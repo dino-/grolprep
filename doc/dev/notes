@@ -1,0 +1,26 @@
+- Original Perl version uses a pair of maps to point answer numbers to letters and back. These are set up randomly, but the two-way lookup is needed.
+
+   In Haskell, we can use Data.Bimap
+
+
+   data Answers = Answers
+      Int      -- Index of correct answer
+      [String] -- List of answer texts
+
+   data Question = Question
+      Int      -- Question number
+      String   -- Question text
+      Answers
+
+Or should it be:
+
+   data Question = Question
+      String   -- Question text
+      Answers
+
+   type Questions = Map Int Question
+   -- Where Int is the question number
+
+Question index comes from the nnn]  part
+
+During parse, easier to have each answer be a (String, Bool) and then turn that [(String, Bool)] into an Answers with the one True one's index.
