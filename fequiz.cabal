@@ -1,5 +1,5 @@
-name:                fequiz2
-version:             2.0.0.0
+name:                fequiz
+version:             2.0.0
 cabal-version:       >= 1.2
 build-type:          Simple
 license:             BSD3
@@ -12,7 +12,7 @@ stability:           experimental
 synopsis:            Foo
 description:         Bar Baz
 category:            Unknown
-tested-with:         GHC>=6.10.1
+tested-with:         GHC>=6.10.4
 
 --executable           pristine
 --   main-is:          main.hs
