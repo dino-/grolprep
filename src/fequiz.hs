@@ -1,6 +1,6 @@
--- Copyright: 2009 Ren Hoek
+-- Copyright: 2009 Dino Morelli
 -- License: BSD3 (see LICENSE)
--- Author: Ren Hoek <ren@spumco.co.dk>
+-- Author: Dino Morelli <dino@ui3.info>
 
 
 main :: IO ()
