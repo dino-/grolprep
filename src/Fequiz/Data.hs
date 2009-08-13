@@ -86,14 +86,19 @@ tillEol :: GenParser Char st String
 tillEol = manyTill (noneOf "\n") eol
 
 
-parseProblems :: String -> Either ParseError [Problem]
+parseProblems :: String -> Either ParseError (String, [Problem])
 parseProblems =
-   (parse (many1 problem) "fequiz FCC study data parse") .
+   (parse problems "fequiz FCC study data parse") .
    unlines .
    deMultiLine .
    lines
 
    where
+      problems = do
+         h <- try (manyTill (noneOf "]\n") eol) <|> (return "unnamed")
+         ps <- many1 problem
+         return (h, ps)
+
       problem = do
          (n, t) <- question <?> "question"
          as <- many1 answer <?> "answers"
