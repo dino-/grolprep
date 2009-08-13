@@ -75,10 +75,10 @@ matchCont l = return h
       h []     = [l]
 
 
-{- The code in this section parses the lines further with Parsec
+{- The code in this section parses the lines into a list of data of 
+   type Problem using Parsec
 -}
 
--- These need to go into a shared library
 eol :: GenParser Char st Char
 eol = newline <|> (eof >> return '\n')
 
