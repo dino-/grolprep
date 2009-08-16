@@ -17,5 +17,5 @@ tested-with:         GHC>=6.10.4
 executable           fequiz
    main-is:          fequiz.hs
    hs-source-dirs:   src
-   build-depends:    base
+   build-depends:    base >= 3 && < 5, cgi, parsec, regex-compat, xhtml
    ghc-options:      -Wall

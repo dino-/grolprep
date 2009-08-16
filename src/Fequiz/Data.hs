@@ -6,6 +6,7 @@
 module Fequiz.Data
    ( Number, Question, Answer, Problem (..)
    , parseProblems
+   , extractAnswer
    )
    where
 
@@ -34,6 +35,10 @@ convertAnswers = map convert
    where
       convert s = maybe (Left s) (Right . head) (match s)
       match = matchRegex $ mkRegex "(.*)@@"
+
+
+extractAnswer :: Either a a -> a
+extractAnswer = either id id
 
 
 {- The code in this section combines multiline continued questions and 
