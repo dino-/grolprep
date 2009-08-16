@@ -4,9 +4,11 @@
 
 import Control.Monad
 import Network.CGI
+import System.Log
 import Text.XHtml.Strict
 
 import Fequiz.Data
+import Fequiz.Log
 
 
 problemForm (Problem n q eas) = form << (
@@ -22,11 +24,14 @@ page t b = header << thetitle << t +++ body << b
 
 
 cgiMain problem = do
+   liftIO $ logM DEBUG "cgiMain executing"
    output $ renderHtml $ page "foo" $ problemForm problem
 
 
 main :: IO ()
 main = do
+   initLogging "/var/tmp/fequiz.log" DEBUG
+
    eps <- liftM parseProblems $ readFile "resources/1.txt"
 
    --either print (\(_,ps) -> print $ head ps) eps
