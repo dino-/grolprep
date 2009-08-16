@@ -1,0 +1,849 @@
+Subelement 3C -- Radio practice 
+
+
+1]  What is a frequency standard? 
+
+a}   A well known (standard) frequency used for transmitting
+certain messages. 
+
+b}   A device used to produce a highly accurate reference
+frequency.@@ 
+
+c}   A device for accurately measuring frequency to within 1 Hz. 
+
+d}   A device used to generate wide-band random frequencies. 
+
+
+2]  What is a frequency-marker generator? 
+
+a}  A device used to produce a highly accurate reference
+frequency.@@ 
+
+b}  A sweep generator. 
+
+c}  A broadband white noise generator. 
+
+d}  A device used to generate wide-band random frequencies. 
+
+
+3]  How is a frequency-marker generator used? 
+
+a}  In conjunction with a grid-dip meter. 
+
+b}  To provide reference points on a receiver dial.@@ 
+
+c}  As the basic frequency element of a transmitter. 
+
+d}  To directly measure wavelength. 
+
+
+4]  How is a frequency counter used? 
+
+a}  To provide reference points on an analog receiver dial
+thereby aiding in the alignment of the receiver. 
+
+b}  To heterodyne the frequency being measured with a known
+variable frequency oscillator until zero beat is achieved,
+thereby indicating what the unknown frequency is. 
+
+c}  To measure the deviation in an FM transmitter in order to
+determine the percentage of modulation. 
+
+d}  To measure the time between events, or the frequency which is
+the reciprocal of the time.@@
+
+
+9]  What is a dip-meter? 
+
+a}  A meter used as a nonradiating load (dummy load) to measure
+transmitter output power. 
+
+b}  A meter used to measure the reflection coefficient of an RF
+transmission path. 
+
+c}  A variable LC oscillator with metered feedback current.@@ 
+
+d}  A fixed tuned LC oscillator used to troubleshoot RF tank
+circuits. 
+
+
+10]  How does a dip-meter function? 
+
+a}  Reflected waves at a specific frequency desensitize the
+detector coil. 
+
+b}  Power absorbed by a resonant circuit causes a decrease in
+dip-meter current.@@ 
+
+c}  Power from a transmitter cancels feedback current. 
+
+d}  Harmonics of the oscillator cause an increase in resonant
+circuit Q resulting in an increase in transmitter output power. 
+
+
+11]  What two ways could a dip-meter be used in a radio
+station?
+
+a}  To measure resonant frequency of antenna traps and to measure
+percentage of modulation. 
+
+b}  To measure antenna resonance and to measure percentage of
+modulation. 
+
+c}  To measure antenna resonance and to measure antenna
+impedance.
+
+d}  To measure resonant frequency of antenna traps and to measure
+a tuned circuit resonant frequency.@@ 
+
+
+12]  How tight should the dip-meter be coupled with the tuned
+circuit being checked? 
+
+a}  As loosely as possible, for best accuracy.@@ 
+
+b}  As tightly as possible, for best accuracy. 
+
+c}  First loose, then tight, for best accuracy. 
+
+d}  With a soldered jumper wire between the meter and the circuit
+to be checked, for best accuracy. 
+
+
+
+13]  What factors limit the accuracy, frequency response, and
+stability of an oscilloscope? 
+
+a}  Sweep oscillator quality and deflection amplifier
+bandwidth.@@
+
+b}  Tube face voltage increments and deflection amplifier
+voltage.
+
+c}  Sweep oscillator quality and tube face voltage increments. 
+
+d}  Deflection amplifier output impedance and tube face frequency
+increments. 
+
+
+14]  What factors limit the accuracy, frequency response, and
+stability of a D'Arsonval movement type meter?
+
+a}  Calibration, coil impedance and meter size. 
+
+b}  Calibration, series resistance and electromagnet current. 
+
+c}  Coil impedance, electromagnet voltage and movement mass. 
+
+d}  Calibration, mechanical tolerance and coil impedance.@@ 
+
+
+15]  What factors limit the accuracy and stability of a
+frequency counter? 
+
+a}  Number of digits in the readout, speed of the logic and time
+base stability. 
+
+b}  Time base accuracy, speed of the logic and time base
+stability.@@ 
+
+c}  Time base accuracy, temperature coefficient of the logic and
+time base stability. 
+
+d}  Number of digits in the readout, external frequency reference
+and temperature coefficient of the logic. 
+
+
+16]  How can the frequency response of an oscilloscope be
+improved? 
+
+a}  By using a triggered sweep and a crystal oscillator as the
+time base. 
+
+b}  By using a crystal oscillator as the time base and increasing
+the vertical sweep rate. 
+
+c}  By increasing the vertical sweep rate and the horizontal
+amplifier frequency response. 
+
+d}  By decreasing the minimum rise time of the vertical
+amplifier.@@ 
+
+
+17]  How can the accuracy of a frequency counter be improved?
+
+a}  By using slower gating circuitry and increasing the number of
+digits used for display. 
+
+b}  By increasing the amount of time the control gate is held
+open, more pulses can be counted. 
+
+c}  By using a crystal controlled oscillator mounted in a thermal
+oven for the time base.@@ 
+
+d}  By using faster gating circuitry and decreasing the number of
+digits used for display. 
+
+
+18]  What is the name of the condition that occurs when the
+signals of two transmitters in close  proximity mix together in
+one or both of their final amplifiers, and unwanted signals at
+the sum and  difference frequencies of the original transmissions
+are generated? 
+
+a}  Amplifier desensitization. 
+
+b}  Neutralization. 
+
+c}  Adjacent channel interference. 
+
+d}  Intermodulation interference.@@ 
+
+
+19]  How does intermodulation interference between two
+transmitters usually occur? 
+
+a}  When the signals from the transmitters are reflected out of
+phase from airplanes passing overhead. 
+
+b}  When they are in close proximity and the signals mix in one
+or both of their final amplifiers.@@ 
+
+c}  When they are in close proximity and the signals cause.
+feedback in one or both of their final amplifiers. 
+
+d}  When the signals from the transmitters are reflected in phase
+from airplanes passing overhead. 
+
+
+20]  How can intermodulation interference between two
+transmitters in close proximity often be reduced or eliminated?
+
+
+a}  By using a Class C final amplifier with high driving power. 
+
+b}  By installing a terminated circulator or ferrite isolator in
+the feed line to the transmitter and duplexer.@@ 
+
+c}  By installing a band-pass filter in the antenna feed line. 
+
+d}  By installing a low-pass filter in the antenna feed line. 
+
+
+21]  What will occur when a non-linear amplifier is used with
+a single-sideband phone transmitter?
+
+a}  Reduced amplifier efficiency. 
+
+b}  Increased intelligibility. 
+
+c}  Sideband inversion. 
+
+d}  Distortion.@@ 
+
+
+22]  How can even-order harmonics be reduced or prevented in
+transmitter amplifier design? 
+
+a}  By using a push-push amplifier. 
+
+b}  By using a push-pull amplifier.@@ 
+
+c}  By operating class C. 
+
+d}  By operating class AB. 
+
+
+23]  What is receiver desensitizing? 
+
+a}  A burst of noise when the squelch is set too low. 
+
+b}  A burst of noise when the squelch is set too high. 
+
+c}  A reduction in receiver sensitivity because of a strong
+signal on a nearby frequency.@@ 
+
+d}  A reduction in receiver sensitivity when the AF gain control
+is turned down. 
+
+
+24]  What is the term used to refer to a reduction in receiver
+sensitivity caused by unwanted high-level adjacent channel
+signals? 
+
+a}  Intermodulation distortion. 
+
+b}  Quieting. 
+
+c}  Desensitizing.@@ 
+
+d}  Overloading. 
+
+
+25]  What is cross-modulation interference? 
+
+a}  Interference between two transmitters of different modulation
+type. 
+
+b}  Interference caused by audio rectification in the receiver
+preamp. 
+
+c}  Harmonic distortion of the transmitted signal. 
+
+d}  Modulation from an unwanted signal is heard in addition to
+the desired signal.@@ 
+
+
+26]  What is the term used to refer to the condition where the
+signals from a very strong station are  superimposed on other
+signals being received? 
+
+a}  Intermodulation distortion. 
+
+b}  Cross-modulation interference.@@ 
+
+c}  Receiver quieting. 
+
+d}  Capture effect. 
+
+
+27]  What is the capture effect? 
+
+a}  All signals on a frequency are demodulated by an FM receiver.
+
+b}  All signals on a frequency are demodulated by an AM receiver.
+
+c}  The strongest signal received is the only demodulated
+signal.@@ 
+
+d}  The weakest signal received is the only demodulated signal. 
+
+
+28]  If a strong FM-phone signal and a weak FM-phone signal,
+both using the same carrier frequency, are received
+simultaneously, why is only one demodulated? 
+
+a}  Strong signal desensitizes the receiver circuitry to block
+the weak signal. 
+
+b}  Strong signal causes cross-modulation interference to prevent
+the weaker signal from being received. 
+
+c}  Strong signal captures the local oscillator preventing the
+weak signal from being detected.@@ 
+
+d}  Strong signal forces the receiver RF amps to discriminate
+against the weaker signal. 
+
+
+29]  How does a spectrum analyzer differ from a conventional
+oscilloscope? 
+
+a}  The oscilloscope is used to display electrical signals while
+the spectrum analyzer is used to measure ionospheric reflection. 
+
+b}  The oscilloscope is used to display electrical signals in the
+frequency domain while the spectrum analyzer is used to display
+electrical signals in the time domain. 
+
+c}  The oscilloscope is used to display electrical signals in the
+time domain while the spectrum analyzer is used to display
+electrical signals in the frequency domain.@@ 
+
+d}  The oscilloscope is used for displaying audio frequencies and
+the spectrum analyzer is used for displaying radio frequencies. 
+
+
+30]  What does the horizontal axis of a spectrum analyzer
+display? 
+
+a}  Amplitude. 
+
+b}  Voltage. 
+
+c}  Resonance. 
+
+d}  Frequency.@@ 
+
+
+31]  What does the vertical axis of a spectrum analyzer
+display? 
+
+a}  Amplitude.@@ 
+
+b}  Duration. 
+
+c}  Frequency. 
+
+d}  Time. 
+
+
+32]  What test instrument can be used to display spurious
+signals in the output of a radio transmitter? 
+
+a}  A spectrum analyzer.@@ 
+
+b}  A wattmeter. 
+
+c}  A logic analyzer. 
+
+d}  A time-domain reflectometer. 
+
+
+33]  What test instrument is used to display intermodulation
+distortion products from an SSB transmitter? 
+
+a}  A wattmeter. 
+
+b}  An audio distortion analyzer.@@ 
+
+c}  A logic analyzer. 
+
+d}  A time-domain reflectometer. 
+
+ 
+
+34]  How can ferrite beads be used to suppress ignition noise? 
+
+a}  Install them in the resistive high voltage cable every 2
+years. 
+
+b}  Install them between the starter solenoid and the starter
+motor. 
+
+c}  Install them in the primary and secondary ignition leads.@@ 
+
+d}  Install them in the antenna lead. 
+
+
+35]  How can you determine if a line-noise interference problem
+is being generated within a building? 
+
+a}  Check the power-line voltage with a time-domain
+reflectometer.
+
+b}  Observe the AC wave form on an oscilloscope. 
+
+c}  Turn off the main circuit breaker and listen on a
+battery-operated radio.@@ 
+
+d}  Observe the power-line voltage on a spectrum analyzer. 
+
+
+36]  An electrical relay: 
+
+a}  Is a current limiting device. 
+
+b}  Is a device used for supplying 3 or more voltages to a
+circuit. 
+
+
+c}  Is concerned mainly with HF audio amplifiers. 
+
+d}  Is a remotely controlled switching device.@@ 
+
+
+37]  A high standing wave ratio on a transmission line can be
+caused by: 
+
+a}  Excessive modulation. 
+
+b}  An increase in output power. 
+
+c}  Detuned antenna coupling.@@ 
+
+d}  Poor B+ regulation. 
+
+
+38]  What may be the results of adding a GaAsFET
+pre-amplifier circuit to a marine VHF transceiver? 
+
+a}  A slight increase in sensitivity, but susceptibility to
+overload and intermodulation.@@ 
+
+b}  Increased selectivity. 
+
+c}  Increase in sensitivity, and a decrease in the susceptibility
+to overload and intermodulation. 
+
+d}  The GaAsFET pre-amplifier will minimize out-of-band unwanted
+reception. 
+
+
+39]  Which of the following contains a multirange AF
+voltmeter calibrated in dB and a sharp, internal 1000 Hz bandstop
+filter, both used in conjunction with each other to perform
+quieting tests? 
+
+a}  Reflectometer. 
+
+b}  Dip meter.
+
+c}  SINAD meter.@@ 
+
+d}  Vector-impedance meter. 
+
+
+40]  A(n) ____ and ____ can be combined to measure the
+characteristics of transmission lines and such an arrangement is
+known as a time-domain reflectometer (TDR). 
+
+a}  Frequency spectrum analyzer, RF generator. 
+
+b}  Oscilloscope, pulse generator.@@
+ 
+
+c}  AC millivolt meter, AF generator. 
+
+d}  Frequency counter, linear detector. 
+
+
+
+41]  Which of the following can not be measured with an
+admittance meter? 
+
+a}  Conductance and susceptance. 
+
+b}  Voltage standing wave ratio (VSWR). 
+
+c}  Reflection coefficient. 
+
+d}  Capacitance and inductance.@@ 
+
+
+42]  One piece of equipment to indicate neutralization is: 
+
+a}  A neon bulb.@@ 
+
+b}  A tachometer. 
+
+c}  Linear detector. 
+
+d}  Ceramic filter. 
+
+
+43]  Pulse type interference to radio receivers in
+automobiles can be reduced by: 
+
+a}  Connecting resistances in series with the spark plugs.@@ 
+
+b}  Using heavy conductors between the starting battery and the
+starting motor. 
+
+c}  Connecting resistances in series with the starting battery. 
+
+d}  Grounding the negative side of the starting battery. 
+
+
+44]  Magnetron oscillators are used for: 
+
+a}  Generating SHF signals.@@ 
+
+b}  Multiplexing. 
+
+c}  Generating rich harmonics. 
+
+d}  FM demodulation. 
+
+
+
+45]  Which of the following pieces of test equipment will
+permit you to measure the percentage of modulation of a
+transmitter signal on an oscilloscope when the frequency of the
+RF exceeds the frequency response of the oscilloscope's vertical
+amplifiers? 
+
+a}  Wow and flutter meter. 
+
+b}  Curve tracer. 
+
+c}  Linear detector.@@ 
+
+d}  Vector-impedance meter. 
+
+
+46]  Typical airborne HF transmitters usually provide a
+nominal RF power output to the antenna of ____ watts, compared
+with ____ watts RF output from a typical VHF transmitter. 
+
+a}  10, 50. 
+
+b}  50, 10. 
+
+c}  20, 100. 
+
+d}  100, 20.@@ 
+
+
+47]  Which of the following devices is a key element in
+modern day ADF systems?
+
+a}  Goniometer.@@ 
+
+b}  Deflection yoke. 
+
+c}  UART integrated circuit. 
+
+d}  Swinging choke. 
+
+
+48]  An absorption wave meter is useful in measuring: 
+
+a}  Field strength. 
+
+b}  Output frequencies to conform with FCC tolerance. 
+
+c}  Standing wave frequencies. 
+
+d}  The resonant frequency of a powered LC tank circuit.@@ 
+
+
+49]  Which of the following navigational methods utilizes the
+lowest frequency for a carrier? 
+
+
+a}  LORAN. 
+
+b}  OMEGA.@@ 
+
+c}  ADF. 
+
+d}  VOR. 
+
+
+50]  Neglecting line losses,  the RMS voltage along an RF
+transmission line having no standing waves: 
+
+a}  Is equal to the impedance. 
+
+b}  Is one-half of the surge impedance. 
+
+c}  Is the product of the surge impedance times the line
+current.@@ 
+
+d}  Varies sinusodially along the line. 
+
+
+51]  Waveguides are: 
+
+a}  A hollow conductor that carries RF.@@ 
+
+b}  Solid copper conductor for RF. 
+
+c}  Special type of  coaxial cables. 
+
+d}  Special alloy wire able to conduct high frequencies. 
+
+
+52]  When a vacuum tube operates at VHF or higher frequencies
+as compared to lower frequencies: 
+
+a}  Transit time of electrons becomes important.@@ 
+
+b}  It is necessary to make larger components. 
+
+c}  It is necessary to increase grid spacing. 
+
+d}  Only a pentode is satisfactory. 
+
+
+53]  The principle of OMEGA navigation depends on measuring
+the ____ between received pulses. 
+
+a}  Frequency difference. 
+
+b}  Phase angle.@@ 
+
+c}  Time interval.
+ 
+d}  Amplitude difference. 
+
+
+54]  A circulator: 
+
+a}  Cools DC motors during heavy loads by turning on a cooling
+fan for the motors' windings. 
+
+b}  Allows two or more antennas to feed one transmitter. 
+
+c}  Allows one antenna to feed two separate microwave
+transmitters and receivers at the same time.@@ 
+
+d}  Insulates UHF frequencies on transmission lines and helps to
+reduce skin effect at high frequencies. 
+
+
+55]  Coaxial transmission line shielding is grounded: 
+
+a}  At the input only. 
+
+b}  At both input and output.@@ 
+
+c}  At the output only. 
+
+d}  Only when a balanced transmission line is needed. 
+
+
+56]  Motorboating (low frequency oscillations) in an amplifier
+can be stopped by: 
+
+a}  Grounding the screen grid. 
+
+b}  Bypassing the screen grid resistor with a .1 mfd capacitor. 
+
+c}  Connect a capacitor between the B+ lead and ground.@@ 
+
+d}  Grounding the plate. 
+
+
+57]  What effect could transmitting on marine SSB have on a
+running autopilot? 
+
+a}  Seldom is there an effect. 
+
+b}  The autopilot may sharply turn left of right.@@ 
+
+c}  The autopilot will make a slow clockwise circle. 
+
+d}  The autopilot will make a slow counterclockwise circle. 
+
+
+59]  An oscilloscope can be used to accomplish all of the
+following except : 
+
+a}  Measure electron flow with the aide of a resistor. 
+
+b}  Measure phase difference between two signals. 
+
+c}  Measure electrical pressure. 
+
+d}  Measure velocity of light with the aide of a light emitting
+diode.@@ 
+
+
+60]  SSB transmitters require a(n) ____ wattmeter and AM or
+FM transmitters require a(n) ____ wattmeter. 
+
+a}  RMS-reading, peak-reading. 
+
+b}  Peak-reading, rms-reading.@@ 
+
+c}  Peak-reading, PEP. 
+
+d}  PEP, Peak-reading. 
+
+
+61]  What type of antenna system allows you to receive and
+transmit at the same time in both directions? 
+
+a}  Simplex. 
+
+b}  Duplex.@@ 
+
+c}  Multiplex. 
+
+d}  Digital diplex. 
+
+
+62]  A microwave device that allows RF energy to pass through in
+one direction with very little loss but absorbs RF power in the
+opposite direction: 
+
+a}  Circulator. 
+
+b}  Wave trap. 
+
+c}  Multiplexer. 
+
+d}  Isolator.@@ 
+
+
+63]  Which of the following is found in an improved MOPA but
+not in a basic MOPA?
+
+a}  Oscillator.
+
+b}  RF amplifier.
+
+c}  Buffer amplifier.@@ 
+
+d}  Key.
+
+
+64]  Which of the following is the only service using
+self-excited, or variable-frequency, oscillators in transmitters?
+
+a}  Aviation. 
+
+b}  Amateur.@@ 
+
+c}  Maritime. 
+
+d}  Government. 
+
+
+65]  Aviation services use predominantly ____ microphones. 
+
+a}  Carbon. 
+
+b}  Dynamic.@@ 
+
+c}  Condenser. 
+
+d}  Piezoelectric crystal. 
+
+
+66]  What geometric patterns will be displayed on an
+oscilloscope if the modulating audio is fed to the horizontal
+plates while the modulated RF is fed to the vertical plates,
+assume 100 % modulation? 
+
+a}  Circle. 
+
+b}  Line. 
+
+c}  Square. 
+
+d}  Triangle.@@ 
+
+
+67]  To produce a single-sideband suppressed carrier
+transmission it is necessary to ____ the carrier and to ____ the
+unwanted sideband. 
+
+a}  Filter, filter. 
+
+b}  Filter, cancel.
+
+c}  Cancel, filter.@@ 
+
+d}  Cancel, cancel. 
+
+
+68]  Which of the following is only required for CW or SSB
+demodulation? 
+
+a}  BFO.@@
+
+b}  BPF. 
+
+c}  VFO.
+
+d}  VOX. 
+
+
+69]  Which of the following FM detectors does not require IF
+limiter stage to precede it? 
+
+a}  Foster-Seeley. 
+
+b}  Ratio.@@ 
+
+c}  Quadrature. 
+
+d}  Stagger-tuned. 
+
+
+
+
+

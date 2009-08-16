@@ -1,0 +1,1904 @@
+Subelement 3E -- Circuit components.
+
+1]  Structurally, what are the two main categories of
+semiconductor diodes?
+
+a}  Junction and point contact.@@
+
+b}  Electrolytic and junction.
+
+c}  Electrolytic and point contact.
+
+d}  Vacuum and point contact.
+
+
+2]  What are the two primary classifications of Zener diodes?
+
+a}  Hot carrier and tunnel.
+
+b}  Varactor and rectifying.
+
+c}  Voltage regulator and voltage reference.@@
+
+d}  Forward and reversed biased.
+
+
+3]  What is the principal characteristic of a Zener diode?
+
+a}  A constant current under conditions of varying voltage.
+
+b}  A constant voltage under conditions of varying current.@@
+
+c}  A negative resistance region.
+
+d}  An internal capacitance that varies with the applied voltage.
+
+
+4]  What is the range of voltage ratings available in Zener
+diodes?
+
+a}  2.4 volts to 200 volts.@@
+
+b}  1.2 volts to 7 volts.
+
+c}  3 volts to 2000 volts.
+
+d}  1.2 volts to 5.6 volts.
+
+
+5]  What is the principal characteristic of a tunnel diode?
+
+a}  A high forward resistance.
+
+b}  A very high PIV(peak inverse voltage).
+
+c}  A negative resistance region.@@
+
+d}  A high forward current rating.
+
+
+6]  What special type of diode is capable of both amplification
+and oscillation?
+
+a}  Point contact diodes.
+
+b}  Zener diodes.
+
+c}  Tunnel diodes.@@
+
+d}  Junction diodes.
+
+
+7]  What type of semiconductor diode varies its internal
+capacitance as the voltage applied to its terminals varies?
+
+a}  A varactor diode.@@
+
+b}  A tunnel diode.
+
+c}  A silicon-controlled rectifier.
+
+d}  A Zener diode.
+
+
+8]  What is the principal characteristic of a varactor diode?
+
+a}  It has a constant voltage under conditions of varying current.
+
+b}  Its internal capacitance varies with the applied voltage.@@
+
+c}  It has a negative resistance region.
+
+d}  It has a very high PIV(peak inverse voltage).
+
+
+9]  What is a common use of a varactor diode?
+
+a}  As a constant current source.
+
+b}  As a constant voltage source.
+
+c}  As a voltage controlled inductance.
+
+d}  As a voltage controlled capacitance.@@
+
+
+10]  What is a common use of a hot-carrier diode?
+
+a}  As balanced inputs in SSB generation.
+
+b}  As a variable capacitance in an automatic frequency control
+circuit.
+
+c}  As a constant voltage reference in a power supply.
+
+d}  As VHF and UHF mixers and detectors.@@
+
+
+11]  What limits the maximum forward current in a junction
+diode?
+
+a}  The peak inverse voltage(PIV).
+
+b}  The junction temperature.@@
+
+c}  The forward voltage.
+
+d}  The back EMF.
+
+
+12]  How are junction diodes rated?
+
+a}  Maximum forward current and capacitance.
+
+b}  Maximum reverse current and PIV(peak inverse voltage).
+
+c}  Maximum reverse current and capacitance.
+
+d}  Maximum forward current and PIV(peak inverse voltage).@@
+
+
+13]  What is a common use for point contact diodes?
+
+a}  As a constant current source.
+
+b}  As a constant voltage source.
+
+c}  As an RF detector.@@
+
+d}  As a high voltage rectifier.
+
+
+14]  What type of diode is made of a metal whisker touching a
+very small semiconductor die?
+
+a}  Zener diode.
+
+b}  Varactor diode.
+
+c}  Junction diode.
+
+d}  Point contact diode.@@
+
+
+
+15]  What is one common use for PIN diodes?
+
+a}  As a constant current source.
+
+b}  As a constant voltage source.
+
+c}  As an RF switch.@@
+
+d}  As a high voltage rectifier.
+
+
+16]  What special type of diode is often used in RF switches,
+attenuators, and various types of phase shifting devices?
+
+a}  Tunnel diodes.
+
+b}  Varactor diodes.
+
+c}  PIN diodes.@@
+
+d}  Junction diodes.
+
+
+17]  What are the three terminals of a bipolar transistor?
+
+a}  Cathode, plate and grid.
+
+b}  Base, collector and emitter.@@
+
+c}  Gate, source and sink.
+
+d}  Input, output and ground.
+
+
+18]  What is the meaning of the term alpha with regard to
+bipolar transistors?
+
+a}  The change of collector current with respect to base current.
+
+b}  The change of base current with respect to collector current.
+
+c}  The change of collector current with respect to emitter
+current.@@
+
+d}  The change of collector current with respect to gate current.
+
+
+19]  What is the term used to express the ratio of change in DC
+collector current to a change in emitter current in a bipolar
+transistor?
+
+a}  Gamma.
+
+
+b}  Epsilon.
+
+c}  Alpha.@@
+
+d}  Beta.
+
+
+20]  What is the meaning of the term beta with regard to
+bipolar transistors?
+
+a}  The change of collector current with respect to base
+current.@@
+
+b}  The change of base current with respect to emitter current.
+
+c}  The change of collector current with respect to emitter
+current.
+
+d}  The change in base current with respect to gate current.
+
+
+21]  What is the term used to express the ratio of change in
+the DC collector current to a change in base current in a bipolar
+transistor?
+
+a}  Alpha.
+
+b}  Beta.@@
+
+c}  Gamma.
+
+d}  Delta.
+
+
+22]  What is the meaning of the term alpha cutoff frequency
+with regard to bipolar transistors?
+
+a}  The practical lower frequency limit of a transistor in common
+emitter configuration.
+
+b}  The practical upper frequency limit of a transistor in common
+base configuration.@@
+
+c}  The practical lower frequency limit of a transistor in common
+base configuration.
+
+d}  The practical upper frequency limit of a transistor in common
+emitter configuration.
+
+
+23]  What is the term used to express that frequency at which
+the grounded base current gain has decreased to 0.707 of the gain
+obtainable at 1 kHz in a bipolar transistor?
+
+
+a}  Corner frequency.
+
+b}  Alpha cutoff frequency.@@
+
+c}  Beta cutoff frequency.
+
+d}  Alpha rejection frequency.
+
+
+24]  What is the meaning of the term beta cutoff frequency
+with regard to a bipolar transistor?
+
+a}  That frequency at which the grounded base current gain has
+decreased to 0.707 of that obtainable at 1 kHz in a transistor.
+
+b}  That frequency at which the grounded emitter current gain has
+decreased to 0.707 of that obtainable at 1 kHz in a transistor.@@
+
+c}  That frequency at which the grounded collector current gain
+has decreased to 0.707 of that obtainable at 1 kHz in a
+transistor.
+
+d}  That frequency at which the grounded gate current gain has
+decreased to 0.707 of that obtainable at 1 kHz in a transistor.
+
+
+25]  What is the meaning of the term transition region with
+regard to a transistor?
+
+a}  An area of low charge density around the P-N junction.@@
+
+b}  The area of maximum P-type charge.
+
+c}  The area of maximum N-type charge.
+
+d}  The point where wire leads are connected to the P- or N-type
+material.
+
+
+26]  What does it mean for a transistor to be fully saturated?
+
+a}  The collector current is at its maximum value.@@
+
+b}  The collector current is at its minimum value.
+
+c}  The transistor's Alpha is at its maximum value.
+
+d}  The transistor's Beta is at its maximum value.
+
+
+27]  What does it mean for a transistor to be cut off?
+
+a}  There is no base current.
+
+
+b}  The transistor is at its Class A operating point.
+
+c}  There is no current between emitter and collector.@@
+
+d}  There is maximum current between emitter and collector.
+
+
+28]  What are the elements of a unijunction transistor?
+
+a}  Base 1, base 2, and emitter.@@
+
+b}  Gate, cathode, and anode.
+
+c}  Gate, base 1, and base 2.
+
+d}  Gate, source, and sink.
+
+
+29]  For best efficiency and stability, where on the load-line
+should a solid-state power amplifier be operated?
+
+a}  Just below the saturation point.@@
+
+b}  Just above the saturation point.
+
+c}  At the saturation point.
+
+d}  At 1.414 times the saturation point.
+
+
+30]  What two elements widely used in semiconductor devices
+exhibit both metallic and non-metallic characteristics?
+
+a}  Silicon and gold.
+
+b}  Silicon and germanium.@@
+
+c}  Galena and germanium.
+
+d}  Galena and bismuth.
+
+
+31]  What are the three terminals of an SCR?
+
+a}  Anode, cathode, and gate.@@
+
+b}  Gate, source, and sink.
+
+c}  Base, collector, and emitter.
+
+d}  Gate, base 1, and base 2.
+
+
+32]  What are the two stable operating conditions of an SCR?
+
+a}  Conducting and nonconducting.@@
+
+b}  Oscillating and quiescent.
+
+c}  Forward conducting and reverse conducting.
+
+d}  NPN conduction and PNP conduction.
+
+
+33]  When an SCR is in the triggered or on condition, its
+electrical characteristics are similar to what other solid-state
+device (as measured between its cathode and anode)?
+
+a}  The junction diode.@@
+
+b}  The tunnel diode.
+
+c}  The hot-carrier diode.
+
+d}  The varactor diode.
+
+
+34]  Under what operating condition does an SCR exhibit
+electrical characteristics similar to a forward-biased silicon
+rectifier?
+
+a}  During a switching transition.
+
+b}  When it is used as a detector.
+
+c}  When it is gated "off".
+
+d}  When it is gated "on".@@
+
+
+35]  What is the transistor called which is fabricated as two
+complementary SCRs in parallel with a common gate terminal?
+
+a}  TRIAC.@@
+
+b}  Bilateral SCR.
+
+c}  Unijunction transistor.
+
+d}  Field effect transistor.
+
+
+36]  What are the three terminals of a TRIAC?
+
+a}  Emitter, base 1, and base 2.
+
+b}  Gate, anode 1, and anode 2.@@
+
+
+c}  Base, emitter, and collector.
+
+d}  Gate, source, and sink.
+
+
+37]  What is the normal operating voltage and current for a
+light-emitting diode?
+
+a}  60 volts and 20 mA.
+
+b}  5 volts and 50 mA.
+
+c}  1.7 volts and 20 mA.@@
+
+d}  0.7 volts and 60 mA.
+
+
+38]  What type of bias is required for an LED to produce
+luminescence?
+
+a}  Reverse bias.
+
+b}  Forward bias.@@
+
+c}  Zero bias.
+
+d}  Inductive bias.
+
+
+39]  What is the name of the semiconductor IC that has a
+fixed pattern of digital data stored in its memory matrix?
+
+a}  RAM--Random-Access Memory.
+
+b}  ROM--Read-Only Memory.@@
+
+c}  Register.
+
+d}  Latch.
+
+
+40]  What colors are available in LEDs?
+
+a}  Yellow, blue, red, and brown.
+
+b}  Red, violet, yellow, and peach.
+
+c}  Violet, blue, orange, and red.
+
+d}  Red, green, orange, and yellow.@@
+
+
+41]  How can a neon lamp be used to check for the presence of
+RF?
+
+a}  A neon lamp will go out in the presence of RF.
+
+b}  A neon lamp will change color in the presence of RF.
+
+c}  A neon lamp will light only in the presence of very low
+frequency (VLF) signal.
+
+d}  A neon lamp will light in the presence of RF.@@
+
+
+42]  What would be the bandwidth of a good crystal lattice
+band-pass filter for a single-sideband phone emission?
+
+a}  6 kHz at -6 dB.
+
+b}  2.1 kHz at -6 dB.@@
+
+c}  500 Hz at -6 dB.
+
+d}  15 kHz at -6 dB.
+
+
+43]  What would be the bandwidth of a good crystal lattice
+band-pass filter for a double-sideband phone emission?
+
+a}  1 kHz at -6 dB.
+
+b}  500 Hz at -6 dB.
+
+c}  6 kHz at -6 dB.@@
+
+d}  15 kHz at -6 dB.
+
+
+44]  What is a crystal lattice filter?
+
+a}  A power supply filter made with crisscrossed quartz crystals.
+
+b}  An audio filter made with 4 quartz crystals at 1-kHz
+intervals.
+
+c}  A filter with infinitely wide and shallow skirts made using
+quartz crystals.
+
+d}  A filter with narrow bandwidth and steep skirts made using
+quartz crystals.@@
+
+
+45]  What technique can be used to construct low cost, high
+performance crystal lattice filters?
+
+a}  Splitting and tumbling.
+
+
+b}  Tumbling and grinding.
+
+c}  Etching and splitting.
+
+d}  Etching and grinding.@@
+
+
+46]  What determines the bandwidth and response shape in a
+crystal lattice filter?
+
+a}  The relative frequencies of the individual crystals.@@
+
+b}  The center frequency chosen for the filter.
+
+c}  The amplitude of the RF stage preceding the filter.
+
+d}  The amplitude of the signals passing through the filter.
+
+
+47]  What is an enhancement-mode FET?
+
+a}  An FET with a channel that blocks voltage through the gate.
+
+b}  An FET with a channel that allows a current when the gate
+voltage is zero.
+
+c}  An FET without a channel to hinder current through the gate.
+
+d}  An FET without a channel; no current occurs with zero gate
+voltage.@@
+
+
+48]  What is a depletion-mode FET?
+
+a}  An FET that has a channel with no gate voltage applied; a
+current flows with zero gate voltage.@@
+
+b}  An FET that has a channel that blocks current when the gate
+voltage is zero.
+
+c}  An FET without a channel; no current flows with zero gate
+voltage.
+
+d}  An FET without a channel to hinder current through the gate.
+
+
+49]  Why do many MOSFET devices have built-in gate-protective
+Zener diodes?
+
+a}  The gate-protective Zener diode provides a voltage reference
+to provide the correct amount of reverse-bias gate voltage.
+
+b}  The gate-protective Zener diode protects the substrate from
+excessive voltages.
+
+c}  The gate-protective Zener diode keeps the gate voltage within
+specifications to prevent the device from overheating.
+
+d}  The gate-protective Zener diode prevents the gate insulation
+from being punctured by small static charges or excessive
+voltages.@@
+
+
+50]  What do the initials CMOS stand for?
+
+a}  Common mode oscillating system.
+
+b}  Complementary mica-oxide silicon.
+
+c}  Complementary metal-oxide semiconductor.@@
+
+d}  Complementary metal-oxide substrate.
+
+
+51]  Why are special precautions necessary in handling FET and
+CMOS devices?
+
+a}  They are susceptible to damage from static charges.@@
+
+b}  They have fragile leads that may break off.
+
+c}  They have micro-welded semiconductor junctions that are
+susceptible to breakage.
+
+d}  They are light sensitive.
+
+
+52]  How does the input impedance of a field-effect transistor
+compare with that of a bipolar transistor?
+
+a}  One cannot compare input impedance without first knowing the
+supply voltage.
+
+b}  An FET has low input impedance; a bipolar transistor has high
+input impedance.
+
+c}  The input impedance of FETs and bipolar transistors is the
+same.
+
+d}  An FET has high input impedance; a bipolar transistor has low
+input impedance.@@
+
+
+53]  What are the three terminals of a field-effect transistor?
+
+a}  Gate 1, gate 2, drain.
+
+b}  Emitter, base, collector.
+
+c}  Emitter, base 1, base 2.
+
+d}  Gate, drain, source.@@
+
+
+54]  What are the two basic types of junction field-effect
+transistors?
+
+a}  N-channel and P-channel.@@
+
+b}  High power and low power.
+
+c}  MOSFET and GaAsFET.
+
+d}  Silicon FET and germanium FET.
+
+
+55]  What is an operational amplifier?
+
+a}  A high-gain, direct-coupled differential amplifier whose
+characteristics are determined by components external to the
+amplifier unit.@@
+
+b}  A high-gain, direct-coupled audio amplifier whose
+characteristics are determined by components external to the
+amplifier unit.
+
+c}  An amplifier used to increase the average output of frequency
+modulated signals.
+
+d}  A program subroutine that calculates the gain of an RF
+amplifier.
+
+
+56]  What would be the characteristics of the ideal op-amp?
+
+a}  Zero input impedance, infinite output impedance, infinite
+gain, flat frequency response.
+
+b}  Infinite input impedance, zero output impedance, infinite
+gain, flat frequency response.@@
+
+c}  Zero input impedance, zero output impedance, infinite gain,
+flat frequency response.
+
+d}  Infinite input impedance, infinite output impedance, infinite
+gain, flat frequency response.
+
+
+57]  What determines the gain of a closed-loop op-amp circuit?
+
+a}  The external feedback network.@@
+
+
+b}  The collector-to-base capacitance of the PNP stage.
+
+c}  The power supply voltage.
+
+d}  The PNP collector load.
+
+
+58]  What is meant by the term op-amp offset voltage?
+
+a}  The output voltage of the op-amp minus its input voltage.
+
+b}  The difference between the output voltage of the op-amp and
+the input voltage required in the following stage.
+
+c}  The potential between the amplifier-input terminals of the
+op-amp in a closed-loop condition.@@
+
+d}  The potential between the amplifier-input terminals of the
+op-amp in an open-loop condition.
+
+
+59]  What is the input impedance of a theoretically ideal
+op-amp?
+
+a}  100 ohms.
+
+b}  1000 ohms.
+
+c}  Very low.
+
+d}  Very high.@@
+
+
+60]  What is the output impedance of a theoretically ideal
+op-amp?
+
+a}  Very low.@@
+
+b}  Very high.
+
+c}  100 ohms.
+
+d}  1000 ohms.
+
+
+61]  What is a phase-locked loop circuit?
+
+a}  An electronic servo loop consisting of a ratio detector,
+reactance modulator, and voltage-controlled oscillator.
+
+b}  An electronic circuit also known as a monostable
+multivibrator.
+
+c}  An electronic circuit consisting of a precision push-pull
+amplifier with a differential input.
+
+d}  An electronic servo loop consisting of a phase detector, a
+low-pass filter and voltage-controlled oscillator.@@
+
+
+62]  What functions are performed by a phase-locked loop?
+
+a}  Wideband AF and RF power amplification.
+
+b}  Comparison of two digital input signals, digital pulse
+counter.
+
+c}  Photovoltaic conversion, optical coupling.
+
+d}  Frequency synthesis, FM demodulation.@@
+
+
+63]  A circuit compares the output from a voltage-controlled
+oscillator and a frequency standard. The difference between the
+two frequencies produces an error voltage that changes the
+voltage-controlled oscillator frequency.  What is the name of the
+circuit?
+
+a}  A doubly balanced mixer.
+
+b}  A phase-locked loop.@@
+
+c}  A differential voltage amplifier.
+
+d}  A variable frequency oscillator.
+
+
+64]  What do the initials TTL stand for?
+
+a}  Resistor-transistor logic.
+
+b}  Transistor-transistor logic.@@
+
+c}  Diode-transistor logic.
+
+d}  Emitter-coupled logic.
+
+
+65]  What is the recommended power supply voltage for TTL
+series integrated circuits?
+
+a}  12.00 volts.
+
+b}  50.00 volts.
+
+c}  5.00 volts.@@
+
+d}  13.60 volts.
+
+
+66]  What logic state do the inputs of a TTL device assume if
+they are left open?
+
+a}  A high logic state.@@
+
+b}  A low logic state.
+
+c}  The device becomes randomized and will not provide consistent
+high or low logic states.
+
+d}  Open inputs on a TTL device are ignored.
+
+
+67]  What is the range of input voltages considered to be a
+logic high input in a TTL device operating with a 5-volt power
+supply?
+
+a}  2.0 to 5.5 volts.@@
+
+b}  1.5 to 3.0 volts.
+
+c}  1.0 to 1.5 volts.
+
+d}  -5.0 to -2.0 volts.
+
+
+68]  What is the range of input voltages considered to be a
+logic low in a CMOS device operating with an 18-volt power
+supply?
+
+a}  -0.8 to 0.0 volts.
+
+b}  0.0 to 5.4 volts.@@
+
+c}  0.0 to 0.8 volts.
+
+d}  -0.8 to 0.4 volts.
+
+
+69]  Why do circuits containing TTL devices have several bypass
+capacitors per printed circuit board?
+
+a}  To prevent RFI to receivers.
+
+b}  To keep the switching noise within the circuit, thus
+eliminating RFI.
+
+c}  To filter out switching harmonics.
+
+d}  To prevent switching transients from appearing on the supply
+line.@@
+
+
+
+70]  What is a CMOS IC?
+
+a}  A chip with only P-channel transistors.
+
+b}  A chip with P-channel and N-channel transistors.@@
+
+c}  A chip with only N-channel transistors.
+
+d}  A chip with only bipolar transistors.
+
+
+71]  What is one major advantage of CMOS over other devices?
+
+a}  Small size.
+
+b}  Low current consumption.@@
+
+c}  Low cost.
+
+d}  Ease of circuit design.
+
+
+72]  Why do CMOS digital integrated circuits have high immunity
+to noise on the input signal or power supply?
+
+a}  Larger bypass capacitors are used in CMOS circuit design.
+
+b}  The input switching threshold is about two times the power
+supply voltage.
+
+c}  The input switching threshold is about one-half the power
+supply voltage.@@
+
+d}  Input signals are stronger.
+
+
+73]  Signal energy is coupled into a traveling-wave tube at:
+
+a}  Collector end of helix.
+
+b}  Anode end of the helix.
+
+c}  Cathode end of the helix.@@
+
+d}  Focusing coils.
+
+
+74]  Permanent magnetic field that surrounds a traveling-wave
+tube (TWT) is intended to:
+
+a}  Provide a means of coupling.
+
+b}  Prevent the electron beam from spreading.@@
+
+c}  Prevent oscillations.
+
+d}  Prevent spurious oscillations.
+
+
+75]  Electromagnetic coils encase a traveling wave tube to:
+
+a}  Provide a means of coupling energy.
+
+b}  Prevent the electron beam from spreading.@@
+
+c}  Prevent oscillation.
+
+d}  Prevent spurious oscillation.
+
+
+76]  When a doped semiconductor crystal is formed against a
+metal conductor, what type of diode is created?
+
+a}  Schottky diode.@@
+
+b}  Tunnel diode.
+
+c}  Varactor diode.
+
+d}  Zener diode.
+
+
+77]  What type of diode contains no minority carriers in the
+junction region?
+
+a}  Tunnel diode.
+
+b}  Varactor diode.
+
+c}  Zener diode.
+
+d}  Hot-carrier diode.@@
+
+
+78]  Mounting an LED facing a photodiode cell in a tiny
+light-tight enclosure produces a:
+
+a}  Seven segment LED.
+
+b}  Opto-isolator.@@
+
+c}  Opto-interrupter.
+
+d}  Photonic device.
+
+
+79]  Most bipolar junction transistors have a ____ doped and
+____ emitter region compared to the base and collector regions..
+
+a}  Heavily, thin.
+
+b}  Heavily, small.@@
+
+c}  Lightly, thin.
+
+d}  Lightly, small.
+
+
+80]  Most bipolar junction transistors have a ____ doped and
+____ base region compared to the emitter and collector regions..
+
+a}  Heavily, thin.
+
+b}  Heavily, small.
+
+c}  Lightly, thin.@@
+
+d}  Lightly, small.
+
+
+81]  Most bipolar junction transistors have a ____ doped and
+____ collector region compared to the base and emitter regions..
+
+a}  Heavily, large.
+
+b}  Heavily, small.
+
+c}  Lightly, thin.
+
+d}  Medium, large.@@
+
+
+82]  A common emitter amplifier has:.
+
+a}  More current gain than common base or common collector.
+
+b}  More voltage gain than common base or common collector.
+
+c}  More power gain than common base or common collector.@@
+
+d}  Highest input impedance of the three amplifier configurations.
+
+
+83]  A common base amplifier has:.
+
+a}  More current gain than common emitter or common collector.
+
+b}  More voltage gain than common emitter or common collector.@@
+
+c}  More power gain than common emitter or common collector.
+
+d}  Highest input impedance of the three amplifier configurations.
+
+
+84]  An emitter-follower amplifier has:.
+
+a}  More current gain than common emitter or common base.@@
+
+b}  More voltage gain than common emitter or common base.
+
+c}  More power gain than common emitter or common base.
+
+d}  Lowest input impedance of the three amplifier configurations.
+
+
+85]  The JFET's ____________ is the ratio of drain-source
+voltage change to gate-source voltage change with drain current
+constant.
+
+a}  Amplification factor.@@
+
+b}  Dynamic drain resistance.
+
+c}  Transconductance.
+
+d}  Pinch-off voltage.
+
+
+86]  The JFET's ____________ is the ratio of drain-source
+voltage change to drain current change with the gate-source
+voltage constant.
+
+a}  Amplification factor.
+
+b}  Dynamic drain resistance.@@
+
+c}  Transconductance.
+
+d}  Pinch-off voltage.
+
+
+87]  The JFET's ____________ is the ratio of drain current
+change to gate-source voltage change with drain-source voltage
+constant.
+
+a}  Amplification factor.
+
+b}  Dynamic drain resistance.
+
+c}  Transconductance.@@
+
+d}  Pinch-off voltage.
+
+
+88]  When working with JFET's the following terms are used:
+amplification factor, dynamic drain resistance, and
+transconductance. Which of the following relationships is
+correct?
+
+a}  dynamic drain resistance = transconductance / amplification
+factor.
+
+b}  transconductance = dynamic drain resistance / amplification
+factor.
+
+c}  amplification factor = dynamic drain resistance /
+transconductance.
+
+d}  amplification factor = dynamic drain resistance *
+tranconductance.@@
+
+
+89]   What describes a diode junction that is forward biased?
+
+a}  It is a high impedance.
+
+b}  It conducts very little current.
+
+c}  It is a low impedance.@@
+
+d}  It is an open circuit.
+
+
+90]  What describes a diode junction that is reverse biased?
+
+a}  It is a short circuit.
+
+b}  It conducts a large current.
+
+c}  It is a low impedance.
+
+d}  It is a high impedance.@@
+
+
+91]  What conditions exist when an NPN transistor is
+operating as a Class A amplifier?
+
+a}  The base-emitter junction is forward biased and the
+collector-base junction is reverse biased.@@
+
+b}  The base-emitter junction and collector-base junction are
+both forward biased.
+
+c}  The base-emitter junction and collector-base junction are
+both reverse biased.
+
+d}  The base-emitter junction is reverse biased and the
+collector-base junction is forward biased.
+
+
+92]  What conditions exist when a transistor is operating in
+saturation?
+
+a}  The base-emitter junction and collector-base junction are
+both forward biased.@@
+
+b}  The base-emitter junction and collector-base junction are
+both reverse biased.
+
+c}  The base-emitter junction is reverse biased and the
+collector-base junction is forward biased.
+
+d}  The base-emitter junction is forward biased and the
+collector-base junction is reverse biased.
+
+
+93]  What voltage is required on a silicon NPN switching
+transistor's base-emitter junction to cause current between
+collector and emitter?
+
+a}  The base must be at least 0.4 volts positive with respect to
+the emitter.
+
+b}  The base must be at a negative voltage with respect to the
+emitter.
+
+c}  The base must be at least 0.7 volts positive with respect to
+the emitter.@@
+
+d}  The base must be at least 0.7 volts negative with respect to
+the emitter.
+
+
+94]  What voltage is required on a silicon PNP switching
+transistor's base-emitter junction to cause current between
+collector and emitter?
+
+a}  The base must be at least 0.7 volts negative with respect to
+the emitter.@@
+
+b}  The base must be at least 0.4 volts negative with respect to
+the emitter.
+
+c}  The base must be positive with respect to the emitter.
+
+d}  The base must be at least 0.4 volts positive with respect to
+the emitter.
+
+
+95]  What semiconductor device controls current between
+source and drain due to a variable width channel controlled by a
+voltage applied between gate and source?
+
+a}  A bipolar transistor (BJT).
+
+b} A field-effect transistor (FET).@@
+
+c}  A gate-controlled diode.
+
+d}  A PNP transistor.
+
+
+96]  What are the operating modes for field-effect
+transistors?
+
+a}  Transition and depletion modes.
+
+b}  Enhancement and transition modes.
+
+c}  Transition and non-transition modes.
+
+d}  Depletion and enhancement modes.@@
+
+
+97]  What is an enhancement-mode FET?
+
+a}  An FET with a channel that blocks voltage through the gate.
+
+b}  An FET with a channel that allows a current between source
+and drain when the gate voltage is zero.
+
+c}  An FET without a channel to hinder current through the gate.
+
+d}  An FET without a channel; no current between source and drain
+with zero gate voltage.@@
+
+
+98]  What is a depletion-mode FET?
+
+a}  An FET that has a channel with no gate voltage applied; there
+is current between source and drain when the gate voltage is
+zero.@@
+
+b}  An FET that has a channel that blocks current when the gate
+voltage is zero.
+
+c}  An FET without a channel; there is no current from source to
+drain with zero gate voltage.
+
+d}  An FET without a channel to hinder current through the gate.
+
+
+99]  What is a silicon integrated circuit (IC)?
+
+a}  A complex semiconductor device containing within it all the
+circuit components interconnected on a single chip of silicon.@@
+
+b}  A large number of discrete components wired together on a
+silicon substrate.
+
+c}  Individual components integrated together on a printed wiring
+board.
+
+d}  A circuit of discrete individual silicon components.
+
+
+100]  What are the advantages of using an LED?
+
+a}  Low power consumption and long life.@@
+
+b}  High lumens per cm squared and low power consumption.
+
+c}  High lumens per cm squared and low voltage requirement.
+
+d}  A current flows when the device is exposed to a light source.
+
+ 
+101]  What determines the visible color radiated by an LED?
+
+a}  The color of a lens in an eyepiece.
+
+b}  The amount of voltage across the device.
+
+c}  The amount of current through the device.
+
+d}  The materials used to construct the device.@@
+
+
+102]  What level of input voltage is considered a logic low
+in a TTL device operating with a 5 volt power supply?
+
+a}  -2.0 to -5.5 volts.
+
+b}  2.0 to 5.5 volts.
+
+c}  0.0 to 0.8 volts.@@
+
+d}  -0.8 to 0.4 volts.
+
+
+103]  Where is the external feedback network connected to
+control the gain of a closed-loop op-amp circuit?
+
+a}  From output to inverting input.@@
+
+b}  From output to non-inverting input.
+
+c}  Across the output.
+
+d}  Across the input.
+
+
+104]  What is the name of the semiconductor memory IC whose
+digital data can be written or read, and whose memory word
+address can be accessed randomly?
+
+a}  ROM--Read-Only Memory.
+
+b}  PROM--Programmable Read-Only Memory.
+
+c}  RAM--Random-Access Memory.@@
+
+d}  EPROM--Electrically Programmable Read-Only Memory.
+
+
+105]  What is the name of the random-accessed semiconductor
+memory IC that must be refreshed periodically to maintain
+reliable data storage in its memory matrix?
+
+a}  ROM--Read-Only Memory.
+
+b}  PROM--Programmable Read-Only Memory.
+
+c}  PRAM--Programmable Random-Access Memory.
+
+d}  DRAM--Dynamic Random-Access Memory.@@
+
+
+106]  What would be the bandwidth of a good crystal lattice
+band-pass filter for weather facsimile HF (high frequency)
+reception?
+
+a}  1 kHz at -6 dB.
+
+b}  500 Hz at -6 dB.@@
+
+c}  6 kHz at -6 dB.
+
+d}  15 kHz at -6 dB.
+
+
+107]  The capacitance of a varactor ____ as the ____ bias is
+increased. Assume proper bias to use the diode as a varactor.
+
+a}  Increases, forward.
+
+b}  Increases, reverse.
+
+c}  Decreases, forward.
+
+d}  Decreases, reverse.@@
+
+
+108]  The screen grid was added to vacuum tubes to reduce
+____ and draw space-charge electrons from the cathode through the
+control grid wires.
+
+a}  Mu.
+
+b}  Transconductance.
+
+c}  Plate-impedance values.
+
+d}  Grid-plate capacitance.@@
+
+
+109]  When working with tetrodes, as long as plate-voltage is
+greater than screen-grid voltage, what effect on plate current
+would be noticed if you doubled plate voltage?
+
+a}  Plate current would be decreased by a factor of 1/2.
+
+b}  Plate current would be increased by a factor of 2.
+
+c}  Plate current would barely increase.@@
+
+d}  Plate current would be increased by a factor equal to Mu.
+
+
+110]  Which of the following is not an advantage of using
+pentodes.
+
+a}  Usually requires no neutralization in high frequency circuits.
+
+b}  Higher Mu than triodes or tetrodes.
+
+c}  Higher secondary emission resulting in greater plate
+current.@@
+
+d}  Better shielding between plate and control grid.
+
+
+111]  Which of the following is not an advantage of gaseous
+tubes.
+
+
+a}  Little heat dissipation.
+
+b}  Carry relatively low currents.@@
+
+c}  High efficiency.
+
+d}  Relatively constant voltage-drop across them.
+
+
+112]  A pulse width modulator IC would most likely be found
+in which of the following:
+
+a}  Ringing choke power supply.@@
+
+b}  Solid-state DC to DC converter.
+
+c}  Crowbar protection circuit.
+
+d}  Shunt regulator with error-signal amp.
+
+
+113]  An 800 kHz crystal, calibrated at 40 degrees Celsius
+and having a temperature coefficient of -30 parts per million per
+degree Celsius, will resonate at what frequency when operated at
+60 degrees Celsius?
+
+a}  799.52 kHz.@@
+
+b}  799.40 kHz.
+
+c}  800.60 kHz.
+
+d}  800.48 kHz.
+
+
+114]  An 800 kHz crystal, calibrated at 40 degrees Celsius
+and having a temperature coefficient of +30 parts per million per
+degree Celsius, will resonate at what frequency when operated at
+60 degrees C.?
+
+a}  799.52 kHz.
+
+b}  799.40 kHz.
+
+c}  800.60 kHz.
+
+d}  800.48 kHz.@@
+
+
+115]  Which of the following does not have a negative
+resistance region?
+
+a}  Dynatron.
+
+b}  Tunnel diode.
+
+c}  Unijunction transistor.
+
+d}  Schottky diode.@@
+
+
+116]  A phase-locked loop IC could be used in all of the
+following applications except:
+
+a}  Frequency-shift keying (FSK).
+
+b}  Horizontal sweep AFC.
+
+c}  Frequency synthesis.
+
+d}  Phase-shift oscillator.@@
+
+
+117]  Which of the following logic gates will provide an
+active high out when both inputs are active high?
+
+a}  AND.@@
+
+b}  NAND.
+
+c}  NOR.
+
+d}  XOR.
+
+
+118]  Which of the following logic gates will provide an
+active low out when both inputs are active high?
+
+a}  AND.
+
+b}  NAND.@@
+
+c}  OR.
+
+d}  XNOR.
+
+
+119]  Which of the following logic gates will provide an
+active high out when any input is active high?
+
+a}  AND.
+
+b}  NAND.
+
+c}  OR.@@
+
+d}  NOR.
+
+
+120]  Which of the following logic gates will provide an
+active low out when any input is active high?
+
+a}  AND.
+
+b}  NAND.
+
+c}  OR.
+
+d}  NOR.@@
+
+
+121]  Which of the following logic gates will provide an
+active high out only when all inputs are different?
+
+a}  OR.
+
+b}  NOR.
+
+c}  XOR.@@
+
+d}  XNOR.
+
+
+122]  Which of the following logic gates will provide an
+active low out only when all inputs are different?
+
+a}  OR.
+
+b}  NOR.
+
+c}  XOR.
+
+d}  XNOR.@@
+
+
+123]  Which of the following inputs to a D flip-flop are
+considered to be asynchronous?
+
+a}  D, CLK.
+
+b}  PRE, CLR.@@
+
+c}  D, PRE.
+
+d}  CLK, CLR.
+
+
+124]  Which of the following inputs to a J-K flip-flop are
+considered to be synchronous?
+
+a}  J, K.@@
+
+b}  PRE, CLR.
+
+c}  CLK, PRE.
+
+d}  Q, CLR.
+
+
+125]  An R-S flip-flop is capable of doing all of the
+following except:.
+
+a}  Accept data input into R-S inputs with CLK initiated.
+
+b}  Accept data input into PRE and CLR inputs without CLK being
+initiated.
+
+c}  Refuse to accept synchronous data if asynchronous data is
+being input at same time.
+
+d}  Operate in toggle mode with R-S inputs held constant and CLK
+initiated.@@
+
+
+126]  The toggle mode of operation, achieved by applying a
+string of CLK pulses, is a normal operation mode for which of the
+following? .
+
+a}  D flip-flop.
+
+b}  R-S flip-flop.
+
+c}  J-K flip-flop.@@
+
+d}  Bistable Multivibrator.
+
+
+127]  How many R-S flip-flops would be required to construct
+an 8 bit storage register?
+
+a}  2.
+
+b}  4.
+
+c}  8.@@
+
+d}  16.
+
+
+128]  How many J-K flip-flops would be required to construct
+a MOD 16 ripple counter?
+
+a}  2.
+
+b}  4.@@
+
+c}  8.
+
+d}  16.
+
+
+129]  How many D flip-flops would be required to construct a
+MOD 16 ring counter?
+
+a}  2.
+
+b}  4.
+
+c}  8.
+
+d}  16.@@
+
+
+130]  If an input CLK frequency of 160 kHz is applied to a
+four bit ripple counter capable of achieving full count before
+roll-over, what frequency can you expect to measure at the MSB
+output?
+
+a}  10 kHz.@@
+
+b}  20 kHz.
+
+c}  40 kHz.
+
+d}  320 kHz.
+
+
+131]  If a CLK frequency of 160 kHz is applied to the
+Count-Up input pin of a BCD counting chip, what will be the
+frequency available at the Carry-Out pin of that same chip?
+(assume all other inputs are proper).
+
+a}  10 kHz.
+
+b}  16 kHz.@@
+
+c}  160 kHz.
+
+d}  320 kHz.
+
+
+132]  Which of the following are contained in an LCD display?
+
+
+a}  Semi-conductor P-N junctions.
+
+b}  Light emitting diodes.
+
+c}  Photovoltaic material.
+
+d}  Nematic fluid.@@
+
+
+
+133]  Which of the following is not an analog to digital
+converter?
+
+a}  Digital-ramp ADC.
+
+b}  Successive approximation ADC.
+
+c}  Flash ADC.
+
+d}  R/2R ladder ADC.@@
+
+
+134]  A -- NOTed OR, bubbled OR, or negative OR -- gate
+performs the same logic function as which of the following gates?
+
+
+a}  AND.
+
+b}  NAND.@@
+
+c}  XOR.
+
+d}  XNOR.
+
+
+135]  A -- NOTed AND, bubbled AND, or negative AND -- gate
+performs the same logic function as which of the following gates?
+
+a}  OR.
+
+b}  NOR.@@
+
+c}  XOR.
+
+d}  XNOR.
+
+
+136]  Which of the following logic functions can not be
+duplicated when using a single IC containing quad 2-input NAND
+gates? (you can use all available gates contained in the one IC
+mentioned).
+
+a}  AND.
+
+b}  XOR.@@
+
+c}  OR.
+
+d}  NOR.
+
+
+137]  Which of the following logic functions would require
+the fewest number of NOR gates to duplicate?
+
+
+a}  AND.@@
+
+b}  NAND.
+
+c}  XOR.
+
+d}  XNOR.
+
+
+138]  Which of the following applications usually requires a
+parallel-to-serial conversion of data?
+
+a}  Transfer a byte of data from a microcomputer's RAM to its CPU.
+
+b}  Transfer a byte of data from a microcomputer's ROM to its CPU.
+
+c}  Transfer a byte of data from a microcomputer's RAM to its
+monitor.@@
+
+d}  Transfer a byte of data from a microcomputer's RAM to its ALU.
+
+
+139]  Which of the following codes has gained the widest
+acceptance in modern times for exchange of data from one computer
+to another?
+
+a}  ASCII code.@@
+
+b}  Baudot code.
+
+c}  Morse code.
+
+d}  Gray code.
+
+
+140]  Which of the following op-amp circuits is operated
+open-loop?
+
+a}  Comparator.@@
+
+b}  Non-inverting amp.
+
+c}  Inverting amp.
+
+d}  Active filter.
+
+
+141]  Slew rate of an op-amp means:
+
+a}  Output voltage change per nanosecond.
+
+b}  Output voltage change per microsecond.@@
+
+c}  Output voltage change per millisecond.
+
+d}  Output voltage change per second.
+
+
+142]  RF chokes are sometimes constructed of universal wound
+pies to:
+
+a}  Lower impedance to a relatively wide band of frequencies for
+which it was manufactured.
+
+b}  Increase impedance to a relatively narrow band of frequencies
+for which it was manufactured.
+
+c}  Increase the end-to-end distributed capacitance.
+
+d}  Decrease the end-to-end distributed capacitance.@@
+
+
+143]  Which of the following types of microphones is least
+likely to be used in broadcast applications?
+
+a}  Condenser microphone.
+
+b}  Crystal microphone.@@
+
+c}  Dynamic microphone.
+
+d}  Magnetic microphone.
+
+
+144]  How many individual memory cells would be contained in
+a memory IC that has 4 data bus input/output pins and 4 address
+pins for connection to the address bus?
+
+a}  8 memory cells.
+
+b}  16 memory cells.
+
+c}  32 memory cells.
+
+d}  64 memory cells.@@
+
+
+145]  When referring to digital IC's, which of the following
+contains between 100 to 9999 gates?
+
+a}  MSI (medium-scale integration).
+
+b}  LSI (large-scale integration).@@
+
+c}  VLSI (very large-scale integration).
+
+
+d}  ULSI (ultra large-scale integration).
+
+
+146]  Which of the following devices acts as two SCR's
+connected back to back, but facing in opposite directions and
+sharing a common gate?
+
+a}  JFET.
+
+b}  Dual-gate MOSFET.
+
+c}  DIAC.
+
+d}  TRIAC.@@
+
+
+147]  Which of the following devices is normally used to
+regulate the amount of AC current flowing to a load from
+approximately 0 degrees to no more than 180 degrees of the input
+signal?
+
+a}  DIAC.
+
+b}  SCR.@@
+
+c}  TRIAC.
+
+d}  Class A BJT amp.
+
+
+148]  Which of the following devices is normally used to
+regulate the amount of AC current flowing to a load from
+approximately 0 degrees to 360 degrees of the input signal?
+
+a}  DIAC.
+
+b}  SCR.
+
+c}  TRIAC.@@
+
+d}  Class B BJT amp.
+
+
+149]  Which of the following devices produces the least
+amount of noise when used as a part of a mixer stage in a
+superheterodyne receiver?
+
+a}  Bipolar-junction transistor.
+
+b}  Dual-gate MOSFET.@@
+
+c}  Duo-triode vacuum tube.
+
+d}  P-N junction diode.
+
+
+150]  Which of the following devices is used principally as
+VHF and UHF parasitic suppressers?
+
+a}  Ferrite bead.@@
+
+b}  Balun.
+
+c}  Autotransformer.
+
+d}  Swinging choke.
+
+
+

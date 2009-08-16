@@ -1,0 +1,1801 @@
+Subelement 3F - Practical circuits.
+
+
+1]  What is a linear electronic voltage regulator?
+
+a}  A regulator that has a ramp voltage as its output.
+
+b}  A regulator in which the pass transistor switches from the
+"off" state to the "on" state.
+
+c}  A regulator in which the control device is switched on or
+off, with the duty cycle proportional to the line or load
+conditions.
+
+d}  A regulator in which the conduction of a control element is
+varied in direct proportion to the line voltage or load current.@@
+
+
+2]  What is a switching electronic voltage regulator?
+
+a}  A regulator in which the conduction of a control element is
+varied in direct proportion to the line voltage or load current.
+
+b}  A regulator that provides more than one output voltage.
+
+c}  A regulator in which the control device is switched on or
+off, with the duty cycle proportional to the line or load
+conditions.@@
+
+d}  A regulator that gives a ramp voltage at its output.
+
+
+3]  What device is usually used as a stable reference voltage
+in a linear voltage regulator?
+
+a}  A Zener diode.@@
+
+b}  A tunnel diode.
+
+c}  An SCR.
+
+d}  A varactor diode.
+
+
+4]  What type of linear regulator is used in applications
+requiring efficient utilization of the primary power source?
+
+a}  A constant current source.
+
+b}  A series regulator.@@
+
+c}  A shunt regulator.
+
+
+d}  A shunt current source.
+
+
+5]  What type of linear voltage regulator is used in
+applications where the load on the unregulated voltage source
+must be kept constant?
+
+a}  A constant current source.
+
+b}  A series regulator.
+
+c}  A shunt current source.
+
+d}  A shunt regulator.@@
+
+ 
+6]  To obtain the best temperature stability, what should be
+the operating voltage of the reference diode in a linear voltage
+regulator?
+
+a}  Approximately 2.0 volts.
+
+b}  Approximately 3.0 volts.
+
+c}  Approximately 6.0 volts.@@
+
+d}  Approximately 10.0 volts.
+
+
+7]  What is the meaning of the term remote sensing with regard
+to a linear voltage regulator?
+
+a}  The feedback connection to the error amplifier is made
+directly to the load.@@
+
+b}  Sensing is accomplished by wireless inductive loops.
+
+c}  The load connection is made outside the feedback loop.
+
+d}  The error amplifier compares the input voltage to the
+reference voltage.
+
+
+8]  What is a three-terminal regulator?
+
+a}  A regulator that supplies three voltages with variable
+current.
+
+b}  A regulator that supplies three voltages at a constant
+current.
+
+c}  A regulator containing three error amplifiers and sensing
+transistors.
+
+
+d}  A regulator containing a voltage reference, error amplifier,
+sensing resistors and transistors, and a pass element.@@
+
+
+9]  What are the important characteristics of a three-terminal
+regulator?
+
+a}  Maximum and minimum input voltage, minimum output current and
+voltage.
+
+b}  Maximum and minimum input voltage, maximum output current and
+voltage.@@
+
+c}  Maximum and minimum input voltage, minimum output current and
+maximum output voltage.
+
+d}  Maximum and minimum input voltage, minimum output voltage and
+maximum output current.
+
+
+10]  What is the distinguishing feature of a Class A amplifier?
+
+a}  Output for less than 180 degrees of the signal cycle.
+
+b}  Output for the entire 360 degrees of the signal cycle.@@
+
+c}  Output for more than 180 degrees and less than 360 degrees of
+the signal cycle.
+
+d}  Output for exactly 180 degrees of the input signal cycle.
+
+
+11]  What class of amplifier is distinguished by the presence
+of output throughout the entire signal cycle and the input never
+goes into the cutoff region?
+
+a}  Class A.@@
+
+b}  Class B.
+
+c}  Class C.
+
+d}  Class D.
+
+
+12]  What is the distinguishing characteristic of a Class B
+amplifier?
+
+a}  Output for the entire input signal cycle.
+
+b}  Output for greater than 180 degrees and less than 360 degrees
+of the input signal cycle.
+
+c}  Output for less than 180 degrees of the input signal cycle.
+
+d}  Output for 180 degrees of the input signal cycle.@@
+
+
+13]  What class of amplifier is distinguished by the flow of
+current in the output essentially in 180 degree pulses?
+
+a}  Class A.
+
+b}  Class B.@@
+
+c}  Class C.
+
+d}  Class D.
+
+
+14]  What is a Class AB amplifier?
+
+a}  Output is present for more than 180 degrees but less than 360
+degrees of the signal input cycle.@@
+
+b}  Output is present for exactly 180 degrees of the input signal
+cycle.
+
+c}  Output is present for the entire input signal cycle.
+
+d}  Output is present for less than 180 degrees of the input
+signal cycle.
+
+
+15]  What is the distinguishing feature of a Class C amplifier?
+
+a}  Output is present for less than 180 degrees of the input
+signal cycle.@@
+
+b}  Output is present for exactly 180 degrees of the input signal
+cycle.
+
+c}  Output is present for the entire input signal cycle.
+
+d}  Output is present for more than 180 degrees but less than 360
+degrees of  the input signal cycle.
+
+
+16]  What class of amplifier is distinguished by the bias being
+set well beyond cutoff?
+
+a}  Class A.
+
+b}  Class B.
+
+c}  Class C.@@
+
+d}  Class AB.
+
+
+17]  Which class of amplifier provides the highest efficiency?
+
+a}  Class A.
+
+b}  Class B.
+
+c}  Class C.@@
+
+d}  Class AB.
+
+
+18]  Which class of amplifier has the highest linearity and
+least distortion?
+
+a}  Class A.@@
+
+b}  Class B.
+
+c}  Class C.
+
+d}  Class AB.
+
+
+19]  Which class of amplifier has an operating angle of more
+than 180 degrees but less than 360 degrees when driven by a sine
+wave signal?
+
+a}  Class A.
+
+b}  Class B.
+
+c}  Class C.
+
+d}  Class AB.@@
+
+
+20]  What is an L-network?
+
+a}  A network consisting entirely of four inductors.
+
+b}  A network consisting of an inductor and a capacitor.@@
+
+c}  A network used to generate a leading phase angle.
+
+d}  A network used to generate a lagging phase angle.
+
+
+21]  What is a pi-network?
+
+a}  A network consisting entirely of four inductors or four
+capacitors.
+
+
+b}  A Power Incidence network.
+
+c}  An antenna matching network that is isolated from ground.
+
+d}  A network consisting of one inductor and two capacitors or
+two inductors and one capacitor.@@
+
+
+22]  What is a pi-L-network?
+
+a}  A Phase Inverter Load network.
+
+b}  A network consisting of two inductors and two capacitors.@@
+
+c}  A network with only three discrete parts.
+
+d}  A matching network in which all components are isolated from
+ground.
+
+
+23]  Which network provides the greatest harmonic suppression?
+
+a}  L-network.
+
+b}  Pi-network.
+
+c}  Inverse L-network.
+
+d}  Pi-L-network.@@
+
+
+24]  What are the three most commonly used networks to
+accomplish a match between an amplifying device and a
+transmission line?
+
+a}  M-network, pi-network and T-network.
+
+b}  T-network, M-network and Q-network.
+
+c}  L-network, pi-network and pi-L-network.@@
+
+d}  L-network, M-network and C-network.
+
+
+25]  How are networks able to transform one impedance to
+another?
+
+a}  Resistances in the networks substitute for resistances in the
+load.
+
+b}  The matching network introduces negative resistance to cancel
+the resistive part of an impedance.
+
+
+c}  The matching network introduces transconductance to cancel
+the reactive part of an impedance.
+
+d}  The matching network can cancel the reactive part of an
+impedance and change the value of the resistive part of an
+impedance.@@
+
+
+26]  Which type of network offers the greater transformation
+ratio?
+
+a}  L-network.
+
+b}  Pi-network.@@
+
+c}  Constant-K.
+
+d}  Constant-M.
+
+
+27]  Why is the L-network of limited utility in impedance
+matching?
+
+a}  It matches a small impedance range.@@
+
+b}  It has limited power handling capabilities.
+
+c}  It is thermally unstable.
+
+d}  It is prone to self resonance.
+
+
+28]  What is an advantage of using a pi-L-network instead of a
+pi-network for impedance matching between the final amplifier of
+a vacuum-tube type transmitter and a multiband antenna?
+
+a}  Greater transformation range.
+
+b}  Higher efficiency.
+
+c}  Lower losses.
+
+d}  Greater harmonic suppression.@@
+
+
+29]  Which type of network provides the greatest harmonic
+suppression?
+
+a}  L-network.
+
+b}  Pi-network.
+
+c}  Pi-L-network.@@
+
+d}  Inverse-Pi network.
+
+
+30]  What are the three general groupings of filters?
+
+a}  High-pass, low-pass and band-pass.@@
+
+b}  Inductive, capacitive and resistive.
+
+c}  Audio, radio and capacitive.
+
+d}  Hartley, Colpitts and Pierce.
+
+
+31]  What is a constant-K filter?
+
+a}  A filter that uses Boltzmann's constant.
+
+b}  A filter whose velocity factor is constant over a wide range
+of frequencies.
+
+c}  A filter whose product of the series- and shunt-element
+impedances is a constant for all frequencies.@@
+
+d}  A filter whose input impedance varies widely over the design
+bandwidth.
+
+
+32]  What is an advantage of a constant-k filter?
+
+a}  It has high attenuation for signals on frequencies far
+removed from the passband.@@
+
+b}  It can match impedances over a wide range of frequencies.
+
+c}  It uses elliptic functions.
+
+d}  The ratio of the cutoff frequency to the trap frequency can
+be varied.
+
+
+33]  What is an m-derived filter?
+
+a}  A filter whose input impedance varies widely over the design
+bandwidth.
+
+b}  A filter whose product of the series- and shunt-element
+impedances is a constant for all frequencies.
+
+c}  A filter whose schematic shape is the letter "M".
+
+d}  A filter that uses a trap to attenuate undesired frequencies
+too near cutoff for a constant-k filter.@@
+
+
+34]  What are the distinguishing features of a Butterworth
+filter?
+
+a}  A filter whose product of the series- and shunt-element
+impedances is a constant for all frequencies.
+
+b}  It only requires capacitors.
+
+c}  It has a maximally flat response over its passband.@@
+
+d}  It requires only inductors.
+
+
+35]  What are the distinguishing features of a Chebyshev
+filter?
+
+a}  It has a maximally flat response over its passband.
+
+b}  It allows ripple in the passband.@@
+
+c}  It only requires inductors.
+
+d}  A filter whose product of the series- and shunt-element
+impedances is a constant for all frequencies.
+
+
+36]  When would it be more desirable to use an m-derived filter
+over a constant-k filter?
+
+a}  When the response must be maximally flat at one frequency.
+
+b}  When you need more attenuation at a certain frequency that is
+too close to the cut-off frequency for a constant-k filter.@@
+
+c}  When the number of components must be minimized.
+
+d}  When high power levels must be filtered.
+
+
+37]  What are three major oscillator circuits often used in
+radio equipment?
+
+a}  Taft, Pierce, and negative feedback.
+
+b}  Colpitts, Hartley, and Taft.
+
+c}  Taft, Hartley, and Pierce.
+
+d}  Colpitts, Hartley, and Pierce.@@
+
+
+38]  How is the positive feedback coupled to the input in a
+Hartley oscillator?
+
+
+a}  Through a neutralizing capacitor.
+
+b}  Through a capacitive divider.
+
+c}  Through link coupling.
+
+d}  Through a tapped coil.@@
+
+
+39]  How is the positive feedback coupled to the input in a
+Colpitts oscillator?
+
+a}  Through a tapped coil.
+
+b}  Through link coupling.
+
+c}  Through a capacitive divider.@@
+
+d}  Through a neutralizing capacitor.
+
+
+40]  How is the positive feedback coupled to the input in a
+Pierce oscillator?
+
+a}  Through a tapped coil.
+
+b}  Through link coupling.
+
+c}  Through a capacitive divider.
+
+d}  Through capacitive coupling.@@
+
+
+41]  Which of the three major oscillator circuits used in radio
+equipment utilizes a quartz crystal?
+
+a}  Negative feedback.
+
+b}  Hartley.
+
+c}  Colpitts.
+
+d}  Pierce.@@
+
+
+42]  What is the piezoelectric effect?
+
+a}  Mechanical vibration of a crystal by the application of a
+voltage.@@
+
+b}  Mechanical deformation of a crystal by the application of a
+magnetic field.
+
+c}  The generation of electrical energy by the application of
+light.
+
+d}  Reversed conduction states when a P-N junction is exposed to
+light.
+
+
+43]  What is the major advantage of a Pierce oscillator?
+
+a}  It is easy to neutralize.
+
+b}  It doesn't require an LC tank circuit.@@
+
+c}  It can be tuned over a wide range.
+
+d}  It has a high output power.
+
+
+44]  Which type of oscillator circuit is commonly used in a
+VFO?
+
+a}  Pierce.
+
+b}  Colpitts.@@
+
+c}  Hartley.
+
+d}  Negative feedback.
+
+
+45]  Why is the Colpitts oscillator circuit commonly used in a
+VFO?
+
+a}  The frequency is a linear function of the load impedance.
+
+b}  It can be used with or without crystal lock-in.
+
+c}  It is stable.@@
+
+d}  It has high output power.
+
+
+46]  What is meant by the term: modulation?
+
+a}  The squelching of a signal until a critical signal-to-noise
+ratio is reached.
+
+b}  Carrier rejection through phase nulling.
+
+c}  A linear amplification mode.
+
+d}  A mixing process whereby information is imposed upon a
+carrier.@@
+
+
+
+47]  How is a G3E FM-phone emission produced?
+
+a}  With a balanced modulator on the audio amplifier.
+
+b}  With a reactance modulator on the oscillator.@@
+
+c}  With a reactance modulator on the final amplifier.
+
+d}  With a balanced modulator on the oscillator.
+
+
+48]  What is a reactance modulator?
+
+a}  A circuit that acts as a variable resistance or capacitance
+to produce FM signals.
+
+b}  A circuit that acts as a variable resistance or capacitance
+to produce AM signals.
+
+c}  A circuit that acts as a variable inductance or capacitance
+to produce FM signals.@@
+
+d}  A circuit that acts as a variable inductance or capacitance
+to produce AM signals.
+
+
+49]  What is a balanced modulator?
+
+a}  An FM modulator that produces a balanced deviation.
+
+b}  A modulator that produces a double sideband, suppressed
+carrier signal.@@
+
+c}  A modulator that produces a single sideband, suppressed
+carrier signal.
+
+d}  A modulator that produces a full carrier signal.
+
+
+50]  How can a single-sideband phone signal be generated?
+
+a}  By driving a product detector with a DSB signal.
+
+b}  By using a reactance modulator followed by a mixer.
+
+c}  By using a loop modulator followed by a mixer.
+
+d}  By using a balanced modulator followed by a filter.@@
+
+
+51]  How can a double-sideband phone signal be generated?
+
+a}  By feeding a phase modulated signal into a low pass filter.
+
+
+b}  By using a balanced modulator followed by a filter.
+
+c}  By detuning a Hartley oscillator.
+
+d}  By modulating the plate voltage of a class C amplifier.@@
+
+
+52]  How is the efficiency of a power amplifier determined?
+
+a}  Efficiency = ( RF power out / DC power in ) X 100%.@@
+
+b}  Efficiency = ( RF power in / RF power out ) X 100%.
+
+c}  Efficiency = ( RF power in / DC power in ) X 100%.
+
+d}  Efficiency = ( DC power in / RF power in ) X 100%.
+
+
+53]  For reasonably efficient operation of a transistor
+amplifier, what should the load resistance be with 12 volts at
+the collector and 5 watts power output?
+
+a}  100.3 ohms.
+
+b}  14.4 ohms.@@
+
+c}  10.3 ohms.
+
+d}  144 ohms.
+
+
+54]  What is the flywheel effect?
+
+a}  The continued motion of a radio wave through space when the
+transmitter is turned off.
+
+b}  The back and forth oscillation of electrons in an LC
+circuit.@@
+
+c}  The use of a capacitor in a power supply to filter rectified
+AC.
+
+d}  The transmission of a radio signal to a distant station by
+several hops through the ionosphere.
+
+
+55]  What order of Q is required by a tank-circuit sufficient
+to reduce harmonics to an acceptable level?
+
+a}  Approximately 120.
+
+b}  Approximately 12.@@
+
+c}  Approximately 1200.
+
+d}  Approximately 1.2.
+
+
+56]  How can parasitic oscillations be eliminated from a power
+amplifier?
+
+a}  By tuning for maximum SWR.
+
+b}  By tuning for maximum power output.
+
+c}  By neutralization.@@
+
+d}  By tuning the output.
+
+
+57]  What is the process of detection?
+
+a}  The process of masking out the intelligence on a received
+carrier to make an S-meter operational.
+
+b}  The recovery of intelligence from the modulated RF signal.@@
+
+c}  The modulation of a carrier.
+
+d}  The mixing of noise with the received signal.
+
+
+58]  What is the principle of detection in a diode detector?
+
+a}  Rectification and filtering of RF.@@
+
+b}  Breakdown of the Zener voltage.
+
+c}  Mixing with noise in the transition region of the diode.
+
+d}  The change of reactance in the diode with respect to
+frequency.
+
+
+59]  What is a product detector?
+
+a}  A detector that provides local oscillations for input to the
+mixer.
+
+b}  A detector that amplifies and narrows the band-pass
+frequencies.
+
+c}  A detector that uses a mixing process with a locally
+generated carrier.@@
+
+d}  A detector used to detect cross-modulation products.
+
+
+
+60]  How are FM-phone signals detected?
+
+a}  By a balanced modulator.
+
+b}  By a frequency discriminator.@@
+
+c}  By a product detector.
+
+d}  By a phase splitter.
+
+
+61]  What is a frequency discriminator?
+
+a}  A circuit for detecting FM signals.@@
+
+b}  A circuit for filtering two closely adjacent signals.
+
+c}  An automatic bandswitching circuit.
+
+d}  An FM generator.
+
+
+62]  What is the mixing process?
+
+a}  The elimination of noise in a wideband receiver by phase
+comparison.
+
+b}  The elimination of noise in a wideband receiver by phase
+differentiation.
+
+c}  Distortion caused by auroral propagation.
+
+d}  The combination of two signals to produce sum and difference
+frequencies.@@
+
+
+63]  What are the principal frequencies that appear at the
+output of a mixer circuit?
+
+a}  Two and four times the original frequency.
+
+b}  The sum, difference and square root of the input frequencies.
+
+c}  The original frequencies and the sum and difference
+frequencies.@@
+
+d}  1.414 and 0.707 times the input frequency.
+
+
+64]  What are the advantages of the frequency-conversion
+process?
+
+a}  Automatic squelching and increased selectivity.
+
+b}  Increased selectivity and optimal tuned-circuit design.@@
+
+c}  Automatic soft limiting and automatic squelching.
+
+d}  Automatic detection in the RF amplifier and increased
+selectivity.
+
+
+65]  What occurs in a receiver when an excessive amount of
+signal energy reaches the mixer circuit?
+
+a}  Spurious mixer products are generated.@@
+
+b}  Mixer blanking occurs.
+
+c}  Automatic limiting occurs.
+
+d}  A beat frequency is generated.
+
+
+66]  How much gain should be used in the RF amplifier stage of
+a receiver?
+
+a}  As much gain as possible short of self oscillation.
+
+b}  Sufficient gain to allow weak signals to overcome noise
+generated in the first mixer stage.@@
+
+c}  Sufficient gain to keep weak signals below the noise of the
+first mixer stage.
+
+d}  It depends on the amplification factor of the first IF stage.
+
+
+67]  Why should the RF amplifier stage of a receiver only have
+sufficient gain to allow weak signals to overcome noise generated
+in the first mixer stage?
+
+a}  To prevent the sum and difference frequencies from being
+generated.
+
+b}  To prevent bleed-through of the desired signal.
+
+c}  To prevent the generation of spurious mixer products.@@
+
+d}  To prevent bleed-through of the local oscillator.
+
+
+68]  What is the primary purpose of an RF amplifier in a
+receiver?
+
+a}  To provide most of the receiver gain.
+
+b}  To vary the receiver image rejection by utilizing the AGC.
+
+c}  To improve the receiver's noise figure.@@
+
+d}  To develop the AGC voltage.
+
+
+69]  What is an i-f amplifier stage?
+
+a}  A fixed-tuned pass-band amplifier.@@
+
+b}  A receiver demodulator.
+
+c}  A receiver filter.
+
+d}  A buffer oscillator.
+
+
+70]  What factors should be considered when selecting an
+intermediate frequency?
+
+a}  Cross-modulation distortion and interference.
+
+b}  Interference to other services.
+
+c}  Image rejection and selectivity.@@
+
+d}  Noise figure and distortion.
+
+
+71]  What is the primary purpose of the first i-f amplifier
+stage in a receiver?
+
+a}  Noise figure performance.
+
+b}  Tune out cross-modulation distortion.
+
+c}  Dynamic response.
+
+d}  Selectivity.@@
+
+
+72]  What is the primary purpose of the final i-f amplifier
+stage in a receiver?
+
+a}  Dynamic response.
+
+b}  Gain.@@
+
+c}  Noise figure performance.
+
+d}  Bypass undesired signals.
+
+
+73]  What is a flip-flop circuit?
+
+a}  A binary sequential logic element with one stable state.
+
+b}  A binary sequential logic element with eight stable states.
+
+c}  A binary sequential logic element with four stable states.
+
+d}  A binary sequential logic element with two stable states.@@
+
+
+74]  How many bits of information can be stored in a single
+flip-flop circuit?
+
+a}  1.@@
+
+b}  2.
+
+c}  3.
+
+d}  4.
+
+
+75]  What is a bistable multivibrator circuit?
+
+a}  An "AND" gate.
+
+b}  An "OR" gate.
+
+c}  A flip-flop.@@
+
+d}  A clock.
+
+
+76]  How many output changes are obtained for every two trigger
+pulses applied to the input of a bistable T flip-flop circuit?
+
+a}  No output level changes.
+
+b}  One output level change.
+
+c}  Two output level changes.@@
+
+d}  Four output level changes.
+
+
+77]  The frequency of an AC signal can be divided
+electronically by what type of digital circuit?
+
+a}  A free-running multivibrator.
+
+b}  An OR gate.
+
+c}  A bistable multivibrator.@@
+
+d}  An astable multivibrator.
+
+
+
+78]  What type of digital IC is also known as a latch?
+
+a}  A decade counter.
+
+b}  An OR gate.
+
+c}  A flip-flop.@@
+
+d}  An op-amp.
+
+
+79]  How many flip-flops are required to divide a signal
+frequency by 4?
+
+a}  1.
+
+b}  2.@@
+
+c}  4.
+
+d}  8.
+
+
+80]  What is an astable multivibrator?
+
+a}  A circuit that alternates between two stable states.
+
+b}  A circuit that alternates between a stable state and an
+unstable state.
+
+c}  A circuit set to block either a 0 pulse or a 1 pulse and pass
+the other.
+
+d}  A circuit that alternates between two unstable states.@@
+
+
+81]  What is a monostable multivibrator?
+
+a}  A circuit that can be switched momentarily to the opposite
+binary state and then returns after a set time to its original
+state.@@
+
+b}  A "clock" circuit that produces a continuous square wave
+oscillating between 1 and 0.
+
+c}  A circuit designed to store one bit of data in either the 0
+or the 1 configuration.
+
+d}  A circuit that maintains a constant output voltage,
+regardless of variations in the input voltage.
+
+
+82]  What is an AND gate?
+
+a}  A circuit that produces a logic "1" at its output only if all
+inputs are logic "1".@@
+
+b}  A circuit that produces a logic "0" at its output only if all
+inputs are logic "1".
+
+c}  A circuit that produces a logic "1" at its output if only one
+input is a logic "1".
+
+d}  A circuit that produces a logic "1" at its output if all
+inputs are logic "0".
+
+
+83]  What is a NAND gate?
+
+a}  A circuit that produces a logic "0" at its output only when
+all inputs are logic "0".
+
+b}  A circuit that produces a logic "1" at its output only when
+all inputs are logic "1".
+
+c}  A circuit that produces a logic "0" at its output if some but
+not all of its inputs are logic "1".
+
+d}  A circuit that produces a logic "0" at its output only when
+all inputs are logic "1".@@
+
+
+84]  What is an OR gate?
+
+a}  A circuit that produces a logic "1" at its output if any
+input is logic "1".@@
+
+b}  A circuit that produces a logic "0" at its output if any
+input is logic "1".
+
+c}  A circuit that produces a logic "0" at its output if all
+inputs are logic "1".
+
+d}  A circuit that produces a logic "1" at its output if all
+inputs are logic "0".
+
+
+85]  What is a NOR gate?
+
+a}  A circuit that produces a logic "0" at its output only if all
+inputs are logic "0".
+
+b}  A circuit that produces a logic "1" at its output only if all
+inputs are logic "1".
+
+c}  A circuit that produces a logic "0" at its output if any or
+all inputs are logic "1".@@
+
+d}  A circuit that produces a logic "1" at its output if some but
+not all of its inputs are logic "1".
+
+
+86]  What is a NOT gate?
+
+a}  A circuit that produces a logic "O" at its output when the
+input is logic "1" and vice versa.@@
+
+b}  A circuit that does not allow data transmission when its
+input is high.
+
+c}  A circuit that allows data transmission only when its input
+is high.
+
+d}  A circuit that produces a logic "1" at its output when the
+input is logic "1" and vice versa.
+
+
+87]  What is a truth table?
+
+a}  A table of logic symbols that indicate the high logic states
+of an op-amp.
+
+b}  A diagram showing logic states when the digital device's
+output is true.
+
+c}  A list of input combinations and their corresponding outputs
+that characterizes a digital device's function.@@
+
+d}  A table of logic symbols that indicates the low logic states
+of an  op-amp.
+
+
+88]  In a positive-logic circuit, what level is used to
+represent a logic 1?
+
+a}  A low level.
+
+b}  A positive-transition level.
+
+c}  A negative-transition level.
+
+d}  A high level.@@
+
+
+89]  In a positive-logic circuit, what level is used to
+represent a logic 0?
+
+a}  A low level.@@
+
+b}  A positive-transition level.
+
+c}  A negative-transition level.
+
+d}  A high level.
+
+
+90]  In a negative-logic circuit, what level is used to
+represent a logic 1?
+
+a}  A low level.@@
+
+b}  A positive-transition level.
+
+c}  A negative-transition level.
+
+d}  A high level.
+
+
+91]  In a negative-logic circuit, what level is used to
+represent a logic 0?
+
+a}  A low level.
+
+b}  A positive-transition level.
+
+c}  A negative-transition level.
+
+d}  A high level.@@
+
+
+92]  What is a crystal-controlled marker generator?
+
+a}  A low-stability oscillator that "sweeps" through a band of
+frequencies.
+
+b}  An oscillator often used in aircraft to determine the craft's
+location relative to the inner and outer markers at airports.
+
+c}  A high-stability oscillator whose output frequency and
+amplitude can be varied over a wide range.
+
+d}  A high-stability oscillator that generates a series of
+reference signals at known frequency intervals.@@
+
+
+93]  What additional circuitry is required in a 100-kHz
+crystal-controlled marker generator to provide markers at 50 and
+25 kHz?
+
+a}  An emitter-follower.
+
+b}  Two frequency multipliers.
+
+c}  Two flip-flops.@@
+
+d}  A voltage divider.
+
+
+94]  What is the purpose of a prescaler circuit?
+
+a}  It converts the output of a JK flip-flop to that of an RS
+flip-flop.
+
+b}  It multiplies an HF signal so a low-frequency counter can
+display the operating frequency.
+
+c}  It prevents oscillation in a low frequency counter circuit.
+
+d}  It divides an HF signal so a low-frequency counter can
+display the operating frequency.@@
+
+
+95]  What does the accuracy of a frequency counter depend on?
+
+a}  The internal crystal reference.@@
+
+b}  A voltage-regulated power supply with an unvarying output.
+
+c}  Accuracy of the AC input frequency to the power supply.
+
+d}  Proper balancing of the power-supply diodes.
+
+
+96]  How many states does a decade counter digital IC have?
+
+a}  6.
+
+b}  10.@@
+
+c}  15.
+
+d}  20.
+
+
+97]  What is the function of a decade counter digital IC?
+
+a}  Decode a decimal number for display on a seven-segment LED
+display.
+
+b}  Produce one output pulse for every ten input pulses.@@
+
+c}  Produce ten output pulses for every input pulse.
+
+d}  Add two decimal numbers.
+
+
+98]  What are the advantages of using an op-amp instead of LC
+elements in an audio filter?
+
+a}  Op-amps are more rugged and can withstand more abuse than can
+LC elements.
+
+b}  Op-amps are fixed at one frequency.
+
+c}  Op-amps are available in more styles and types than are LC
+elements.
+
+d}  Op-amps exhibit gain rather than insertion loss.@@
+
+
+99]  What determines the gain and frequency characteristics of
+an op-amp RC active filter?
+
+a}  Values of capacitances and resistances built into the op-amp.
+
+b}  Values of capacitances and resistances external to the
+op-amp.@@
+
+c}  Voltage and frequency of DC input to the op-amp power supply.
+
+d}  Regulated DC voltage output from the op-amp power supply.
+
+
+100]  What are the principle uses of an op-amp RC active
+filter?
+
+a}  Op-amp circuits are used as high-pass filters to block RFI at
+the input to receivers.
+
+b}  Op-amp circuits are used as low-pass filters between
+transmitters and transmission lines.
+
+c}  Op-amp circuits are used as filters for smoothing
+power-supply output.
+
+d}  Op-amp circuits are used as audio filters for receivers.@@
+
+
+101]  What type of capacitors should be used in an op-amp RC
+active filter circuit?
+
+a}  Electrolytic.
+
+b}  Disc ceramic.
+
+c}  Polystyrene.@@
+
+d}  Paper dielectric.
+
+
+102]  How can unwanted ringing and audio instability be
+prevented in a multisection op-amp RC audio filter circuit?
+
+a}  Restrict both gain and Q.@@
+
+b}  Restrict gain, but increase Q.
+
+c}  Restrict Q, but increase gain.
+
+d}  Increase both gain and Q.
+
+
+103]  Where should an op-amp RC active audio filter be placed
+in a receiver?
+
+a}  In the IF strip, immediately before the detector.
+
+b}  In the audio circuitry immediately before the speaker or
+phone jack.
+
+c}  Between the balanced modulator and frequency multiplier.
+
+d}  In the low-level audio stages.@@
+
+
+104]  What parameter must be selected when designing an audio
+filter using an op-amp?
+
+a}  Bandpass characteristics.@@
+
+b}  Desired current gain.
+
+c}  Temperature coefficient.
+
+d}  Output-offset overshoot.
+
+
+105]  What two factors determine the sensitivity of a receiver?
+
+a}  Dynamic range and third-order intercept.
+
+b}  Cost and availability.
+
+c}  Intermodulation distortion and dynamic range.
+
+d}  Bandwidth and noise figure.@@
+
+
+106]  What is the limiting condition for sensitivity in a
+communications receiver?
+
+a}  The noise floor of the receiver.@@
+
+b}  The power-supply output ripple.
+
+c}  The two-tone intermodulation distortion.
+
+d}  The input impedance to the detector.
+
+
+107]  What is the theoretical minimum noise floor of a receiver
+with a 400-hertz bandwidth?
+
+a}  -141 dBm.
+
+b}  -148 dBm.@@
+
+c}  -174 dBm.
+
+d}  -180 dBm.
+
+
+108]  How can selectivity be achieved in the front-end
+circuitry of a communications receiver?
+
+a}  By using an audio filter.
+
+b}  By using a preselector.@@
+
+c}  By using an additional RF amplifier stage.
+
+d}  By using an additional IF amplifier stage.
+
+
+109]  A receiver selectivity of 2.4 kHz in the IF circuitry is
+optimum for what type of signals?
+
+a}  CW.
+
+b}  SSB voice.@@
+
+c}  Double-sideband AM voice.
+
+d}  FSK RTTY.
+
+
+110]  What occurs during CW reception if too narrow a filter
+bandwidth is used in the IF stage of a receiver?
+
+a}  Undesired signals will reach the audio stage.
+
+b}  Output-offset overshoot.
+
+c}  Cross-modulation distortion.
+
+d}  Filter ringing.@@
+
+
+111]  (Refer to figure EL3F1) To find the supply power with
+only a voltmeter, measure between:
+
+a}  Z to W voltage times 150,000 divided by 2000.
+
+b}  Y  to Z voltage squared divided by 2000.
+
+c}  W to Y voltage divided by 150.
+
+d}  W to X voltage divided by 150,000 times W to Z voltage.@@
+
+
+112]  A receiver selectivity of 10 kHz in the IF circuitry is
+optimum for what type of signals?
+
+a}  SSB voice.
+
+b}  Double-sideband AM.@@
+
+c}  CW.
+
+d}  FSK RTTY.
+
+
+113]  What degree of selectivity is desirable in the IF
+circuitry of a single-sideband phone receiver?
+
+a}  1 kHz.
+
+b}  2.4 kHz.@@
+
+c}  4.2 kHz.
+
+d}  4.8 kHz.
+
+
+114]  What is an undesirable effect of using too wide a filter
+bandwidth in the IF section of a receiver?
+
+a}  Output-offset overshoot.
+
+b}  Undesired signals will reach the audio stage.@@
+
+c}  Thermal-noise distortion.
+
+d}  Filter ringing.
+
+
+115]  How should the filter bandwidth of a receiver IF section
+compare with the bandwidth of a received signal?
+
+a}  Filter bandwidth should be slightly greater than the
+received-signal bandwidth.@@
+
+b}  Filter bandwidth should be approximately half the
+received-signal bandwidth.
+
+c}  Filter bandwidth should be approximately two times the
+received-signal bandwidth.
+
+d}  Filter bandwidth should be approximately four times the
+received-signal bandwidth.
+
+
+116]  What degree of selectivity is desirable in the IF
+circuitry of an FM-phone receiver?
+
+a}  1 kHz.
+
+b}  2.4 kHz.
+
+c}  4.2 kHz.
+
+d}  15 kHz.@@
+
+
+117]  How can selectivity be achieved in the IF circuitry of a
+communications receiver?
+
+a}  Incorporate a means of varying the supply voltage to the
+local oscillator circuitry.
+
+b}  Replace the standard JFET mixer with a bipolar transistor
+followed by a capacitor of the proper value.
+
+c}  Remove AGC action from the IF stage and confine it to the
+audio stage only.
+
+d}  Incorporate a high-Q filter.@@
+
+
+118]  What is meant by the dynamic range of a communications
+receiver?
+
+a}  The number of kHz between the lowest and the highest
+frequency to which the receiver can be tuned.
+
+b}  The maximum possible undistorted audio output of the
+receiver, referenced to one milliwatt.
+
+c}  The ratio between the minimum discernible signal and the
+largest tolerable signal without causing audible distortion
+products.@@
+
+d}  The difference between the lowest-frequency signal and the
+highest-frequency signal detectable without moving the tuning
+knob.
+
+
+119]  What is the term for the ratio between the largest
+tolerable receiver input signal and the minimum discernible
+signal?
+
+a}  Intermodulation distortion.
+
+b}  Noise floor.
+
+c}  Noise figure.
+
+d}  Dynamic range.@@
+
+
+120]  What type of problems are caused by poor dynamic range in
+a communications receiver?
+
+a}  Cross-modulation of the desired signal and desensitization
+from strong adjacent signals.@@
+
+b}  Oscillator instability requiring frequent retuning, and loss
+of ability to recover the opposite sideband, should it be
+transmitted.
+
+c}  Cross-modulation of the desired signal and insufficient audio
+power to operate the speaker.
+
+d}  Oscillator instability and severe audio distortion of all but
+the strongest received signals.
+
+
+121]  The ability of a communications receiver to perform well
+in the presence of strong signals outside the band of interest is
+indicated by what parameter?
+
+a}  Noise figure.
+
+b}  Blocking dynamic range.@@
+
+c}  Signal-to-noise ratio.
+
+d}  Audio output.
+
+
+122]  What is meant by the term noise figure of a communications receiver?
+
+a}  The level of noise entering the receiver from the antenna.
+
+b}  The relative strength of a received signal 3 kHz removed from
+the carrier frequency.
+
+c}  The level of noise generated in the front end and succeeding
+stages of a receiver.@@
+
+d}  The ability of a receiver to reject unwanted signals at
+frequencies close to the desired one.
+
+
+
+123]  Which stage of a receiver primarily establishes its noise
+figure?
+
+a}  The audio stage.
+
+b}  The IF strip.
+
+c}  The RF stage.@@
+
+d}  The local oscillator.
+
+
+124]  What is an inverting op-amp circuit?
+
+a}  An operational amplifier circuit connected such that the
+input and output signals are 180 degrees out of phase.@@
+
+b}  An operational amplifier circuit connected such that the
+input and output signals are in phase.
+
+c}  An operational amplifier circuit connected such that the
+input and output signals are 90 degrees out of phase.
+
+d}  An operational amplifier circuit connected such that the
+input impedance is held at zero, while the output impedance is
+high.
+
+
+125]  What is a noninverting op-amp circuit?
+
+a}  An operational amplifier circuit connected such that the
+input and output signals are 180 degrees out of phase.
+
+b}  An operational amplifier circuit connected such that the
+input and output signals are in phase.@@
+
+c}  An operational amplifier circuit connected such that the
+input and output signals are 90 degrees out of phase.
+
+d}  An operational amplifier circuit connected such that the
+input impedance is held at zero while the output impedance is
+high.
+
+
+126]  How does the gain of a theoretically ideal operational
+amplifier vary with frequency?
+
+a}  The gain increases linearly with increasing frequency.
+
+b}  The gain decreases linearly with increasing frequency.
+
+c}  The gain decreases logarithmically with increasing frequency.
+
+d}  The gain does not vary with frequency.@@
+
+
+127]  What determines the input impedance in a FET
+common-source amplifier?
+
+a}  The input impedance is essentially determined by the
+resistance between the drain and substrate.
+
+b}  The input impedance is essentially determined by the
+resistance between the source and drain.
+
+c}  The input impedance is essentially determined by the gate
+biasing network.@@
+
+d}  The input impedance is essentially determined by the
+resistance between the source and substrate.
+
+
+128]  What determines the output impedance in a FET
+common-source amplifier?
+
+a}  The output impedance is essentially determined by the drain
+resistor.@@
+
+b}  The output impedance is essentially determined by the input
+impedance of  the FET.
+
+c}  The output impedance is essentially determined by the drain
+supply voltage.
+
+d}  The output impedance is essentially determined by the gate
+supply voltage.
+
+
+129]  What is the purpose of a bypass capacitor?
+
+a}  It increases the resonant frequency of the circuit.
+
+b}  It removes direct current from the circuit by shunting DC to
+ground.
+
+c}  It removes alternating current by providing a low impedance
+path to ground.@@
+
+d}  It acts as a voltage divider.
+
+
+130]  What is the purpose of a coupling capacitor?
+
+a}  It blocks direct current and passes alternating current.@@
+
+b}  It blocks alternating current and passes direct current.
+
+c}  It increases the resonant frequency of the circuit.
+
+d}  It decreases the resonant frequency of the circuit.
+
+
+131]  What condition must exist for a circuit to oscillate?
+
+a}  It must have a gain of less than 1.
+
+b}  It must be neutralized.
+
+c}  It must have positive feedback sufficient to overcome
+losses.@@
+
+d}  It must have negative feedback sufficient to cancel the input.
+
+
+132]  (Refer to figure EL3F2) What is the voltage drop across
+R1?
+
+a}  9 volts.
+
+b}  7 volts.
+
+c}  5 volts.@@
+
+d}  3 volts
+    
+
+133]  (Refer to figure EL3F3) What is the voltage drop across
+R1?
+
+a}  1.2 volts.
+
+b}  2.4 volts.
+
+c}  3.7 volts.
+
+d}  9 volts.@@
+
+
+134]  In a properly operating marine transmitter, if the power
+supply bleeder resistor opens:
+
+a}  Short circuit of supply voltage due to overload.
+
+b}  Regulation would decrease.
+
+c}  Next stage would fail due to short circuit.
+
+d}  Filter capacitors might short from voltage surge.@@
+
+
+135]  (Refer to figure EL3F4) Which of the following can occur
+that would least affect this circuit?
+
+a}  C1 shorts.
+
+b}  C1 opens.
+
+c}  C3 shorts.
+
+d}  C18 opens@@
+
+
+136]  (Refer to figure EL3F5) When S1 is closed, lights L1 and
+L2 go on.  What is the condition of both lamps when both S1 and
+S2 are closed?
+
+a}  both lamps stay on.
+
+b}  L1 turns off;  L2 stays on.
+
+c}  both lamps turn off.
+
+d}  L1 stays on;  L2 turns off.@@
+
+
+137]  (Refer to figure EL3F5) If S1 is closed both lamps light,
+what happens when S1 and S2 are closed?
+
+a}  L1 and L2 are off.
+
+b}  L1 is on and L2 is flashing.
+
+c}  L1 is off and L2 is on.
+
+d}  L1 is on and L2 is off@@
+
+
+138]  (Refer to figure EL3F6) How can we correct the defect, if
+any, in this voltage doubler circuit?
+
+a}  Omit C1.
+
+b}  Reverse polarity signs.@@
+
+c}  Ground X.
+
+d}  Reverse polarity on C1.
+
+
+139]  (Refer to figure EL3F7) What change is needed in order
+to correct the grounded emitter amplifier shown?
+
+
+a}  No change is necessary.@@
+
+b}  Polarities of emitter-base battery should be reversed.
+
+c}  Polarities of collector-base battery should be reversed.
+
+d}  Point A should be replaced with a low value capacitor.
+
+
+

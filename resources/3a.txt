@@ -1,0 +1,491 @@
+Subelement 3A -- Operating procedures  
+ 
+ 
+1]  What is facsimile?  
+ 
+a}  The transmission of characters by radioteletype that form a
+picture when printed.
+  
+b}  The transmission of still pictures by slow-scan television.
+
+c}  The transmission of video by television.
+
+d}  The transmission of printed pictures for permanent display on
+paper.@@  
+ 
+ 
+2]  What is the standard scan rate for VHF 137 MHz polar
+orbiting weather facsimile reception?  
+ 
+a}  240 lines per minute.@@
+  
+b}  50 lines per minute.
+
+c}  150 lines per second.
+  
+d}  60 lines per second.
+ 
+ 
+3]  What is the standard scan rate for high-frequency 3
+MHz-23 MHz weather facsimile reception from associated shore
+stations?  
+ 
+a}  240 lines per minute.
+  
+b}  120 lines per minute.@@
+  
+c}  150 lines per second.
+
+d}  60 lines per second.  
+ 
+ 
+4]  The Distance Measuring Equipment (DME) measures the
+distance from the aircraft to the DME ground station. This is
+referred to as : 
+
+a}  The slant range.@@
+  
+b}  DME bearing.
+
+c}  Glide Slope angle of approach.
+ 
+d}  Localizer course width.
+ 
+ 
+5]  What is an ascending pass for a low-earth-orbit
+communications satellite?  
+ 
+a}  A pass from west to east.
+  
+b}  A pass from east to west.
+  
+c}  A pass from south to north.@@  
+
+d}  A pass from north to south.
+ 
+ 
+6]  What is a descending pass for a low-earth-orbit
+communications satellite?  
+ 
+a}  A pass from north to south.@@ 
+ 
+b}  A pass from west to east.
+  
+c}  A pass from east to west.
+  
+d}  A pass from south to north.  
+ 
+ 
+7]  What is the period of a satellite?  
+ 
+a}  An orbital arc that extends from 60 degrees west longitude to
+145 degrees west longitude.
+  
+b}  The point on an orbit where satellite height is minimum.
+  
+c}  The amount of time it takes for a satellite to complete one
+orbit.@@
+  
+d}  The time it takes a satellite to travel from perigee to
+apogee.  
+ 
+ 
+8]  What is the accuracy of a global positioning system (GPS)
+fix with selective availability (SA) turned on?  
+ 
+a}  100 meters 95% of the time.@@
+  
+b}  100 feet 50% of the time.
+  
+c}  150 meters 95% of the time.
+  
+d}  10 feet 95% of the time.  
+ 
+ 
+9]  What is the probable cause for a docked vessel to
+occasionally register speed and direction on a global positioning
+system (GPS) receiver?  
+ 
+a}  Interference entering the antenna cable.
+  
+b}  A misconnection to the associated electronic chart display.
+  
+c}  A loose coaxial cable connector in the antenna unit.
+  
+d}  A normal condition caused by Department of Defense (DOD)
+selective availability.@@  
+ 
+ 
+10]  What voice communications system will lead to a slight
+delay and possible echo in a telephone conversation?  
+ 
+a}  Propagational delay in communications through a geostationary
+satellite.@@
+  
+b}  Acoustic delay and echo over cellular phone frequency.
+  
+c}  Propagational delays and echoes on low-earth-orbit
+satellites. 
+
+d}  Propagational delays on marine VHF 157/162 MHz bands  
+ 
+ 
+11]  Why does the received signal from a satellite, stabilized
+by a computer-pulsed electromagnet, exhibit a fairly rapid pulsed
+fading effect?  
+ 
+a}  Because the satellite is rotating.@@  
+
+b}  Because of ionospheric absorption.  
+
+c}  Because of the satellite's low orbital altitude.
+
+d}  Because of the Doppler effect.  
+ 
+ 
+12]  The majority of airborne Distance Measuring Equipment
+systems automatically tune their transmitter and receiver
+frequencies to the paired ____ channel. 
+
+a}  VOR/marker beacon.
+ 
+b}  VOR/LOC.@@
+ 
+c}  Marker beacon/glideslope.
+ 
+d}  LOC/Glideslope.  
+ 
+ 
+13]  The Distance Measuring Equipment (DME) ground station
+has a built-in delay between reception of an interrogation and
+transmission of the reply to allow :  
+ 
+a}  Someone to answer the call.
+  
+b}  The VOR to make a mechanical hook-up.
+  
+c}  Clear other traffic for a reply.
+  
+d}  Operation at close range.@@  
+ 
+ 
+14]  During soldering operations, "wetting" is :  
+ 
+a}  The action of the flux on the surface of the connection.
+  
+b}  The blending of solder and copper to form a new alloy.@@
+  
+c}  The dipping of the connection in water to cool the
+connection.
+ 
+d}  The operation of cooling the completed connection with flux. 
+
+  
+15]  One nautical mile is equal to how many statute miles?  
+ 
+a}  1.5.
+  
+b}  8.3.
+  
+c}  1.73.
+  
+d}  1.15.@@  
+ 
+ 
+16]  Solder most commonly used for hand soldering in
+electronics is :  
+ 
+a}  50% tin 50% lead.
+  
+b}  60% tin 40% lead.@@
+  
+c}  40% tin 60% lead.
+  
+d}  30% tin 30% lead.  
+ 
+ 
+17]  Which of the following is true about the soldering tip? 
+ 
+a}  One size soldering tip is right for all jobs, only the heat
+is changed.
+  
+b}  If the temperature of the soldering tip is the same in each
+case, the larger work mass will heat up faster than the smaller
+one will.
+  
+c}  Iron-plated soldering tips require no preparation before
+using.
+  
+d}  The soldering tip should be tinned during the initial heating
+up of the soldering iron.@@  
+ 
+ 
+18]  3:00 PM Central Standard Time is:  
+ 
+a}  1000 UTC.
+  
+b}  2100 UTC.@@
+  
+c}  1800 UTC.
+  
+d}  0300 UTC.  
+ 
+ 
+19]  Which of the following is an acceptable method of solder
+removal from holes in a printed board?  
+ 
+a}  Compressed air.
+  
+b}  Toothpick.
+  
+c}  Soldering iron and a suction device.@@
+  
+d}  Power drill.  
+ 
+ 
+20]  6:00 PM PST is equal to what time in UTC?  
+ 
+a}  0200.@@
+  
+b}  1800.
+  
+c}  2300.
+  
+d}  1300.  
+ 
+
+21]  The ideal method of removing insulation from wire is :  
+ 
+a}  The thermal stripper.@@
+ 
+b}  The pocket knife.
+  
+c}  A mechanical wire stripper.
+  
+d}  The scissor action stripping tool.  
+ 
+ 
+22]  2300 UTC time is:  
+ 
+a}  2 PM CST.
+  
+b}  3 PM PST.@@
+  
+c}  10 AM EST.  
+
+d}  6 AM EST.  
+ 
+ 
+
+23]  One statute mile equals how many nautical miles?  
+ 
+a}  3.8.
+  
+b}  1.5.
+  
+c}  0.87.@@
+  
+d}  0.7.  
+ 
+ 
+24]  When soldering electronic circuits be sure to:  
+ 
+a}  Wet wires with flux after soldering.
+  
+b}  Use maximum heat.
+  
+c}  Heat wires until wetting action begins.@@
+  
+d}  Use maximum solder to insure a good bond. 
+ 
+
+25]  What is the purpose of flux?  
+ 
+a}  Removes oxides from surfaces and prevents formation of oxides
+during soldering.@@  
+
+b}  To act as a lubricant to aid the flow of the solder.
+
+c}  Acid cleans printed circuit connections.  
+
+d}  To cool the soldered connection.  
+ 
+ 
+26]  Which of these will be useful for insulation at UHF?  
+ 
+a}  Rubber.  
+
+b}  Mica.@@  
+
+c}  Wax impregnated paper.  
+
+d}  Lead.  
+ 
+ 
+27]  The condition of a lead-acid storage battery is
+determined with a(n):  
+ 
+a}  Hygrometer.  
+
+b}  Manometer.  
+
+c}  FET.  
+
+d}  Hydrometer.@@ 
+ 
+ 
+28]  Lines drawn from the VOR station in a particular
+magnetic direction are :  
+ 
+a}  Radials.@@
+  
+b}  Quadrants.
+  
+c}  Bearings.
+ 
+d}  Headings.  
+ 
+ 
+29]  The horizontal dipole VOR transmit antenna rotates at
+____ revolutions per second. 
+ 
+a}  60.
+  
+b}  2400.
+  
+c}  30.@@
+  
+d}  1800.  
+ 
+30]  The direction from the aircraft's nose to the VOR
+station is referred to as the : 
+ 
+a}  Heading.
+  
+b}  Bearing.@@
+  
+c}  Deflection.
+  
+d}  Inclination.  
+ 
+ 
+31]  All directions associated with a VOR station are related
+to:  
+ 
+a}  North pole.
+ 
+b}  North star.
+  
+c}  Magnetic north.@@
+  
+d}  None of these.
+
+
+32]  If a shunt motor, running with a load, has its shunt
+field opened, how would this affect the speed of the motor?  
+ 
+a}  Slow down.
+  
+b}  Stop suddenly.
+  
+c}  Speed up.@@
+  
+d}  Unaffected.  
+ 
+ 
+33]  On runway approach, an ILS Localizer shows :  
+ 
+a}  Deviation left or right of runway center line.@@
+  
+b}  Deviation up and down from ground speed.
+  
+c}  Deviation percentage from authorized ground speed.
+  
+d}  Wind speed along runway.  
+ 
+ 
+34]  What radio navigation aid determines the distance from
+an aircraft to a selected VORTAC station by measuring the length
+of time the radio signal takes to travel to and from the station?
+
+a}  Radar.
+  
+b}  Loran C.
+  
+c}  Distance Marking (DM).
+  
+d}  Distance Measuring Equipment (DME).@@  
+
+ 
+35]  Which of the following is a feature of an Instrument
+Landing System (ILS)?  
+ 
+a}  Localizer: shows aircraft deviation horizontally from center
+of runway.@@
+  
+b}  Altimeter: shows aircraft height above sea-level.
+  
+c}  VHF Communications: provide communications to aircraft.
+  
+d}  Distance Measuring Equipment: shows aircraft distance to
+VORTAC station.  
+ 
+ 
+36]  Why do we tin component leads?  
+ 
+a}  It helps to oxidize the wires.
+  
+b}  Prevents rusting of circuit board.
+  
+c}  Decreases heating time and aids in connection.@@
+  
+d}  Provides ample wetting for good connection.  
+ 
+ 
+37]  What is the purpose of using a small amount of solder on
+the tip of a soldering iron just prior to making a connection?  
+ 
+a}  Removes oxidation.
+  
+b}  Burns up flux.
+  
+c}  Increases solder temperature.
+
+d}  Aids in wetting the wires.@@  
+ 
+ 
+38]  What occurs if the load is removed from an operating
+series DC motor?  
+ 
+a}  It will stop running.
+  
+b}  Speed will increase slightly.
+  
+c}  No change occurs.
+  
+d}  It will accelerate until it flies apart.@@  
+ 
+ 
+39]  Why are concentric transmission lines sometimes filled
+with nitrogen?  
+ 
+a}  Reduces resistance at high frequencies.
+  
+b}  Prevent water damage underground.
+  
+c}  Keep moisture out and prevent oxidation.@@  
+
+d}  Reduce microwave line losses.  
+ 
+
+40]  Nitrogen is placed in transmission lines to :  
+ 
+a}  Improve the "skin-effect" of microwaves.  
+
+b}  Reduce arcing in the line.  
+
+c}  Reduce the standing wave ratio of the line.  
+
+d}  Prevent moisture from entering the line.@@  
+ 
+
