@@ -17,6 +17,6 @@ tested-with:         GHC>=6.10.4
 executable           fequiz
    main-is:          fequiz.hs
    hs-source-dirs:   src
-   build-depends:    base >= 3 && < 5, cgi, hslogger, old-locale, 
+   build-depends:    base >= 3 && < 5, cgi, hslogger, mtl, old-locale, 
                      parsec, regex-compat, time, xhtml
    ghc-options:      -Wall

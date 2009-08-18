@@ -3,10 +3,11 @@
 -- Author: Dino Morelli <dino@ui3.info>
 
 module Fequiz.Log
-   ( initLogging, logM, logTest )
+   ( initLogging, logM, llog, logTest )
    where
 
 import Control.Monad ( liftM )
+import Control.Monad.Trans
 import Data.Time.Clock ( getCurrentTime )
 import Data.Time.Format ( formatTime )
 import Data.Time.LocalTime ( utcToLocalZonedTime )
@@ -32,6 +33,13 @@ logM pri msg = do
    fd <- formattedDate "%Y-%m-%d %H:%M:%S %Z"
    let fullMsg = printf "%s %9s> %s" fd (show pri) msg
    L.logM rootLoggerName pri fullMsg
+
+
+{- Convenience function for logging from within transformered
+   computations
+-}
+llog :: (MonadIO m) => Priority -> String -> m ()
+llog p m = liftIO $ logM p m
 
 
 {- Default hslogger behavior sends logging to stderr. In this case,
