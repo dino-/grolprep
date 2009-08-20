@@ -15,81 +15,13 @@ import Fequiz.Log
 import Fequiz.Session
 
 
+{- Utility functions and definitions
+-}
+
 appName, version, appId :: String
 appName = "fequiz"
 version = "1.0.0.1"
 appId = printf "%s-%s" appName version
-
-
-startForm :: Html
-startForm = form << (
-   p << "Please select type of study"
-   +++
-   p << select ! [name "file", size "10"] <<
-      (   option ! [value "resources/1.txt"] << "Element 1"
-      +++ option ! [value "resources/3a.txt"] << "Subelement 3A -- Operating procedures"
-      +++ option ! [value "resources/3b.txt"] << "Subelement 3B -- Radio wave propagation"
-      +++ option ! [value "util/resources/small1.txt"] << "small1"
-      )
-   +++ p << submit "start" "Start study session"
-   )
-
-
-problemForm :: Problem -> Html
-problemForm (Problem n q eas) = form << (
-   [ paragraph << ((show n) ++ "] " ++ q)
-   ] ++ (ansControls eas) ++
-   --[ submit "problem" "Proceed"
-   [ submit "problem" "Proceed" +++ submit "quit" "Cancel test session"
-   ] )
-   where
-      ansControls eas' = map f $ zip [0..] $ map extractAnswer eas'
-         where
-            f :: (Int, String) -> Html
-            f (n', a) = paragraph << ((radio "answer" (show n')) +++ a)
-
-
-page :: (HTML a) => a -> Html -> Html
-page t b = header << thetitle << t +++ body << ([h, b])
-   where h = p << ((printf "%s %s" appName version) :: String)
-
-
-initializeAction = do
-   llog DEBUG "initializeAction"
-
-   let c = newCookie appId ""
-   deleteCookie c
-   output $ renderHtml $ page appName $ startForm
-
-
-nextProblem :: Session -> IO Problem
-nextProblem session = do
-   let (Set questionsPath) = sessType session
-   let nextProblemIx = length (sessResults session)
-
-   eps <- liftM parseProblems $ readFile questionsPath
-   let ps = either undefined snd eps
-
-   return $ ps !! nextProblemIx
-
-
-setupSessionAction = do
-   llog DEBUG "setupSessionAction"
-
-   questionsPath <- liftM fromJust $ getInput "file"
-
-   let session = Session (Set questionsPath) Nothing []
-   let cookie = newCookie appId $ show session
-   setCookie cookie
-
-   np <- liftIO $ nextProblem session
-   problemAction np
-
-
-problemAction problem = do
-   llog DEBUG "problemAction"
-
-   output $ renderHtml $ page appName $ problemForm problem
 
 
 readSessionCookie :: (MonadCGI m) => m (Maybe Session)
@@ -105,6 +37,89 @@ getFormName = do
    return $ foldr mplus Nothing mbfs
 
 
+page :: (HTML a) => a -> Html -> Html
+page t b = header << thetitle << t +++ body << ([h, b])
+   where h = p << ((printf "%s %s" appName version) :: String)
+
+
+nextProblem :: Session -> IO Problem
+nextProblem session = do
+   let (Set questionsPath) = sessType session
+   let nextProblemIx = length (sessResults session)
+
+   eps <- liftM parseProblems $ readFile questionsPath
+   let ps = either undefined snd eps
+
+   return $ ps !! nextProblemIx
+
+
+{- Forms
+-}
+
+formStart :: Html
+formStart = form << (
+   p << "Please select type of study"
+   +++
+   p << select ! [name "file", size "10"] <<
+      (   option ! [value "resources/1.txt"] << "Element 1"
+      +++ option ! [value "resources/3a.txt"] << "Subelement 3A -- Operating procedures"
+      +++ option ! [value "resources/3b.txt"] << "Subelement 3B -- Radio wave propagation"
+      +++ option ! [value "util/resources/small1.txt"] << "small1"
+      )
+   +++ p << submit "start" "Start study session"
+   )
+
+
+formPoseProblem :: Problem -> Html
+formPoseProblem (Problem n q eas) = form << (
+   [ paragraph << ((show n) ++ "] " ++ q)
+   ] ++ (ansControls eas) ++
+   --[ submit "problem" "Proceed"
+   [ submit "problem" "Proceed" +++ submit "quit" "Cancel test session"
+   ] )
+   where
+      ansControls eas' = map f $ zip [0..] $ map extractAnswer eas'
+         where
+            f :: (Int, String) -> Html
+            f (n', a) = paragraph << ((radio "answer" (show n')) +++ a)
+
+
+{- Action handlers
+-}
+
+actionInitialize = do
+   llog DEBUG "actionInitialize"
+
+   let c = newCookie appId ""
+   deleteCookie c
+   output $ renderHtml $ page appName $ formStart
+
+
+actionSetupSession = do
+   llog DEBUG "actionSetupSession"
+
+   questionsPath <- liftM fromJust $ getInput "file"
+
+   let session = Session (Set questionsPath) Nothing []
+   let cookie = newCookie appId $ show session
+   setCookie cookie
+
+   np <- liftIO $ nextProblem session
+   actionCorrectProblem np
+
+
+--actionPoseProblem = do
+
+
+actionCorrectProblem problem = do
+   llog DEBUG "problemAction"
+
+   output $ renderHtml $ page appName $ formPoseProblem problem
+
+
+{- main program
+-}
+
 cgiMain :: CGI CGIResult
 cgiMain = do
    qs <- queryString
@@ -119,11 +134,11 @@ cgiMain = do
    llog DEBUG $ "form button: " ++ show mbForm
 
    case (mbCookie, mbForm) of
-      (Nothing, Nothing) -> initializeAction
-      (Nothing, Just "start") -> setupSessionAction
-      (_, Just "quit") -> initializeAction
+      (Nothing, Nothing) -> actionInitialize
+      (Nothing, Just "start") -> actionSetupSession
+      (_, Just "quit") -> actionInitialize
       --(Just _, Just "problem") -> problemAction
-      (_, _) -> initializeAction
+      (_, _) -> actionInitialize
 
 
 main :: IO ()
