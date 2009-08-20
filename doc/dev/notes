@@ -1,3 +1,17 @@
+-----
+2009-08-19
+
+page flow                     c  submit
+- first time at site          n
+- actionInitialize <------+   n
+- formStart               |   n  "start"
+- actionSetupSession      |   y
+- actionNextProblem <---?-^   y
+- formPoseProblem       |     y  "pose"
+- actionCorrectProblem  |     y
+- formAnswer -----------+     y  "answer"
+
+-----
 - Original Perl version uses a pair of maps to point answer numbers to letters and back. These are set up randomly, but the two-way lookup is needed.
 
    In Haskell, we can use Data.Bimap
