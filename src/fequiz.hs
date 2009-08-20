@@ -30,7 +30,7 @@ readSessionCookie = readCookie appId
 
 getFormName :: (MonadCGI m) => m (Maybe String)
 getFormName = do
-   let keys = ["problem", "start", "quit"]
+   let keys = ["start", "pose", "answer", "quit"]
    mbvs <- mapM getInput keys
    let mbfs = zipWith (\i a -> maybe Nothing (const $ Just a) i)
          mbvs keys
@@ -74,8 +74,7 @@ formPoseProblem :: Problem -> Html
 formPoseProblem (Problem n q eas) = form << (
    [ paragraph << ((show n) ++ "] " ++ q)
    ] ++ (ansControls eas) ++
-   --[ submit "problem" "Proceed"
-   [ submit "problem" "Proceed" +++ submit "quit" "Cancel test session"
+   [ submit "pose" "Proceed" +++ submit "quit" "Cancel test session"
    ] )
    where
       ansControls eas' = map f $ zip [0..] $ map extractAnswer eas'
@@ -104,17 +103,22 @@ actionSetupSession = do
    let cookie = newCookie appId $ show session
    setCookie cookie
 
+   actionNextProblem session
+
+
+actionNextProblem session = do
    np <- liftIO $ nextProblem session
-   actionCorrectProblem np
+   output $ renderHtml $ page appName $ formPoseProblem np
 
 
---actionPoseProblem = do
-
-
-actionCorrectProblem problem = do
+{-
+actionCorrectProblem = do
    llog DEBUG "problemAction"
 
-   output $ renderHtml $ page appName $ formPoseProblem problem
+   -- Here we'll add results to the state and setCookie
+
+   --output $ renderHtml $ page appName $ formPoseProblem problem
+-}
 
 
 {- main program
@@ -136,8 +140,10 @@ cgiMain = do
    case (mbCookie, mbForm) of
       (Nothing, Nothing) -> actionInitialize
       (Nothing, Just "start") -> actionSetupSession
+      --(_, Just "pose") -> actionCorrectProblem
+      (Just session, Just "pose") -> actionNextProblem session
+      --(_, Just "answer") -> actionNextProblem
       (_, Just "quit") -> actionInitialize
-      --(Just _, Just "problem") -> problemAction
       (_, _) -> actionInitialize
 
 
@@ -145,11 +151,3 @@ main :: IO ()
 main = do
    initLogging "/var/tmp/fequiz.log" DEBUG
    runCGI $ handleErrors cgiMain
-
-   --eps <- liftM parseProblems $ readFile "resources/1.txt"
-
-   --either print (\(_,ps) -> print $ head ps) eps
-   --either print (\(_,ps) -> print $ take 2 ps) eps
-
-   --let problem = either undefined (\(_,ps) -> head ps) eps
-   --runCGI $ handleErrors $ cgiMain problem
