@@ -18,6 +18,14 @@ import Fequiz.Session
 {- Utility functions and definitions
 -}
 
+isLeft :: Either a b -> Bool
+isLeft = either (const True) (const False)
+
+
+isRight :: Either a b -> Bool
+isRight = not . isLeft
+
+
 appName, version, appId :: String
 appName = "fequiz"
 version = "1.0.0.1"
@@ -40,6 +48,20 @@ getButtonPressed = do
 page :: (HTML a) => a -> Html -> Html
 page t b = header << thetitle << t +++ body << ([h, b])
    where h = p << ((printf "%s %s" appName version) :: String)
+
+
+{- Do we really need this?
+
+currProblem :: Session -> IO Problem
+currProblem session = do
+   let (Set questionsPath) = sessType session
+   let currProblemIx = length (sessResults session) - 1
+
+   eps <- liftM parseProblems $ readFile questionsPath
+   let ps = either undefined snd eps
+
+   return $ ps !! currProblemIx
+-}
 
 
 nextProblem :: Session -> IO Problem
@@ -83,19 +105,28 @@ formPoseProblem (Problem n q eas) = form << (
             f (n', a) = paragraph << ((radio "answer" (show n')) +++ a)
 
 
+formAnswer :: Bool -> Html
+formAnswer correct = form << (
+   paragraph << (show correct) +++
+   submit "btnAnswer" "Next question" +++ submit "btnQuit" "Cancel test session"
+   )
+
+
 {- Action handlers
 -}
 
+actionInitialize :: CGI CGIResult
 actionInitialize = do
-   llog DEBUG "actionInitialize"
+   llog INFO "actionInitialize"
 
    let c = newCookie appId ""
    deleteCookie c
    output $ renderHtml $ page appName $ formStart
 
 
+actionSetupSession :: CGI CGIResult
 actionSetupSession = do
-   llog DEBUG "actionSetupSession"
+   llog INFO "actionSetupSession"
 
    questionsPath <- liftM fromJust $ getInput "file"
 
@@ -106,25 +137,35 @@ actionSetupSession = do
    actionNextProblem session
 
 
+actionNextProblem :: Session -> CGI CGIResult
 actionNextProblem session = do
-   llog DEBUG "actionNextProblem"
+   llog INFO "actionNextProblem"
 
    np <- liftIO $ nextProblem session
    output $ renderHtml $ page appName $ formPoseProblem np
 
 
+actionCorrectProblem :: CGI CGIResult
 actionCorrectProblem = do
-   llog DEBUG "actionCorrectProblem"
+   llog INFO "actionCorrectProblem"
 
    -- Here we'll add results to the state and setCookie
+
+   -- Get current session and extract some things from it
    session <- liftM fromJust readSessionCookie
    let ansList = sessResults session
-   let newSession = session { sessResults = False : ansList }
+
+   -- Evaluate the user's answer
+   problem@(Problem _ _ as) <- liftIO $ nextProblem session
+   answer <- liftM fromJust $ readInput "answer"
+   let correct = isRight $ as !! answer
+
+   -- Make the new session and set it
+   let newSession = session { sessResults = correct : ansList }
    let cookie = newCookie appId $ show newSession
    setCookie cookie
 
-   --output $ renderHtml $ page appName $ formPoseProblem problem
-   actionNextProblem newSession
+   output $ renderHtml $ page appName $ formAnswer correct
 
 
 {- main program
