@@ -191,9 +191,9 @@ cgiMain = do
    case (mbCookie, mbForm) of
       (Nothing,      Nothing         ) -> actionInitialize
       (Nothing,      Just "btnStart" ) -> actionSetupSession
-      (Just session, Just "btnAnswer") -> actionNextProblem session
       (_,            Just "btnPose"  ) -> actionCorrectProblem
       (_,            Just "btnQuit"  ) -> actionInitialize
+      (Just session, _               ) -> actionNextProblem session
       (_,            _               ) -> actionInitialize
 
 
