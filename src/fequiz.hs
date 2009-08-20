@@ -28,9 +28,9 @@ readSessionCookie :: (MonadCGI m) => m (Maybe Session)
 readSessionCookie = readCookie appId
 
 
-getFormName :: (MonadCGI m) => m (Maybe String)
-getFormName = do
-   let keys = ["start", "pose", "answer", "quit"]
+getButtonPressed :: (MonadCGI m) => m (Maybe String)
+getButtonPressed = do
+   let keys = ["btnStart", "btnPose", "btnAnswer", "btnQuit"]
    mbvs <- mapM getInput keys
    let mbfs = zipWith (\i a -> maybe Nothing (const $ Just a) i)
          mbvs keys
@@ -66,7 +66,7 @@ formStart = form << (
       +++ option ! [value "resources/3b.txt"] << "Subelement 3B -- Radio wave propagation"
       +++ option ! [value "util/resources/small1.txt"] << "small1"
       )
-   +++ p << submit "start" "Start study session"
+   +++ p << submit "btnStart" "Start study session"
    )
 
 
@@ -74,7 +74,7 @@ formPoseProblem :: Problem -> Html
 formPoseProblem (Problem n q eas) = form << (
    [ paragraph << ((show n) ++ "] " ++ q)
    ] ++ (ansControls eas) ++
-   [ submit "pose" "Proceed" +++ submit "quit" "Cancel test session"
+   [ submit "btnPose" "Proceed" +++ submit "btnQuit" "Cancel test session"
    ] )
    where
       ansControls eas' = map f $ zip [0..] $ map extractAnswer eas'
@@ -107,23 +107,32 @@ actionSetupSession = do
 
 
 actionNextProblem session = do
+   llog DEBUG "actionNextProblem"
+
    np <- liftIO $ nextProblem session
    output $ renderHtml $ page appName $ formPoseProblem np
 
 
-{-
 actionCorrectProblem = do
-   llog DEBUG "problemAction"
+   llog DEBUG "actionCorrectProblem"
 
    -- Here we'll add results to the state and setCookie
+   session <- liftM fromJust readSessionCookie
+   let ansList = sessResults session
+   let newSession = session { sessResults = False : ansList }
+   let cookie = newCookie appId $ show newSession
+   setCookie cookie
 
    --output $ renderHtml $ page appName $ formPoseProblem problem
--}
+   actionNextProblem newSession
 
 
 {- main program
 -}
 
+{- This is sort of our main event entry point. The web application
+   starts here and all form submits come through here.
+-}
 cgiMain :: CGI CGIResult
 cgiMain = do
    qs <- queryString
@@ -134,17 +143,17 @@ cgiMain = do
    llog DEBUG $ "cookie: " ++ show mbCookie
 
    -- Figure out which form button was used for submit
-   mbForm <- getFormName
+   mbForm <- getButtonPressed
    llog DEBUG $ "form button: " ++ show mbForm
 
+   -- Map cookie status and form button pressed into actions
    case (mbCookie, mbForm) of
-      (Nothing, Nothing) -> actionInitialize
-      (Nothing, Just "start") -> actionSetupSession
-      --(_, Just "pose") -> actionCorrectProblem
-      (Just session, Just "pose") -> actionNextProblem session
-      --(_, Just "answer") -> actionNextProblem
-      (_, Just "quit") -> actionInitialize
-      (_, _) -> actionInitialize
+      (Nothing,      Nothing         ) -> actionInitialize
+      (Nothing,      Just "btnStart" ) -> actionSetupSession
+      (Just session, Just "btnAnswer") -> actionNextProblem session
+      (_,            Just "btnPose"  ) -> actionCorrectProblem
+      (_,            Just "btnQuit"  ) -> actionInitialize
+      (_,            _               ) -> actionInitialize
 
 
 main :: IO ()
