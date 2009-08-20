@@ -4,21 +4,21 @@
 
 
 module Fequiz.Session
+   ( StudyType (..), Session (..)
+   )
    where
 
 
 data StudyType
    = Set String  -- A specific question set, this is the path
                  -- like "resources/3a.txt"
-   | Sim Int     -- A simulation of a real 76 question test
-                 -- the Int is the random number seed so it can be
-                 -- recreated
+   -- | Sim         -- A simulation of a real 76 question test
    deriving (Read, Show)
 
 
 data Session = Session
-   { sessType = StudyType
-   , sessCurr = Int
-   , sessResults = [(Int, Bool)]
+   { sessType :: StudyType
+   , sessSeed :: Maybe Int  -- Nothing means no randomization
+   , sessResults :: [Bool]
    }
    deriving (Read, Show)

@@ -1,0 +1,80 @@
+1]  What is the Global Maritime Distress and Safety System (GMDSS)?
+
+a}  An automated ship-to-shore distress alerting system using satellite and advanced terrestrial
+communications systems.@@
+
+b}  An emergency radio service employing analog and manual safety apparatus.
+
+c}  An association of radio officers trained in emergency procedures.
+
+d}  The international organization charged with the safety of ocean-going vessels.
+
+
+2]  What authority does the Marine Radio Operator Permit confer?
+
+a}  Grants authority to operate commercial broadcast stations and repair associated equipment.
+
+b}  Allows the radio operator to maintain equipment in the Business Radio Service.
+
+c}  Confers authority to operate licensed radio stations in the Aviation, Marine and
+International Fixed Public Radio Services.@@
+  
+d}  The non-transferable right to install, operate and maintain any type-accepted radio
+transmitter.
+
+
+3]  Which of the following persons are ineligible to be issued a commercial radio operator
+license?
+
+a}  Individuals who are unable to send and receive correctly by telephone spoken messages in
+English.@@
+
+b}  Handicapped persons with uncorrected disabilities which affect their ability to perform all
+duties required of commercial radio operators.
+  
+c}  Foreign maritime radio operators unless they are certified by the International Maritime
+Organization (IMO).
+  
+d}  U.S. Military radio operators who are still on active duty.
+
+
+4]  Who is required to make entries on a required service or maintenance log?
+
+a}  The licensed operator or a person whom he or she designates.
+
+b}  The operator responsible for the station operation or maintenance.@@
+  
+c}  Any commercial radio operator holding at least a Restricted Radiotelephone Operator
+Permit.
+  
+d}  The technician who actually makes the adjustments to the equipment.
+
+
+5]  What is a requirement of every commercial operator on duty and in charge of a
+transmitting system?
+ 
+a}  A copy of the Proof-of-Passing Certificate (PPC) must be on display at the transmitter
+location.
+  
+b}  The original license or a photocopy must be posted or in the operator's personal
+possession and available for inspection.@@
+  
+c}  The FCC Form 756 certifying the operator's qualifications must be readily available at the
+transmitting system site.
+  
+d}  A copy of the operator's license must be supplied to the radio station's supervisor as
+evidence of technical qualification.
+
+
+6]  What is distress traffic?
+ 
+a}  In radiotelegraphy, SOS sent as a single character; in radiotelephony, the speaking of the
+word, "Mayday."
+  
+b}  Health and welfare messages concerning the immediate protection of property and safety
+of human life.
+  
+c}  Internationally recognized communications relating to emergency situations.
+  
+d}  All messages relative to the immediate assistance required by a ship, aircraft or other
+vehicle in imminent danger.@@
