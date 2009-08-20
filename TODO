@@ -1,0 +1,6 @@
+- Stop calling the project fequiz2, name the directory fequiz-web for now?
+
+- Rename all the resources/3a.txt like files to remove the .txt
+  Some other extension?
+
+- Need a real conf file to set things like logging, etc
