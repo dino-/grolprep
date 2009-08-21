@@ -11,7 +11,7 @@ stability:           experimental
 --homepage:            http://foo/bar/baz.html
 synopsis:            Foo
 description:         Bar Baz
-category:            Unknown
+category:            Education
 tested-with:         GHC>=6.10.4
 
 executable           fequiz.cgi
