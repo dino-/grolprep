@@ -52,7 +52,7 @@ page t b = header << thetitle << t +++ body << ([h, b])
    where h = p << ((printf "%s %s" appName appVersion) :: String)
 
 
-nextProblem :: Session -> IO Problem
+nextProblem :: Session -> IO (Maybe Problem)
 nextProblem (Session stype _ scurr _) = do
    let (Set questionsPath) = stype
 
@@ -60,7 +60,9 @@ nextProblem (Session stype _ scurr _) = do
       getDataFileName questionsPath >>= readFile
    let ps = either undefined snd eps
 
-   return $ ps !! scurr
+   return $ if (scurr < length ps)
+      then Just (ps !! scurr)
+      else Nothing
 
 
 {- Forms
@@ -136,8 +138,10 @@ actionNextProblem :: Session -> CGI CGIResult
 actionNextProblem session = do
    llog INFO "actionNextProblem"
 
-   np <- liftIO $ nextProblem session
-   output $ renderHtml $ page appName $ formPoseProblem np
+   mbnp <- liftIO $ nextProblem session
+   maybe actionInitialize
+      (output . renderHtml . (page appName) . formPoseProblem)
+      mbnp
 
 
 actionCorrectProblem :: CGI CGIResult
@@ -151,8 +155,11 @@ actionCorrectProblem = do
       <- liftM fromJust readSessionCookie
 
    -- Evaluate the user's answer
-   problem@(Problem _ _ as) <- liftIO $ nextProblem session
+   mbnp <- liftIO $ nextProblem session
+   let problem@(Problem _ _ as) = fromJust mbnp
+
    answer <- liftM fromJust $ readInput "answer"
+
    let correct = isRight $ as !! answer
    let newAnsList = case correct of
          True  -> setBit ansList curr
