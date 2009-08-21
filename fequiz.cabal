@@ -13,6 +13,8 @@ synopsis:            Foo
 description:         Bar Baz
 category:            Education
 tested-with:         GHC>=6.10.4
+data-dir:            resources
+data-files:          questions/*.txt
 
 executable           fequiz.cgi
    main-is:          fequiz.hs

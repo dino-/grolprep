@@ -1,15 +1,26 @@
 -----
+2009-08-21
+
+Developer configuration
+
+This web application requires access to its data files to function. The easiest way to work on it is to configure it with a --prefix to a dir in your http server document root.
+
+Changes made require both build and install, don't forget install or nothing will be deployed to where the web server is looking.
+
+
+-----
 2009-08-19
 
 page flow                     c  submit
 - first time at site          n
 - actionInitialize <------+   n
-- formStart               |   n  "start"
+- formStart               |   n  "btnStart"
 - actionSetupSession      |   y
 - actionNextProblem <---?-^   y
-- formPoseProblem       |     y  "pose"
+- formPoseProblem       |     y  "btnPose"
 - actionCorrectProblem  |     y
-- formAnswer -----------+     y  "answer"
+- formAnswer -----------+     y  "btnAnswer"
+
 
 -----
 - Original Perl version uses a pair of maps to point answer numbers to letters and back. These are set up randomly, but the two-way lookup is needed.
