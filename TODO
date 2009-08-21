@@ -1,6 +1,25 @@
+- Something doesn't work right yet when we arrive at the end of the test questions
+
+- What about special http server configuration? Maybe a script in util
+
+- Apache conf: /etc/httpd/conf/httpd.conf
+  DocumentRoot: /srv/http/
+
+- Can/should I keep the Subelement 3 structure?
+
+- Should I migrate now over to the newer 1, 3 and 8 elements?
+
+- What about elements 2, 4, 5...?
+
+- Should I now support the questions with images?
+
+- Changs the session and code to do the passes style of study
+
+- Fill out missing cabal info
+
 - Stop calling the project fequiz2, name the directory fequiz-web for now?
 
-- Rename all the resources/3a.txt like files to remove the .txt
+- Rename all the resources/questions/3a.txt like files to remove the .txt
   Some other extension?
 
 - Need a real conf file to set things like logging, etc
