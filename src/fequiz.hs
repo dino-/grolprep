@@ -82,11 +82,18 @@ formStart :: Html
 formStart = form << (
    p << "Please select type of study"
    +++
-   p << select ! [name "file", size "10"] <<
-      (   option ! [value "resources/1.txt"] << "Element 1"
-      +++ option ! [value "resources/3a.txt"] << "Subelement 3A -- Operating procedures"
-      +++ option ! [value "resources/3b.txt"] << "Subelement 3B -- Radio wave propagation"
-      +++ option ! [value "util/resources/small1.txt"] << "small1"
+   p << select ! [name "file", size "12"] <<
+      (   option ! [value "resources/1.txt"] << "Element 1 (170 questions)"
+      +++ option ! [value "resources/3a.txt"] << "Subelement 3A - Operating procedures (40 questions)"
+      +++ option ! [value "resources/3b.txt"] << "Subelement 3B - Radio wave propagation (42 questions)"
+      +++ option ! [value "resources/3c.txt"] << "Subelement 3C - Radio practice (69 questions)"
+      +++ option ! [value "resources/3d.txt"] << "Subelement 3D - Electrical principles (202 questions)"
+      +++ option ! [value "resources/3e.txt"] << "Subelement 3E - Circuit components (150 questions)"
+      +++ option ! [value "resources/3f.txt"] << "Subelement 3F - Practical circuits (139 questions)"
+      +++ option ! [value "resources/3g.txt"] << "Subelement 3G - Signals and emissions (131 questions)"
+      +++ option ! [value "resources/3h.txt"] << "Subelement 3H - Antennas and feedlines (143 questions)"
+      +++ option ! [value "resources/8.txt"] << "Element 8 (321 questions)"
+      +++ option ! [value "util/resources/small1.txt"] << "small1 (6 questions)"
       )
    +++ p << submit "btnStart" "Start study session"
    )
