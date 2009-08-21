@@ -14,7 +14,12 @@ description:         Bar Baz
 category:            Education
 tested-with:         GHC>=6.10.4
 data-dir:            resources
-data-files:          questions/*.txt
+data-files:          questions/element1, questions/subelement3a,
+                     questions/subelement3b, questions/subelement3c,
+                     questions/subelement3d, questions/subelement3e,
+                     questions/subelement3f, questions/subelement3g,
+                     questions/subelement3h, questions/element8,
+                     questions/small1
 
 executable           fequiz.cgi
    main-is:          fequiz.hs

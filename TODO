@@ -1,3 +1,5 @@
+- Need to set the cookie expiration time, let's say a week
+
 - What about special http server configuration? Maybe a script in util
 
 - Apache conf: /etc/httpd/conf/httpd.conf
@@ -16,8 +18,5 @@
 - Fill out missing cabal info
 
 - Stop calling the project fequiz2, name the directory fequiz-web for now?
-
-- Rename all the resources/questions/3a.txt like files to remove the .txt
-  Some other extension?
 
 - Need a real conf file to set things like logging, etc

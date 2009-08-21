@@ -73,17 +73,17 @@ formStart = form << (
    p << "Please select type of study"
    +++
    p << select ! [name "file", size "12"] <<
-      (   option ! [value "questions/1.txt"] << "Element 1 (170 questions)"
-      +++ option ! [value "questions/3a.txt"] << "Subelement 3A - Operating procedures (40 questions)"
-      +++ option ! [value "questions/3b.txt"] << "Subelement 3B - Radio wave propagation (42 questions)"
-      +++ option ! [value "questions/3c.txt"] << "Subelement 3C - Radio practice (69 questions)"
-      +++ option ! [value "questions/3d.txt"] << "Subelement 3D - Electrical principles (202 questions)"
-      +++ option ! [value "questions/3e.txt"] << "Subelement 3E - Circuit components (150 questions)"
-      +++ option ! [value "questions/3f.txt"] << "Subelement 3F - Practical circuits (139 questions)"
-      +++ option ! [value "questions/3g.txt"] << "Subelement 3G - Signals and emissions (131 questions)"
-      +++ option ! [value "questions/3h.txt"] << "Subelement 3H - Antennas and feedlines (143 questions)"
-      +++ option ! [value "questions/8.txt"] << "Element 8 (321 questions)"
-      +++ option ! [value "questions/small1.txt"] << "small1 (6 questions)"
+      (   option ! [value "questions/element1", selected] << "Element 1 (170 questions)"
+      +++ option ! [value "questions/subelement3a"] << "Subelement 3A - Operating procedures (40 questions)"
+      +++ option ! [value "questions/subelement3b"] << "Subelement 3B - Radio wave propagation (42 questions)"
+      +++ option ! [value "questions/subelement3c"] << "Subelement 3C - Radio practice (69 questions)"
+      +++ option ! [value "questions/subelement3d"] << "Subelement 3D - Electrical principles (202 questions)"
+      +++ option ! [value "questions/subelement3e"] << "Subelement 3E - Circuit components (150 questions)"
+      +++ option ! [value "questions/subelement3f"] << "Subelement 3F - Practical circuits (139 questions)"
+      +++ option ! [value "questions/subelement3g"] << "Subelement 3G - Signals and emissions (131 questions)"
+      +++ option ! [value "questions/subelement3h"] << "Subelement 3H - Antennas and feedlines (143 questions)"
+      +++ option ! [value "questions/element8"] << "Element 8 (321 questions)"
+      +++ option ! [value "questions/small1"] << "small1 (6 questions)"
       )
    +++ p << submit "btnStart" "Start study session"
    )
