@@ -3,6 +3,7 @@
 -- Author: Dino Morelli <dino@ui3.info>
 
 import Control.Monad
+import Data.Bits
 import Data.List
 import Data.Maybe
 import Network.CGI
@@ -52,15 +53,14 @@ page t b = header << thetitle << t +++ body << ([h, b])
 
 
 nextProblem :: Session -> IO Problem
-nextProblem session = do
-   let (Set questionsPath) = sessType session
-   let nextProblemIx = length (sessResults session)
+nextProblem (Session stype _ scurr _) = do
+   let (Set questionsPath) = stype
 
    eps <- liftM parseProblems $
       getDataFileName questionsPath >>= readFile
    let ps = either undefined snd eps
 
-   return $ ps !! nextProblemIx
+   return $ ps !! scurr
 
 
 {- Forms
@@ -125,7 +125,7 @@ actionSetupSession = do
 
    questionsPath <- liftM fromJust $ getInput "file"
 
-   let session = Session (Set questionsPath) Nothing []
+   let session = Session (Set questionsPath) Nothing 0 0
    let cookie = newCookie appId $ show session
    setCookie cookie
 
@@ -147,16 +147,20 @@ actionCorrectProblem = do
    -- Here we'll add results to the state and setCookie
 
    -- Get current session and extract some things from it
-   session <- liftM fromJust readSessionCookie
-   let ansList = sessResults session
+   session@(Session _ _ curr ansList)
+      <- liftM fromJust readSessionCookie
 
    -- Evaluate the user's answer
    problem@(Problem _ _ as) <- liftIO $ nextProblem session
    answer <- liftM fromJust $ readInput "answer"
    let correct = isRight $ as !! answer
+   let newAnsList = case correct of
+         True  -> setBit ansList curr
+         False -> clearBit ansList curr
 
    -- Make the new session and set it
-   let newSession = session { sessResults = correct : ansList }
+   let newSession =
+         session { sessCurr = curr + 1 , sessResults = newAnsList }
    let cookie = newCookie appId $ show newSession
    setCookie cookie
 

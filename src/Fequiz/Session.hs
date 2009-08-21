@@ -19,6 +19,7 @@ data StudyType
 data Session = Session
    { sessType :: StudyType
    , sessSeed :: Maybe Int  -- Nothing means no randomization
-   , sessResults :: [Bool]
+   , sessCurr :: Int
+   , sessResults :: Integer  -- Results for all questions in a bit field
    }
    deriving (Read, Show)
