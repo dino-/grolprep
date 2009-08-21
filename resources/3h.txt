@@ -1,4 +1,4 @@
-Subelement 3H -- Antennas and feedlines
+Subelement 3H - Antennas and feedlines
 
 
 1]  What is meant by the term antenna gain?

@@ -1,4 +1,4 @@
-Subelement 3B -- Radio wave propagation 
+Subelement 3B - Radio wave propagation 
 
 
 1]  What is a selective fading effect? 

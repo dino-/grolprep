@@ -1,4 +1,4 @@
-Subelement 3F -- Practical circuits
+Subelement 3F - Practical circuits
 
 
 1]  What is a linear electronic voltage regulator?
