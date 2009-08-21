@@ -14,7 +14,7 @@ description:         Bar Baz
 category:            Unknown
 tested-with:         GHC>=6.10.4
 
-executable           fequiz
+executable           fequiz.cgi
    main-is:          fequiz.hs
    hs-source-dirs:   src
    build-depends:    base >= 3 && < 5, cgi, hslogger, mtl, old-locale, 
