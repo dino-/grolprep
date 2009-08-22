@@ -30,7 +30,7 @@ isRight = not . isLeft
 
 appName, appVersion, appId :: String
 appName = "fequiz"
-appVersion = "1.0.0.1"
+appVersion = "1.0.0.2"
 appId = printf "%s-%s" appName appVersion
 
 
