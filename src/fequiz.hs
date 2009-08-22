@@ -9,6 +9,7 @@ import Data.Maybe
 import Network.CGI
 import System.Log
 import Text.Printf
+import Text.Regex
 import Text.XHtml.Strict
 
 import Fequiz.Data
@@ -47,8 +48,30 @@ getButtonPressed = do
    return $ foldr mplus Nothing mbfs
 
 
-page :: (HTML a) => a -> Html -> Html
-page t b = header << thetitle << t +++ body << ([h, b])
+{- This function allows us to rely on the cabal data-files mechanism 
+   to generate relative URLs for HTML pages
+-}
+getRelDataFileName :: String -> IO String
+getRelDataFileName s = do
+   fullPath <- getDataFileName s
+   return $ (++) "../" $ maybe s head $
+      matchRegex (mkRegex "(share.*)$") fullPath
+
+
+page :: (HTML a) => a -> Html -> IO Html
+page t b = do
+   cssPath <- getRelDataFileName "css/question.css"
+   return (
+      (header <<
+         thetitle << t
+         +++
+         thelink noHtml ! [href cssPath, rel "stylesheet", 
+             thetype "text/css"]
+      )
+      +++
+      body << ([h, b])
+      )
+
    where h = p << ((printf "%s %s" appName appVersion) :: String)
 
 
@@ -91,9 +114,9 @@ formStart = form << (
 
 formPoseProblem :: Problem -> Html
 formPoseProblem (Problem n q eas) = form << (
-   [ paragraph << ((show n) ++ "] " ++ q)
-   ] ++ (ansControls eas) ++
-   [ submit "btnPose" "Proceed" +++ submit "btnQuit" "Cancel test session"
+   [ paragraph ! [theclass "question"] << ((show n) ++ "] " ++ q)
+   , thediv ! [theclass "answer-box"] << (ansControls eas)
+   , submit "btnPose" "Proceed" +++ submit "btnQuit" "Cancel test session"
    ] )
    where
       ansControls eas' = map f $ zip [0..] $ map extractAnswer eas'
@@ -105,7 +128,8 @@ formPoseProblem (Problem n q eas) = form << (
 formAnswer :: Bool -> Html
 formAnswer correct = form << (
    paragraph << (show correct) +++
-   submit "btnAnswer" "Next question" +++ submit "btnQuit" "Cancel test session"
+   submit "btnAnswer" "Next question" +++
+   submit "btnQuit" "Cancel test session"
    )
 
 
@@ -118,7 +142,9 @@ actionInitialize = do
 
    let c = newCookie appId ""
    deleteCookie c
-   output $ renderHtml $ page appName $ formStart
+
+   startPage <- liftIO $ page appName formStart
+   output $ renderHtml startPage
 
 
 actionSetupSession :: CGI CGIResult
@@ -139,9 +165,12 @@ actionNextProblem session = do
    llog INFO "actionNextProblem"
 
    mbnp <- liftIO $ nextProblem session
-   maybe actionInitialize
-      (output . renderHtml . (page appName) . formPoseProblem)
-      mbnp
+   maybe actionInitialize posePageResult mbnp
+
+   where
+      posePageResult np = do
+         posePage <- liftIO $ page appName $ formPoseProblem np
+         output $ renderHtml $ posePage
 
 
 actionCorrectProblem :: CGI CGIResult
@@ -171,7 +200,8 @@ actionCorrectProblem = do
    let cookie = newCookie appId $ show newSession
    setCookie cookie
 
-   output $ renderHtml $ page appName $ formAnswer correct
+   answerPage <- liftIO $ page appName $ formAnswer correct
+   output $ renderHtml answerPage
 
 
 {- main program

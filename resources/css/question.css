@@ -1,0 +1,8 @@
+.question {
+   border-top: solid 1.0mm;
+}
+
+.answer-box {
+   border-top: solid 0.5mm;
+   border-bottom: solid 1.0mm;
+}
