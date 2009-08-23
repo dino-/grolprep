@@ -8,8 +8,9 @@
 - Can/should I keep the Subelement 3 structure?
 
 - Should I migrate now over to the newer 1, 3 and 8 elements?
+  We actually need to support both. And the new questions are significantly different. Need to look at them very soon.
 
-- What about elements 2, 4, 5...?
+x What about elements 2, 4, 5...? Not at this time.
 
 - Should I now support the questions with images?
 
