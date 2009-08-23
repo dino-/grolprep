@@ -1,8 +1,28 @@
 .question {
    border-top: solid 1.0mm;
+   margin-top: 1.0em;
+   padding-top: 0.5em;
 }
 
-.answer-box {
-   border-top: solid 0.5mm;
-   border-bottom: solid 1.0mm;
+.button {
+   border: none;
+   background: #ccf;
 }
+
+.button:hover {
+   border: none;
+   background: #aad;
+}
+
+.hanging {
+   display: block;
+   float: left;
+   margin: 2px 6px 6px 4px;
+}
+
+label {
+   width: 100px;
+   margin: 2px 4px 6px 4px;
+}
+
+p { clear: left; }

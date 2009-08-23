@@ -92,8 +92,9 @@ nextProblem (Session stype _ scurr _) = do
 -}
 
 formStart :: Html
-formStart = form << (
-   p << "Please select type of study"
+formStart = form <<
+   fieldset << (
+   legend << "Please select type of study"
    +++
    p << select ! [name "file", size "12"] <<
       (   option ! [value "questions/element1", selected] << "Element 1 (170 questions)"
@@ -108,28 +109,35 @@ formStart = form << (
       +++ option ! [value "questions/element8"] << "Element 8 (321 questions)"
       +++ option ! [value "questions/small1"] << "small1 (6 questions)"
       )
-   +++ p << submit "btnStart" "Start study session"
+   +++ p << submit "btnStart" "Start study session" ! [theclass "button"]
    )
 
 
 formPoseProblem :: Problem -> Html
-formPoseProblem (Problem n q eas) = form << (
+formPoseProblem (Problem n q eas) = formCancel +++ form << (
    [ paragraph ! [theclass "question"] << ((show n) ++ "] " ++ q)
-   , thediv ! [theclass "answer-box"] << (ansControls eas)
-   , submit "btnPose" "Proceed" +++ submit "btnQuit" "Cancel test session"
+   , thediv << (ansControls eas)
+   , submit "btnPose" "Proceed" ! [theclass "button"]
    ] )
    where
       ansControls eas' = map f $ zip [0..] $ map extractAnswer eas'
          where
             f :: (Int, String) -> Html
-            f (n', a) = paragraph << ((radio "answer" (show n')) +++ a)
+            f (n', a) =
+               p << ((radio "answer" (show n') ! [theclass "hanging"])
+                    +++ label << a)
 
 
 formAnswer :: Bool -> Html
-formAnswer correct = form << (
+formAnswer correct = formCancel +++ form << (
    paragraph << (show correct) +++
-   submit "btnAnswer" "Next question" +++
-   submit "btnQuit" "Cancel test session"
+   submit "btnAnswer" "Next question" ! [theclass "button"]
+   )
+
+
+formCancel :: Html
+formCancel = form << (
+   submit "btnQuit" "Cancel test session" ! [theclass "button"]
    )
 
 
