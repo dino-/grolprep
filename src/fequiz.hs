@@ -21,24 +21,42 @@ import Paths_fequiz
 {- Utility functions and definitions
 -}
 
+{- Functions for Either similar to Data.Maybe.isJust and friends
+-}
 isLeft :: Either a b -> Bool
 isLeft = either (const True) (const False)
-
 
 isRight :: Either a b -> Bool
 isRight = not . isLeft
 
 
+{- Some identifying info for this application
+-}
 appName, appVersion, appId :: String
 appName = "fequiz"
 appVersion = "1.0.0.2"
 appId = printf "%s-%s" appName appVersion
 
 
+{- Convenience wrapper for reading the specific named cookie for this 
+   application
+-}
 readSessionCookie :: (MonadCGI m) => m (Maybe Session)
 readSessionCookie = readCookie appId
 
 
+{- When a specific form submit button is pressed, and it has a name 
+   attribute, that attribute becomes a key in the request with the 
+   value attribute as the value. This can be used to determine if a 
+   button was pressed at all to generate the request and if so which 
+   one. 
+
+   But it's bad to rely on the hard-coded button's display text as it 
+   may change.
+
+   This function checks for the existance of a specific set of buttons 
+   and if it's there returns the key, not the value.
+-}
 getButtonPressed :: (MonadCGI m) => m (Maybe String)
 getButtonPressed = do
    let keys = ["btnStart", "btnPose", "btnAnswer", "btnQuit"]
@@ -49,7 +67,10 @@ getButtonPressed = do
 
 
 {- This function allows us to rely on the cabal data-files mechanism 
-   to generate relative URLs for HTML pages
+   to generate relative URLs for HTML pages.
+
+   It's a bit of a hack, but this returns the part of the path starting 
+   with the share directory and continuing to the end.
 -}
 getRelDataFileName :: String -> IO String
 getRelDataFileName s = do
