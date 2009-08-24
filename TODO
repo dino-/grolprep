@@ -1,23 +1,49 @@
-- Need to set the cookie expiration time, let's say a week
+-----
+beta
 
-- What about special http server configuration? Maybe a script in util
+- Add correct/incorrect info to the answer results page
 
-- Apache conf: /etc/httpd/conf/httpd.conf
-  DocumentRoot: /srv/http/
-
-- Can/should I keep the Subelement 3 structure?
-
-- Should I migrate now over to the newer 1, 3 and 8 elements?
-  We actually need to support both. And the new questions are significantly different. Need to look at them very soon.
-
-x What about elements 2, 4, 5...? Not at this time.
-
-- Should I now support the questions with images?
+- Add running stats to each question display
 
 - Change the session and code to do the passes style of study
 
-- Fill out missing cabal info
+- Add the randomization machinery
+
+- Need a real conf file to set things like logging, etc
+
+- Include newer elements 1, 3 and 8. This will involve changes to the data parsing.
+  Will probably want to parse data into our own format and store it as serialized Haskell data.
 
 - Stop calling the project fequiz2, name the directory fequiz-web for now?
 
-- Need a real conf file to set things like logging, etc
+
+-----
+release
+
+- Add an end of test results page
+
+- Need to set the cookie expiration time, let's say a week
+
+- Fill out missing cabal info
+
+- Work on the styles to make everything look and work better
+
+- Need a feedback form for reporting problems. Have this do something simple at first, append data to a file on the server.
+
+- More explanatory information on the start page. Maybe links to the VT aviation site and also the FCC?
+
+
+-----
+feature additions
+
+- Should I now support the questions with images?
+
+- Add elements 2, 4, 5... that are not used by the VT aviation people at all, but may be useful to the general population
+
+
+-----
+general TODO thoughts
+
+- What about special http server configuration? Maybe a script in util. At the very least, should document this better in the README or something.
+  Apache conf: /etc/httpd/conf/httpd.conf
+  DocumentRoot: /srv/http/
