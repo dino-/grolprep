@@ -149,11 +149,20 @@ formPoseProblem (Problem n q eas) = formCancel +++ form << (
                     +++ label << a)
 
 
-formAnswer :: Bool -> Html
-formAnswer correct = formCancel +++ form << (
-   paragraph << (show correct) +++
-   submit "btnAnswer" "Next question" ! [theclass "button"]
-   )
+formAnswer :: Int -> Problem -> Html
+formAnswer g (Problem n q eas) = formCancel +++ form << (
+   [ paragraph ! [theclass "question"] << ((show n) ++ "] " ++ q)
+   , thediv << (ansLines eas)
+   , submit "btnAnswer" "Next question" ! [theclass "button"]
+   ] )
+   where
+      ansLines eas' = map f $ zip [0..] eas'
+         where
+            f :: (Int, Either String String) -> Html
+            f (n', Left  a)
+               | n' == g    = p ! [theclass "incorrect-ans"] << a
+               | otherwise  = p << a
+            f (_ , Right a) = p ! [theclass "correct-ans"] << a
 
 
 formCancel :: Html
@@ -218,8 +227,7 @@ actionCorrectProblem = do
 
    answer <- liftM fromJust $ readInput "answer"
 
-   let correct = isRight $ as !! answer
-   let newAnsList = case correct of
+   let newAnsList = case (isRight $ as !! answer) of
          True  -> setBit ansList curr
          False -> clearBit ansList curr
 
@@ -229,7 +237,7 @@ actionCorrectProblem = do
    let cookie = newCookie appId $ show newSession
    setCookie cookie
 
-   answerPage <- liftIO $ page appName $ formAnswer correct
+   answerPage <- liftIO $ page appName $ formAnswer answer problem
    output $ renderHtml answerPage
 
 

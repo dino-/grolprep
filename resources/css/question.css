@@ -26,3 +26,8 @@ label {
 }
 
 p { clear: left; }
+
+.correct-ans { color: green; }
+
+.incorrect-ans { color: red; }
+
