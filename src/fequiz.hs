@@ -151,11 +151,16 @@ formPoseProblem (Problem n q eas) = formCancel +++ form << (
 
 formAnswer :: Int -> Problem -> Html
 formAnswer g (Problem n q eas) = formCancel +++ form << (
-   [ paragraph ! [theclass "question"] << ((show n) ++ "] " ++ q)
+   [ correctness (eas !! g)
+   , paragraph ! [theclass "question"] << ((show n) ++ "] " ++ q)
    , thediv << (ansLines eas)
    , submit "btnAnswer" "Next question" ! [theclass "button"]
    ] )
    where
+      correctness (Right _) = p ! [theclass "correct-ans"] << "CORRECT"
+      correctness _         =
+         p ! [theclass "incorrect-ans"] << "INCORRECT"
+
       ansLines eas' = map f $ zip [0..] eas'
          where
             f :: (Int, Either String String) -> Html
