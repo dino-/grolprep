@@ -155,8 +155,8 @@ headingStats (Session _ pass passCurr passTot _ list) =
 
 
 formPoseProblem :: Problem -> Html
-formPoseProblem (Problem n q eas) = form << (
-   [ paragraph ! [theclass "question"] << ((show n) ++ "] " ++ q)
+formPoseProblem (Problem _ q eas) = form << (
+   [ p ! [theclass "question"] << q
    , thediv << (ansControls eas)
    , submit "btnPose" "Proceed" ! [theclass "button"]
    ] )
@@ -170,9 +170,9 @@ formPoseProblem (Problem n q eas) = form << (
 
 
 formAnswer :: Int -> Problem -> Html
-formAnswer g (Problem n q eas) = form << (
+formAnswer g (Problem _ q eas) = form << (
    [ correctness (eas !! g)
-   , paragraph ! [theclass "question"] << ((show n) ++ "] " ++ q)
+   , p ! [theclass "question"] << q
    , thediv << (ansLines eas)
    , submit "btnAnswer" "Next question" ! [theclass "button"]
    ] )
