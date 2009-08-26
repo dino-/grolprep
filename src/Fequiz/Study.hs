@@ -60,7 +60,7 @@ formStart = form <<
       +++ option ! [value "questions/element8"] << "Element 8 (321 questions)"
       +++ option ! [value "questions/small1"] << "small1 (6 questions)"
       )
-   +++ p << submit "btnStart" "Start study session" ! [theclass "button"]
+   +++ p << submit (show ActStart) "Start study session" ! [theclass "button"]
    )
 
 
@@ -83,7 +83,7 @@ formPoseProblem :: Problem -> Html
 formPoseProblem (Problem _ q eas) = form << (
    [ p ! [theclass "question"] << q
    , thediv << (ansControls eas)
-   , submit "btnPose" "Proceed" ! [theclass "button"]
+   , submit (show ActPose) "Proceed" ! [theclass "button"]
    ] )
    where
       ansControls eas' = map f $ zip [0..] $ map extractAnswer eas'
@@ -99,7 +99,7 @@ formAnswer g (Problem _ q eas) = form << (
    [ correctness (eas !! g)
    , p ! [theclass "question"] << q
    , thediv << (ansLines eas)
-   , submit "btnAnswer" "Next question" ! [theclass "button"]
+   , submit (show ActAnswer) "Next question" ! [theclass "button"]
    ] )
    where
       correctness (Right _) = p ! [theclass "correct-ans"] << "CORRECT"
@@ -117,7 +117,7 @@ formAnswer g (Problem _ q eas) = form << (
 
 formCancel :: Html
 formCancel = form << (
-   submit "btnQuit" "Cancel test session" ! [theclass "button"]
+   submit (show ActQuit) "Cancel test session" ! [theclass "button"]
    )
 
 

@@ -17,6 +17,27 @@ import Fequiz.Session
 import Paths_fequiz
 
 
+{- This represents a type-safe enumeration of the possible form actions
+   that are responded to by this application
+
+   Serialized values of this type are the submit button identifiers,
+   all of this achieved with read and show for safety.
+-}
+data Action
+   = ActStart
+   | ActPose
+   | ActAnswer
+   | ActQuit
+   deriving (Read, Show)
+
+
+{- If you add a constructor the the Action type above, you MUST add
+   it to the list of constructed datum below.
+-}
+allActions :: [Action]
+allActions = [ActStart, ActPose, ActAnswer, ActQuit]
+
+
 {- Some identifying info for this application
 -}
 appName, appVersion, appId :: String
@@ -51,13 +72,15 @@ setSessionCookie session = do
 
    This function checks for the existance of a specific set of buttons 
    and if it's there returns the key, not the value.
+
+   This key, in our application, is also an instance of the Action
+   type.
 -}
-getButtonPressed :: (MonadCGI m) => m (Maybe String)
+getButtonPressed :: (MonadCGI m) => m (Maybe Action)
 getButtonPressed = do
-   let keys = ["btnStart", "btnPose", "btnAnswer", "btnQuit"]
-   mbvs <- mapM getInput keys
+   mbvs <- mapM getInput $ map show allActions
    let mbfs = zipWith (\i a -> maybe Nothing (const $ Just a) i)
-         mbvs keys
+         mbvs allActions
    return $ foldr mplus Nothing mbfs
 
 

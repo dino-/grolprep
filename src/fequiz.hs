@@ -30,12 +30,12 @@ cgiMain = do
 
    -- Map cookie status and form button pressed into actions
    case (mbCookie, mbForm) of
-      (Nothing,      Nothing         ) -> actionInitialize
-      (Nothing,      Just "btnStart" ) -> actionSetupSession
-      (_,            Just "btnPose"  ) -> actionCorrectProblem
-      (_,            Just "btnQuit"  ) -> actionInitialize
-      (Just session, _               ) -> actionNextProblem session
-      (_,            _               ) -> actionInitialize
+      (Nothing,      Nothing       ) -> actionInitialize
+      (Nothing,      Just ActStart ) -> actionSetupSession
+      (_,            Just ActPose  ) -> actionCorrectProblem
+      (_,            Just ActQuit  ) -> actionInitialize
+      (Just session, _             ) -> actionNextProblem session
+      (_,            _             ) -> actionInitialize
 
 
 main :: IO ()
