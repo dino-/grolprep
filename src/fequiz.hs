@@ -3,7 +3,6 @@
 -- Author: Dino Morelli <dino@ui3.info>
 
 import Control.Monad
-import Data.Bits
 import Data.List
 import Data.Maybe
 import Network.CGI
@@ -21,13 +20,10 @@ import Paths_fequiz
 {- Utility functions and definitions
 -}
 
-{- Functions for Either similar to Data.Maybe.isJust and friends
+{- Remove an indexed element from a list
 -}
-isLeft :: Either a b -> Bool
-isLeft = either (const True) (const False)
-
-isRight :: Either a b -> Bool
-isRight = not . isLeft
+removeFromList :: Int -> [a] -> [a]
+removeFromList i xs = take i xs ++ drop (i + 1) xs
 
 
 {- Some identifying info for this application
@@ -43,6 +39,14 @@ appId = printf "%s-%s" appName appVersion
 -}
 readSessionCookie :: (MonadCGI m) => m (Maybe Session)
 readSessionCookie = readCookie appId
+
+
+{- Convenience wrapper for setting a new session cookie
+-}
+setSessionCookie :: (MonadCGI m) => Session -> m ()
+setSessionCookie session = do
+   let cookie = newCookie appId $ show session
+   setCookie cookie
 
 
 {- When a specific form submit button is pressed, and it has a name 
@@ -97,19 +101,19 @@ page t b = do
 
 
 nextProblem :: Session -> IO (Maybe Problem)
-nextProblem (Session stype _ scurr _) = do
+nextProblem (Session stype _ _ _ scurr slist) = do
    let (Set questionsPath) = stype
 
    eps <- liftM parseProblems $
       getDataFileName questionsPath >>= readFile
    let ps = either undefined snd eps
 
-   return $ if (scurr < length ps)
-      then Just (ps !! scurr)
+   return $ if (scurr < length slist)
+      then Just (ps !! (slist !! scurr))
       else Nothing
 
 
-{- Forms
+{- HTML pages and forms 
 -}
 
 formStart :: Html
@@ -132,6 +136,21 @@ formStart = form <<
       )
    +++ p << submit "btnStart" "Start study session" ! [theclass "button"]
    )
+
+
+headingStats :: Session -> Html
+headingStats (Session _ pass passCurr passTot _ list) =
+   p << (printf "Pass %d, question %d of %d total in this pass"
+      pass passCurr passTot :: String)
+   +++
+   p << (printf "%d (%0.1f%%) correct so far for this pass"
+      correct perc :: String)
+
+   where
+      correct = passTot - (length list)
+
+      perc :: Float
+      perc = (fromIntegral correct / fromIntegral passTot) * 100
 
 
 formPoseProblem :: Problem -> Html
@@ -196,34 +215,57 @@ actionSetupSession = do
 
    questionsPath <- liftM fromJust $ getInput "file"
 
-   let session = Session (Set questionsPath) Nothing 0 0
-   let cookie = newCookie appId $ show session
-   setCookie cookie
+   numQuestions <- liftIO $ do
+      eps <- liftM parseProblems $
+         getDataFileName questionsPath >>= readFile
+      let ps = either undefined snd eps
+      return $ length ps
+
+   let questionNumbers = [0..(numQuestions - 1)]
+   let session = Session (Set questionsPath) 1 0
+         (length questionNumbers) 0 questionNumbers
+   setSessionCookie session
 
    actionNextProblem session
 
 
 actionNextProblem :: Session -> CGI CGIResult
-actionNextProblem session = do
+actionNextProblem session@(Session _ pass passCurr _ _ list) = do
    llog INFO "actionNextProblem"
 
    mbnp <- liftIO $ nextProblem session
-   maybe actionInitialize posePageResult mbnp
+
+   case (mbnp, null list) of
+      (Just np, _    ) -> do
+         let newSession =
+               session { sessPassCurr = passCurr + 1 }
+         setSessionCookie newSession
+         posePageResult newSession np
+      (_      , True ) -> actionInitialize
+      (_      , False) -> do
+         let newSession =
+               session
+               { sessPass = pass + 1
+               , sessPassCurr = 0
+               , sessPassTot = (length list)
+               , sessCurr = 0
+               }
+         setSessionCookie newSession
+
+         actionNextProblem newSession
 
    where
-      posePageResult np = do
+      posePageResult ns np = do
          posePage <- liftIO $ page appName $ formPoseProblem np
-         output $ renderHtml $ posePage
+         output $ renderHtml $ ((headingStats ns) +++ posePage)
 
 
 actionCorrectProblem :: CGI CGIResult
 actionCorrectProblem = do
    llog INFO "actionCorrectProblem"
 
-   -- Here we'll add results to the state and setCookie
-
    -- Get current session and extract some things from it
-   session@(Session _ _ curr ansList)
+   session@(Session _ _ _ _ curr list)
       <- liftM fromJust readSessionCookie
 
    -- Evaluate the user's answer
@@ -232,18 +274,17 @@ actionCorrectProblem = do
 
    answer <- liftM fromJust $ readInput "answer"
 
-   let newAnsList = case (isRight $ as !! answer) of
-         True  -> setBit ansList curr
-         False -> clearBit ansList curr
+   let (newCurr, newList) = case (as !! answer) of
+         Right _ -> (curr, removeFromList curr list)
+         Left _  -> (curr + 1, list)
 
    -- Make the new session and set it
    let newSession =
-         session { sessCurr = curr + 1 , sessResults = newAnsList }
-   let cookie = newCookie appId $ show newSession
-   setCookie cookie
+         session { sessCurr = newCurr , sessList = newList }
+   setSessionCookie newSession
 
    answerPage <- liftIO $ page appName $ formAnswer answer problem
-   output $ renderHtml answerPage
+   output $ renderHtml ((headingStats newSession) +++ answerPage)
 
 
 {- main program
