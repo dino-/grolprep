@@ -1,12 +1,7 @@
 -----
 beta
 
-- Reorganize the quiz-driving code into its own module and do something better with the truly common util functions.
-
 - Add the randomization machinery
-
-- Redesign the way getButtonPressed works with types instead of the strings for btn*  Instead, these strings can be constructors for a type. This will provide more static type checkable correctness for the html forms.
-   data Action = ActStart | ActPose ...
 
 - Must change to storing state locally on the server. It's just going to be too big for the cookie very soon.
 
