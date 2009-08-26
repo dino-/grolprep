@@ -5,6 +5,8 @@ beta
 
 - Change the session and code to do the passes style of study
 
+- Reorganize the quiz-driving code into its own module and do something better with the truly common util functions.
+
 - Add the randomization machinery
 
 - Need a real conf file to set things like logging, etc
@@ -13,6 +15,9 @@ beta
   Will probably want to parse data into our own format and store it as serialized Haskell data.
 
 - Stop calling the project fequiz2, name the directory fequiz-web for now?
+  May be leaving this alone and sticking with fequiz for a name.
+
+- Redesign the way getButtonPressed works with types instead of the strings for btn*  Instead, these strings can be constructors for a type. Think about this, it may provide more static type checkable correctness for the html forms.
 
 
 -----
@@ -30,11 +35,15 @@ release
 
 - More explanatory information on the start page. Maybe links to the VT aviation site and also the FCC?
 
+- Generate a statically linked binary
+
 
 -----
 feature additions
 
-- Should I now support the questions with images?
+- Could the session data be stored on Amazon S3? How about the question data? Think about it.
+
+- Support the questions with images, there are a couple.
 
 - Add elements 2, 4, 5... that are not used by the VT aviation people at all, but may be useful to the general population
 
@@ -45,3 +54,5 @@ general TODO thoughts
 - What about special http server configuration? Maybe a script in util. At the very least, should document this better in the README or something.
   Apache conf: /etc/httpd/conf/httpd.conf
   DocumentRoot: /srv/http/
+
+- May want to read that old old page about avoiding SQL injection attacks with Haskell. Track it down.
