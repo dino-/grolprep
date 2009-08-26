@@ -83,21 +83,22 @@ getRelDataFileName s = do
       matchRegex (mkRegex "(share.*)$") fullPath
 
 
-page :: (HTML a) => a -> Html -> IO Html
-page t b = do
+{- Convenience function to deal with some of the repetitive parts
+   included in every HTML document
+-}
+page :: Html -> IO Html
+page b = do
    cssPath <- getRelDataFileName "css/question.css"
    return (
       (header <<
-         thetitle << t
+         thetitle << appId
          +++
          thelink noHtml ! [href cssPath, rel "stylesheet", 
              thetype "text/css"]
       )
       +++
-      body << ([h, b])
+      body << ([(p << appId), b])
       )
-
-   where h = p << ((printf "%s %s" appName appVersion) :: String)
 
 
 nextProblem :: Session -> IO (Maybe Problem)
@@ -154,7 +155,7 @@ headingStats (Session _ pass passCurr passTot _ list) =
 
 
 formPoseProblem :: Problem -> Html
-formPoseProblem (Problem n q eas) = formCancel +++ form << (
+formPoseProblem (Problem n q eas) = form << (
    [ paragraph ! [theclass "question"] << ((show n) ++ "] " ++ q)
    , thediv << (ansControls eas)
    , submit "btnPose" "Proceed" ! [theclass "button"]
@@ -169,7 +170,7 @@ formPoseProblem (Problem n q eas) = formCancel +++ form << (
 
 
 formAnswer :: Int -> Problem -> Html
-formAnswer g (Problem n q eas) = formCancel +++ form << (
+formAnswer g (Problem n q eas) = form << (
    [ correctness (eas !! g)
    , paragraph ! [theclass "question"] << ((show n) ++ "] " ++ q)
    , thediv << (ansLines eas)
@@ -205,7 +206,7 @@ actionInitialize = do
    let c = newCookie appId ""
    deleteCookie c
 
-   startPage <- liftIO $ page appName formStart
+   startPage <- liftIO $ page formStart
    output $ renderHtml startPage
 
 
@@ -256,8 +257,9 @@ actionNextProblem session@(Session _ pass passCurr _ _ list) = do
 
    where
       posePageResult ns np = do
-         posePage <- liftIO $ page appName $ formPoseProblem np
-         output $ renderHtml $ ((headingStats ns) +++ posePage)
+         posePage <- liftIO $ page $ formCancel +++ 
+            (headingStats ns) +++ formPoseProblem np
+         output $ renderHtml posePage
 
 
 actionCorrectProblem :: CGI CGIResult
@@ -283,8 +285,9 @@ actionCorrectProblem = do
          session { sessCurr = newCurr , sessList = newList }
    setSessionCookie newSession
 
-   answerPage <- liftIO $ page appName $ formAnswer answer problem
-   output $ renderHtml ((headingStats newSession) +++ answerPage)
+   answerPage <- liftIO $ page $ formCancel +++
+      (headingStats newSession) +++ formAnswer answer problem
+   output $ renderHtml answerPage
 
 
 {- main program
