@@ -1,15 +1,20 @@
 -----
 beta
 
-- Add running stats to each question display
-
-- Change the session and code to do the passes style of study
-
 - Reorganize the quiz-driving code into its own module and do something better with the truly common util functions.
 
 - Add the randomization machinery
 
+- Redesign the way getButtonPressed works with types instead of the strings for btn*  Instead, these strings can be constructors for a type. This will provide more static type checkable correctness for the html forms.
+   data Action = ActStart | ActPose ...
+
+- Must change to storing state locally on the server. It's just going to be too big for the cookie very soon.
+
+- Add the test simulation mode that randomly picks the 76 questions
+
 - Need a real conf file to set things like logging, etc
+
+- Add an end of test results page
 
 - Include newer elements 1, 3 and 8. This will involve changes to the data parsing.
   Will probably want to parse data into our own format and store it as serialized Haskell data.
@@ -17,13 +22,9 @@ beta
 - Stop calling the project fequiz2, name the directory fequiz-web for now?
   May be leaving this alone and sticking with fequiz for a name.
 
-- Redesign the way getButtonPressed works with types instead of the strings for btn*  Instead, these strings can be constructors for a type. Think about this, it may provide more static type checkable correctness for the html forms.
-
 
 -----
 release
-
-- Add an end of test results page
 
 - Need to set the cookie expiration time, let's say a week
 
