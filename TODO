@@ -14,9 +14,6 @@ beta
 - Include newer elements 1, 3 and 8. This will involve changes to the data parsing.
   Will probably want to parse data into our own format and store it as serialized Haskell data.
 
-- Stop calling the project fequiz2, name the directory fequiz-web for now?
-  May be leaving this alone and sticking with fequiz for a name.
-
 
 -----
 release
