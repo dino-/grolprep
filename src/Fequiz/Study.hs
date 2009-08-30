@@ -17,6 +17,7 @@ import Fequiz.Common
 import Fequiz.Data
 import Fequiz.Log
 import Fequiz.Session
+import Fequiz.Shuffle
 import Paths_fequiz
 
 
@@ -27,7 +28,7 @@ removeFromList i xs = take i xs ++ drop (i + 1) xs
 
 
 nextProblem :: Session -> IO (Maybe Problem)
-nextProblem (Session stype _ _ _ scurr slist) = do
+nextProblem (Session stype _ _ _ _ scurr slist) = do
    let (Set questionsPath) = stype
 
    eps <- liftM parseProblems $
@@ -60,12 +61,19 @@ formStart = form <<
       +++ option ! [value "questions/element8"] << "Element 8 (321 questions)"
       +++ option ! [value "questions/small1"] << "small1 (6 questions)"
       )
+   +++ p << (
+      checkbox "randQ" "" +++
+      label << "Ask the questions in a random order"
+      )
+   +++ p << (checkbox "randA" "" +++
+      label << "Randomly order the answers of each question"
+      )
    +++ p << submit (show ActStart) "Start study session" ! [theclass "button"]
    )
 
 
 headingStats :: Session -> Html
-headingStats (Session _ pass passCurr passTot _ list) =
+headingStats (Session _ _ pass passCurr passTot _ list) =
    p << (printf "Pass %d, question %d of %d total in this pass"
       pass passCurr passTot :: String)
    +++
@@ -79,19 +87,27 @@ headingStats (Session _ pass passCurr passTot _ list) =
       perc = (fromIntegral correct / fromIntegral passTot) * 100
 
 
-formPoseProblem :: Problem -> Html
-formPoseProblem (Problem _ q eas) = form << (
-   [ p ! [theclass "question"] << q
-   , thediv << (ansControls eas)
-   , submit (show ActPose) "Proceed" ! [theclass "button"]
-   ] )
+formPoseProblem :: Bool -> Problem -> IO Html
+formPoseProblem randA (Problem _ q eas) = do
+   nas <- orderer randA $ zip [0..] $ map extractAnswer eas
+   return $ formPoseProblem' q nas
+
    where
-      ansControls eas' = map f $ zip [0..] $ map extractAnswer eas'
+      orderer True  = shuffle
+      orderer False = return
+
+      formPoseProblem' q' as = form << (
+         [ p ! [theclass "question"] << q'
+         , thediv << (ansControls as)
+         , submit (show ActPose) "Proceed" ! [theclass "button"]
+         ] )
          where
-            f :: (Int, String) -> Html
-            f (n', a) =
-               p << ((radio "answer" (show n') ! [theclass "hanging"])
-                    +++ label << a)
+            ansControls as' = map f as'
+               where
+                  f :: (Int, String) -> Html
+                  f (n', a) =
+                     p << ((radio "answer" (show n') ! [theclass "hanging"])
+                          +++ label << a)
 
 
 formAnswer :: Int -> Problem -> Html
@@ -140,6 +156,7 @@ actionSetupSession = do
    llog INFO "actionSetupSession"
 
    questionsPath <- liftM fromJust $ getInput "file"
+   randA <- liftM (maybe False (const True)) $ getInput "randA"
 
    numQuestions <- liftIO $ do
       eps <- liftM parseProblems $
@@ -147,8 +164,10 @@ actionSetupSession = do
       let ps = either undefined snd eps
       return $ length ps
 
-   let questionNumbers = [0..(numQuestions - 1)]
-   let session = Session (Set questionsPath) 1 0
+   questionOrderer <- liftM (maybe return (const shuffle))
+      $ getInput "randQ"
+   questionNumbers <- liftIO $ questionOrderer [0..(numQuestions - 1)]
+   let session = Session (Set questionsPath) randA 1 0
          (length questionNumbers) 0 questionNumbers
    setSessionCookie session
 
@@ -156,7 +175,7 @@ actionSetupSession = do
 
 
 actionNextProblem :: Session -> CGI CGIResult
-actionNextProblem session@(Session _ pass passCurr _ _ list) = do
+actionNextProblem session@(Session _ randA pass passCurr _ _ list) = do
    llog INFO "actionNextProblem"
 
    mbnp <- liftIO $ nextProblem session
@@ -182,8 +201,9 @@ actionNextProblem session@(Session _ pass passCurr _ _ list) = do
 
    where
       posePageResult ns np = do
+         fpp <- liftIO $ formPoseProblem randA np
          posePage <- liftIO $ page $ formCancel +++ 
-            (headingStats ns) +++ formPoseProblem np
+            (headingStats ns) +++ fpp
          output $ renderHtml posePage
 
 
@@ -192,7 +212,7 @@ actionCorrectProblem = do
    llog INFO "actionCorrectProblem"
 
    -- Get current session and extract some things from it
-   session@(Session _ _ _ _ curr list)
+   session@(Session _ _ _ _ _ curr list)
       <- liftM fromJust readSessionCookie
 
    -- Evaluate the user's answer

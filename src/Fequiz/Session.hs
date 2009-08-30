@@ -18,6 +18,7 @@ data StudyType
 
 data Session = Session
    { sessType     :: StudyType
+   , sessRandA    :: Bool
    , sessPass     :: Int
    , sessPassCurr :: Int
    , sessPassTot  :: Int

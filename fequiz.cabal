@@ -26,5 +26,5 @@ executable           fequiz.cgi
    main-is:          fequiz.hs
    hs-source-dirs:   src
    build-depends:    base >= 3 && < 5, cgi, hslogger, mtl, old-locale, 
-                     parsec, regex-compat, time, xhtml
+                     parsec, random, regex-compat, time, xhtml
    ghc-options:      -Wall
