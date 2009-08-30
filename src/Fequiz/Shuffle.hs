@@ -9,7 +9,6 @@ module Fequiz.Shuffle
 -- Clever shuffle code from dolio on #haskell, thanks!
 
 import Control.Monad
-import System.Environment
 import System.Random
 
 
