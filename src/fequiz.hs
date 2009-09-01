@@ -9,13 +9,14 @@ import System.Log
 
 import Fequiz.Common
 import Fequiz.Log
+import Fequiz.Session
 import Fequiz.Study
 
 
 {- This is sort of our main event entry point. The web application
    starts here and all form submits come through here.
 -}
-cgiMain :: CGI CGIResult
+cgiMain :: App CGIResult
 cgiMain = do
    qs <- queryString
    llog DEBUG $ "query string: " ++ qs
@@ -41,4 +42,4 @@ cgiMain = do
 main :: IO ()
 main = do
    initLogging "/var/tmp/fequiz.log" DEBUG
-   runCGI $ handleErrors cgiMain
+   runApp cgiMain

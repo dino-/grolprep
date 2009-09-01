@@ -147,7 +147,7 @@ formCancel = form << (
 {- Action handlers
 -}
 
-actionInitialize :: CGI CGIResult
+actionInitialize :: App CGIResult
 actionInitialize = do
    llog INFO "actionInitialize"
 
@@ -158,7 +158,7 @@ actionInitialize = do
    output $ renderHtml startPage
 
 
-actionSetupSession :: CGI CGIResult
+actionSetupSession :: App CGIResult
 actionSetupSession = do
    llog INFO "actionSetupSession"
 
@@ -181,7 +181,7 @@ actionSetupSession = do
    actionNextProblem session
 
 
-actionNextProblem :: Session -> CGI CGIResult
+actionNextProblem :: Session -> App CGIResult
 actionNextProblem session = do
    llog INFO "actionNextProblem"
 
@@ -219,7 +219,7 @@ actionNextProblem session = do
          output $ renderHtml posePage
 
 
-actionCorrectProblem :: CGI CGIResult
+actionCorrectProblem :: App CGIResult
 actionCorrectProblem = do
    llog INFO "actionCorrectProblem"
 
