@@ -21,22 +21,21 @@ cgiMain = do
    qs <- queryString
    llog DEBUG $ "query string: " ++ qs
 
-   -- Extract the cookie
-   mbCookie <- readSessionCookie
-   llog DEBUG $ "cookie: " ++ show mbCookie
+   mbSession <- getSession
+   llog DEBUG $ "session: " ++ show mbSession
 
    -- Figure out which form button was used for submit
    mbForm <- getButtonPressed
    llog DEBUG $ "form button: " ++ show mbForm
 
-   -- Map cookie status and form button pressed into actions
-   case (mbCookie, mbForm) of
-      (Nothing,      Nothing       ) -> actionInitialize
-      (Nothing,      Just ActStart ) -> actionSetupSession
-      (_,            Just ActPose  ) -> actionCorrectProblem
-      (_,            Just ActQuit  ) -> actionInitialize
-      (Just session, _             ) -> actionNextProblem session
-      (_,            _             ) -> actionInitialize
+   -- Map session status and form button pressed into actions
+   case (mbSession, mbForm) of
+      (Nothing, Nothing       ) -> actionInitialize
+      (Nothing, Just ActStart ) -> actionSetupSession
+      (_,       Just ActPose  ) -> actionCorrectProblem
+      (_,       Just ActQuit  ) -> actionInitialize
+      (Just _,  _             ) -> actionNextProblem
+      (_,       _             ) -> actionInitialize
 
 
 main :: IO ()

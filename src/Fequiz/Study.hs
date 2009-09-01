@@ -151,8 +151,7 @@ actionInitialize :: App CGIResult
 actionInitialize = do
    llog INFO "actionInitialize"
 
-   let c = newCookie appId ""
-   deleteCookie c
+   deleteSession
 
    startPage <- liftIO $ page formStart
    output $ renderHtml startPage
@@ -176,14 +175,16 @@ actionSetupSession = do
    questionNumbers <- liftIO $ questionOrderer [0..(numQuestions - 1)]
    let session = Session (Set questionsPath) randA 1 0
          (length questionNumbers) 0 questionNumbers
-   setSessionCookie session
+   putSession session
 
-   actionNextProblem session
+   actionNextProblem
 
 
-actionNextProblem :: Session -> App CGIResult
-actionNextProblem session = do
+actionNextProblem :: App CGIResult
+actionNextProblem = do
    llog INFO "actionNextProblem"
+
+   session <- liftM fromJust getSession
 
    let randA = sessRandA session
    let pass = sessPass session
@@ -196,7 +197,7 @@ actionNextProblem session = do
       (Just np, _    ) -> do
          let newSession =
                session { sessPassCurr = passCurr + 1 }
-         setSessionCookie newSession
+         putSession newSession
          posePageResult randA newSession np
       (_      , True ) -> actionInitialize
       (_      , False) -> do
@@ -207,9 +208,9 @@ actionNextProblem session = do
                , sessPassTot = (length list)
                , sessCurr = 0
                }
-         setSessionCookie newSession
+         putSession newSession
 
-         actionNextProblem newSession
+         actionNextProblem
 
    where
       posePageResult r ns np = do
@@ -224,7 +225,7 @@ actionCorrectProblem = do
    llog INFO "actionCorrectProblem"
 
    -- Get current session and extract some things from it
-   session <- liftM fromJust readSessionCookie
+   session <- liftM fromJust getSession
    let curr = sessCurr session
    let list = sessList session
 
@@ -241,7 +242,7 @@ actionCorrectProblem = do
    -- Make the new session and set it
    let newSession =
          session { sessCurr = newCurr , sessList = newList }
-   setSessionCookie newSession
+   putSession newSession
 
    answerPage <- liftIO $ page $ formCancel +++
       (headingStats newSession) +++ formAnswer answer problem

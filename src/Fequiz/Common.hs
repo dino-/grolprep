@@ -13,7 +13,6 @@ import Text.Printf
 import Text.Regex
 import Text.XHtml.Strict
 
-import Fequiz.Session
 import Paths_fequiz
 
 
@@ -44,21 +43,6 @@ appName, appVersion, appId :: String
 appName = "fequiz"
 appVersion = "1.0.0.4"
 appId = printf "%s-%s" appName appVersion
-
-
-{- Convenience wrapper for reading the specific named cookie for this 
-   application
--}
-readSessionCookie :: (MonadCGI m) => m (Maybe Session)
-readSessionCookie = readCookie appId
-
-
-{- Convenience wrapper for setting a new session cookie
--}
-setSessionCookie :: (MonadCGI m) => Session -> m ()
-setSessionCookie session = do
-   let cookie = newCookie appId $ show session
-   setCookie cookie
 
 
 {- When a specific form submit button is pressed, and it has a name 

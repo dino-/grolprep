@@ -9,14 +9,18 @@
 module Fequiz.Session
    ( StudyType (..), Session (..)
    , App, runApp
+   , getSession, putSession, deleteSession
    )
    where
 
 import Control.Monad.State
+import Data.Maybe
 import Network.CGI
 import Network.CGI.Monad
 import Network.CGI.Protocol
 import System.IO
+
+import Fequiz.Common
 
 
 data StudyType
@@ -55,3 +59,24 @@ runApp (App a) = do
    env <- getCGIVars
    hRunCGI env stdin stdout (runCGIT (evalStateT a Nothing))
    return ()
+
+
+getSession :: App (Maybe Session)
+getSession = do
+   ms <- get
+   when (isNothing ms) $ (readCookie appId) >>= put
+   get
+
+
+putSession :: Session -> App ()
+putSession s = do
+   let cookie = newCookie appId $ show s
+   setCookie cookie
+   put $ Just s
+
+
+deleteSession :: App ()
+deleteSession = do
+   let cookie = newCookie appId ""
+   deleteCookie cookie
+   put Nothing
