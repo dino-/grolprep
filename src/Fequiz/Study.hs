@@ -28,8 +28,10 @@ removeFromList i xs = take i xs ++ drop (i + 1) xs
 
 
 nextProblem :: Session -> IO (Maybe Problem)
-nextProblem (Session stype _ _ _ _ scurr slist) = do
-   let (Set questionsPath) = stype
+nextProblem session = do
+   let (Set questionsPath) = sessType session
+   let scurr = sessCurr session
+   let slist = sessList session
 
    eps <- liftM parseProblems $
       getDataFileName questionsPath >>= readFile
@@ -73,7 +75,7 @@ formStart = form <<
 
 
 headingStats :: Session -> Html
-headingStats (Session _ _ pass passCurr passTot _ list) =
+headingStats session =
    p << (printf "Pass %d, question %d of %d total in this pass"
       pass passCurr passTot :: String)
    +++
@@ -81,6 +83,11 @@ headingStats (Session _ _ pass passCurr passTot _ list) =
       correct perc :: String)
 
    where
+      pass = sessPass session
+      passCurr = sessPassCurr session
+      passTot = sessPassTot session
+      list = sessList session
+
       correct = passTot - (length list)
 
       perc :: Float
@@ -175,8 +182,13 @@ actionSetupSession = do
 
 
 actionNextProblem :: Session -> CGI CGIResult
-actionNextProblem session@(Session _ randA pass passCurr _ _ list) = do
+actionNextProblem session = do
    llog INFO "actionNextProblem"
+
+   let randA = sessRandA session
+   let pass = sessPass session
+   let passCurr = sessPassCurr session
+   let list = sessList session
 
    mbnp <- liftIO $ nextProblem session
 
@@ -185,7 +197,7 @@ actionNextProblem session@(Session _ randA pass passCurr _ _ list) = do
          let newSession =
                session { sessPassCurr = passCurr + 1 }
          setSessionCookie newSession
-         posePageResult newSession np
+         posePageResult randA newSession np
       (_      , True ) -> actionInitialize
       (_      , False) -> do
          let newSession =
@@ -200,8 +212,8 @@ actionNextProblem session@(Session _ randA pass passCurr _ _ list) = do
          actionNextProblem newSession
 
    where
-      posePageResult ns np = do
-         fpp <- liftIO $ formPoseProblem randA np
+      posePageResult r ns np = do
+         fpp <- liftIO $ formPoseProblem r np
          posePage <- liftIO $ page $ formCancel +++ 
             (headingStats ns) +++ fpp
          output $ renderHtml posePage
@@ -212,8 +224,9 @@ actionCorrectProblem = do
    llog INFO "actionCorrectProblem"
 
    -- Get current session and extract some things from it
-   session@(Session _ _ _ _ _ curr list)
-      <- liftM fromJust readSessionCookie
+   session <- liftM fromJust readSessionCookie
+   let curr = sessCurr session
+   let list = sessList session
 
    -- Evaluate the user's answer
    mbnp <- liftIO $ nextProblem session
