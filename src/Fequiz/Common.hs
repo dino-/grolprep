@@ -41,7 +41,7 @@ allActions = [ActStart, ActPose, ActAnswer, ActQuit]
 -}
 appName, appVersion, appId :: String
 appName = "fequiz"
-appVersion = "1.0.0.4"
+appVersion = "1.0.0.5"
 appId = printf "%s-%s" appName appVersion
 
 
