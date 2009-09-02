@@ -1,6 +1,10 @@
 -----
 beta
 
+- Create a web page for this project at ui3.info to describe what it's all about and provide links to the source, darcs commands, and more
+
+- Add this project to the resume. Make it start working for you.
+
 - Must change to storing state locally on the server. It's just going to be too big for the cookie very soon.
 
 - Add the test simulation mode that randomly picks the 76 questions
@@ -27,8 +31,6 @@ release
 - More explanatory information on the start page. Maybe links to the VT aviation site and also the FCC?
 
 - Generate a statically linked binary
-
-- Create a web page for this project at ui3.info to describe what it's all about and provide links to the source, darcs commands, and more
 
 
 -----
