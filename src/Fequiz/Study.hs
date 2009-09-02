@@ -45,32 +45,9 @@ nextProblem session = do
 {- HTML pages and forms 
 -}
 
-formStart :: Html
-formStart = form <<
-   fieldset << (
-   legend << "Please select type of study"
-   +++
-   p << select ! [name "file", size "12"] <<
-      (   option ! [value "questions/element1", selected] << "Element 1 (170 questions)"
-      +++ option ! [value "questions/subelement3a"] << "Subelement 3A - Operating procedures (40 questions)"
-      +++ option ! [value "questions/subelement3b"] << "Subelement 3B - Radio wave propagation (42 questions)"
-      +++ option ! [value "questions/subelement3c"] << "Subelement 3C - Radio practice (69 questions)"
-      +++ option ! [value "questions/subelement3d"] << "Subelement 3D - Electrical principles (202 questions)"
-      +++ option ! [value "questions/subelement3e"] << "Subelement 3E - Circuit components (150 questions)"
-      +++ option ! [value "questions/subelement3f"] << "Subelement 3F - Practical circuits (139 questions)"
-      +++ option ! [value "questions/subelement3g"] << "Subelement 3G - Signals and emissions (131 questions)"
-      +++ option ! [value "questions/subelement3h"] << "Subelement 3H - Antennas and feedlines (143 questions)"
-      +++ option ! [value "questions/element8"] << "Element 8 (321 questions)"
-      +++ option ! [value "questions/small1"] << "small1 (6 questions)"
-      )
-   +++ p << (
-      checkbox "randQ" "" +++
-      label << "Ask the questions in a random order"
-      )
-   +++ p << (checkbox "randA" "" +++
-      label << "Randomly order the answers of each question"
-      )
-   +++ p << submit (show ActStart) "Start study session" ! [theclass "button"]
+formCancel :: Html
+formCancel = form << (
+   submit (show ActQuit) "Cancel test session" ! [theclass "button"]
    )
 
 
@@ -94,10 +71,51 @@ headingStats session =
       perc = (fromIntegral correct / fromIntegral passTot) * 100
 
 
-formPoseProblem :: Bool -> Problem -> IO Html
-formPoseProblem randA (Problem _ q eas) = do
-   nas <- orderer randA $ zip [0..] $ map extractAnswer eas
-   return $ formPoseProblem' q nas
+formStart :: App CGIResult
+formStart = do
+   startPage <- liftIO $ page theform
+   output $ renderHtml startPage
+
+   where
+      theform = form <<
+         fieldset << (
+         legend << "Please select type of study"
+         +++
+         p << select ! [name "file", size "12"] <<
+            (   option ! [value "questions/element1", selected] << "Element 1 (170 questions)"
+            +++ option ! [value "questions/subelement3a"] << "Subelement 3A - Operating procedures (40 questions)"
+            +++ option ! [value "questions/subelement3b"] << "Subelement 3B - Radio wave propagation (42 questions)"
+            +++ option ! [value "questions/subelement3c"] << "Subelement 3C - Radio practice (69 questions)"
+            +++ option ! [value "questions/subelement3d"] << "Subelement 3D - Electrical principles (202 questions)"
+            +++ option ! [value "questions/subelement3e"] << "Subelement 3E - Circuit components (150 questions)"
+            +++ option ! [value "questions/subelement3f"] << "Subelement 3F - Practical circuits (139 questions)"
+            +++ option ! [value "questions/subelement3g"] << "Subelement 3G - Signals and emissions (131 questions)"
+            +++ option ! [value "questions/subelement3h"] << "Subelement 3H - Antennas and feedlines (143 questions)"
+            +++ option ! [value "questions/element8"] << "Element 8 (321 questions)"
+            +++ option ! [value "questions/small1"] << "small1 (6 questions)"
+            )
+         +++ p << (
+            checkbox "randQ" "" +++
+            label << "Ask the questions in a random order"
+            )
+         +++ p << (checkbox "randA" "" +++
+            label << "Randomly order the answers of each question"
+            )
+         +++ p << submit (show ActStart) "Start study session" ! [theclass "button"]
+         )
+
+
+formPoseProblem :: Problem -> App CGIResult
+formPoseProblem (Problem _ q eas) = do
+   session <- liftM fromJust getSession
+   let randA = sessRandA session
+
+   nas <- liftIO $ orderer randA $ zip [0..] $ map extractAnswer eas
+
+   let fpp = formPoseProblem' q nas
+   posePage <- liftIO $ page $ formCancel +++ 
+      (headingStats session) +++ fpp
+   output $ renderHtml posePage
 
    where
       orderer True  = shuffle
@@ -138,12 +156,6 @@ formAnswer g (Problem _ q eas) = form << (
             f (_ , Right a) = p ! [theclass "correct-ans"] << a
 
 
-formCancel :: Html
-formCancel = form << (
-   submit (show ActQuit) "Cancel test session" ! [theclass "button"]
-   )
-
-
 {- Action handlers
 -}
 
@@ -153,8 +165,7 @@ actionInitialize = do
 
    deleteSession
 
-   startPage <- liftIO $ page formStart
-   output $ renderHtml startPage
+   formStart
 
 
 actionSetupSession :: App CGIResult
@@ -186,8 +197,6 @@ actionNextProblem = do
 
    session <- liftM fromJust getSession
 
-   let randA = sessRandA session
-   let pass = sessPass session
    let passCurr = sessPassCurr session
    let list = sessList session
 
@@ -198,11 +207,11 @@ actionNextProblem = do
          let newSession =
                session { sessPassCurr = passCurr + 1 }
          putSession newSession
-         posePageResult randA newSession np
+         formPoseProblem np
       (_      , True ) -> actionInitialize
       (_      , False) -> do
-         let newSession =
-               session
+         let pass = sessPass session
+         let newSession = session
                { sessPass = pass + 1
                , sessPassCurr = 0
                , sessPassTot = (length list)
@@ -211,13 +220,6 @@ actionNextProblem = do
          putSession newSession
 
          actionNextProblem
-
-   where
-      posePageResult r ns np = do
-         fpp <- liftIO $ formPoseProblem r np
-         posePage <- liftIO $ page $ formCancel +++ 
-            (headingStats ns) +++ fpp
-         output $ renderHtml posePage
 
 
 actionCorrectProblem :: App CGIResult
