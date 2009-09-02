@@ -210,12 +210,19 @@ actionNextProblem = do
    mbnp <- liftIO $ nextProblem session
 
    case (mbnp, null list) of
+      -- We have a next problem, let's get to it
       (Just np, _    ) -> do
          let newSession =
                session { sessPassCurr = passCurr + 1 }
          putSession newSession
          formPoseProblem np
+
+      -- No next problem and there are no more
+      -- not-correctly-answered. We're done.
       (_      , True ) -> actionInitialize
+
+      -- No next problem for this pass, but not-correctly-answered
+      -- problems remain. Start next pass.
       (_      , False) -> do
          let pass = sessPass session
          let newSession = session
