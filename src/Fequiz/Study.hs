@@ -27,6 +27,15 @@ removeFromList :: Int -> [a] -> [a]
 removeFromList i xs = take i xs ++ drop (i + 1) xs
 
 
+{- This function is used to take a list of randomized indexes to
+   answers, and a list of the answers themselves, combine them into
+   tuples, and sort that new list on the index values.
+-}
+combineIxAndAns :: (Ord a) => [a] -> [b] -> [(a, b)]
+combineIxAndAns xs ys =
+   sortBy (\x y -> compare (fst x) (fst y)) $ zip xs ys
+
+
 nextProblem :: Session -> IO (Maybe Problem)
 nextProblem session = do
    let (Set questionsPath) = sessType session
@@ -110,7 +119,9 @@ formPoseProblem (Problem _ q eas) = do
    session <- liftM fromJust getSession
    let randA = sessRandA session
 
-   nas <- liftIO $ orderer randA $ zip [0..] $ map extractAnswer eas
+   qord <- liftIO $ orderer randA [0..3]
+   putSession $ session { sessCurrOrd = qord }
+   let nas = combineIxAndAns qord $ map extractAnswer eas
 
    let fpp = formPoseProblem' q nas
    posePage <- liftIO $ page $ formCancel +++ 
@@ -138,23 +149,28 @@ formPoseProblem (Problem _ q eas) = do
 formAnswer :: Int -> Problem -> App CGIResult
 formAnswer g (Problem _ q eas) = do
    session <- liftM fromJust getSession
+   let qord = sessCurrOrd session
+
+   let nas = combineIxAndAns qord eas
+
    answerPage <- liftIO $ page $ formCancel +++
-      (headingStats session) +++ theform
+      (headingStats session) +++ theform nas
    output $ renderHtml answerPage
 
    where
-      theform = form << (
-         [ correctness (eas !! g)
+      theform nas' = form << (
+         [ correctness (snd $ nas' !! g)
          , p ! [theclass "question"] << q
-         , thediv << (ansLines eas)
+         , thediv << ansLines
          , submit (show ActAnswer) "Next question" ! [theclass "button"]
          ] )
          where
-            correctness (Right _) = p ! [theclass "correct-ans"] << "CORRECT"
+            correctness (Right _) =
+               p ! [theclass "correct-ans"] << "CORRECT"
             correctness _         =
                p ! [theclass "incorrect-ans"] << "INCORRECT"
 
-            ansLines eas' = map f $ zip [0..] eas'
+            ansLines = map f nas'
                where
                   f :: (Int, Either String String) -> Html
                   f (n', Left  a)
@@ -191,8 +207,16 @@ actionSetupSession = do
    questionOrderer <- liftM (maybe return (const shuffle))
       $ getInput "randQ"
    questionNumbers <- liftIO $ questionOrderer [0..(numQuestions - 1)]
-   let session = Session (Set questionsPath) randA 1 0
-         (length questionNumbers) 0 questionNumbers
+   let session = Session
+         { sessType     = Set questionsPath
+         , sessRandA    = randA
+         , sessPass     = 1
+         , sessPassCurr = 0
+         , sessPassTot  = length questionNumbers
+         , sessCurr     = 0
+         , sessCurrOrd  = []
+         , sessList     = questionNumbers
+         }
    putSession session
 
    actionNextProblem
@@ -249,9 +273,14 @@ actionCorrectProblem = do
    mbnp <- liftIO $ nextProblem session
    let problem@(Problem _ _ as) = fromJust mbnp
 
+   -- Reconstitute the order of the answers from when the question
+   -- was asked. We cleverly stored this in the session.
+   let currOrd = sessCurrOrd session
+   let ast = combineIxAndAns currOrd as
+
    answer <- liftM fromJust $ readInput "answer"
 
-   let (newCurr, newList) = case (as !! answer) of
+   let (newCurr, newList) = case (snd $ ast !! answer) of
          Right _ -> (curr, removeFromList curr list)
          Left _  -> (curr + 1, list)
 

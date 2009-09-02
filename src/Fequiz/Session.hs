@@ -37,6 +37,7 @@ data Session = Session
    , sessPassCurr :: Int
    , sessPassTot  :: Int
    , sessCurr     :: Int
+   , sessCurrOrd  :: [Int]
    , sessList     :: [Int]
    }
    deriving (Read, Show)
