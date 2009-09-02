@@ -8,6 +8,30 @@ This web application requires access to its data files to function. The easiest 
 Changes made require both build and install, don't forget install or nothing will be deployed to where the web server is looking.
 
 
+apache configuration
+
+Under Debian:
+   /etc/apache2/sites-available/default
+   (add ExecCGI to the end of this line)
+      <Directory /var/www/>
+         Options Indexes FollowSymLinks MultiViews ExecCGI
+
+   /etc/apache2/mods-available/mime.conf
+   (uncomment this AddHandler line)
+      AddHandler cgi-script .cgi
+
+
+Under Arch Linux:
+   /etc/httpd/conf/httpd.conf
+   (add ExecCGI to the end of this line)
+      <Directory "/src/http">
+         Options Indexes FollowSymLinks ExecCGI
+
+   (uncomment this AddHandler line)
+      <IfModule mime_module>
+         AddHandler cgi-script .cgi
+
+
 -----
 2009-08-19
 

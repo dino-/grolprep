@@ -44,8 +44,6 @@ feature additions
 -----
 general TODO thoughts
 
-- What about special http server configuration? Maybe a script in util. At the very least, should document this better in the README or something.
-  Apache conf: /etc/httpd/conf/httpd.conf
-  DocumentRoot: /srv/http/
+- What about special http server configuration? Maybe a script in util.
 
 - May want to read that old old page about avoiding SQL injection attacks with Haskell. Track it down.
