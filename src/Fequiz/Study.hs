@@ -135,25 +135,32 @@ formPoseProblem (Problem _ q eas) = do
                           +++ label << a)
 
 
-formAnswer :: Int -> Problem -> Html
-formAnswer g (Problem _ q eas) = form << (
-   [ correctness (eas !! g)
-   , p ! [theclass "question"] << q
-   , thediv << (ansLines eas)
-   , submit (show ActAnswer) "Next question" ! [theclass "button"]
-   ] )
-   where
-      correctness (Right _) = p ! [theclass "correct-ans"] << "CORRECT"
-      correctness _         =
-         p ! [theclass "incorrect-ans"] << "INCORRECT"
+formAnswer :: Int -> Problem -> App CGIResult
+formAnswer g (Problem _ q eas) = do
+   session <- liftM fromJust getSession
+   answerPage <- liftIO $ page $ formCancel +++
+      (headingStats session) +++ theform
+   output $ renderHtml answerPage
 
-      ansLines eas' = map f $ zip [0..] eas'
+   where
+      theform = form << (
+         [ correctness (eas !! g)
+         , p ! [theclass "question"] << q
+         , thediv << (ansLines eas)
+         , submit (show ActAnswer) "Next question" ! [theclass "button"]
+         ] )
          where
-            f :: (Int, Either String String) -> Html
-            f (n', Left  a)
-               | n' == g    = p ! [theclass "incorrect-ans"] << a
-               | otherwise  = p << a
-            f (_ , Right a) = p ! [theclass "correct-ans"] << a
+            correctness (Right _) = p ! [theclass "correct-ans"] << "CORRECT"
+            correctness _         =
+               p ! [theclass "incorrect-ans"] << "INCORRECT"
+
+            ansLines eas' = map f $ zip [0..] eas'
+               where
+                  f :: (Int, Either String String) -> Html
+                  f (n', Left  a)
+                     | n' == g    = p ! [theclass "incorrect-ans"] << a
+                     | otherwise  = p << a
+                  f (_ , Right a) = p ! [theclass "correct-ans"] << a
 
 
 {- Action handlers
@@ -246,6 +253,4 @@ actionCorrectProblem = do
          session { sessCurr = newCurr , sessList = newList }
    putSession newSession
 
-   answerPage <- liftIO $ page $ formCancel +++
-      (headingStats newSession) +++ formAnswer answer problem
-   output $ renderHtml answerPage
+   formAnswer answer problem
