@@ -9,6 +9,7 @@ import Control.Monad
 import Data.List
 import Data.Maybe
 import Network.CGI
+import System.FilePath
 import System.Log
 import Text.Printf
 import Text.XHtml.Strict
@@ -27,6 +28,13 @@ removeFromList :: Int -> [a] -> [a]
 removeFromList i xs = take i xs ++ drop (i + 1) xs
 
 
+loadQuestionData :: String -> IO [Problem]
+loadQuestionData name = do
+   eps <- liftM parseProblems $ getDataFileName
+      ("questions" </> name) >>= readFile
+   return $ either undefined snd eps
+
+
 {- This function is used to take a list of randomized indexes to
    answers, and a list of the answers themselves, combine them into
    tuples, and sort that new list on the index values.
@@ -38,13 +46,11 @@ combineIxAndAns xs ys =
 
 nextProblem :: Session -> IO (Maybe Problem)
 nextProblem session = do
-   let (Set questionsPath) = sessType session
+   let (Set questionsName) = sessType session
    let scurr = sessCurr session
    let slist = sessList session
 
-   eps <- liftM parseProblems $
-      getDataFileName questionsPath >>= readFile
-   let ps = either undefined snd eps
+   ps <- loadQuestionData questionsName
 
    return $ if (scurr < length slist)
       then Just (ps !! (slist !! scurr))
@@ -91,17 +97,17 @@ formStart = do
          legend << "Please select type of study"
          +++
          p << select ! [name "file", size "12"] <<
-            (   option ! [value "questions/element1", selected] << "Element 1 (170 questions)"
-            +++ option ! [value "questions/subelement3a"] << "Subelement 3A - Operating procedures (40 questions)"
-            +++ option ! [value "questions/subelement3b"] << "Subelement 3B - Radio wave propagation (42 questions)"
-            +++ option ! [value "questions/subelement3c"] << "Subelement 3C - Radio practice (69 questions)"
-            +++ option ! [value "questions/subelement3d"] << "Subelement 3D - Electrical principles (202 questions)"
-            +++ option ! [value "questions/subelement3e"] << "Subelement 3E - Circuit components (150 questions)"
-            +++ option ! [value "questions/subelement3f"] << "Subelement 3F - Practical circuits (139 questions)"
-            +++ option ! [value "questions/subelement3g"] << "Subelement 3G - Signals and emissions (131 questions)"
-            +++ option ! [value "questions/subelement3h"] << "Subelement 3H - Antennas and feedlines (143 questions)"
-            +++ option ! [value "questions/element8"] << "Element 8 (321 questions)"
-            +++ option ! [value "questions/small1"] << "small1 (6 questions)"
+            (   option ! [value "element1", selected] << "Element 1 (170 questions)"
+            +++ option ! [value "subelement3a"] << "Subelement 3A - Operating procedures (40 questions)"
+            +++ option ! [value "subelement3b"] << "Subelement 3B - Radio wave propagation (42 questions)"
+            +++ option ! [value "subelement3c"] << "Subelement 3C - Radio practice (69 questions)"
+            +++ option ! [value "subelement3d"] << "Subelement 3D - Electrical principles (202 questions)"
+            +++ option ! [value "subelement3e"] << "Subelement 3E - Circuit components (150 questions)"
+            +++ option ! [value "subelement3f"] << "Subelement 3F - Practical circuits (139 questions)"
+            +++ option ! [value "subelement3g"] << "Subelement 3G - Signals and emissions (131 questions)"
+            +++ option ! [value "subelement3h"] << "Subelement 3H - Antennas and feedlines (143 questions)"
+            +++ option ! [value "element8"] << "Element 8 (321 questions)"
+            +++ option ! [value "small1"] << "small1 (6 questions)"
             )
          +++ p << (
             checkbox "randQ" "" +++
@@ -195,20 +201,18 @@ actionSetupSession :: App CGIResult
 actionSetupSession = do
    llog INFO "actionSetupSession"
 
-   questionsPath <- liftM fromJust $ getInput "file"
+   questionsName <- liftM fromJust $ getInput "file"
    randA <- liftM (maybe False (const True)) $ getInput "randA"
 
    numQuestions <- liftIO $ do
-      eps <- liftM parseProblems $
-         getDataFileName questionsPath >>= readFile
-      let ps = either undefined snd eps
+      ps <- loadQuestionData questionsName
       return $ length ps
 
    questionOrderer <- liftM (maybe return (const shuffle))
       $ getInput "randQ"
    questionNumbers <- liftIO $ questionOrderer [0..(numQuestions - 1)]
    let session = Session
-         { sessType     = Set questionsPath
+         { sessType     = Set questionsName
          , sessRandA    = randA
          , sessPass     = 1
          , sessPassCurr = 0
