@@ -1,4 +1,48 @@
 -----
+The randomly chosen simulations of real tests are to be generated like this:
+
+there are three different tests that need to be generated
+Elements 1, 3 and 8
+
+File  1.txt  needs 24 of 170
+
+That will become one 24 question test - Element 1
+
+
+File 3a.txt needs  3  of   40
+File 3b.txt needs  3  of   42
+File 3c.txt needs  6  of   69
+File 3d.txt needs 17  of  202
+File 3e.txt needs 10  of  150
+File 3f.txt needs 17  of  139
+File 3g.txt needs 10  of  131
+File 3h.txt needs 10  of  143
+
+That will become one 76 question test - Element 3
+
+
+File 8.txt  needs 50  of  321
+
+That will become one 50 question test - Element 8
+
+-----
+2009-09-04 Information about the new questions scheduling:
+
+For the FCC testing, as you know, they are switching to the new test
+question pools. There are two ways that someone can take an FCC exam.
+They can go to a designated FCC examiner (they are all over the country)
+or they can go to a computer test center (CATS or LASERGRADE) to take the
+exam. We are a CATS testing center.
+
+If the person goes to a designated examiner, the examiner has the option
+to use the current test pools or use the new test pools. As of December
+25, 2009 they will only be able to use the new test pools.
+
+For us being a CATS test center, the rules are different. The CATS system
+will continue using only the old test pools until December 25, 2009 and
+then switch to the new test pools.
+
+-----
 2009-08-21
 
 Developer configuration
