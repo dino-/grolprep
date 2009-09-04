@@ -25,6 +25,7 @@ data-files:          css/*.css
 executable           fequiz.cgi
    main-is:          fequiz.hs
    hs-source-dirs:   src
-   build-depends:    base >= 3 && < 5, cgi, hslogger, mtl, old-locale, 
-                     parsec, random, regex-compat, time, xhtml
+   build-depends:    base >= 3 && < 5, cgi, Crypto, directory, filepath, 
+                     hslogger, mtl, old-locale, parsec, random, 
+                     regex-compat, time, xhtml
    ghc-options:      -Wall

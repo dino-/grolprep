@@ -9,7 +9,7 @@
 module Fequiz.Session
    ( StudyType (..), Session (..)
    , App, runApp
-   , getSession, putSession, deleteSession
+   , getSession, putSession, destroySession
    )
    where
 
@@ -18,9 +18,13 @@ import Data.Maybe
 import Network.CGI
 import Network.CGI.Monad
 import Network.CGI.Protocol
+import System.Directory
+import System.FilePath
 import System.IO
 
 import Fequiz.Common
+import Fequiz.SessionId
+import Paths_fequiz
 
 
 data StudyType
@@ -62,22 +66,79 @@ runApp (App a) = do
    return ()
 
 
+{- Make a directory if it doesn't already exist
+-}
+mkdir :: FilePath -> IO ()
+mkdir path =
+   doesDirectoryExist path >>= (flip unless $ createDirectory path)
+
+
+{- Remove a file given a file path. Does nothing at all if the file
+   does not exist.
+-}
+unlink :: FilePath -> IO ()
+unlink path = doesFileExist path >>= (flip when $ removeFile path)
+
+
+loadSession :: String -> IO Session
+loadSession sessionId = do
+   path <- getDataFileName $ "session" </> sessionId
+   liftM read $ readFile path
+
+
+saveSession :: String -> Session -> IO ()
+saveSession sessionId session = do
+   sessionDir <- getDataFileName "session"
+   mkdir sessionDir
+
+   let path = sessionDir </> sessionId
+   unlink path
+   writeFile path $ show session
+
+
+deleteSession :: String -> IO ()
+deleteSession sessionId = do
+   path <- getDataFileName $ "session" </> sessionId
+   unlink path
+
+
 getSession :: App (Maybe Session)
 getSession = do
-   ms <- get
-   when (isNothing ms) $ (readCookie appId) >>= put
+   mbSession <- get
+   when (isNothing mbSession) $ do
+      mbSessionId <- getCookie appId
+      case mbSessionId of
+         Just sessionId -> do
+            session <- liftIO $ loadSession sessionId
+            put $ Just session
+         Nothing -> return ()
    get
 
 
 putSession :: Session -> App ()
-putSession s = do
-   let cookie = newCookie appId $ show s
-   setCookie cookie
-   put $ Just s
+putSession session = do
+   existingCookie <- getCookie appId
+   sessionId <- case existingCookie of
+      Just sid -> return sid
+      Nothing -> do
+         ip <- remoteAddr
+         sid <- liftIO $ generateSessionId ip
+         let cookie = newCookie appId sid
+         setCookie cookie
+         return sid
+
+   liftIO $ saveSession sessionId session
+   put $ Just session
 
 
-deleteSession :: App ()
-deleteSession = do
-   let cookie = newCookie appId ""
-   deleteCookie cookie
+destroySession :: App ()
+destroySession = do
+   existingCookie <- getCookie appId
+   case existingCookie of
+      Just sessionId -> do
+         liftIO $ deleteSession sessionId
+         let cookie = newCookie appId ""
+         deleteCookie cookie
+      Nothing -> return ()
+
    put Nothing

@@ -186,7 +186,7 @@ actionInitialize :: App CGIResult
 actionInitialize = do
    llog INFO "actionInitialize"
 
-   deleteSession
+   destroySession
 
    formStart
 
