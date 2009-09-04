@@ -29,9 +29,9 @@ removeFromList i xs = take i xs ++ drop (i + 1) xs
 
 
 loadQuestionData :: String -> IO [Problem]
-loadQuestionData name = do
+loadQuestionData questionsName = do
    eps <- liftM parseProblems $ getDataFileName
-      ("questions" </> name) >>= readFile
+      ("questions" </> questionsName) >>= readFile
    return $ either undefined snd eps
 
 
@@ -46,15 +46,15 @@ combineIxAndAns xs ys =
 
 nextProblem :: Session -> IO (Maybe Problem)
 nextProblem session = do
-   let (Set questionsName) = sessType session
    let scurr = sessCurr session
    let slist = sessList session
 
-   ps <- loadQuestionData questionsName
-
-   return $ if (scurr < length slist)
-      then Just (ps !! (slist !! scurr))
-      else Nothing
+   if (scurr < length slist)
+      then do
+         let (questionsName, questionNum) = slist !! scurr
+         ps <- loadQuestionData questionsName
+         return $ Just (ps !! questionNum)
+      else return Nothing
 
 
 {- HTML pages and forms 
@@ -211,15 +211,15 @@ actionSetupSession = do
    questionOrderer <- liftM (maybe return (const shuffle))
       $ getInput "randQ"
    questionNumbers <- liftIO $ questionOrderer [0..(numQuestions - 1)]
+   let qNameNumPairs = zip (repeat questionsName) questionNumbers
    let session = Session
-         { sessType     = Set questionsName
-         , sessRandA    = randA
+         { sessRandA    = randA
          , sessPass     = 1
          , sessPassCurr = 0
          , sessPassTot  = length questionNumbers
          , sessCurr     = 0
          , sessCurrOrd  = []
-         , sessList     = questionNumbers
+         , sessList     = qNameNumPairs
          }
    putSession session
 

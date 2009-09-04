@@ -7,7 +7,7 @@
 
 
 module Fequiz.Session
-   ( StudyType (..), Session (..)
+   ( Session (..)
    , App, runApp
    , getSession, putSession, destroySession
    )
@@ -27,22 +27,14 @@ import Fequiz.SessionId
 import Paths_fequiz
 
 
-data StudyType
-   = Set String  -- A specific question set, this is the path
-                 -- like "resources/3a.txt"
-   -- | Sim         -- A simulation of a real 76 question test
-   deriving (Read, Show)
-
-
 data Session = Session
-   { sessType     :: StudyType
-   , sessRandA    :: Bool
+   { sessRandA    :: Bool
    , sessPass     :: Int
    , sessPassCurr :: Int
    , sessPassTot  :: Int
    , sessCurr     :: Int
    , sessCurrOrd  :: [Int]
-   , sessList     :: [Int]
+   , sessList     :: [(String, Int)]
    }
    deriving (Read, Show)
 
