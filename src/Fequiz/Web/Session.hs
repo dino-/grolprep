@@ -6,7 +6,7 @@
 {-# LANGUAGE FlexibleInstances #-}
 
 
-module Fequiz.Session
+module Fequiz.Web.Session
    ( Session (..)
    , App, runApp
    , getSession, putSession, destroySession
@@ -22,8 +22,8 @@ import System.Directory
 import System.FilePath
 import System.IO
 
-import Fequiz.Common
-import Fequiz.SessionId
+import Fequiz.Common.Util
+import Fequiz.Web.SessionId
 import Paths_fequiz
 
 

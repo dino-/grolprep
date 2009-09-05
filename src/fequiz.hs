@@ -7,10 +7,10 @@ import Data.Maybe
 import Network.CGI
 import System.Log
 
-import Fequiz.Common
-import Fequiz.Log
-import Fequiz.Session
-import Fequiz.Study
+import Fequiz.Common.Log
+import Fequiz.Common.Util
+import Fequiz.Web.Session
+import Fequiz.Web.Study
 
 
 {- This is sort of our main event entry point. The web application

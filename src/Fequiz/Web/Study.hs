@@ -2,7 +2,7 @@
 -- License: BSD3 (see LICENSE)
 -- Author: Dino Morelli <dino@ui3.info>
 
-module Fequiz.Study
+module Fequiz.Web.Study
    where
 
 import Control.Monad
@@ -14,11 +14,11 @@ import System.Log
 import Text.Printf
 import Text.XHtml.Strict
 
-import Fequiz.Common
-import Fequiz.Data
-import Fequiz.Log
-import Fequiz.Session
-import Fequiz.Shuffle
+import Fequiz.Common.Data
+import Fequiz.Common.Log
+import Fequiz.Common.Shuffle
+import Fequiz.Common.Util
+import Fequiz.Web.Session
 import Paths_fequiz
 
 

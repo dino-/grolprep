@@ -2,7 +2,7 @@
 -- License: BSD3 (see LICENSE)
 -- Author: Dino Morelli <dino@ui3.info>
 
-module Fequiz.Log
+module Fequiz.Common.Log
    ( initLogging, logM, llog, logTest )
    where
 

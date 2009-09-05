@@ -3,7 +3,7 @@
 -- Author: Dino Morelli <dino@ui3.info>
 
 
-module Fequiz.Data
+module Fequiz.Common.Data
    ( Number, Question, Answer, Problem (..)
    , parseProblems
    , extractAnswer
