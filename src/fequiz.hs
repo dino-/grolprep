@@ -11,6 +11,7 @@ import Fequiz.Common.Log
 import Fequiz.Common.Util
 import Fequiz.Web.Session
 import Fequiz.Web.Study
+import Fequiz.Web.Feedback
 
 
 {- This is sort of our main event entry point. The web application
@@ -21,6 +22,27 @@ cgiMain = do
    qs <- queryString
    llog DEBUG $ "query string: " ++ qs
 
+   path <- pathInfo
+   llog DEBUG $ "pathInfo: " ++ path
+
+   case (path) of
+      "/feedback" -> dispatchFeedback
+      _           -> dispatchStudy
+
+
+dispatchFeedback :: App CGIResult
+dispatchFeedback = do
+   -- Figure out which form button was used for submit
+   mbForm <- getButtonPressed
+   llog DEBUG $ "form button: " ++ show mbForm
+
+   -- Map form button pressed into actions
+   case (mbForm) of
+      (Just ActFeedback ) -> actionFeedbackHandler
+      (_                ) -> actionFeedbackPage
+
+dispatchStudy :: App CGIResult
+dispatchStudy = do
    mbSession <- getSession
    llog DEBUG $ "session: " ++ show mbSession
 

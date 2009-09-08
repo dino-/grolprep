@@ -26,6 +26,7 @@ data Action
    = ActStart
    | ActPose
    | ActAnswer
+   | ActFeedback
    | ActQuit
    deriving (Read, Show)
 
@@ -34,7 +35,7 @@ data Action
    it to the list of constructed datum below.
 -}
 allActions :: [Action]
-allActions = [ActStart, ActPose, ActAnswer, ActQuit]
+allActions = [ActStart, ActPose, ActAnswer, ActFeedback, ActQuit]
 
 
 {- Some identifying info for this application
@@ -95,5 +96,13 @@ page b = do
              thetype "text/css"]
       )
       +++
-      body << ([(p << appId), b])
+      body << ([(p << appId), b]  ++ footer )
       )
+
+footer :: [Html]
+footer =  
+--   [ anchor ! [href "/fequiz/bin/fequiz.cgi/about"] << "About" 
+--   , spaceHtml
+   [ anchor ! [href "/fequiz/bin/fequiz.cgi/feedback"] << "Feedback"
+   ]
+   
