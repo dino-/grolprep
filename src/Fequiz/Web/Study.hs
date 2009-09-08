@@ -111,10 +111,10 @@ formStart = do
             )
          +++ p << (
             checkbox "randQ" "" +++
-            label << "Ask the questions in a random order"
+            label ! [thefor "randQ"] << "Ask the questions in a random order"
             )
          +++ p << (checkbox "randA" "" +++
-            label << "Randomly order the answers of each question"
+            label ! [thefor "randA"] << "Randomly order the answers of each question"
             )
          +++ p << submit (show ActStart) "Start study session" ! [theclass "button"]
          )
@@ -148,9 +148,9 @@ formPoseProblem (Problem _ q eas) = do
                where
                   f :: (Int, String) -> Html
                   f (n', a) =
-                     p << ((radio "answer" (show n') ! [theclass "hanging"])
-                          +++ label << a)
-
+                     -- we pass empty string to radio so we can explictly set different name and id attributes 
+                     p << ((radio "" (show n') ! [theclass "hanging", name "answer", strAttr "id" (show n')])
+                          +++ label ! [thefor (show n')] << a)
 
 formAnswer :: Int -> Problem -> App CGIResult
 formAnswer g (Problem _ q eas) = do
