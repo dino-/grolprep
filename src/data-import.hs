@@ -11,25 +11,14 @@ import System.Directory
 import System.Environment
 import System.FilePath
 import System.IO
-import Text.Printf
 
+import Fequiz.Common.Data
 import Fequiz.Import.Parse
-
-
-{- Remove a file given a file path. Does nothing at all if the file
-   does not exist.
--}
-unlink :: FilePath -> IO ()
-unlink path = doesFileExist path >>= (flip when $ removeFile path)
-
-
-dbPath :: FilePath
-dbPath = "resources" </> "fequiz" <.> "sqlite"
 
 
 {- Create the necessary tables
 -}
-createTable conn = do
+createTables conn = do
    mapM_ (\sql -> do
          stmt <- prepare conn sql
          execute stmt []
@@ -46,13 +35,16 @@ createTable conn = do
             , ";"
             ]
          ,  [ "CREATE TABLE subelement "
-            , "   ( id   TEXT PRIMARY KEY"
+            , "   ( id   TEXT"
+            , "   , element INTEGER"
             , "   , desc TEXT"
             , "   )"
             , ";"
             ]
          ,  [ "CREATE TABLE keytopic "
-            , "   ( id   INTEGER PRIMARY KEY"
+            , "   ( id   INTEGER"
+            , "   , element INTEGER"
+            , "   , subelement TEXT"
             , "   , desc TEXT"
             , "   )"
             , ";"
@@ -69,17 +61,79 @@ createTable conn = do
          ]
 
 
+storeElement conn (Element eid edesc ses) = do
+   stmt <- prepare conn $ unlines
+      [ "INSERT INTO element "
+      , "   (id, desc)"
+      , "   VALUES (?, ?)"
+      , ";"
+      ]
+
+   execute stmt [toSql eid, toSql edesc]
+   commit conn
+
+   mapM_ (storeSubElement conn eid) ses
+
+
+storeSubElement conn eid (SubElement seid sedesc kts) = do
+   stmt <- prepare conn $ unlines
+      [ "INSERT INTO subelement "
+      , "   (id, element, desc)"
+      , "   VALUES (?, ?, ?)"
+      , ";"
+      ]
+
+   execute stmt [toSql seid, toSql eid, toSql sedesc]
+   commit conn
+
+   mapM_ (storeKeyTopic conn eid seid) kts
+
+
+storeKeyTopic conn eid seid (KeyTopic kid kdesc ps) = do
+   stmt <- prepare conn $ unlines
+      [ "INSERT INTO keytopic "
+      , "   (id, element, subelement, desc)"
+      , "   VALUES (?, ?, ?, ?)"
+      , ";"
+      ]
+
+   execute stmt [toSql kid, toSql eid, toSql seid, toSql kdesc]
+   commit conn
+
+   mapM_ (storeProblem conn eid seid kid) ps
+
+
+storeProblem conn eid seid kid p@(Problem pid _ _) = do
+   stmt <- prepare conn $ unlines
+      [ "INSERT INTO problem "
+      , "   (id, element, subelement, keytopic, probdata)"
+      , "   VALUES (?, ?, ?, ?, ?)"
+      , ";"
+      ]
+
+   execute stmt
+      [ toSql pid
+      , toSql eid
+      , toSql seid
+      , toSql kid
+      , toSql $ show p
+      ]
+   commit conn
+
+
 main :: IO ()
 main = do
-   unlink dbPath
+   let dbPath = "resources" </> "fequiz" <.> "sqlite"
+
+   dbExists <- doesFileExist dbPath
+
    conn <- connectSqlite3 dbPath
 
-   createTable conn
+   unless dbExists $ createTables conn
 
-{-
    dataPath <- liftM head getArgs
-   eps <- liftM parseProblems $ readFile dataPath
-   print eps
--}
+   eel <- liftM parseProblems $ readFile dataPath
+   let el = either undefined id eel
+   storeElement conn el
 
    disconnect conn

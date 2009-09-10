@@ -4,11 +4,13 @@
 
 
 module Fequiz.Import.Parse
-   ( parseProblems
+   ( Element (..), SubElement (..), KeyTopic (..)
+   , parseProblems
    )
    where
 
 import Control.Monad
+import Data.Char
 import Data.List
 import Data.Maybe
 --import Debug.Trace
@@ -163,23 +165,25 @@ subElement = do
    return $ SubElement [l] desc kts
 
 
-elemDesc :: GenParser Char st [Char]
+elemDesc :: GenParser Char st (Int, String)
 elemDesc = do
    spaces
-   x <- string "FCC"
-   y <- tillEol
-   return (x ++ y)
+   y <- many1 $ satisfy (not . isDigit)
+   d <- many1 digit
+   z <- manyTill anyChar $ try $ string " ("
+   tillEol
+   return (read d, (y ++ d ++ z))
 
 
 element :: GenParser Char st Element
 element = do
-   ed <- elemDesc
+   (en, ed) <- elemDesc
    ses <- (many1 $ try subElement) <?> "subElement"
    spaces
    string "[END OF"
    tillEol
 
-   return $ Element 0 ed ses
+   return $ Element en ed ses
 
 
 parseProblems :: String -> Either ParseError Element
