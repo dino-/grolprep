@@ -1,0 +1,2668 @@
+
+FCC Commercial Element 8 Question Pool (approved 25 June 2009)
+
+Subelement  A - RADAR Principles: 10 Key Topics - 10 Exam Questions - 8 Drawings
+
+Key Topic 1: Marine RADAR Systems
+
+8-1A1  Choose the most correct statement containing the parameters which control the size of the target echo.
+	A.	Transmitted power, antenna effective area, transmit and receive losses, RADAR cross section of the target, range to target.
+	B.	Height of antenna, power radiated, size of target, receiver gain, pulse width.
+	C.	Power radiated, antenna gain, size of target, shape of target, pulse width, receiver gain.
+	D.	Magnetron gain, antenna gain, size of target, range to target, wave-guide loss.
+
+8-1A2  Which of the following has NO effect on the maximum range capability?
+	A.	Carrier frequency.
+	B.	Recovery time.
+	C.	Pulse repetition frequency.
+	D.	Receiver sensitivity.
+
+8-1A3  What type of transmitter power is measured over a period of time?
+	A.	Average.
+	B.	Peak.
+	C.	Reciprocal.
+	D.	Return.
+
+8-1A4 What RADAR component controls timing throughout the system?
+	A.	Power supply.
+	B.	Indicator.
+	C.	Synchronizer.
+	D.	Receiver.
+
+8-1A5 Which of the following components allows the use of a single antenna for both transmitting and receiving?
+	A.	Mixer.
+	B.	Duplexer.
+	C.	Synchronizer.
+	D.	Modulator.
+
+8-1A6 The sweep frequency of a RADAR indicator is determined by what parameter?
+	A.	Carrier frequency.
+	B.	Pulse width.
+	C.	Duty cycle.
+	D.	Pulse repetition frequency.
+
+
+
+
+
+
+
+
+Answer Key:	8-1A1: A	8-1A2: B	8-1A3: A	8-1A4: C	8-1A5: B	8-1A6: D
+
+Key Topic 2: Distance and Time
+
+8-2A1  A radio wave will travel a distance of three nautical miles in:
+	A.	6.17 microseconds.
+	B.	37.0 microseconds.
+	C.	22.76 microseconds.
+	D.	18.51 microseconds.
+
+8-2A2  One RADAR mile is how many microseconds?
+	A.	6.2
+	B.	528.0
+	C.	12.34
+	D.	0.186
+
+8-2A3  RADAR range is measured by the constant:
+	A.	150 meters per microsecond.
+	B.	150 yards per microsecond.
+	C.	300 yards per microsecond.
+	D.	18.6 miles per microsecond.
+
+8-2A4  If a target is 5 miles away, how long does it take for the RADAR echo to be received back at the antenna?
+	A.	51.4 microseconds.
+	B.	123 microseconds.
+	C.	30.75 microseconds.
+	D.	61.7 microseconds.
+
+8-2A5  How long would it take for a RADAR pulse to travel to a target 10 nautical miles away and return to the RADAR receiver?
+	A.	12.34 microseconds.
+	B.	1.234 microseconds.
+	C.	123.4 microseconds.
+	D.	10 microseconds.
+
+8-2A6  What is the distance in nautical miles to a target if it takes 308.5 microseconds for the RADAR pulse to travel from the RADAR antenna to the target and back.
+	A.	12.5 nautical miles.
+	B.	25 nautical miles.
+	C.	50 nautical miles.
+	D.	2.5 nautical miles.
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-2A1: D	8-2A2: C	8-2A3: A	8-2A4: D	8-2A5: C	8-2A6: B
+
+Key Topic 3: Frequency and Wavelength
+
+8-3A1  Frequencies generally used for marine RADAR are in the ___ part of the radio spectrum.
+	A.	UHF
+	B.	EHF
+	C.	SHF
+	D.	VHF
+
+8-3A2  Practical RADAR operation requires the use of microwave frequencies so that:
+	A.	Stronger target echoes will be produced.
+	B.	Ground clutter interference will be minimized.
+	C.	Interference to other communication systems will be eliminated.
+	D.	Antennas will be more efficient for both transmitting and receiving.
+
+8-3A3  An S-band RADAR operates in which frequency band?
+	A.	1 - 2 GHz.
+	B.	4 - 8 GHz.
+	C.	8 - 12 GHz.
+	D.	2 - 4 GHz.
+
+8-3A4  A RADAR operating at a frequency of 3 GHz has a wavelength of approximately:
+	A.	1 centimeter.
+	B.	10 centimeters.
+	C.	3 centimeters.
+	D.	30 centimeters.
+
+8-3A5  The major advantage of an S-band RADAR over an X-band RADAR is:
+	A.	It is less affected by weather conditions.
+	B.	It has greater bearing resolution.
+	C.	It is mechanically less complex.
+	D.	It has greater power output.
+
+8-3A6  An X band RADAR operates in which frequency band?
+	A.	1 - 2 GHz.
+	B.	2 - 4 GHz.
+	C.	4 - 8 GHz.
+	D.	8 - 12 GHz.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-3A1: C	8-3A2: A	8-3A3: D	8-3A4: B	8-3A5: A	8-3A6: D
+
+Key Topic 4: Power, Pulse Width, PRR
+
+8-4A1  A pulse RADAR has a pulse repetition frequency (PRF) of 400 Hz, a pulse width of 1 microsecond, and a peak power of 100 kilowatts. The average power of the RADAR transmitter is:
+	A.	25 watts.
+	B.	40 watts.
+	C.	250 watts.
+	D.	400 watts.
+
+8-4A2  A shipboard RADAR transmitter has a pulse repetition frequency (PRF) of 1,000 Hz, a pulse width of 0.5 microseconds, peak power of 150 KW, and a minimum range of 75 meters. Its duty cycle is:
+	A.	0.5
+	B.	0.05
+	C.	0.005
+	D.	0.0005
+
+8-4A3  A pulse RADAR transmits a 0.5 microsecond RF pulse with a peak power of 100 kilowatts every 1600 microseconds. This RADAR has:
+	A.	An average power of 31.25 watts.
+	B.	A PRF of 3,200.
+	C.	A maximum range of 480 kilometers.
+	D.	A duty cycle of 3.125 percent.
+
+8-4A4  If a RADAR transmitter has a pulse repetition frequency (PRF) of 900 Hz, a pulse width of 0.5 microseconds and a peak power of 15 kilowatts, what is its average power output?
+	A.	15 kilowatts.
+	B.	13.5 watts.
+	C.	6.75 watts.
+	D.	166.67 watts.
+
+8-4A5  What is the average power if the RADAR set has a PRF of 1000 Hz, a pulse width of 1 microsecond, and a peak power rating of 100 kilowatts?
+	A.	10 watts.
+	B.	100 watts.
+	C.	1,000 watts.
+	D.	None of these.
+
+8-4A6  8L37 (C) (250) A search RADAR has a pulse width of 1.0 microsecond, a pulse repetition frequency (PRF) of 900 Hz, and an average power of 18 watts. The unit’s peak power is:
+	A.	200 kilowatts.
+	B.	180 kilowatts.
+	C.	20 kilowatts.
+	D.	2 kilowatts.
+
+
+
+
+
+
+
+Answer Key:	8-4A1: B	8-4A2: D	8-4A3: A	8-4A4: C	8-4A5: B	8-4A6: C
+
+Key Topic 5: Range, Pulse Width, PRF
+
+8-5A1  For a range of 5 nautical miles, the RADAR pulse repetition frequency should be:
+	A.	16.2 Hz or more.
+	B.	16.2 MHz or less.
+	C.	1.62 kHz or more.
+	D.	16.2 kHz or less.
+
+8-5A2  For a range of 100 nautical miles, the RADAR pulse repetition frequency should be:
+	A.	8.1 kHz or less.
+	B.	810 Hz or less.
+	C.	8.1 kHz or more.
+	D.	81 kHz or more.
+
+8-5A3  The minimum range of a RADAR is determined by:
+	A.	The frequency of the RADAR transmitter.
+	B.	The pulse repetition rate.
+	C.	The transmitted pulse width.
+	D.	The pulse repetition frequency.
+
+8-5A4  Short range RADARs would most likely transmit:
+	A.	Narrow pulses at a fast rate.
+	B.	Narrow pulses at a slow rate.
+	C.	Wide pulses at a fast rate.
+	D.	Wide pulses at a slow rate.
+
+8-5A5  For a range of 30 nautical miles, the RADAR pulse repetition frequency should be:
+	A.	0.27 kHz or less.
+	B.	2.7 kHz or less.
+	C.	27 kHz or more.
+	D.	2.7 Hz or more.
+
+8-5A6  For a range of 10 nautical miles, the RADAR pulse repetition frequency (PRF) should be:
+	A.	Approximately 8.1 kHz or less.
+	B.	900 Hz.
+	C.	18.1 kHz or more.
+	D.	120.3 microseconds.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-5A1: D	8-5A2: B	8-5A3: C	8-5A4: A	8-5A5: B	8-5A6: A
+
+Key Topic 6: Pulse Width - Pulse Repetition Rates
+
+8-6A1  If the PRF is 2500 Hz, what is the PRI?
+	A.	40 microseconds.
+	B.	400 microseconds.
+	C.	250 microseconds.
+	D.	800 microseconds.
+
+8-6A2  If the pulse repetition frequency (PRF) is 2000 Hz, what is the pulse repetition interval (PRI)?
+	A.	0.05 seconds.
+	B.	0.005 seconds.
+	C.	0.0005 seconds.
+	D.	0.00005 seconds.
+
+8-6A3  The pulse repetition rate (PRR) refers to:
+	A.	The reciprocal of the duty cycle.
+	B.	The pulse rate of the local oscillator tube.
+	C.	The pulse rate of the klystron.
+	D.	The pulse rate of the magnetron.
+
+8-6A4  If the RADAR unit has a pulse repetition frequency (PRF) of 2000 Hz and a pulse width of 0.05 microseconds, what is the duty cycle?
+	A.	0.0001
+	B.	0.0005
+	C.	0.05
+	D.	0.001
+
+8-6A5  Small targets are best detected by:
+	A.	Short pulses transmitted at a fast rate.
+	B.	Using J band frequencies.
+	C.	Using a long pulse width with high output power.
+	D.	All of these answers are correct.
+
+8-6A6  What is the relationship between pulse repetition rate and pulse width?
+	A.	Higher PRR with wider pulse width.
+	B.	The pulse repetition rate does not change with the pulse width.
+	C.	The pulse width does not change with the pulse repetition rate.
+	D.	Lower PRR with wider pulse width.
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-6A1: B	8-6A2: C	8-6A3: D	8-6A4: A	8-6A5: C	8-6A6: D
+
+Key Topic 7: Components-1
+
+8-7A1  What component of a RADAR receiver is represented by block 46 in Fig. 8A1?
+	A.	The ATR box.
+	B.	The TR box.
+	C.	The RF Attenuator.
+	D.	The Crystal Detector.
+
+8-7A2  A basic sample-and-hold circuit contains:
+	A.	An analog switch and an amplifier.
+	B.	An analog switch, a capacitor, and an amplifier.
+	C.	An analog multiplexer and a capacitor.
+	D.	An analog switch, a capacitor, amplifiers and input and output buffers.
+
+8-7A3  When comparing a TTL and a CMOS NAND gate:
+	A.	Both have active pull-up characteristics.
+	B.	Both have three output states.
+	C.	Both have comparable input power sourcing.
+	D.	Both employ Schmitt diodes for increased speed capabilities.
+
+8-7A4  Silicon crystals:
+	A.	Are very sensitive to static electric charges.
+	B.	Should be wrapped in lead foil for storage.
+	C.	Tolerate very low currents.
+	D.	All of these.
+
+8-7A5  Which is typical current for a silicon crystal used in a RADAR mixer or detector circuit?
+	A.	3 mA
+	B.	15 mA
+	C.	50 mA
+	D.	100 mA
+
+
+
+
+
+
+
+8-7A6  What component of a RADAR receiver is represented by block 47 in Fig. 8A1?
+	A.	The ATR box.
+	B.	The TR box.
+	C.	The RF Attenuator.
+	D.	The Crystal Detector.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-7A1: B	8-7A2: D	8-7A3: A	8-7A4: D	8-7A5: A	8-7A6: C
+
+Key Topic 8: Components-2
+
+8-8A1  The basic frequency determining element in a Gunn oscillator is:
+	A.	The power supply voltage.
+	B.	The type of semiconductor used.
+	C.	The resonant cavity.
+	D.	The loading of the oscillator by the mixer.
+
+8-8A2  Which of the following is not a method of analog-to-digital conversion?
+	A.	Delta-sigma conversion.
+	B.	Dynamic-range conversion.
+	C.	Switched-capacitor conversion.
+	D.	Dual-slope integration.
+
+8-8A3  When comparing TTL and CMOS logic families, which of the following is true:
+	A.	CMOS logic requires a supply voltage of 5 volts (20%, whereas TTL logic requires 5 volts (5%.
+	B.	Unused inputs should be tied high or low as necessary especially in the CMOS family.
+	C.	At higher operating frequencies, CMOS circuits consume almost as much power as TTL circuits.
+	D.	When a CMOS input is held low, it sources current into whatever it drives.
+
+8-8A4  The primary operating frequency of a reflex klystron is controlled by the:
+	A.	Dimensions of the resonant cavity.
+	B.	Level of voltage on the control grid.
+	C.	Voltage applied to the cavity grids.
+	D.	Voltage applied to the repeller plate.
+
+8-8A5  A Gunn diode oscillator takes advantage of what effect?
+	A.	Negative resistance.
+	B.	Avalanche transit time.
+	C.	Bulk-effect.
+	D.	Negative resistance and bulk-effect.
+
+8-8A6  Fine adjustments of a reflex klystron are accomplished by:
+	A.	Adjusting the flexible wall of the cavity.
+	B.	Varying the repeller voltage.
+	C.	Adjusting the AFC control system.
+	D.	Varying the cavity grid potential.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-8A1: C	8-8A2: B	8-8A3: C	8-8A4: A	8-8A5: D	8-8A6: B
+
+Key Topic 9: Circuits-1
+
+8-9A1  Blocking oscillators operate on the formula of:
+	A.	T = R x C.
+	B.	I = E/R.
+	C.	By using the receiver’s AGC.
+	D.	None of the above are correct.
+
+8-9A2   The block diagram of a typical RADAR system microprocessor is shown in Fig. 8A2. Choose the most correct statement regarding this system.
+	A.	The ALU is used for address decoding.
+	B.	The Memory and I/O communicate with peripherals.
+	C.	The control unit executes arithmetic manipulations.
+	D.	The internal bus is used simultaneously by all units.
+
+8-9A3  The phantastron circuit is capable of:
+	A.	Stabilizing the magnetron.
+	B.	Preventing saturation of the RADAR receiver.
+	C.	Being used to control repeller voltage in the AFC system.
+	D.	Developing a linear ramp voltage when triggered by an external source.
+
+
+
+
+
+
+
+
+
+8-9A4  The block diagram of a typical RADAR system microprocessor is shown in Fig. 8A2. Choose the most correct statement regarding this system.
+	A.	The ALU executes arithmetic manipulations.
+	B.	The ALU is used for address decoding.
+	C.	General registers are used for arithmetic manipulations.
+	D.	Address pointers are contained in the control unit.
+
+8-9A5  In the Line-Driver/Coax/Line-receiver circuit shown in Fig. 8A3, what component is represented by the blank box marked "X"?
+	A.	25-ohm resistor.
+	B.	51-ohm resistor.
+	C.	10-microhm inductor.
+	D.	20-microhm inductor.
+
+8-9A6  Choose the most correct statement:
+	A.	The magnetron anode is a low voltage circuit.
+	B.	The anode of the magnetron carries high voltage.
+	C.	The filament of the magnetron carries dangerous voltages.
+	D.	The magnetron filament is a low voltage circuit.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-9A1: A	8-9A2: B	8-9A3: D	8-9A4: A	8-9A5: B	8-9A6: C
+
+Key Topic 10: Circuits-2
+
+8-10A1  In the circuit shown in Fig. 8A4, U5 pins 1 and 4 are high and both are in the reset state.  Assume one clock cycle occurs of Clk A followed by one cycle of Clk B. What are the output states of the two D-type flip flops?
+	A.	Pin 5 low, Pin 9 low.
+	B.	Pin 5 high, Pin 9 low.
+	C.	Pin 5 low, Pin 9 high.
+	D.	Pin 5 high, Pin 9 high.
+
+8-10A2  If more light strikes the photodiode in Fig. 8A5, there will be:
+	A.	Less diode current.
+	B.	No change in diode current.
+	C.	More diode current.
+	D.	There is wrong polarity on the diode.
+
+
+
+
+
+
+
+
+
+
+8-10A3  In the circuit shown in Fig. 8A6, which of the following is true?
+	A.	With A and B high, Q1 is saturated and Q2 is off.
+	B.	With either A or B low, Q1 is saturated and Q2 is off.
+	C.	With A and B low, Q2 is on and Q4  is off.
+	D.	With either A or B low, Q1 is off and Q2 is on.
+
+8-10A4  What is the correct value of RS in Fig. 8A7, if the voltage across the LED is 1.9 Volts with 5 Volts applied and If max equals 40 milliamps?
+	A.	4,700 ohms.
+	B.	155 ohms.
+	C.	77 ohms.
+	D.	10,000 ohms.
+
+
+
+
+
+
+8-10A5  The block diagram of a typical RADAR system microprocessor is shown in Fig. 8A2. Choose the most correct statement regarding this system.
+	A.	The ALU is used for address decoding.
+	B.	General registers are used for arithmetic manipulations.
+	C.	The control unit executes arithmetic manipulations.
+	D.	Address pointers are contained in the general registers.
+
+8-10A6  You are troubleshooting a component on a printed circuit board in a RADAR system while referencing the Truth Table in Fig. 8A8. What kind of integrated circuit is the component?
+	A.	D-type Flip-Flop, 3-State, Inverting.
+	B.	Q-type Flip-Flop, Non-Inverting.
+	C.	Q-type Directional Shift Register, Dual.
+	D.	D to Q Convertor, 2-State.
+
+
+Answer Key:	8-10A1: D	8-10A2: C	8-10A3: B	8-10A4: C	8-10A5: D	8-10A6: A
+
+Subelement B - Transmitting Systems: 8 Key Topics - 8 Exam Questions
+
+Key Topic 11: Transmitting Systems
+
+8-11B1  The magnetron is used to:
+	A.	Generate the output signal at the proper operating frequency.
+	B.	Determine the shape and width of the transmitted pulses.
+	C.	Modulate the pulse signal.
+	D.	Determine the pulse repetition rate.
+
+8-11B2  The purpose of the modulator is to:
+	A.	Transmit the high voltage pulses to the antenna.
+	B.	Provide high voltage pulses of the proper shape and width to the magnetron.
+	C.	Adjust the pulse repetition rate.
+	D.	Tune the Magnetron to the proper frequency.
+
+8-11B3  Which of the following statements about most modern RADAR transmitter power supplies is false?
+	A.	High voltage supplies may produce voltages in excess of 5,000 volts AC.
+	B.	There are usually separate low voltage and high voltage supplies.
+	C.	Low voltage supplies use switching circuits to deliver multiple voltages.
+	D.	Low voltage supplies may supply both AC and DC voltages.
+
+8-11B4  The purpose of the Pulse Forming Network is to:
+	A.	Act as a low pass filter.
+	B.	Act as a high pass filter.
+	C.	Produce a pulse of the correct width.
+	D.	Regulate the pulse repetition rate.
+
+8-11B5  The purpose of the Synchronizer is to:
+	A.	Generate the modulating pulse to the magnetron.
+	B.	Generate a timing signal that establishes the pulse repetition rate.
+	C.	Insure that the TR tube conducts at the proper time.
+	D.	Control the pulse width.
+
+8-11B6  Which of the following is not part of the transmitting system?
+	A.	Magnetron.
+	B.	Modulator.
+	C.	Pulse Forming Network.
+	D.	Klystron.
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-11B1: A	8-11B2: B	8-11B3: A	8-11B4: C	8-11B5: B	8-11B6: D
+
+Key Topic 12: Magnetrons
+
+8-12B1  High voltage is applied to what element of the magnetron?
+	A.	The waveguide.
+	B.	The anode.
+	C.	The plate cap.
+	D.	The cathode.
+
+8-12B2  The characteristic of the magnetron output pulse that relates to accurate range measurement is its:
+	A.	Amplitude.
+	B.	Decay time.
+	C.	Rise time.
+	D.	Duration.
+
+8-12B3  What device is used as a transmitter in a marine RADAR system?
+	A.	Magnetron.
+	B.	Klystron.
+	C.	Beam-powered pentode.
+	D.	Thyratron.
+
+8-12B4   The magnetron is:
+	A.	A type of diode that requires an internal magnetic field.
+	B.	A triode that requires an external magnetic field.
+	C.	Used as the local oscillator in the RADAR unit.
+	D.	A type of diode that requires an external magnetic field.
+
+8-12B5  A negative voltage is commonly applied to the magnetron cathode rather than a positive voltage to the magnetron anode because:
+	A.	The cathode must be made neutral to force electrons into the drift area.
+	B.	A positive voltage would tend to nullify or weaken the magnetic field.
+	C.	The anode can be operated at ground potential for safety reasons.
+	D.	The cavities might not be shock-excited into oscillation by a positive voltage.
+
+8-12B6  The anode of a magnetron is normally maintained at ground potential:
+	A.	Because it operates more efficiently that way.
+	B.	For safety purposes.
+	C.	Never. It must be highly positive to attract the electrons.
+	D.	Because greater peak-power ratings can be achieved.
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-12B1: D	8-12B2: C	8-12B3: A	8-12B4: D	8-12B5: C	8-12B6: B
+
+Key Topic 13: Modulation
+
+8-13B1  In a solid-state RADAR modulator, the duration of the transmitted pulse is determined by:
+	A.	The thyratron.
+	B.	The magnetron voltage.
+	C.	The pulse forming network.
+	D.	The trigger pulse.
+
+8-13B2  The modulation frequency of most RADAR systems is between:
+	A.	60 and 500 Hz.
+	B.	3000 and 6000 Hz.
+	C.	1500 and 7500 Hz.
+	D.	1000 and 3000 Hz.
+
+8-13B3  A shipboard RADAR uses a PFN driving a magnetron cathode through a step-up transformer. This results in which type of modulation?
+	A.	Frequency modulation.
+	B.	Amplitude modulation.
+	C.	Continuous Wave (CW) modulation.
+	D.	Pulse modulation.
+
+8-13B4  In a pulse modulated magnetron what device determines the shape and width of the pulse?
+	A.	Pulse Forming Network.
+	B.	Thyratron.
+	C.	LC parallel circuit.
+	D.	Dimensions of the magnetron cavity.
+
+8-13B5  What device(s) may act as the modulator of a RADAR system?
+	A.	Magnetron.
+	B.	Klystron.
+	C.	Video amplifier.
+	D.	Thyratron or a silicon-controlled rectifier (SCR).
+
+8-13B6  The purpose of a modulator in the transmitter section of a RADAR is to:
+	A.	Improve bearing resolution.
+	B.	Provide the correct waveform to the transmitter.
+	C.	Prevent sea return.
+	D.	Control magnetron power output.
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-13B1: C	8-13B2: A	8-13B3: D	8-13B4: A	8-13B5: D	8-13B6: B
+
+Key Topic 14: Pulse Forming Networks Modulation
+
+8-14B1  The pulse developed by the modulator may have an amplitude greater than the supply voltage. This is possible by:
+	A.	Using a voltage multiplier circuit.
+	B.	Employing a resonant charging choke.
+	C.	Discharging a capacitor through an inductor.
+	D.	Discharging two capacitors in series and combining their charges.
+
+8-14B2  Pulse transformers and pulse-forming networks are commonly used to shape the microwave energy burst RADAR transmitter. The switching devices most often used in such pulse-forming circuits are:
+	A.	Power MOSFETS and Triacs.
+	B.	Switching transistors.
+	C.	Thyratrons and BJT’s.
+	D.	SCR’s and Thyratrons.
+
+8-14B3  The purpose of the pulse-forming network is to:
+	A.	Determine the width of the modulating pulses.
+	B.	Determine the pulse repetition rate.
+	C.	Act as a high pass filter.
+	D.	Act as a log pass filter.
+
+8-14B4  The shape and duration of the high-voltage pulse delivered to the magnetron is established by:
+	A.	An RC network in the keyer stage.
+	B.	The duration of the modulator input trigger.
+	C.	An artificial delay line.
+	D.	The time required to saturate the pulse transformer.
+
+8-14B5  Pulse-forming networks are usually composed of the following:
+	A.	Series capacitors and shunt inductors.
+	B.	Series inductors and shunt capacitors.
+	C.	Resonant circuit with an inductor and capacitor.
+	D.	None of the above.
+
+8-14B6  An artificial transmission line is used for:
+	A.	The transmission of RADAR pulses.
+	B.	Testing the RADAR unit, when actual targets are not available.
+	C.	Determining the shape and duration of pulses.
+	D.	Testing the delay time for artificial targets.
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-14B1: B	8-14B2: D	8-14B3: A	8-14B4: C	8-14B5: B	8-14B6: C
+
+Key Topic 15: TR - ATR - Circulators - Directional Couplers-1
+
+8-15B1  The ferrite material in a circulator is used as a(an):
+	A.	Electric switch.
+	B.	Saturated reactor.
+	C.	Loading element.
+	D.	Phase shifter.
+
+8-15B2  In a circular resonant cavity with flat ends, the E-field and the H-field form with specific relationships. The:
+	A.	E-lines are parallel to the top and bottom walls.
+	B.	E-lines are perpendicular to the end walls.
+	C.	H-lines are perpendicular to the side walls.
+	D.	H-lines are circular to the end walls.
+
+8-15B3  A ferrite circulator is most commonly used in what portion of a RADAR system?
+	A.	The antenna.
+	B.	The modulator.
+	C.	The duplexer.
+	D.	The receiver.
+
+8-15B4  A circulator provides what function in the RF section of a RADAR system?
+	A.	It replaces the TR cell and functions as a duplexer.
+	B.	It cools the magnetron by forcing a flow of circulating air.
+	C.	It permits tests to be made to the thyristors while in use.
+	D.	It transmits antenna position to the indicator during operation.
+
+8-15B5  A directional coupler has an attenuation of -30 db. A measurement of 100 milliwatts at the coupler indicates the power of the line is:
+	A.	10 watts.
+	B.	100 watts.
+	C.	1,000 watts.
+	D.	10,000 watts.
+
+8-15B6  What is the purpose or function of the RADAR duplexer/circulator?
+	A.	An electronic switch that allows the use of one antenna for both transmission and reception.
+	B.	A coupling device that is used in the transition from a rectangular waveguide to a circular waveguide.
+	C.	A modified length of waveguide used to sample a portion of the transmitted energy for testing purposes.
+	D.	A dual section coupling device that allows the use of a magnetron as a transmitter.
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-15B1: D	8-15B2: B	8-15B3: C	8-15B4: A	8-15B5: B	8-15B6: A
+
+Key Topic 16: TR - ATR - Circulators - Directional Couplers-2
+
+8-16B1  The ATR box:
+	A.	Protects the receiver from strong RADAR signals.
+	B.	Prevents the received signal from entering the transmitter.
+	C.	Turns off the receiver when the transmitter is on.
+	D.	All of the above.
+
+8-16B2  When a pulse RADAR is radiating, which elements in the TR box are energized?
+	A.	The TR tube only.
+	B.	The ATR tube only.
+	C.	Both the TR and ATR tubes.
+	D.	Neither the TR nor ATR tubes.
+
+8-16B3  The TR box:
+	A.	Prevents the received signal from entering the transmitter.
+	B.	Protects the receiver from the strong RADAR pulses.
+	C.	Turns off the receiver when the transmitter is on.
+	D.	 Protects the receiver from the strong RADAR pulses and mutes the receiver when the transmitter is on.
+
+8-16B4  What device is located between the magnetron and the mixer and prevents received signals from entering the magnetron?
+	A.	The ATR tube.
+	B.	The TR tube.
+	C.	The RF Attenuator.
+	D.	A resonant cavity.
+
+8-16B5  A keep-alive voltage is applied to:
+	A.	The crystal detector.
+	B.	The ATR tube.
+	C.	The TR tube.
+	D.	The magnetron.
+
+8-16B6  A DC keep-alive potential:
+	A.	Is applied to a TR tube to make it more sensitive.
+	B.	Partially ionizes the gas in a TR tube, making it very sensitive to transmitter pulses.
+	C.	Fully ionizes the gas in a TR tube.
+	D.	Is applied to a TR tube to make it more sensitive and partially ionizes the gas in a TR tube.
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-16B1: B	8-16B2: C	8-16B3: D	8-16B4: A	8-16B5: C	8-16B6: D
+
+Key Topic 17: Timer - Trigger - Synchronizer Circuits
+
+8-17B1  What RADAR circuit determines the pulse repetition rate (PRR)?
+	A.	Discriminator.
+	B.	Timer (synchronizer circuit).
+	C.	Artificial transmission line.
+	D.	Pulse-rate-indicator circuit.
+
+8-17B2  The triggering section is also known as the:
+	A.	PFN.
+	B.	Timer circuit.
+	C.	Blocking oscillator.
+	D.	Synchronizer.
+
+8-17B3  Operation of any RADAR system begins in the:
+	A.	Triggering section.
+	B.	Magnetron.
+	C.	AFC.
+	D.	PFN.
+
+8-17B4  The timer circuit:
+	A.	Determines the pulse repetition rate (PRR).
+	B.	Determines range markers.
+	C.	Provides blanking and unblanking signals for the CRT.
+	D.	All of the above
+
+8-17B5  Pulse RADARs require precise timing for their operation. Which type circuit below might best be used to provide these accurate timing pulses?
+	A.	Single-swing blocking oscillator.
+	B.	AFC controlled sinewave oscillator.
+	C.	Non-symmetrical astable multivibrator.
+	D.	Triggered flip-flop type multivibrator.
+
+8-17B6  Unblanking pulses are produced by the timer circuit. Where are they sent?
+	A.	IF amplifiers.
+	B.	Mixer.
+	C.	CRT.
+	D.	Discriminator.
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-17B1: B	8-17B2: D	8-17B3: A	8-17B4: D	8-17B5: A	8-17B6: C
+
+Key Topic 18: Power Supplies
+
+8-18B1  An advantage of resonant charging is that it:
+	A.	Eliminates the need for a reverse current diode.
+	B.	Guarantees perfectly square output pulses.
+	C.	Reduces the high-voltage power supply requirements.
+	D.	Maintains a constant magnetron output frequency.
+
+8-18B2  The characteristics of a field-effect transistor (FET) used in a modern RADAR switching power supply can be compared as follows:
+	A.	“On” state compares to a bipolar transistor. “Off” state compares to a 1-Megohm resistor.
+	B.	“On” state compares to a pure resistor. “Off” state compares to a mechanical relay.
+	C.	“On” state compares to an low resistance inductor. “Off” state compares to a 10-Megohm resistor.
+	D.	“On” state compares to a resistor. “Off” state compares to a capacitor.
+
+8-18B3  A pulse-width modulator in a switching power supply is used to:
+	A.	Provide the reference voltage for the regulator.
+	B.	Vary the frequency of the switching regulator to control the output voltage.
+	C.	Vary the duty cycle of the regulator switch to control the output voltage.
+	D.	Compare the reference voltage with the output voltage sample and produce an error voltage.
+
+8-18B4  In a fixed-frequency switching power supply, the pulse width of the switching circuit will increase when:
+	A.	The load impedance decreases.
+	B.	The load current decreases.
+	C.	The output voltage increases.
+	D.	The input voltage increases.
+
+8-18B5  A major consideration for the use of a switching regulator power supply over a linear regulator is:
+	A.	The switching regulator has better regulation.
+	B.	The linear regulator does not require a transformer to step down AC line voltages to a usable level.
+	C.	The switching regulator can be used in nearly all applications requiring regulated voltage.
+	D.	The overall efficiency of a switching regulator is much higher than a linear power supply.
+
+8-18B6  Which of the following characteristics are true of a power MOSFET used in a RADAR switching supply?
+	A.	Low input impedance; failure mode can be gate punch-through.
+	B.	High input impedance; failure mode can be gate punch-through.
+	C.	High input impedance; failure mode can be thermal runaway.
+	D.	Low input impedance; failure mode can be gate breakdown.
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-18B1: C	8-18B2: B	8-18B3: C	8-18B4: A	8-18B5: D	8-18B6: B
+
+Subelement C - Receiving Systems: 10 Key Topics - 10 Exam Questions - 4 Drawings
+
+Key Topic 19: Receiving Systems
+
+8-19C1  Which of the following statements is true?
+	A.	The front end of the receiver does not provide any amplification to the RADAR signal.
+	B.	The mixer provides a gain of at least 6 db.
+	C.	The I.F. amplifier is always a high gain, narrow bandwidth amplifier.
+	D.	None of the above.
+
+8-19C2  Logarithmic receivers:
+	A.	Can’t be damaged.
+	B.	Can’t be saturated.
+	C.	Should not be used in RADAR systems.
+	D.	Have low sensitivity.
+
+8-19C3  RADAR receivers are similar to:
+	A.	FM receivers.
+	B.	HF receivers.
+	C.	T.V. receivers.
+	D.	Microwave receivers.
+
+8-19C4  What section of the receiving system sends signals to the display system?
+	A.	Video amplifier.
+	B.	Audio amplifier.
+	C.	I.F. Amplifier.
+	D.	Resolver.
+
+8-19C5  What is the main difference between an analog and a digital receiver?
+	A.	Special amplification circuitry.
+	B.	The presence of decision circuitry to distinguish between “on” and “off” signal levels.
+	C.	An AGC stage is not required in a digital receiver.
+	D.	Digital receivers produce no distortion.
+
+8-19C6  In a RADAR receiver, the RF power amplifier:
+	A.	Is high gain.
+	B.	Is low gain.
+	C.	Does not exist.
+	D.	Requires wide bandwidth.
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-19C1: A	8-19C2: B	8-19C3: D	8-19C4: A	8-19C5: B	8-19C6: C
+
+Key Topic 20: Mixers
+
+8-20C1  The diagram in Fig. 8C9 shows a simplified RADAR mixer circuit using a crystal diode as the first detector. What is the output of the circuit when no echoes are being received?
+	A.	60 MHz CW.
+	B.	4095 MHz CW.
+	C.	4155 MHz CW.
+	D.	No output is developed.
+
+8-20C2  In the receive mode, frequency conversion is generally accomplished by a:
+	A.	Tunable wave-guide section.
+	B.	Pentagrid converter.
+	C.	Crystal diode.
+	D.	Ferrite device.
+
+8-20C3  An RF mixer has what purpose in a RADAR system?
+	A.	Mixes the CW transmitter output to form pulsed waves.
+	B.	Converts a low-level signal to a different frequency.
+	C.	Prevents microwave oscillations from reaching the antenna.
+	D.	Combines audio tones with RF to produce the RADAR signal.
+
+8-20C4  In a RADAR unit, the mixer uses a:
+	A.	Pentagrid converter tube.
+	B.	Field-effect transistor.
+	C.	Silicon crystal or PIN diode.
+	D.	Microwave transistor.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8-20C5  What component of a RADAR receiver is represented by block 49 in Fig. 8A1?
+	A.	Discriminator.
+	B.	IF amplifier.
+	C.	Klystron.
+	D.	Crystal detector (the mixer).
+
+8-20C6  In a RADAR unit, the mixer uses:
+	A.	PIN diodes and silicon crystals.
+	B.	PIN diodes.
+	C.	Boettcher crystals.
+	D.	Silicon crystals.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-20C1: D	8-20C2: C	8-20C3: B	8-20C4: C	8-20C5: D	8-20C6: A
+
+Key Topic 21: Local Oscillators
+
+8-21C1  The error voltage from the discriminator is applied to the:
+	A.	Repeller (reflector) of the klystron.
+	B.	Grids of the IF amplifier.
+	C.	Grids of the RF amplifiers.
+	D.	Magnetron.
+
+8-21C2  In a RADAR unit, the local oscillator is a:
+	A.	Hydrogen Thyratron.
+	B.	Klystron.
+	C.	Pentagrid converter tube.
+	D.	Reactance tube modulator.
+
+8-21C3  What component of a RADAR receiver is represented by block 48 in Fig. 8A1?
+	A.	Klystron (local oscillator).
+	B.	Discriminator.
+	C.	IF amplifier.
+	D.	Crystal detector.
+
+8-21C4  What device(s) could be used as the local oscillator in a RADAR receiver?
+	A.	Thyratron
+	B.	Klystron
+	C.	Klystron and a Gunn Diode
+	D.	Gunn diode
+
+8-21C5  The klystron local oscillator is constantly kept on frequency by:
+	A.	Constant manual adjustments.
+	B.	The Automatic Frequency Control circuit.
+	C.	A feedback loop from the crystal detector.
+	D.	A feedback loop from the TR box.
+
+
+
+
+
+
+
+8-21C6  How may the frequency of the klystron be varied?
+	A.	Small changes can be made by adjusting the anode voltage.
+	B.	Large changes can be made by adjusting the frequency.
+	C.	By changing the phasing of the buncher grids
+	D.	Small changes can be made by adjusting the repeller voltage and large changes can be made by adjusting the size of the resonant cavity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-21C1: A	8-21C2: B	8-21C3: A	8-21C4: C	8-21C5: B	8-21C6: D
+
+Key Topic 22: Amplifiers
+
+8-22C1  Overcoupling in a RADAR receiver will cause?
+	A.	Improved target returns.
+	B.	Increase the range of the IAGC.
+	C.	Decrease noise.
+	D.	Oscillations.
+
+8-22C2  The usual intermediate frequency of a shipboard RADAR unit is:
+	A.	455 kHz.
+	B.	10.7 MHz.
+	C.	30 or 60 MHz.
+	D.	120 MHz.
+
+8-22C3  The I.F. Amplifier bandwidth is:
+	A.	Wide for short ranges and narrow for long ranges.
+	B.	Wide for long ranges and narrow for short ranges.
+	C.	Constant for all ranges.
+	D.	Adjustable from the control panel.
+
+8-22C4  A logarithmic IF amplifier is preferable to a linear IF amplifier in a RADAR receiver because it:
+	A.	Has higher gain.
+	B.	Is more easily aligned.
+	C.	Has a lower noise figure.
+	D.	Has a greater dynamic range.
+
+8-22C5  The high-gain IF amplifiers in a RADAR receiver may amplify a 2 microvolt input signal to an output level of 2 volts. This amount of amplification represents a gain of:
+	A.	60 db.
+	B.	100 db.
+	C.	120 db.
+	D.	1,000 db.
+
+8-22C6  In a RADAR receiver AGC and IAGC can vary between:
+	A.	10 and 15 db.
+	B.	20 and 40 db.
+	C.	30 and 60 db.
+	D.	5 and 30 db.
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-22C1: D	8-22C2: C	8-22C3: A	8-22C4: D	8-22C5: C	8-22C6: B
+
+Key Topic 23: Detectors - Video Amplifiers
+
+8-23C1  Which of the following statements is correct?
+	A.	The video amplifier is located between the mixer and the I.F. amplifier.
+	B.	The video amplifier operates between 60 MHz and 120 Mhz.
+	C.	The video amplifier is located between the I.F. amplifier and the display system.
+	D.	The video amplifier is located between the local oscillator and the mixer.
+
+8-23C2  Video amplifiers in pulse RADAR receivers must have a broad bandwidth because:
+	A.	Weak pulses must be amplified.
+	B.	High frequency sine waves must be amplified.
+	C.	The RADARs operate at PRFs above 100.
+	D.	The pulses produced are normally too wide for video amplification.
+
+8-23C3  In video amplifiers, compensation for the input and output stage capacitances must be accomplished to prevent distorting the video pulses. This compensation is normally accomplished by connecting:
+	A.	Inductors in parallel with both the input and output capacitances.
+	B.	Resistances in parallel with both the input and output capacitances.
+	C.	An inductor in parallel with the input capacitance and an inductor in series with the output capacitance.
+	D.	An inductor in series with the input capacitance and an inductor in parallel with the output capacitance.
+
+8-23C4  Which of the following signals is not usually an input to the video amplifier?
+	A.	Resolver.
+	B.	Range.
+	C.	Brilliance.
+	D.	Contrast.
+
+8-23C5  Which of the following signals are usually an input to the video amplifier?
+	A.	Range.
+	B.	Brilliance.
+	C.	Contrast.
+	D.	All of the above.
+
+8-23C6  The video (second) detector in a pulse modulated RADAR system would most likely use a/an:
+	A.	Discriminator detector.
+	B.	Diode detector.
+	C.	Ratio detector.
+	D.	Infinite impedance detector.
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-23C1: C	8-23C2: A	8-23C3: D	8-23C4: A	8-23C5: D	8-23C6: B
+
+Key Topic 24: Automatic Frequency Control - AFC/ATC
+
+8-24C1  The AFC system is used to:
+	A.	Control the frequency of the magnetron.
+	B.	Control the frequency of the klystron.
+	C.	Control the receiver gain.
+	D.	Control the frequency of the incoming pulses.
+
+8-24C2  A circuit used to develop AFC voltage in a RADAR receiver is called the:
+	A.	Peak detector.
+	B.	Crystal mixer.
+	C.	Second detector.
+	D.	Discriminator.
+
+8-24C3  In the AFC system, the discriminator compares the frequencies of the:
+	A.	Magnetron and klystron.
+	B.	PRR generator and magnetron.
+	C.	Magnetron and crystal detector.
+	D.	Magnetron and video amplifier.
+
+8-24C4  An AFC system keeps the receiver tuned to the transmitted signal by varying the frequency of the:
+	A.	Magnetron.
+	B.	IF amplifier stage.
+	C.	Local oscillator.
+	D.	Cavity duplexer.
+
+8-24C5  A RADAR transmitter is operating on 3.0 GHz and the reflex klystron local oscillator, operating at 3.060 GHz, develops a 60 MHz IF. If the magnetron drifts higher in frequency, the AFC system must cause the klystron repeller plate to become:
+	A.	More positive.	C.	Less positive.
+	B.	More negative.	D.	Less negative.
+
+8-24C6  What component is block 50 in Fig. 8A1?
+	A.	IF amplifier.	C.	Discriminator.
+	B.	AFC amplifier.	D.	Crystal detector.
+
+Answer Key:	8-24C1: B	8-24C2: D	8-24C3: A	8-24C4: C	8-24C5: B	8-24C6: C
+
+Key Topic 25: Sea Clutter - STC - FTC
+
+8-25C1  The STC circuit is used to:
+	A.	Increase receiver stability.
+	B.	Increase receiver sensitivity.
+	C.	Increase receiver selectivity.
+	D.	Decrease sea return on a RADAR receiver.
+
+8-25C2  The STC circuit:
+	A.	Increases the sensitivity of the receiver for close targets.
+	B.	Decreases sea return on the PPI scope.
+	C.	Helps to increase the bearing resolution of targets.
+	D.	Increases sea return on the PPI scope.
+
+8-25C3  Sea return is:
+	A.	Sea water that gets into the antenna system.
+	B.	The return echo from a target at sea.
+	C.	The reflection of RADAR signals from nearby waves.
+	D.	None of the above.
+
+8-25C4  Sea clutter on the RADAR scope cannot be effectively reduced using front panel controls. What circuit would you suspect is faulty?
+	A.	Sensitivity Time Control (STC) circuit.
+	B.	False Target Eliminator (FTE) circuit.
+	C.	Fast Time Constant (FTC) circuit.
+	D.	Intermediate Frequency (IF) circuit.
+
+8-25C5  What circuit controls the suppression of sea clutter?
+	A.	EBL circuit.
+	B.	STC circuit.
+	C.	Local oscillator.
+	D.	Audio amplifier.
+
+8-25C6  The sensitivity time control (STC) circuit:
+	A.	Decreases the sensitivity of the receiver for close objects.
+	B.	Increases the sensitivity of the receiver for close objects.
+	C.	Increases the sensitivity of the receiver for distant objects.
+	D.	Decreases the sensitivity of the transmitter for close objects.
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-25C1: D	8-25C2: B	8-25C3: C	8-25C4: A	8-25C5: B	8-25C6: A
+
+Key Topic 26: Power Supplies
+
+8-26C1  Prior to making “power-on” measurements on a switching power supply, you should be familiar with the supply because of the following:
+	A.	You need to know where the filter capacitors are so they can be discharged.
+	B.	If it does not use a line isolation transformer you may destroy the supply with grounded test equipment.
+	C.	It is not possible to cause a component failure by using ungrounded test equipment.
+	D.	So that measurements can be made without referring to the schematic.
+
+8-26C2  A constant frequency switching power supply regulator with an input voltage of 165 volts DC, and a switching frequency of 20 kHz, has an “ON” time of 27 microseconds when supplying 1 ampere to its load. What is the output voltage across the load?
+	A.	It cannot be determined with the information given.
+	B.	305.55 volts DC.
+	C.	89.1 volts DC.
+	D.	165 volts DC.
+
+8-26C3  The circuit shown in Fig. 8C10 is the output of a switching power supply. Measuring from the junction of CR6, CR7 and L1 to ground with an oscilloscope, what waveform would you expect to see?
+	A.	Filtered DC.
+	B.	Pulsating DC at line frequency.
+	C.	AC at line frequency.
+	D.	Pulsating DC much higher than line frequency.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8-26C4  With regard to the comparator shown in Fig. 8C11, the input is a sinusoid. Nominal high level output of the comparator is 4.5 volts. Choose the most correct statement regarding the input and output.
+	A.	The leading edge of the output waveform occurs 180 degrees after positive zero crossing of the input waveform.
+	B.	The rising edge of the output waveform trails the positive zero crossing of the input waveform by 45 degrees.
+	C.	The rising edge of the output waveform trails the negative zero crossing of the input waveform by 45 degrees.
+	D.	The rising edge of the output waveform trails the positive peak of the input waveform by 45 degrees.
+
+8-26C5  When monitoring the gate voltage of a power MOSFET in the switching power supply of a modern RADAR, you would expect to see the gate voltage change from “low” to “high” by how much?
+	A.	1 volt to 2 volts.
+	B.	300 microvolts to 700 microvolts.
+	C.	Greater than 2 volts.
+	D.	1.0 volt to 20.0 volts.
+
+8-26C6  The nominal output high of the comparator shown in Fig. 8C11 is 4.5 volts. Choose the most correct statement which describes the trip points.
+	A.	Upper trip point is 4.5 volts. Lower trip point is approximately 0 volts.
+	B.	Upper trip point is 2.5 volts. Lower trip point is approximately 2.0 volts.
+	C.	Upper trip point is 900 microvolts. Lower trip point is approximately 0 volts.
+	D.	Upper trip point is +1.285 volts. Lower trip point is -1.285 volts.
+
+Answer Key:	8-26C1: B	8-26C2: C	8-26C3: D	8-26C4: A	8-26C5: C	8-26C6: D
+
+Key Topic 27: Interference Issues
+
+8-27C1  One of the best methods of reducing noise in a RADAR receiver is?
+	A.	Changing the frequency.
+	B.	Isolation.
+	C.	Replacing the resonant cavity.
+	D.	Changing the IF strip.
+
+8-27C2  The primary cause of noise in a RADAR receiver can be attributed to:
+	A.	Electrical causes.
+	B.	Atmospheric changes.
+	C.	Poor grounding.
+	D.	Thermal noise caused by RADAR receiver components.
+
+8-27C3  Noise can appear on the LCD as:
+	A.	Erratic video and sharp changes in intensity.
+	B.	Black spots on the screen.
+	C.	Changes in bearings.
+	D.	None of the above.
+
+8-27C4  RADAR interference on a communications receiver appears as:
+	A.	A varying tone.
+	B.	Static.
+	C.	A hissing tone.
+	D.	A steady tone.
+
+8-27C5  In a RADAR receiver the most common types of interference are?
+	A.	Weather and sea return.
+	B.	Sea return and thermal.
+	C.	Weather and electrical.
+	D.	Jamming and electrical.
+
+8-27C6  Noise can:
+	A.	Mask larger targets.
+	B.	Change bearings.
+	C.	Mask small targets.
+	D.	Increase RADAR transmitter interference.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-27C1: B	8-27C2: D	8-27C3: A	8-27C4: D	8-27C5: A	8-27C6: C
+
+Key Topic 28: Miscellaneous
+
+8-28C1  The purpose of the discriminator circuit in a RADAR set is to:
+	A.	Discriminate against nearby objects.
+	B.	Discriminate against two objects with very similar bearings.
+	C.	Generate a corrective voltage for controlling the frequency of the klystron local oscillator.
+	D.	Demodulate or remove the intelligence from the FM signal.
+
+8-28C2  The MTI circuit:
+	A.	Acts as a mixer in a RADAR receiver.
+	B.	Is a filter, which blocks out stationary targets, allowing only moving targets to be detected.
+	C.	Is used to monitor transmitter interference.
+	D.	Will pick up targets, which are not in motion.
+
+8-28C3  Where is a RF attenuator used in a RADAR unit?
+	A.	Between the antenna and the receiver.
+	B.	Between the magnetron and the antenna.
+	C.	Between the magnetron and the AFC section of the receiver.
+	D.	Between the AFC section and the klystron.
+
+8-28C4  The condition known as “glint” refers to a shifting of clutter with each RADAR pulse and can be caused by a:
+	A.	Improperly functioning MTI filter.
+	B.	Memory failure.
+	C.	Low AFC voltage.
+	D.	Interference from electrical equipment.
+
+8-28C5  An ion discharge (TR) cell is used to:
+	A.	Protect the transmitter from high SWRs.
+	B.	Lower the noise figure of the receiver.
+	C.	Tune the local oscillator of the RADAR receiver.
+	D.	Protect the receiver mixer during the transmit pulse.
+
+8-28C6  When the receiver employs an MTI circuit:
+	A.	The receiver gain increases with time.
+	B.	Only moving targets will be displayed.
+	C.	The receiver AGC circuits are disabled.
+	D.	Ground clutter will be free of “rabbits.”
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-28C1: C	8-28C2: B	8-28C3: C	8-28C4: A	8-28C5: D	8-28C6: B
+
+Subelement D - Display & Control Systems: 10 Key Topics - 10 Exam Questions
+
+Key Topic 29: Displays
+
+8-29D1  Modern liquid crystal displays have a pixel count of:
+	A.	Greater than 200 pixels per inch.
+	B.	Greater than 50 pixels per inch.
+	C.	Can have no more than 125 pixels per inch.
+	D.	Can implement 1,000 pixels per inch.
+
+8-29D2  Voltages used in CRT anode circuits are in what range of value?
+	A.	0.5-10 mV.
+	B.	10-50 kV.
+	C.	20-50 mV.
+	D.	200-1000 V.
+
+8-29D3  The purpose of the aquadag coating on the CRT is:
+	A.	To protect the electrons from strong electric fields.
+	B.	To act as a second anode.
+	C.	To attract secondary emissions from the CRT screen.
+	D.	All of the above
+
+8-29D4  LCD patterns are formed when:
+	A.	Current passes through the crystal causing them to align.
+	B.	When voltage is reduced to the raster scan display.
+	C.	When the deflection coils are resonant.
+	D.	When the ships antenna’s bearing is true north.
+
+8-29D5  In a raster-type display, the electron beam is scanned:
+	A.	From the center of the display to the outer edges.
+	B.	Horizontally and vertically across the CRT face.
+	C.	In a rotating pattern which follows the antenna position.
+	D.	From one specified X-Y coordinate to the next.
+
+8-29D6  Select the statement, which is most correct regarding a raster scan display.
+	A.	Raster displays are the same as conventional T.V. receivers.
+	B.	The scan rate for a RADAR system is 30 frames per second.
+	C.	Raster scanning is controlled by clock pulses and requires an address bus.
+	D.	Raster scanning is not used in RADAR systems.
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-29D1: A	8-29D2: B	8-29D3: D	8-29D4: A	8-29D5: B	8-29D6: C
+
+Key Topic 30: Video Amplifiers and Sweep Circuits
+
+8-30D1  What are the usual input signals to the video amplifier?
+	A.	Low level video.
+	B.	Fixed range rings.
+	C.	Variable range rings.
+	D.	All of the above.
+
+8-30D2  Which of the following would not normally be an input to the video amplifier?
+	A.	Fixed range rings.
+	B.	Variable range rings.
+	C.	Resolver signal.
+	D.	Low level video.
+
+8-30D3  The purpose of the sweep amplifier is to:
+	A.	Increase the power of the video amplifier.
+	B.	Drive the CRT deflection coils.
+	C.	Drive the resolver coils.
+	D.	All of the above.
+
+8-30D4  How many deflection coils are driven by the sweep amplifier?
+	A.	4
+	B.	3
+	C.	2
+	D.	1
+
+8-30D5  The main purpose of the sweep generator is to provide:
+	A.	Antenna information.
+	B.	Range rings.
+	C.	Composite video to the cathode of the CRT.
+	D.	The drive signal to the sweep amplifier.
+
+8-30D6  The main purpose of the video amplifier is to provide:
+	A.	Composite video to the cathode of the CRT.
+	B.	Resolver signals
+	C.	Antenna X and Y signals.
+	D.	Provide the drive signal to the sweep amplifier.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-30D1: D	8-30D2: C	8-30D3: B	8-30D4: C	8-30D5: D	8-30D6: A
+
+Key Topic 31: Timing Circuits
+
+8-31D1  Timing circuits are used to provide what function?
+	A.	Develop synchronizing pulses for the transmitter system.
+	B.	Synchronize the antenna and display system.
+	C.	Adjust the sea return.
+	D.	Control the North Up presentation.
+
+8-31D2  The circuit that develops timing signals is called the:
+	A.	Resolver.
+	B.	Synchronizer.
+	C.	Pulse forming network.
+	D.	Video amplifier.
+
+8-31D3  Which of the following functions is not affected by the timing circuit?
+	A.	Resolver output.
+	B.	Pulse repetition frequency.
+	C.	Sweep drive.
+	D.	Modulation.
+
+8-31D4  The synchronizer primarily affects the following circuit or function:
+	A.	Mixer.
+	B.	Receiver.
+	C.	Modulator.
+	D.	I.F. Amplifier.
+
+8-31D5  The output from the synchronizer usually consists of a:
+	A.	Sine wave.
+	B.	Pulse or square wave.
+	C.	Triangle wave.
+	D.	None of the above.
+
+8-31D6  The sweep drive is initiated by what circuit?
+	A.	Resolver.
+	B.	Sweep amplifier.
+	C.	Video amplifier.
+	D.	Synchronizer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-31D1: A	8-31D2: B	8-31D3: A	8-31D4: C	8-31D5: B	8-31D6: D
+
+Key Topic 32: Fixed Range Markers
+
+8-32D1  Accurate range markers must be developed using very narrow pulses. A circuit that could be used to provide these high-quality pulses for the CRT is a:
+	A.	Ringing oscillator.
+	B.	Monostable multivibrator.
+	C.	Triggered bi-stable multivibrator.
+	D.	Blocking oscillator.
+
+8-32D2  Range markers are determined by:
+	A.	The CRT.
+	B.	The magnetron.
+	C.	The timer.
+	D.	The video amplifier.
+
+8-32D3  A gated LC oscillator, operating at 27 kHz, is being used to develop range markers. If each cycle is converted to a range mark, the range between markers will be:
+	A.	3 nautical miles.
+	B.	6 nautical miles.
+	C.	8 nautical miles.
+	D.	12 nautical miles.
+
+8-32D4  What would be the frequency of a range ring marker oscillator generating range rings at 10 nautical miles intervals?
+	A.	24 kHz
+	B.	16 kHz
+	C.	12 kHz
+	D.	8 kHz
+
+8-32D5  What is the distance between range markers if the controlling oscillator is operating at 20 kHz?
+	A.	1 nautical miles.
+	B.	2 nautical miles.
+	C.	4 nautical miles.
+	D.	8 nautical miles.
+
+8-32D6  What would be the frequency of a range ring marker oscillator generating range rings at intervals of 0.25 nautical miles?
+	A.	161 kHz
+	B.	322 kHz
+	C.	644 kHz
+	D.	1288 kHz
+
+
+
+
+
+
+
+
+Answer Key:	8-32D1: D	8-32D2: C	8-32D3: A	8-32D4: D	8-32D5: C	8-32D6: B
+
+Key Topic 33: Variable Range Markers
+
+8-33D1  The variable range marker signal is normally fed to the input of the:
+	A.	Sweep amplifier.
+	B.	Low voltage power supply regulator.
+	C.	Video amplifier.
+	D.	Range ring oscillator.
+
+8-33D2  The purpose of the variable range marker is to:
+	A.	Provide an accurate means of determining the range of a moving target.
+	B.	Provide a bearing line between own ship and a moving target.
+	C.	Indicate the distance between two different targets.
+	D.	Provide a means of calibrating the fixed range rings.
+
+8-33D3  How is the variable range marker usually adjusted for accuracy?
+	A.	Adjusting the frequency of the VRM oscillator at the maximum range.
+	B.	Adjusting the frequency of the VRM oscillator at the minimum range.
+	C.	Adjusting the readout to match at the median range ring.
+	D.	The minimum and maximum ranges are aligned with the matching fixed range ring.
+
+8-33D4  The panel control for the variable range marker is normally a:
+	A.	Variable resistor.
+	B.	Variable inductance.
+	C.	Variable capacitance.
+	D.	Variable resolver.
+
+8-33D5  An important component of the VRM system is the:
+	A.	Resolver.
+	B.	Interference rejection circuit.
+	C.	STC sensitivity control.
+	D.	Shift register.
+
+8-33D6  Which of the following statements about the Variable Range Marker system is correct?
+	A.	The VRM is an auxiliary output of the fixed range marker oscillator.
+	B.	The VRM system develops a single adjustable range ring.
+	C.	The VRM system is calibrated using a frequency counter.
+	D.	The VRM system is controlled by a crystal oscillator.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-33D1: C	8-33D2: A	8-33D3: D	8-33D4: A	8-33D5: D	8-33D6: B
+
+Key Topic 34: EBL, Azimuth and True Bearing
+
+8-34D1  The purpose of the Electronic Bearing Line is to:
+	A.	Indicate your own vessel’s heading.
+	B.	Measure the bearing of a specific target.
+	C.	Indicate True North.
+	D.	Display the range of a specific target.
+
+8-34D2  The Electronic Bearing Line is:
+	A.	The ships heading line.
+	B.	A line indicating True North.
+	C.	Used to mark a target to obtain the distance.
+	D.	A line from your own vessel to a specific target.
+
+8-34D3  Which of the following inputs is required to indicate azimuth?
+	A.	Gyro signals.
+	B.	Synchronizer
+	C.	Resolver.
+	D.	Range rings.
+
+8-34D4  Bearing information from the gyro is used to provide the following:
+	A.	The heading of the nearest target.
+	B.	Range and bearing to the nearest target.
+	C.	Vessel’s own heading.
+	D.	The range of a selected target.
+
+8-34D5  Which of the following statements about “true bearing” is correct?
+	A.	The ship’s heading flasher is at the top of the screen.
+	B.	True North is at the top of the screen and the heading flasher indicates the vessel’s course.
+	C.	The true bearing of the nearest target is indicated.
+	D.	The relative bearing of the nearest target is indicated.
+
+8-34D6  A true bearing presentation appears as follows:
+	A.	The bow of the vessel always points up.
+	B.	The course of the five closest targets is displayed.
+	C.	North is at the top of the display and the ship's heading flasher indicates the vessels course.
+	D.	The course and distance of the closest target is displayed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-34D1: B	8-34D2: D	8-34D3: A	8-34D4: C	8-34D5: B	8-34D6: C
+
+Key Topic 35: Memory Systems
+
+8-35D1  In a digitized RADAR, the 360 degree sweep is divided into how many digitized segments?
+	A.	16
+	B.	64
+	C.	255
+	D.	4,096
+
+8-35D2  While troubleshooting a memory problem in a raster scan RADAR, you discover that the “REFRESH” cycle is not operating correctly. What type of memory circuit are you working on?
+	A.	SRAM
+	B.	DRAM
+	C.	ROM
+	D.	PROM
+
+8-35D3  The term DRAM stands for:
+	A.	Digital refresh access memory.
+	B.	Digital recording access memory.
+	C.	Dynamic random access memory.
+	D.	Digital response area motion.
+
+8-35D4  How does the dual memory function reduce sea clutter?
+	A.	Successive sweeps are digitized and compared. Only signals appearing in both sweeps are displayed.
+	B.	The dual memory system makes the desired targets larger.
+	C.	It reduces receiver gain for closer signals.
+	D.	It increases receiver gain for real targets.
+
+8-35D5  How many sequential memory cells with target returns are required to display the target?
+	A.	1
+	B.	2
+	C.	4
+	D.	8
+
+8-35D6  What is the primary purpose of display system memory?
+	A.	Eliminate fluctuating targets such as sea return.
+	B.	Display stationary targets.
+	C.	Display the last available targets prior to a power dropout.
+	D.	Store target bearings.
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-35D1: D	8-35D2: B	8-35D3: C	8-35D4: A	8-35D5: B	8-35D6: A
+
+Key Topic 36: ARPA - CAS
+
+8-36D1  The ship’s speed indication on the ARPA display can be set manually, but does not change with changes in the vessel’s speed. What other indication would point to a related equipment failure?
+	A.	“GYRO OUT” is displayed on the ARPA indicator.
+	B.	“LOG OUT” is displayed on the ARPA indicator.
+	C.	“TARGET LOST” is displayed on the ARPA indicator.
+	D.	“NORTH UP” is displayed on the ARPA indicator.
+
+8-36D2  What does the term ARPA/CAS refer to?
+	A.	The basic RADAR system in operation.
+	B.	The device which displays the optional U.S.C.G. Acquisition and Search RADAR information on a CRT display.
+	C.	The device which acquires and tracks targets that are displayed on the RADAR indicator’s CRT.
+	D.	The device which allows the ship to automatically steer around potential hazards.
+
+8-36D3  Which of the following would not be considered an input to the computer of a collision avoidance system?
+	A.	Own ship’s exact position from navigation satellite receiver.
+	B.	Own ship’s gyrocompass heading.
+	C.	Own ship’s speed from Doppler log.
+	D.	Own ship’s wind velocity from an anemometer.
+
+8-36D4  Which answer best describes a line on the display which indicates a target’s position. The speed is shown by the length of the line and the course by the direction of the line.
+	A.	Vector.
+	B.	Electronic Bearing Line.
+	C.	Range Marker.
+	D.	Heading Marker.
+
+8-36D5  What is the purpose or function of the “Trial Mode” used in most ARPA equipment?
+	A.	It selects trial dots for targets’ recent past positions.
+	B.	It is used to display target position and your own ship’s data such as TCPA, CPA, etc.
+	C.	It is used to allow results of proposed maneuvers to be assessed.
+	D.	None of these.
+
+8-36D6  The ARPA term CPA refers to:
+	A.	The furthest point a ship or target will get to your own ship’s bow.
+	B.	Direction of target relative to your own ship’s direction.
+	C.	The combined detection and processing of targets.
+	D.	The closest point a ship or target will approach your own ship.
+
+
+
+
+
+
+
+
+
+Answer Key:	8-36D1: B	8-36D2: C	8-36D3: D	8-36D4: A	8-36D5: C	8-36D6: D
+
+Key Topic 37: Display System Power Supplies
+
+8-37D1  The display power supply provides the following:
+	A.	+18 volts DC for the pulse forming network.
+	B.	5 volts DC for logic circuits and ( 12 volts DC for analog and sweep circuits.
+	C.	80 volts AC for the antenna resolver circuits.
+	D.	All of the above
+
+8-37D2  The display power supply provides the following:
+	A.	5 volts DC for logic circuits.
+	B.	( 12 volts DC for analog and sweep circuits.
+	C.	17kV DC for the CRT HV anode.
+	D.	All of the above
+
+8-37D3  In a display system power supply what is the purpose of the chopper?
+	A.	It acts as an electronic switch between the raw DC output and the inverter.
+	B.	It interrupts the AC supply line at a varying rate depending on the load demands.
+	C.	It regulates the 5 volt DC output.
+	D.	It pre-regulates the AC input.
+
+8-37D4  In a display system power supply, what is the purpose of the inverter?
+	A.	Inverts the polarity of the DC voltage applied to the voltage regulators.
+	B.	Provides the dual polarity 12 volt DC supply.
+	C.	Acts as the voltage regulator for the 5 volt DC supply.
+	D.	Produces the pulsed DC input voltage to the power transformer.
+
+8-37D5  What would be a common switching frequency for a display system power supply?
+	A.	18 kHz
+	B.	120 Hz
+	C.	60 kHz
+	D.	120 kHz
+
+8-37D6  What display system power supply output would use a tripler circuit?
+	A.	The logic circuit supply.
+	B.	The sweep circuit supply.
+	C.	The HV supply for the CRT anode.
+	D.	The resolver drive
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-37D1: B	8-37D2: D	8-37D3: A	8-37D4: D	8-37D5: A	8-37D6: C
+
+Key Topic 38: Miscellaneous
+
+8-38D1  The heading flash is a momentary intensification of the sweep line on the PPI presentation. Its function is to:
+	A.	Alert the operator when a target is within range.
+	B.	Alert the operator when shallow water is near.
+	C.	Inform the operator of the dead-ahead position on the PPI scope.
+	D.	Inform the operator when the antenna is pointed to the rear of the ship.
+
+8-38D2  The major advantage of digitally processing a RADAR signal is:
+	A.	Digital readouts appear on the RADAR display.
+	B.	Enhancement of weak target returns.
+	C.	An improved operator interface.
+	D.	Rectangular display geometry is far easier to read on the CRT.
+
+8-38D3  In order to ensure that a practical filter is able to remove undesired components from the output of an analog-to-digital converter, the sampling frequency should be:
+	A.	The same as the lowest component of the analog frequency.
+	B.	Two times the highest component of the analog frequency.
+	C.	Greater than two times the highest component of the sampled frequency.
+	D.	The same as the highest component of the sampled frequency.
+
+8-38D4  Bearing resolution is:
+	A.	The ability to distinguish two adjacent targets of equal distance.
+	B.	The ability to distinguish two targets of different distances.
+	C.	The ability to distinguish two targets of different elevations.
+	D.	The ability to distinguish two targets of different size.
+
+8-38D5  The output of an RC integrator, when driven by a square wave with a period of much less than one time constant is a:
+	A.	Sawtooth wave.
+	B.	Sine wave.
+	C.	Series of narrow spikes.
+	D.	Triangle wave.
+
+8-38D6  How do you eliminate stationary objects such as trees, buildings, bridges, etc., from the PPI presentation?
+	A.	Remove the discriminator from the unit.
+	B.	Use a discriminator as a second detector.
+	C.	Calibrate the IF circuit.
+	D.	Calibrate the local oscillator.
+
+
+
+
+
+
+
+
+Answer Key:	8-38D1: C	8-38D2: B	8-38D3: C	8-38D4: A	8-38D5: D	8-38D6: B
+
+Subelement E - Antenna Systems: 5 Key Topics - 5 Exam Questions
+
+Key Topic 39: Antenna Systems
+
+8-39E1  Slotted waveguide arrays, when fed from one end exhibit:
+	A.	Frequency scan.
+	B.	High VSWR.
+	C.	Poor performance in rain.
+	D.	A narrow elevation beam.
+
+8-39E2  A typical shipboard RADAR antenna is a:
+	A.	Rotary parabolic transducer.
+	B.	Slotted waveguide array.
+	C.	Phased planar array.
+	D.	Dipole.
+
+8-39E3  Good bearing resolution largely depends upon:
+	A.	A high transmitter output reading.
+	B.	A high duty cycle.
+	C.	A narrow antenna beam in the vertical plane.
+	D.	A narrow antenna beam in the horizontal plane.
+
+8-39E4  The center of the transmitted lobe from a slotted waveguide array is:
+	A.	Several degrees offset from a line perpendicular to the antenna.
+	B.	Perpendicular to the antenna.
+	C.	Maximum at the right hand end.
+	D.	Maximum at the left hand end.
+
+8-39E5  How does antenna length affect the horizontal beamwidth of the transmitted signal?
+	A.	The longer the antenna the wider the horizontal beamwidth.
+	B.	The longer the antenna the narrower the horizontal beamwidth.
+	C.	The horizontal beamwidth is not affected by the antenna length.
+	D.	None of the above.
+
+8-39E6  What is the most common type of RADAR antenna used aboard commercial maritime vessels?
+	A.	Parabolic.
+	B.	Truncated parabolic.
+	C.	Slotted waveguide array.
+	D.	Multi-element Yagi array.
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-39E1: A	8-39E2: B	8-39E3: D	8-39E4: A	8-39E5: B	8-39E6: C
+
+Key Topic 40: Transmission Lines
+
+8-40E1  The VSWR of a microwave transmission line device might be measured using:
+	A.	A dual directional coupler and a power meter.
+	B.	A network analyzer.
+	C.	A spectrum analyzer.
+	D.	A dual directional coupler, a power meter, and a network analyzer.
+
+8-40E2  The impedance total (ZO) of a transmission line can be calculated by ZO = √L/C  when L and C are known. When a section of transmission line contains 250 microhenries of L and 1000 picofarads of C, its impedance total (ZO) will be:
+	A.	50 ohms.
+	B.	250 ohms.
+	C.	500 ohms.
+	D.	1,000 ohms.
+
+8-40E3  If long-length transmission lines are not properly shielded and terminated:
+	A.	The silicon crystals can be damaged.
+	B.	Communications receiver interference might result.
+	C.	Overmodulation might result.
+	D.	Excessive RF loss can result.
+
+8-40E4  A certain length of transmission line has a characteristic impedance of 72 ohms. If the line is cut at its center, each half of the transmission line will have a ZO of:
+	A.	36 ohms.
+	B.	144 ohms.
+	C.	72 ohms.
+	D.	The exact length must be known to determine Zo.
+
+8-40E5  Standing waves on a transmission line may be an indication that:
+	A.	All energy is being delivered to the load.
+	B.	Source and surge impedances are equal to ZO and ZL.
+	C.	The line is terminated in impedance equal to ZO.
+	D.	Some of the energy is not absorbed by the load.
+
+8-40E6  What precautions should be taken with horizontal waveguide runs?
+	A.	They should be sloped slightly downwards at the elbow and a small drain hole drilled in the elbow.
+	B.	They should be absolutely level.
+	C.	They should not exceed 10 feet in length.
+	D.	None of the above.
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-40E1: D	8-40E2: C	8-40E3: B	8-40E4: C	8-40E5: D	8-40E6: A
+
+Key Topic 41: Antenna to Display Interface
+
+8-41E1  The position of the PPI scope sweep must indicate the position of the antenna. The sweep and antenna positions are frequently kept in synchronization by the use of:
+	A.	Synchro systems.
+	B.	Servo systems.
+	C.	DC positioning motors.
+	D.	Differential amplifiers.
+
+8-41E2  On a basic synchro system, the angular information is carried on the:
+	A.	DC feedback signal.
+	B.	Stator lines.
+	C.	Deflection coils.
+	D.	Rotor lines.
+
+8-41E3  What is the most common type of antenna position indicating device used in modern RADARs?
+	A.	Resolvers.
+	B.	Servo systems.
+	C.	Synchro transmitters.
+	D.	Step motors.
+
+8-41E4  Which of the following statements about antenna resolvers is correct?
+	A.	Most resolvers contain a rotor winding and a delta stator winding.
+	B.	Resolvers consist of a two rotor windings and two stator windings that are 90 degrees apart.
+	C.	The basic resolver contains a rotor winding and two stator windings that are 90 degrees apart.
+	D.	Resolvers consist of a "Y" connected rotor winding and a delta connected stator winding.
+
+8-41E5  An antenna synchro transmitter is composed of the following:
+	A.	Three rotor and two stator windings.
+	B.	Two rotor and three stator windings.
+	C.	Three rotor and three stator windings.
+	D.	A single rotor and 3 stator windings.
+
+8-41E6  RADAR antenna direction must be sent to the display in all ARPAs or RADAR systems. How is this accomplished?
+	A.	3-phase synchros.
+	B.	2-phase resolvers.
+	C.	Optical encoders.
+	D.	Any of the above.
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-41E1: A	8-41E2: B	8-41E3: A	8-41E4: C	8-41E5: B	8-41E6: D
+
+Key Topic 42: Waveguides-1
+
+8-42E1  Wave guides can be constructed from:
+	A.	Brass.
+	B.	Aluminum.
+	C.	Copper.
+	D.	All of the above.
+
+8-42E2  A microwave transmission line constructed of a center conductor suspended between parallel conductive ground planes is called:
+	A.	Microstrip.
+	B.	Coax.
+	C.	Stripline.
+	D.	Waveguide.
+
+8-42E3  Wave guide theory is based upon:
+	A.	The movement of an electromagnetic field.
+	B.	Current flow through conductive wires.
+	C.	Inductance.
+	D.	Resonant charging.
+
+8-42E4  A waveguide is used at RADAR microwave frequencies because:
+	A.	It is easier to install than other feedline types.
+	B.	It is more rugged than other feedline types.
+	C.	It is less expensive than other feedline types.
+	D.	It has lower transmission losses than other feedline types.
+
+8-42E5  Wave guide theory is based on the principals of:
+	A.	Ohm’s Law.
+	B.	High standing waves.
+	C.	Skin effect and use of ¼ wave stubs.
+	D.	None of the above.
+
+8-42E6  How is the signal removed from a waveguide or magnetron?
+	A.	With a thin wire called a T-hook.
+	B.	With a thin wire called a J-Hook.
+	C.	With a coaxial connector.
+	D.	With a waveguide flange joint.
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-42E1: D	8-42E2: C	8-42E3: A	8-42E4: D	8-42E5: C	8-42E6: B
+
+Key Topic 43: Waveguides-2
+
+8-43E1  A rotary joint is used to:
+	A.	Couple two waveguides together at right angles.
+	B.	Act as a switch between two waveguide runs.
+	C.	Connect a stationary waveguide to the antenna array.
+	D.	Maintain pressurization at the end of the waveguide.
+
+8-43E2  Resistive losses in a waveguide are very small because:
+	A.	The inner surface of the waveguide is large.
+	B.	The inner surface of the waveguide is small.
+	C.	The waveguide does not require a ground connection.
+	D.	The heat remains in the waveguide and cannot dissipate.
+
+8-43E3  A right-angle bend in an X-band waveguide must have a radius greater than:
+	A.	Three inches.
+	B.	Six inches.
+	C.	One inch.
+	D.	Two inches.
+
+8-43E4  To insert RF energy into or extract RF energy from a waveguide, which of the following would not be used?
+	A.	Coupling capacitance.
+	B.	Current loop.
+	C.	Aperture window.
+	D.	Voltage probe.
+
+8-43E5  The following is true concerning waveguides:
+	A.	Conduction is accomplished by the polarization of electromagnetic and electrostatic fields.
+	B.	Ancillary deflection is employed.
+	C.	The magnetic field is strongest at the center of the waveguide.
+	D.	The magnetic field is strongest at the edges of the waveguide.
+
+8-43E6  At microwave frequencies, waveguides are used instead of conventional coaxial transmission lines because:
+	A.	They are smaller and easier to handle.
+	B.	They have considerably less loss.
+	C.	They are lighter since they have hollow centers.
+	D.	Moisture is never a problem with them.
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-43E1: C	8-43E2: A	8-43E3: D	8-43E4: A	8-43E5: D	8-43E6: B
+
+Subelement F - Installation, Maintenance & Repair: 7 Key Topics - 7 Exam Questions - 1 Drawing
+
+Key Topic 44: Equipment Faults-1
+
+8-44F1  When you examine the RADAR you notice that there is no target video in the center of the CRT. The blank spot gets smaller in diameter as you increase the range scale. What operator front panel control could be misadjusted?
+	A.	TUNE.
+	B.	Sensitivity Time Control (STC).
+	C.	Anti-Clutter Rain (ACR).
+	D.	False Target Elimination (FTE).
+
+8-44F2  Range rings on the PPI indicator are oval in shape. Which circuit would you suspect is faulty?
+	A.	Timing circuit.
+	B.	Video amplifier circuit.
+	C.	Range marker circuit.
+	D.	Sweep generation circuit.
+
+8-44F3  What would be the most likely defective area when there is no target video in the center of the CRT and the blank spot gets smaller in diameter as your range scale is increased?
+	A.	The TR (TRL) Cell.
+	B.	The local oscillator is misadjusted.
+	C.	Video amplifier circuit.
+	D.	The IF amplifier circuit.
+
+8-44F4  While the vessel is docked the presentation of the pier is distorted near the center of the PPI with the pier appearing to bend in a concave fashion. This is a primary indication of what?
+	A.	The deflection coils need adjusting.
+	B.	The centering magnets at the CRT neck need adjusting.
+	C.	The waveguide compensation delay line needs adjusting.
+	D.	The CRT filaments are weakening.
+
+8-44F5  In a RADAR using digital video processing, a bright, wide ring appears at a fixed distance from the center of the display on all digital ranges. The transmitter is operating normally. What receiver circuit would you suspect is causing the problem?
+	A.	VRM circuit.
+	B.	Video storage RAM or shift register.
+	C.	Range ring generator.
+	D.	EBL circuit.
+
+8-44F6  The raster scan RADAR display has missing video in a rectangular block on the screen. Where is the most likely problem area?
+	A.	Horizontal sweep circuit.
+	B.	Power supply.
+	C.	Memory area failure.
+	D.	Vertical blanking pulse.
+
+
+
+Answer Key:	8-44F1: B	8-44F2: D	8-44F3: A	8-44F4: C	8-44F5: B	8-44F6: C
+
+Key Topic 45: Equipment Faults-2
+
+8-45F1  A circuit card in a RADAR system has just been replaced with a spare card. You notice the voltage level at point E in Fig. 8F12 is negative 4.75 volts when the inputs are all at 5 volts. The problem is:
+	A.	The 25 K resistor is open.
+	B.	The 100 K resistor has been mistakenly replaced with a 50 K resistor.
+	C.	The op amp is at the rail voltage.
+	D.	The 50 K resistor has been mistakenly replaced with a 25 K resistor.
+
+8-45F2  A defective crystal in the AFC section will cause:
+	A.	No serious problems.
+	B.	Bright flashing pie sections on the PPI.
+	C.	Spiking on the PPI.
+	D.	Vertical spikes that constantly move across the screen.
+
+8-45F3  The RADAR display has sectors of solid video (spoking). What would be the first thing to check?
+	A.	Antenna information circuits failure.
+	B.	Frequency of raster scan.
+	C.	For interference from nearby ships.
+	D.	Constant velocity of antenna rotation.
+
+8-45F4  In the circuit contained in Fig. 8F12, there are 5 volts present at points B and C, and there are zero volts present at points A and D. What is the voltage at point E?
+	A.	21.5 Volts.
+	B.	3.75 Volts.
+	C.	23.75 Volts.
+	D.	4.5 Volts.
+
+8-45F5  If the TR tube malfunctions:
+	A.	The transmitter might be damaged.
+	B.	The receiver might be damaged.
+	C.	The klystron might be damaged.
+	D.	Magnetron current will increase.
+
+8-45F6  The indicated distance from your own vessel to a lighthouse is found to be in error. What circuit would you suspect?
+	A.	Range ring oscillator.
+	B.	Video amplifier.
+	C.	STC circuit.
+	D.	FTC circuit.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-45F1: D	8-45F2: B	8-45F3: C	8-45F4: A	8-45F5: B	8-45F6: A
+
+Key Topic 46: Equipment Faults-3
+
+8-46F1  Silicon crystals are used in RADAR mixer and detector stages. Using an ohmmeter, how might a crystal be checked to determine if it is functional?
+	A.	Its resistance should be the same in both directions.
+	B.	Its resistance should be low in one direction and high in the opposite direction.
+	C.	Its resistance cannot be checked with a dc ohmmeter because the crystal acts as a rectifier.
+	D.	It would be more appropriate to use a VTVM and measure the voltage drop across the crystal.
+
+8-46F2  In a RADAR unit, if the crystal mixer becomes defective, replace the:
+	A.	Crystal only.
+	B.	The crystal and the ATR tube.
+	C.	The crystal and the TR tube.
+	D.	The crystal and the klystron.
+
+8-46F3  An increase in magnetron current that coincides with a decrease in power output is an indication of what?
+	A.	The pulse length decreasing.
+	B.	A high SWR.
+	C.	A high magnetron heater voltage.
+	D.	The external magnet weakening.
+
+8-46F4  It is reported that the RADAR is not receiving small targets. The most likely causes are:
+	A.	Magnetron, IF amplifier, or receiver tuning.
+	B.	PFN, crystals, or processor memory.
+	C.	Crystals, local oscillator tuning, or power supply.
+	D.	Fuse blown, IF amp, or video processor.
+
+8-46F5  A high magnetron current indicates a/an:
+	A.	Defective AFC crystal.
+	B.	Increase in duty cycle.
+	C.	Defective external magnetic field.
+	D.	High standing wave ratio (SWR).
+
+8-46F6  Low or no mixer current could be caused by:
+	A.	Local oscillator frequency misadjustment.
+	B.	TR cell failure.
+	C.	Mixer diode degradation.
+	D.	All of the above.
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-46F1: B	8-46F2: C	8-46F3: D	8-46F4: A	8-46F5: C	8-46F6: D
+
+Key Topic 47: Equipment Faults-4
+
+8-47F1  If the magnetron is allowed to operate without the magnetic field in place:
+	A.	Its output will be somewhat distorted.
+	B.	It will quickly destroy itself from excessive current flow.
+	C.	Its frequency will change slightly.
+	D.	Nothing serious will happen.
+
+8-47F2  Targets displayed on the RADAR display are not on the same bearing as their visual bearing. What should you first suspect?
+	A.	A bad reed relay in the antenna pedestal.
+	B.	A sweep length misadjustment.
+	C.	One phase of the yoke assembly is open.
+	D.	Incorrect antenna position information.
+
+8-47F3  Loss of distant targets during and immediately after wet weather indicates:
+	A.	A leak in waveguide or rotary joint.
+	B.	High atmospheric absorption.
+	C.	Dirt or soot on the rotary joint.
+	D.	High humidity in the transmitter causing power supply loading.
+
+8-47F4  In a marine RADAR set, a high VSWR is indicated at the magnetron output. The waveguide and rotary joint appear to be functioning properly. What component may be malfunctioning?
+	A.	The magnetron
+	B.	The waveform generator
+	C.	The STC circuit
+	D.	The waveguide array termination
+
+8-47F5  On a vessel with two RADARs, one has a different range indication on a specific target than the other. How would you determine which RADAR is incorrect?
+	A.	Check the sweep and timing circuits of both indicators for correct readings.
+	B.	Triangulate target using the GPS and visual bearings.
+	C.	Check antenna parallax.
+	D.	Use the average of the two indications and adjust both for that amount.
+
+8-47F6  An increase in the deflection on the magnetron current meter could likely be caused by:
+	A.	Insufficient pulse amplitude from the modulator.
+	B.	Too high a B1 level on the magnetron.
+	C.	A decrease of the magnetic field strength.
+	D.	A lower duty cycle, as from 0.0003 to 0.0002.
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-47F1: B	8-47F2: D	8-47F3: A	8-47F4: D	8-47F5: A	8-47F6: C
+
+Key Topic 48: Maintenance
+
+8-48F1  A thick layer of rust and corrosion on the surface of the parabolic dish will have what effect?
+	A.	No noticeable effect.
+	B.	Scatter and absorption of RADAR waves.
+	C.	Decrease in performance, especially for weak targets.
+	D.	Slightly out of focus PPI scope.
+
+8-48F2  The echo box is used for:
+	A.	Testing the wavelength of the incoming echo signal.
+	B.	Testing and tuning of the RADAR unit by providing artificial targets.
+	C.	Amplification of the echo signal.
+	D.	Detection of the echo pulses.
+
+8-48F3  What should be done to the interior surface of a waveguide in order to minimize signal loss?
+	A.	Fill it with nitrogen gas.
+	B.	Paint it with nonconductive paint to prevent rust.
+	C.	Keep it as clean as possible.
+	D.	Fill it with a high-grade electrical oil.
+
+8-48F4  Which of the following is the most useful instrument for RADAR servicing?
+	A.	Oscilloscope.
+	B.	Frequency Counter.
+	C.	R. F. Wattmeter.
+	D.	Audio generator.
+
+8-48F5  A non-magnetic screwdriver should always be used when replacing what component?
+	A.	TR tube.
+	B.	Mixer.
+	C.	Video amplifier.
+	D.	Magnetron.
+
+8-48F6  What kind of display would indicate water in the waveguide?
+	A.	Spoking.
+	B.	Large circular rings near the center.
+	C.	Loss of range rings.
+	D.	Wider than normal targets.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-48F1: C	8-48F2: B	8-48F3: C	8-48F4: A	8-48F5: D	8-48F6: B
+
+Key Topic 49: Installation
+
+8-49F1  Why is coaxial cable often used for S-band installations instead of a waveguide:
+	A.	Losses can be kept reasonable at S-band frequencies and the installation cost is lower.
+	B.	A waveguide will not support the power density required for modern S-band RADAR transmitters.
+	C.	S-band waveguide flanges show too much leakage and are unsafe for use near personnel.
+	D.	Dimensions for S-band waveguide do not permit a rugged enough installation for use by ships at sea.
+
+8-49F2  RADAR interference to a communications receiver is eliminated by:
+	A.	Not operating other devices when RADAR is in use.
+	B.	Properly grounding, bonding, and shielding all units.
+	C.	Using a high pass filter on the power line.
+	D.	Using a link coupling.
+
+8-49F3  Why should long horizontal runs of waveguide be avoided?
+	A.	They must be insulated to prevent electric shock.
+	B.	To prevent damage from shipboard personnel.
+	C.	To minimize reception of horizontally polarized returns.
+	D.	To prevent accumulation of condensation.
+
+8-49F4  Long horizontal sections of waveguides are not desirable because:
+	A.	Moisture can accumulate in the waveguide.
+	B.	The waveguide can sag, causing loss of signal.
+	C.	Excessive standing waves can occur.
+	D.	The polarization of the signal might shift.
+
+8-49F5  In a RADAR system, wave guides should be installed
+	A.	Slightly bent for maximum gain.
+	B.	As straight as possible to reduce distortion.
+	C.	At 90 degree angles to improve resonance.
+	D.	As long as possible for system flexibility.
+
+8-49F6  What is the most important factor to consider in locating the antenna?
+	A.	Allow the shortest cable/waveguide run.
+	B.	Maximum height for best long range operation.
+	C.	The antenna is in a location that is not shadowed by other structures.
+	D.	Easy access for maintenance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	8-49F1: A	8-49F2: B	8-49F3: D	8-49F4: A	8-49F5: B	8-49F6: C
+
+Key Topic 50: Safety
+
+8-50F1  Choose the most correct statement with respect to component damage from electrostatic discharge:
+	A.	ESD damage occurs primarily in passive components which are easily identified and replaced.
+	B.	ESD damage occurs primarily in active components which are easily identified and replaced.
+	C.	The technician will feel a small static shock and recognize that ESD damage has occurred to the circuit.
+	D.	ESD damage may cause immediate circuit failures, but may also cause failures much later at times when the RADAR set is critically needed.
+
+8-50F2  Before testing a RADAR transmitter, it would be a good idea to:
+	A.	Make sure no one is on the deck.
+	B.	Make sure the magnetron’s magnetic field is far away from the magnetron.
+	C.	Make sure there are no explosives or flammable cargo being loaded.
+	D.	Make sure the Coast Guard has been notified.
+
+8-50F3  While making repairs or adjustments to RADAR units:
+	A.	Wear fire-retardant clothing.
+	B.	Discharge all high-voltage capacitors to ground.
+	C.	Maintain the filament voltage.
+	D.	Reduce the magnetron voltage.
+
+8-50F4  While removing a CRT from its operating casing, it is a good idea to:
+	A.	Discharge the first anode.
+	B.	Test the second anode with your fingertip.
+	C.	Wear gloves and goggles.
+	D.	Set it down on a hard surface.
+
+8-50F5  If a CRT is dropped:
+	A.	Most likely nothing will happen because they are built with durability in mind.
+	B.	It might go out of calibration.
+	C.	The phosphor might break loose.
+	D.	It might implode, causing damage to workers and equipment.
+
+8-50F6  Prior to removing, servicing or making measurements on any solid state circuit boards from the RADAR set, the operator should ensure that:
+	A.	The proper work surfaces and ESD grounding straps are in place to prevent damage to the boards from electrostatic discharge.
+	B.	The waveguide is detached from the antenna to prevent radiation.
+	C.	The magnetic field is present to prevent over-current damage or overheating from occurring in the magnetron.
+	D.	Only non-conductive tools and devices are used.
+
+
+
+
+
+
+Answer Key:	8-50F1: D	8-50F2: C	8-50F3: B	8-50F4: C	8-50F5: D	8-50F6: A
+
+
+[END OF PROPOSED 2009 FCC COMMERCIAL ELEMENT 8 QUESTION POOL]
+

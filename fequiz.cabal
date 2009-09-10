@@ -29,3 +29,4 @@ executable           fequiz.cgi
                      hslogger, mtl, old-locale, parsec, random, 
                      regex-compat, time, xhtml
    ghc-options:      -Wall
+   buildable:        False

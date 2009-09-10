@@ -1,0 +1,1147 @@
+
+FCC Commercial Element 1 Question Pool (approved 25 June 2009)
+
+Subelement A - Rules & Regulations:  6 Key Topics, 6 Exam Questions
+
+Key Topic 1: Equipment Requirements
+
+1-1A1  What is a requirement of all marine transmitting apparatus used aboard United States vessels?
+	A.	Only equipment that has been certified by the FCC for Part 80 operations is authorized.
+	B.	Equipment must be type-accepted by the U.S. Coast Guard for maritime mobile use.
+	C.	Certification is required by the International Maritime Organization (IMO).
+	D.	Programming of all maritime channels must be performed by a licensed Marine Radio Operator.
+
+1-1A2  What transmitting equipment is authorized for use by a station in the maritime services?
+	A.	Transmitters that have been certified by the manufacturer for maritime use.
+	B.	Unless specifically excepted, only transmitters certified by the Federal Communications Commission for Part 80 operations.
+	C.	Equipment that has been inspected and approved by the U.S. Coast Guard.
+	D.	Transceivers and transmitters that meet all ITU specifications for use in maritime mobile service.
+
+1-1A3  Small passenger vessels that sail 20 to 100 nautical miles from the nearest land must have what additional equipment?
+	A.	Inmarsat-B terminal.
+	B.	Inmarsat-C terminal.
+	C.	Aircraft Transceiver with 121.5 MHz.
+	D.	MF-HF SSB Transceiver.
+
+1-1A4  What equipment is programmed to initiate transmission of distress alerts and calls to individual stations?
+	A.	NAVTEX.
+	B.	GPS.
+	C.	DSC controller.
+	D.	Scanning Watch Receiver.
+
+1-1A5  What is the minimum transmitter power level required by the FCC for a medium-frequency transmitter aboard a compulsorily fitted vessel?
+	A.	At least 100 watts, single-sideband, suppressed-carrier power.
+	B.	At least 60 watts PEP.
+	C.	The power predictably needed to communicate with the nearest public coast station operating on 2182 kHz.
+	D.	At least 25 watts delivered into 50 ohms effective resistance when operated with a primary voltage of 13.6 volts DC.
+
+1-1A6  Shipboard transmitters using F3E emission (FM voice) may not exceed what carrier power?
+	A.	500 watts.
+	B.	250 watts.
+	C.	100 watts.
+	D.	25 watts.
+
+
+
+
+Answer Key:	1-1A1:  A	1-1A2:  B	1-1A3:  D	1-1A4:  C	1-1A5:  B	1-1A6:  D
+
+Key Topic 2: License Requirements
+
+1-2A1  Which commercial radio operator license is required to operate a fixed-tuned ship RADAR station with external controls?
+	A.	A radio operator certificate containing a Ship RADAR Endorsement.
+	B.	A Marine Radio Operator Permit or higher.
+	C.	Either a First or Second Class Radiotelegraph certificate or a General Radiotelephone Operator License.
+	D.	No radio operator authorization is required.
+
+1-2A2  When is a Marine Radio Operator Permit or higher license required for aircraft communications?
+	A.	When operating on frequencies below 30 MHz allocated exclusively to aeronautical mobile services.
+	B.	When operating on frequencies above 30 MHz allocated exclusively to aeronautical mobile services.
+	C.	When operating on frequencies below 30 MHz not allocated exclusively to aeronautical mobile services.
+	D.	When operating on frequencies above 30 MHz not assigned for international use.
+
+1-2A3  Which of the following persons are ineligible to be issued a commercial radio operator license?
+	A.	Individuals who are unable to send and receive correctly by telephone spoken messages in English.
+	B.	Handicapped persons with uncorrected disabilities which affect their ability to perform all duties required of commercial radio operators.
+	C.	Foreign maritime radio operators unless they are certified by the International Maritime Organization (IMO).
+	D.	U.S. Military radio operators who are still on active duty.
+
+1-2A4  What are the radio operator requirements of a passenger ship equipped with a GMDSS installation?
+	A.	The operator must hold a General Radiotelephone Operator License or higher-class license.
+	B.	The operator must hold a Restricted Radiotelephone Operator Permit or higher-class license.
+	C.	The operator must hold a Marine Radio Operator Permit or higher-class license.
+	D.	Two operators on board must hold a GMDSS Radio Operator License or a Restricted GMDSS Radio Operator License, depending on the ship’s operating areas.
+
+1-2A5  What is the minimum radio operator requirement for ships subject to the Great Lakes Radio Agreement?
+	A.	Third Class Radiotelegraph Operator’s Certificate.
+	B.	General Radiotelephone Operator License.
+	C.	Marine Radio Operator Permit.
+	D.	Restricted Radiotelephone Operator Permit.
+
+1-2A6  What is a requirement of every commercial operator on duty and in charge of a transmitting system?
+	A.	A copy of the Proof-of-Passing Certificate (PPC) must be in the station’s records.
+	B.	The original license or a photocopy must be posted or in the operator’s personal possession and available for inspection.
+	C.	The FCC Form 605 certifying the operator’s qualifications must be readily available at the transmitting system site.
+	D.	A copy of the operator’s license must be supplied to the radio station’s supervisor as evidence of technical qualification.
+
+
+
+
+
+
+Answer Key:	1-2A1:  D	1-2A2:  C	1-2A3:  A	1-2A4:  D	1-2A5:  C	1-2A6:  B
+
+Key Topic 3: Watchkeeping
+
+1-3A1  Radio watches for compulsory radiotelephone stations will include the following:
+	A.	VHF channel 22a continuous watch at sea.
+	B.	121.5 MHz continuous watch at sea.
+	C.	VHF channel 16 continuous watch.
+	D.	500 kHz.
+
+1-3A2  All compulsory equipped cargo ships (except those operating under GMDSS regulations or in a VTS) while being navigated outside of a harbor or port, shall keep a continuous radiotelephone watch on:
+	A.	2182 kHz and Ch-16.
+	B.	2182 kHz.
+	C.	Ch-16.
+	D.	Cargo ships are exempt from radio watch regulations.
+
+1-3A3  What channel must all compulsory, non-GMDSS vessels monitor at all times in the open sea?
+	A.	Channel 8.
+	B.	Channel 70.
+	C.	Channel 6.
+	D.	Channel 16.
+
+1-3A4  When a watch is required on 2182 kHz, at how many minutes past the hour must a 3 minute silent period be observed?
+	A.	00, 30.
+	B.	15, 45.
+	C.	10, 40.
+	D.	05, 35.
+
+1-3A5  Which is true concerning a required watch on VHF Ch-16?
+	A.	It is compulsory at all times while at sea until further notice, unless the vessel is in a VTS system.
+	B.	When a vessel is in an A1 sea area and subject to the Bridge-to-Bridge act and in a VTS system, a watch is not required on Ch-16, provided the vessel monitors both Ch-13 and VTS channel.
+	C.	It is always compulsory in sea areas A2, A3 and A4.
+	D.	All of the above.
+
+1-3A6  What are the mandatory DSC watchkeeping bands/channels?
+	A.	VHF Ch-70, 2 MHz MF DSC, 6 MHz DSC and 1 other HF DSC.
+	B.	8 MHz HF DSC, 1 other HF DSC, 2 MHz MF DSC and VHF Ch-70.
+	C.	2 MHz MF DSC, 8 MHz DSC, VHF Ch-16 and 1 other HF DSC.
+	D.	None of the above.
+
+
+
+
+
+
+
+
+
+Answer Key:	1-3A1:  C	1-3A2:  A	1-3A3:  D	1-3A4:  A	1-3A5:  D	1-3A6:  B
+
+Key Topic 4: Logkeeping
+
+1-4A1  Who is required to make entries in a required service or maintenance log?
+	A.	The licensed operator or a person whom he or she designates.
+	B.	The operator responsible for the station operation or maintenance.
+	C.	Any commercial radio operator holding at least a Restricted Radiotelephone Operator Permit.
+	D.	The technician who actually makes the adjustments to the equipment.
+
+1-4A2  Who is responsible for the proper maintenance of station logs?
+	A.	The station licensee.
+	B.	The commercially-licensed radio operator in charge of the station.
+	C.	The ship’s master and the station licensee.
+	D.	The station licensee and the radio operator in charge of the station.
+
+1-4A3  Where must ship station logs be kept during a voyage?
+	A.	At the principal radiotelephone operating position.
+	B.	They must be secured in the vessel’s strongbox for safekeeping.
+	C.	In the personal custody of the licensed commercial radio operator.
+	D.	All logs are turned over to the ship’s master when the radio operator goes off duty.
+
+1-4A4  What is the proper procedure for making a correction in the station log?
+	A.	The ship’s master must be notified, approve and initial all changes to the station log.
+	B.	The mistake may be erased and the correction made and initialized only by the radio operator making the original error.
+	C.	The original person making the entry must strike out the error, initial the correction and indicate the date of the correction.
+	D.	Rewrite the new entry in its entirety directly below the incorrect notation and initial the change.
+
+1-4A5  How long should station logs be retained when there are entries relating to distress or disaster situations?
+	A.	Until authorized by the Commission in writing to destroy them.
+	B.	For a period of three years from the last date of entry, unless notified by the FCC.
+	C.	Indefinitely, or until destruction is specifically authorized by the U.S. Coast Guard.
+	D.	For a period of one year from the last date of entry.
+
+1-4A6  How long should station logs be retained when there are no entries relating to distress or disaster situations?
+	A.	For a period of three years from the last date of entry, unless notified by the FCC.
+	B.	Until authorized by the Commission in writing to destroy them.
+	C.	For a period of two years from the last date of entry.
+	D.	Indefinitely, or until destruction is specifically authorized by the U.S. Coast Guard.
+
+
+
+
+
+
+
+
+
+
+Answer Key:	1-4A1:  B	1-4A2:  D	1-4A3:  A	1-4A4:  C	1-4A5:  B	1-4A6:  C
+
+Key Topic 5: Log Entries
+
+1-5A1  Radiotelephone stations required to keep logs of their transmissions must include:
+	A.	Station, date and time.
+	B.	Name of operator on duty.
+	C.	Station call signs with which communication took place.
+	D.	All of these.
+
+1-5A2  Which of the following is true?
+	A.	Battery test must be logged daily.
+	B.	EPIRB tests are normally logged monthly.
+	C.	Radiotelephone tests are normally logged weekly.
+	D.	None of the above.
+
+1-5A3  Where should the GMDSS radio log be kept on board ship?
+	A.	Captain’s office.
+	B.	Sea cabin.
+	C.	At the GMDSS operating position.
+	D.	Anywhere on board the vessel.
+
+1-5A4  Which of the following statements is true?
+	A.	Key letters or abbreviations may be used in GMDSS Radio Logbooks if their meaning is noted in the log.
+	B.	Key letters or abbreviations may not be used in GMDSS Radio Logbooks under any circumstances.
+	C.	All Urgency communications must be entered in the logbook.
+	D.	None of the above.
+
+1-5A5  Which of the following logkeeping statements is true?
+	A.	Entries relating to pre-voyage, pre-departure and daily tests are required.
+	B.	Both a) and c)
+	C.	A summary of all required Distress communications heard and Urgency communications affecting the station’s own ship.  Also, all Safety communications (other than VHF) affecting the station’s own ship must be logged.
+	D.	Routine daily MF-HF and Inmarsat-C transmissions do not have to be logged.
+
+1-5A6  Which of the following statements concerning log entries is false?
+	A.	All Safety communications received on VHF must be logged.
+	B.	All required equipment tests must be logged.
+	C.	The radio operator must log on and off watch.
+	D.	The vessels daily position must be entered in the log.
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	1-5A1:  D	1-5A2:  B	1-5A3:  C	1-5A4:  A	1-5A5:  B	1-5A6:  A
+
+Key Topic 6: Miscellaneous Rules & Regulations
+
+1-6A1  What regulations govern the use and operation of FCC-licensed ship stations in international waters?
+	A.	The regulations of the International Maritime Organization (IMO) and Radio Officers Union.
+	B.	Part 80 of the FCC Rules plus the international Radio Regulations and agreements to which the United States is a party.
+	C.	The Maritime Mobile Directives of the International Telecommunication Union.
+	D.	Those of the FCC’s Wireless Telecommunications Bureau, Maritime Mobile Service, Washington, DC 20554.
+
+1-6A2  When may the operator of a ship radio station allow an unlicensed person to speak over the transmitter?
+	A.	At no time.  Only commercially-licensed radio operators may modulate the transmitting apparatus.
+	B.	When the station power does not exceed 200 watts peak envelope power.
+	C.	When under the supervision of the licensed operator.
+	D.	During the hours that the radio officer is normally off duty.
+
+1-6A3  Where do you make an application for inspection of a ship GMDSS radio station?
+	A.	To a Commercial Operator Licensing Examination Manager (COLE Manager).
+	B.	To the Federal Communications Commission, Washington, DC 20554.
+	C.	To the Engineer-in-Charge of the FCC District Office nearest the proposed place of inspection.
+	D.	To an FCC-licensed technician holding a GMDSS Radio Maintainer’s License.
+
+1-6A4  Who has ultimate control of service at a ship’s radio station?
+	A.	The master of the ship.
+	B.	A holder of a First Class Radiotelegraph Certificate with a six months’ service endorsement.
+	C.	The Radio Officer-in-Charge authorized by the captain of the vessel.
+	D.	An appointed licensed radio operator who agrees to comply with all Radio Regulations in force.
+
+1-6A5  Where must the principal radiotelephone operating position be installed in a ship station?
+	A.	At the principal radio operating position of the vessel.
+	B.	In the chart room, master’s quarters or wheel house.
+	C.	In the room or an adjoining room from which the ship is normally steered while at sea.
+	D.	At the level of the main wheel house or at least one deck above the ship’s main deck.
+
+1-6A6  By international agreement, which ships must carry radio equipment for the safety of life at sea?
+	A.	All ships traveling more than 100 miles out to sea.
+	B.	Cargo ships of more than 100 gross tons and passenger vessels on international deep-sea voyages.
+	C.	All cargo ships of more than 100 gross tons.
+	D.	Cargo ships of more than 300 gross tons and vessels carrying more than 12 passengers.
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	1-6A1:  B	1-6A2:  C	1-6A3:  C	1-6A4:  A	1-6A5:  C	1-6A6:  D
+
+Subelement B - Communications Procedures:  6 Key Topics, 6 Exam Questions
+
+Key Topic 7: Bridge-to-Bridge Operations
+
+1-7B1  What traffic management service is operated by the U.S. Coast Guard in certain designated water areas to prevent ship collisions, groundings and environmental harm?
+	A.	Water Safety Management Bureau (WSMB).
+	B.	Vessel Traffic Service (VTS).
+	C.	Ship Movement and Safety Agency (SMSA).
+	D.	Interdepartmental Harbor and Port Patrol (IHPP).
+
+1-7B2  What is a bridge-to-bridge station?
+	A.	An internal communications system linking the wheel house with the ship’s primary radio operating position and other integral ship control points.
+	B.	An inland waterways and coastal radio station serving ship stations operating within the United States.
+	C.	A portable ship station necessary to eliminate frequent application to operate a ship station on board different vessels.
+	D.	A VHF radio station located on a ship’s navigational bridge or main control station that is used only for navigational communications.
+
+1-7B3  When may a bridge-to-bridge transmission be more than 1 watt?
+	A.	When broadcasting a distress message and rounding a bend in a river or traveling in a blind spot.
+	B.	When broadcasting a distress message.
+	C.	When rounding a bend in a river or traveling in a blind spot.
+	D.	When calling the Coast Guard.
+
+1-7B4  When is it legal to transmit high power on Channel 13?
+	A.	Failure of vessel being called to respond.
+	B.	In a blind situation such as rounding a bend in a river.
+	C.	During an emergency.
+	D.	All of these.
+
+1-7B5  A ship station using VHF bridge-to-bridge Channel 13:
+	A.	May be identified by the name of the ship in lieu of call sign.
+	B.	May be identified by call sign and country of origin.
+	C.	Must be identified by call sign and name of vessel.
+	D.	Does not need to identify itself within 100 miles from shore.
+
+1-7B6  The primary purpose of bridge-to-bridge communications is:
+	A.	Search and rescue emergency calls only.
+	B.	All short-range transmission aboard ship.
+	C.	Navigational communications.
+	D.	Transmission of Captain's orders from the bridge.
+
+
+
+
+
+
+
+Answer Key:	1-7B1:  B	1-7B2:  D	1-7B3:  A	1-7B4:  D	1-7B5:  A	1-7B6:  C
+
+Key Topic 8: Operating Procedures-1
+
+1-8B1  What is the best way for a radio operator to minimize or prevent interference to other stations?
+	A.	By using an omni-directional antenna pointed away from other stations.
+	B.	Reducing power to a level that will not affect other on-frequency communications.
+	C.	Determine that a frequency is not in use by monitoring the frequency before transmitting.
+	D.	By changing frequency when notified that a radiocommunication causes interference.
+
+1-8B2  Under what circumstances may a coast station using telephony transmit a general call to a group of vessels?
+	A.	Under no circumstances.
+	B.	When announcing or preceding the transmission of Distress, Urgency, Safety or other important messages.
+	C.	When the vessels are located in international waters beyond 12 miles.
+	D.	When identical traffic is destined for multiple mobile stations within range.
+
+1-8B3  Who determines when a ship station may transmit routine traffic destined for a coast or government station in the maritime mobile service?
+	A.	Shipboard radio officers may transmit traffic when it will not interfere with ongoing radiocommunications.
+	B.	The order and time of transmission and permissible type of message traffic is decided by the licensed on-duty operator.
+	C.	Ship stations must comply with instructions given by the coast or government station.
+	D.	The precedence of conventional radiocommunications is determined by FCC and international regulation.
+
+1-8B4  What is required of a ship station which has established initial contact with another station on 2182 kHz or Ch-16?
+	A.	The stations must change to an authorized working frequency for the transmission of messages.
+	B.	The stations must check the radio channel for Distress, Urgency and Safety calls at least once every ten minutes.
+	C.	Radiated power must be minimized so as not to interfere with other stations needing to use the channel.
+	D.	To expedite safety communications, the vessels must observe radio silence for two out of every fifteen minutes.
+
+1-8B5  How does a coast station notify a ship that it has a message for the ship?
+	A.	By making a directed transmission on 2182 kHz or 156.800 MHz.
+	B.	The coast station changes to the vessel’s known working frequency.
+	C.	By establishing communications using the eight-digit maritime mobile service identification.
+	D.	The coast station may transmit, at intervals, lists of call signs in alphabetical order for which they have traffic.
+
+1-8B6  What is the priority of communications?
+	A.	Safety, Distress, Urgency and radio direction-finding.
+	B.	Distress, Urgency and Safety.
+	C.	Distress, Safety, radio direction-finding, search and rescue.
+	D.	Radio direction-finding, Distress and Safety.
+
+
+
+
+Answer Key:	1-8B1:  C	1-8B2:  B	1-8B3:  C	1-8B4:  A	1-8B5:  D	1-8B6:  B
+
+
+Key Topic 9: Operating Procedures-2
+
+
+1-9B1  Under what circumstances may a ship or aircraft station interfere with a public coast station?
+	A.	In cases of distress.
+	B.	Under no circumstances during on-going radiocommunications.
+	C.	During periods of government priority traffic handling.
+	D.	When it is necessary to transmit a message concerning the safety of navigation or important meteorological warnings.
+
+1-9B2  Ordinarily, how often would a station using a telephony emission identify?
+	A.	At least every 10 minutes.
+	B.	At the beginning and end of each transmission and at 15-minute intervals.
+	C.	At 15-minute intervals, unless public correspondence is in progress.
+	D.	At 20-minute intervals.
+
+1-9B3  When using a SSB station on 2182 kHz or VHF-FM on channel 16:
+	A.	Preliminary call must not exceed 30 seconds.
+	B.	If contact is not made, you must wait at least 2 minutes before repeating the call.
+	C.	Once contact is established, you must switch to a working frequency.
+	D.	All of these.
+
+1-9B4  What should a station operator do before making a transmission?
+	A.	Except for the transmission of distress calls, determine that the frequency is not in use by monitoring the frequency before transmitting.
+	B.	Transmit a general notification that the operator wishes to utilize the channel.
+	C.	Check transmitting equipment to be certain it is properly calibrated.
+	D.	Ask if the frequency is in use.
+
+1-9B5  On what frequency should a ship station normally call a coast station when using a radiotelephony emission?
+	A.	On a vacant radio channel determined by the licensed radio officer.
+	B.	Calls should be initiated on the appropriate ship-to-shore working frequency of the coast station.
+	C.	On any calling frequency internationally approved for use within ITU Region 2.
+	D.	On 2182 kHz or Ch-16 at any time.
+
+1-9B6  In the International Phonetic Alphabet, the letters E, M, and S are represented by the words:
+	A.	Echo, Michigan, Sonar.
+	B.	Equator, Mike, Sonar.
+	C.	Echo, Mike, Sierra
+	D.	Element, Mister, Scooter
+
+
+
+
+
+
+
+
+
+
+Answer Key:	1-9B1:  A	1-9B2:  B	1-9B3:  D	1-9B4:  A	1-9B5:  B	1-9B6:  C
+
+Key Topic 10: Distress Communications
+
+1-10B1  What information must be included in a Distress message?
+	A.	Name of vessel.
+	B.	Location.
+	C.	Type of distress and specifics of help requested.
+	D.	All of the above.
+
+1-10B2  What are the highest priority communications from ships at sea?
+	A.	All critical message traffic authorized by the ship’s master.
+	B.	Navigation and meteorological warnings.
+	C.	Distress calls are highest and then communications preceded by Urgency and then Safety signals.
+	D.	Authorized government communications for which priority right has been claimed.
+
+1-10B3  What is a Distress communication?
+	A.	Communications indicating that the calling station has a very urgent message concerning safety.
+	B.	An internationally recognized communication indicating that the sender is threatened by grave and imminent danger and requests immediate assistance.
+	C.	Radio communications which, if delayed, will adversely affect the safety of life or property.
+	D.	An official radio communication notification of approaching navigational or meteorological hazards.
+
+1-10B4  What is the order of priority of radiotelephone communications in the maritime services?
+	A.	Alarm and health and welfare communications.
+	B.	Navigation hazards, meteorological warnings, priority traffic.
+	C.	Distress calls and signals, followed by communications preceded by Urgency and Safety signals and all other communications.
+	D.	Government precedence, messages concerning safety of life and protection of property, and traffic concerning grave and imminent danger.
+
+1-10B5  The radiotelephone Distress call and message consists of:
+	A.	MAYDAY spoken three times, followed by the name of the vessel and the call sign in phonetics spoken three times.
+	B.	Particulars of its position, latitude and longitude, and other information which might facilitate rescue, such as length, color and type of vessel, and number of persons on board.
+	C.	Nature of distress and kind of assistance required.
+	D.	All of the above.
+
+1-10B6  What is Distress traffic?
+	A.	All messages relative to the immediate assistance required by a ship, aircraft or other vehicle threatened by grave or imminent danger, such as life and safety of persons on board, or man overboard.
+	B.	In radiotelephony, the speaking of the word, “Mayday.”
+	C.	Health and welfare messages concerning property and the safety of a vessel.
+	D.	Internationally recognized communications relating to important situations.
+
+
+
+
+
+
+
+Answer Key:	1-10B1:  D	1-10B2:  C	1-10B3:  B	1-10B4:  C	1-10B5:  D	1-10B6:  A
+
+Key Topic 11: Urgency and Safety Communications
+
+1-11B1 What is a typical Urgency transmission?
+	A.	A request for medical assistance that does not rise to the level of a Distress or a critical weather transmission higher than Safety.
+	B.	A radio Distress transmission affecting the security of humans or property.
+	C.	Health and welfare traffic which impacts the protection of on-board personnel.
+	D.	A communications alert that important personal messages must be transmitted.
+
+1-11B2  What is the internationally recognized Urgency signal?
+	A.	The letters “TTT” transmitted three times by radiotelegraphy.
+	B.	The words “PAN PAN” spoken three times before the Urgency call.
+	C.	Three oral repetitions of the word “Safety” sent before the call.
+	D.	The pronouncement of the word “Mayday.”
+
+1-11B3  What is a Safety transmission?
+	A.	A communications transmission which indicates that a station is preparing to transmit an important navigation or weather warning.
+	B.	A radiotelephony warning preceded by the words “PAN PAN.”
+	C.	Health and welfare traffic concerning the protection of human life.
+	D.	A voice call proceeded by the words “Safety Alert.”
+
+1-11B4  The Urgency signal concerning the safety of a ship, aircraft or person shall be sent only on the authority of:
+	A.	Master of ship.
+	B.	Person responsible for mobile station.
+	C.	Either Master of ship or person responsible for mobile station.
+	D.	An FCC-licensed operator.
+
+1-11B5  The Urgency signal has lower priority than:
+	A.	Ship-to-ship routine calls.
+	B.	Distress.
+	C.	Safety.
+	D.	Security.
+
+1-11B6  What safety signal call word is spoken three times, followed by the station call letters spoken three times, to announce a storm warning, danger to navigation, or special aid to navigation?
+	A.	PAN PAN.
+	B.	MAYDAY.
+	C.	SAFETY.
+	D.	SECURITE.
+
+
+
+
+
+
+
+
+
+Answer Key:	1-11B1:  A	1-11B2:  B	1-11B3:  A	1-11B4:  C	1-11B5:  B	1-11B6:  D
+
+Key Topic 12: GMDSS
+
+1-12B1  What is the fundamental concept of the GMDSS?
+	A.	It is intended to automate and improve existing digital selective calling procedures and techniques.
+	B.	It is intended to provide more effective but lower cost commercial communications.
+	C.	It is intended to provide compulsory vessels with a collision avoidance system when they are operating in waters that are also occupied by non-compulsory vessels.
+	D.	It is intended to automate and improve emergency communications in the maritime industry.
+
+1-12B2  The primary purpose of the GMDSS is to:
+	A.	Allow more effective control of SAR situations by vessels.
+	B.	Provide additional shipboard systems for more effective company communications.
+	C.	Automate and improve emergency communications for the world’s shipping industry.
+	D.	Provide effective and inexpensive communications.
+
+1-12B3  What is the basic concept of GMDSS?
+	A.	Shoreside authorities and vessels can assist in a coordinated SAR operation with minimum delay.
+	B.	Search and rescue authorities ashore can be alerted to a Distress situation.
+	C.	Shipping in the immediate vicinity of a ship in Distress will be rapidly alerted.
+	D.	All of these.
+
+1-12B4  GMDSS is primarily a system based on?
+	A.	Ship-to-ship Distress communications using MF or HF radiotelephony.
+	B.	VHF digital selective calling from ship to shore.
+	C.	Distress, Urgency and Safety communications carried out by the use of narrow-band direct printing telegraphy.
+	D.	The linking of search and rescue authorities ashore with shipping in the immediate vicinity of a ship in Distress or in need of assistance.
+
+1-12B5  What is the responsibility of vessels under GMDSS?
+	A.	Vessels over 300 gross tons may be required to render assistance if such assistance does not adversely affect their port schedule.
+	B.	Only that vessel, regardless of size, closest to a vessel in Distress, is required to render assistance.
+	C.	Every ship is able to perform those communications functions that are essential for the Safety of the ship itself and of other ships.
+	D.	Vessels operating under GMDSS, outside of areas effectively serviced by shoreside authorities, operating in sea areas A2, and A4 may be required to render assistance in Distress situations.
+
+1-12B6  GMDSS is required for which of the following?
+	A.	All vessels capable of international voyages.
+	B.	SOLAS Convention ships of 300 gross tonnage or more.
+	C.	Vessels operating outside of the range of VHF coastal radio stations.
+	D.	Coastal vessels of less than 300 gross tons.
+
+
+
+
+
+
+
+Answer Key:	1-12B1:  D	1-12B2:  C	1-12B3:  A	1-12B4:  D	1-12B5:  C	1-12B6:  B
+
+Subelement C - Equipment Operations:  6 Key Topics, 6 Exam Questions
+
+Key Topic 13: VHF Equipment Controls
+
+1-13C1  What is the purpose of the INT-USA control settings on a VHF?
+	A.	To change all VTS frequencies to Duplex so all vessels can receive maneuvering orders.
+	B.	To change all VHF channels from Duplex to Simplex while in U.S. waters.
+	C.	To change certain International Duplex channel assignments to simplex in the U.S. for VTS and other purposes.
+	D.	To change to NOAA weather channels and receive weather broadcasts while in the U.S.
+
+1-13C2  VHF ship station transmitters must have the capability of reducing carrier power to:
+	A.	1 watt.
+	B.	10 watts.
+	C.	25 watts.
+	D.	50 watts.
+
+1-13C3  The Dual Watch (DW) function is used to:
+	A.	Listen to Ch-70 at the same time while monitoring Ch-16.
+	B.	Sequentially monitor 4 different channels.
+	C.	Sequentially monitoring all VHF channels.
+	D.	Listen on any selected channel while periodically monitoring Ch-16.
+
+1-13C4  Which of the following statements best describes the correct setting for manual adjustment of the squelch control?
+	A.	Adjust squelch control to the minimum level necessary to barely suppress any background noise.
+	B.	Always adjust squelch control to its maximum level.
+	C.	Always adjust squelch control to its minimum level.
+	D.	Adjust squelch control to approximately twice the minimum level necessary to barely suppress any background noise.
+
+1-13C5  The “Scan” function is used to:
+	A.	Monitor  Ch-16 continuously and switching to either Ch-70 or Ch-13 every 5 seconds.
+	B.	Scan Ch-16 for Distress calls.
+	C.	Scan Ch-70 for Distress alerts.
+	D.	Sequentially scan all or selected channels.
+
+1-13C6  Why must all VHF Distress, Urgency and Safety communications (as well as VTS traffic calls) be performed in Simplex operating mode?
+	A.	To minimize interference from vessels engaged in routine communications.
+	B.	To ensure that vessels not directly participating in the communications can hear both sides of the radio exchange.
+	C.	To enable an RCC or Coast station to only hear communications from the vessel actually in distress.
+	D.	To allow an RCC or Coast station to determine which transmissions are from other vessels and which transmissions are from the vessel actually in distress.
+
+
+
+
+
+Answer Key:	1-13C1:  C	1-13C2:  A	1-13C3:  D	1-13C4:  A	1-13C5:  D	1-13C6:  B
+
+Key Topic 14: VHF Channel Selection
+
+1-14C1  What channel must VHF-FM-equipped vessels monitor at all times when the vessel is at sea?
+	A.	Channel 8.
+	B.	Channel 16.
+	C.	Channel 5A.
+	D.	Channel 1A.
+
+1-14C2  What is the aircraft frequency and emission used for distress communications?
+	A.	243.000 MHz - F3E.
+	B.	121.500 MHz - F3E.
+	C.	156.525 MHz - F1B.
+	D.	121.500 MHz - A3E.
+
+1-14C3  Which VHF channel is used only for digital selective calling?
+	A.	Channel 70.
+	B.	Channel 16.
+	C.	Channel 22A.
+	D.	Channel 6.
+
+1-14C4  Which channel is utilized for the required bridge-to-bridge watch?
+	A.	DSC on Ch-70.
+	B.	VHF-FM on Ch-16.
+	C.	VHF-FM on Ch-13 in most areas of the continental United States.
+	D.	The vessel’s VHF working frequency.
+
+1-14C5  Which channel would most likely be used for routine ship-to-ship voice traffic?
+	A.	Ch-16.
+	B.	Ch-08.
+	C.	Ch-70.
+	D.	Ch-22A.
+
+1-14C6  What channel would you use to place a call to a shore telephone?
+	A.	Ch-16.
+	B.	Ch-70.
+	C.	Ch-28.
+	D.	Ch-06.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	1-14C1:  B	1-14C2:  D	1-14C3:  A	1-14C4:  C	1-14C5:  B	1-14C6:  C
+
+Key Topic 15: MF-HF Equipment Controls
+
+1-15C1  Which modes could be selected to receive vessel traffic lists from high seas shore stations?
+	A.	AM and VHF-FM.
+	B.	ARQ and FEC.
+	C.	VHF-FM and SSB.
+	D.	SSB and FEC.
+
+1-15C2  Why must all MF-HF Distress, Urgency and Safety communications take place solely on the 6 assigned frequencies and in the simplex operating mode?
+	A.	For non-GMDSS ships, to maximize the chances for other vessels to receive those communications.
+	B.	Answers a) and c) are both correct.
+	C.	For GMDSS or DSC-equipped ships, to maximize the chances for other vessels to receive those communications following the transmission of a DSC call of the correct priority.
+	D.	To enable an RCC or Coast station to only hear communications from the vessel actually in distress.
+
+1-15C3  To set-up the MF/HF transceiver for a voice call to a coast station, the operator must:
+	A.	Select J3E mode for proper SITOR operations.
+	B.	Select F1B mode or J2B mode, depending on the equipment manufacturer.
+	C.	Select J3E mode for proper voice operations.
+	D.	Select F1B/J2B modes or J3E mode, depending on whether FEC or ARQ is preferred.
+
+1-15C4  MF/HF transceiver power levels should be set:
+	A.	To the lowest level necessary for effective communications.
+	B.	To the level necessary to maximize the propagation radius.
+	C.	To the highest level possible so as to ensure other stations cannot “break-in” on the channel during use.
+	D.	Both a) and c) are correct.
+
+1-15C5  To set-up the MF/HF transceiver for a TELEX call to a coast station, the operator must:
+	A.	Select J3E mode for proper SITOR operations.
+	B.	Select F1B mode or J2B mode, depending on the equipment manufacturer.
+	C.	Select F1B/J2B modes or J3E mode, depending on whether ARQ or FEC is preferred.
+	D.	None of the above.
+
+1-15C6  What is the purpose of the Receiver Incremental Tuning (RIT) or “Clarifier” control?
+	A.	It acts as a “fine-tune” control on the receive frequency.
+	B.	It acts as a “fine-tune” control on the transmitted frequency.
+	C.	It acts as a “fine-tune” control on both the receive and transmitted frequencies.
+	D.	None of the above.
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	1-15C1:  D	1-15C2:  B	1-15C3:  C	1-15C4:  A	1-15C5:  B	1-15C6:  A
+
+Key Topic 16: MF-HF Frequency & Emission Selection
+
+1-16C1  On what frequency would a vessel normally call another ship station when using a radiotelephony emission?
+	A.	Only on 2182 kHz in ITU Region 2.
+	B.	On 2182 kHz or Ch-16, unless the station knows that the called vessel maintains a simultaneous watch on another intership working frequency.
+	C.	On the appropriate calling channel of the ship station at 15 minutes past the hour.
+	D.	On the vessel’s unique working radio channel assigned by the Federal Communications Commission.
+
+1-16C2  What is the MF radiotelephony calling and Distress frequency?
+	A.	2670 kHz.
+	B.	Ch-06 VHF.
+	C.	2182 kHz.
+	D.	Ch-22 VHF.
+
+1-16C3  For general communications purposes, paired frequencies are:
+	A.	Normally used with private coast stations.
+	B.	Normally used between ship stations.
+	C.	Normally used between private coast and ship stations.
+	D.	Normally used with public coast stations.
+
+1-16C4  What emission must be used when operating on the MF distress and calling voice frequency?
+	A.	J3E – Single sideband telephony.
+	B.	A1A – On-off keying without modulation by an audio frequency.
+	C.	F3E – Frequency modulation telephony.
+	D.	A3E – Amplitude modulation telephony, double sideband.
+
+1-16C5  Which of the following defines high frequency “ITU Channel 1212”?
+	A.	Ch-12 in the 16 MHz band.
+	B.	Ch-1216 in the MF band.
+	C.	The 12th channel in the 12 MHz band.
+	D.	This would indicate the 1st channel in the 12 MHz band.
+
+1-16C6  For general communications purposes, simplex frequencies are:
+	A.	Normally used between ship stations and private coast stations.
+	B.	Normally used with public coast stations.
+	C.	Normally used between ship stations.
+	D.	Both a) and c) are correct.
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	1-16C1:  B	1-16C2:  C	1-16C3:  D	1-16C4:  A	1-16C5:  C	1-16C6:  D
+
+Key Topic 17: Equipment Tests
+
+1-17C1  What is the proper procedure for testing a radiotelephone installation?
+	A.	A dummy antenna must be used to insure the test will not interfere with ongoing communications.
+	B.	Transmit the station’s call sign, followed by the word “test” on the frequency being used for the test.
+	C.	Permission for the voice test must be requested and received from the nearest public coast station.
+	D.	Short tests must be confined to a single frequency and must never be conducted in port.
+
+1-17C2  When testing is conducted on 2182 kHz or Ch-16, testing should not continue for more than ______ in any 5-minute period.
+	A.	2 minutes.
+	B.	1 minute.
+	C.	30 seconds.
+	D.	10 seconds.
+
+1-17C3  Under GMDSS, a compulsory VHF-DSC radiotelephone installation must be tested at what minimum intervals at sea?
+	A.	Daily.
+	B.	Annually, by a representative of the FCC.
+	C.	Weekly.
+	D.	Monthly.
+
+1-17C4  The best way to test the MF-HF NBDP system is?
+	A.	Make a radiotelephone call to a coast station.
+	B.	Initiate an ARQ call to demonstrate that the transmitter and antenna are working.
+	C.	Initiate an FEC call to demonstrate that the transmitter and antenna are working.
+	D.	Initiate an ARQ call to a Coast Station and wait for the automatic exchange of answerbacks.
+
+1-17C5  The best way to test the Inmarsat-C terminal is?
+	A.	Compose and send a brief message to your own Inmarsat-C terminal.
+	B.	Send a message to a shore terminal and wait for confirmation.
+	C.	Send a message to another ship terminal.
+	D.	If the “Send” light flashes, proper operation has been confirmed.
+
+1-17C6  When may you test a radiotelephone transmitter on the air?
+	A.	Between midnight and 6:00 AM local time.
+	B.	Only when authorized by the Commission.
+	C.	At any time (except during silent periods) as necessary to assure proper operation.
+	D.	After reducing transmitter power to 1 watt.
+
+
+
+
+
+
+
+
+
+
+
+Answer Key:	1-17C1:  B	1-17C2:  D	1-17C3:  A	1-17C4:  D	1-17C5:  A	1-17C6:  C
+
+Key Topic 18: Equipment Faults
+
+1-18C1  Under normal circumstances, what do you do if the transmitter aboard your ship is operating off-frequency, overmodulating or distorting?
+	A.	Reduce to low power.
+	B.	Reduce audio volume level.
+	C.	Stop transmitting.
+	D.	Make a notation in station operating log.
+
+1-18C2  Which would be an indication of proper operation of a SSB transmitter rated at 60 watt PEP output?
+	A.	In SSB (J3E) voice mode, with the transmitter keyed but without speaking into the microphone, power output is indicated.
+	B.	In SITOR communications, the power meter can be seen fluctuating regularly from zero to the 60 watt relative output reading.
+	C.	In SSB (J3E) mode, speaking into the microphone causes power meter to fluctuate slightly around the 60 watt reading.
+	D.	A steady indication of transmitted energy on an RF Power meter with no fluctuations when speaking into the microphone.
+
+1-18C3  If a ship radio transmitter signal becomes distorted:
+	A.	Reduce transmitter power.
+	B.	Use minimum modulation.
+	C.	Cease operations.
+	D.	Reduce audio amplitude.
+
+1-18C4  What would be an indication of a malfunction on a GMDSS station with a 24 VDC battery system?
+	A.	A constant 30 volt reading on the GMDSS console voltmeter.
+	B.	After testing the station on battery power, the ammeter reading indicates a high rate of charge that then declines.
+	C.	After testing the station on battery power, a voltmeter reading of 30 volts for brief period followed by a steady 26 volt reading.
+	D.	None of the above.
+
+1-18C5  Your antenna tuner becomes totally inoperative. What would you do to obtain operation on both the 8 MHz and 22 MHz frequency bands?
+	A.	Without an operating antenna tuner, transmission is impossible.
+	B.	It is impossible to obtain operation on 2 different HF bands, without an operating antenna tuner.
+	C.	Bypass the antenna tuner and shorten the whip to 15 ft.
+	D.	Bypass the antenna tuner. Use a straight whip or wire antenna approximately 30 ft long.
+
+1-18C6  Which of the following conditions would be a symptom of malfunction in a 2182 kHz radiotelephone system that must be reported to the Master, then logged appropriately.
+	A.	Much higher noise level observed during daytime operation.
+	B.	No indication of power output when speaking into the microphone.
+	C.	When testing a radiotelephone alarm on 2182 kHz into an artificial antenna, the Distress frequency watch receiver becomes unmuted, an improper testing procedure.
+	D.	Failure to contact a shore station 600 nautical miles distant during daytime operation.
+
+
+
+Answer Key:	1-18C1:  C	1-18C2:  B	1-18C3:  C	1-18C4:  A	1-18C5:  D	1-18C6:  B
+
+Subelement D - Other Equipment:  6 Key Topics, 6 Exam Questions
+
+Key Topic 19: Antennas
+
+1-19D1  What are the antenna requirements of a VHF telephony coast, maritime utility or ship station?
+	A.	The shore or on-board antenna must be vertically polarized.
+	B.	The antenna array must be type-accepted for 30-200 MHz operation by the FCC.
+	C.	The horizontally-polarized antenna must be positioned so as not to cause excessive interference to other stations.
+	D.	The antenna must be capable of being energized by an output in excess of 100 watts.
+
+1-19D2  What is the antenna requirement of a radiotelephone installation aboard a passenger vessel?
+	A.	The antenna must be located a minimum of 15 meters from the radiotelegraph antenna.
+	B.	The antenna must be vertically polarized and as non-directional and efficient as is practicable for the transmission and reception of ground waves over seawater.
+	C.	An emergency reserve antenna system must be provided for communications on 156.800 MHz.
+	D.	All antennas must be tested and the operational results logged at least once during each voyage.
+
+1-19D3  What is the most common type of antenna for GMDSS VHF?
+	A.	Horizontally polarized circular antenna.
+	B.	Long wire antenna.
+	C.	Both of the above.
+	D.	None of the above.
+
+1-19D4  What is the purpose of the antenna tuner?
+	A.	It alters the electrical characteristics of the antenna to match the frequency in use.
+	B.	It physically alters the length of the antenna to match the frequency in use.
+	C.	It makes the antenna look like a half-wave antenna at the frequency in use.
+	D.	None of the above.
+
+1-19D5  What advantage does a vertical whip have over a long wire?
+	A.	It radiates more signal fore and aft.
+	B.	It radiates equally well in all directions.
+	C.	It radiates a strong signal vertically.
+	D.	None of the above.
+
+1-19D6  A vertical whip antenna has a radiation pattern best described by?
+	A.	A figure eight.
+	B.	A cardioid.
+	C.	A circle.
+	D.	An ellipse.
+
+
+
+
+
+
+
+
+
+Answer Key:	1-19D1:  A	1-19D2:  B	1-19D3:  D	1-19D4:  A	1-19D5:  B	1-19D6:  C
+
+Key Topic 20: Power Sources
+
+1-20D1  For a small passenger vessel inspection, reserve power batteries must be tested:
+	A.	At intervals not exceeding every 3 months.
+	B.	At intervals not exceeding every 6 months
+	C.	Before any new voyage
+	D.	At intervals not exceeding 12 months, or during the inspection.
+
+1-20D2  What are the characteristics of the Reserve Source of Energy under GMDSS?
+	A.	Supplies independent HF and MF installations at the same time.
+	B.	Cannot be independent of the propelling power of the ship.
+	C.	Must be independent of the ship’s electrical system when the RSE is needed to supply power to the GMDSS equipment.
+	D.	Must be incorporated into the ship’s electrical system.
+
+1-20D3  Which of the following terms is defined as a back-up power source that provides power to radio installations for the purpose of conducting Distress and Safety communications when the vessel’s main and emergency generators cannot?
+	A.	Emergency Diesel Generator.	C.	Reserve Source of Diesel Power.
+	B.	Reserve Source of Energy.	D.	Emergency Back-up Generator.
+
+1-20D4  In the event of failure of the main and emergency sources of electrical power, what is the term for the source required to supply the GMDSS console with power for conducting distress and other radio communications?
+	A.	Emergency power.	C.	Reserve source of energy.
+	B.	Ship’s emergency diesel generator.	D.	Ship’s standby generator
+
+1-20D5  What is the requirement for emergency and reserve power in GMDSS radio installations?
+	A.	An emergency power source for radio communications is not required if a vessel has proper reserve power (batteries).
+	B.	A reserve power source is not required for radio communications.
+	C.	Only one of the above is required if a vessel is equipped with a second 406 EPIRB as a backup means of sending a distress alert.
+	D.	All newly constructed ships under GMDSS must have both emergency and reserve power sources for radio communications.
+
+1-20D6  What is the meaning of “Reserve Source of Energy”?
+	A.	The supply of electrical energy sufficient to operate the radio installations for the purpose of conducting Distress and Safety communications in the event of failure of the ship’s main and emergency sources of electrical power.
+	B.	High caloric value items for lifeboat, per SOLAS regulations.
+	C.	Diesel fuel stored for the purpose of operating the powered survival craft for a period equal to or exceeding the U.S.C.G. and SOLAS requirements.
+	D.	None of these.
+
+
+
+
+
+Answer Key:	1-20D1:  D	1-20D2:  C	1-20D3:  B	1-20D4:  C	1-20D5:  D	1-20D6:  A
+
+Key Topic 21: EPIRBs
+
+1-21D1  What is an EPIRB?
+	A.	A battery-operated emergency position-indicating radio beacon that floats free of a sinking ship.
+	B.	An alerting device notifying mariners of imminent danger.
+	C.	A satellite-based maritime distress and safety alerting system.
+	D.	A high-efficiency audio amplifier.
+
+1-21D2  When are EPIRB batteries changed?
+	A.	After emergency use; after battery life expires.
+	B.	After emergency use or within the month and year replacement date printed on the EPIRB.
+	C.	After emergency use; every 12 months when not used.
+	D.	Whenever voltage drops to less than 20% of full charge.
+
+1-21D3  If a ship sinks, what device is designed to float free of the mother ship, is turned on automatically and transmits a distress signal?
+	A.	An emergency position indicating radio beacon.
+	B.	EPIRB on 2182 kHz and 405.025 kHz.
+	C.	Bridge-to-bridge transmitter on 2182 kHz.
+	D.	Auto alarm keyer on any frequency.
+
+1-21D4  How do you cancel a false EPIRB distress alert?
+	A.	Transmit a DSC distress alert cancellation.
+	B.	Transmit a broadcast message to “all stations” canceling the distress message.
+	C.	Notify the Coast Guard or rescue coordination center at once.
+	D.	Make a radiotelephony “distress cancellation” transmission on 2182 kHz.
+
+1-21D5  What is the COSPAS-SARSAT system?
+	A.	A global satellite communications system for users in the maritime, land and aeronautical mobile services.
+	B.	An international satellite-based search and rescue system.
+	C.	A broadband military satellite communications network.
+	D.	A Wide Area Geostationary Satellite program (WAGS).
+
+1-21D6  What is an advantage of a 406 MHz satellite EPIRB?
+	A.	It is compatible with the geostationary COSPAS-SARSAT and Global Maritime Distress and Safety System (GMDSS) regulations.
+	B.	Provides the fastest and most accurate way the Coast Guard has of locating and rescuing persons in distress.
+	C.	Includes a digitally encoded message containing the ship’s identity and nationality.
+	D.	All of the above.
+
+
+
+
+
+
+
+
+
+Answer Key:	1-21D1:  A	1-21D2:  B	1-21D3:  A	1-21D4:  C	1-21D5:  B	1-21D6:  D
+
+Key Topic 22: SARTs
+
+1-22D1  In which frequency band does a search and rescue transponder operate?
+	A.	3 GHz.
+	B.	S-band.
+	C.	406 MHz.
+	D.	9 GHz.
+
+1-22D2  How should the signal from a Search And Rescue Radar Transponder appear on a RADAR display?
+	A.	A series of dashes.
+	B.	A series of spirals all originating from the range and bearing of the SART.
+	C.	A series of 12 equally spaced dots.
+	D.	A series of twenty dashes.
+
+1-22D3  What is the purpose of the SART’s audible tone alarm?
+	A.	It informs survivors that assistance may be nearby.
+	B.	It informs survivors when the battery’s charge condition has weakened.
+	C.	It informs survivors when the SART switches to the “standby” mode.
+	D.	It informs survivors that a nearby vessel is signaling on DSC.
+
+1-22D4  Which statement is true regarding the SART?
+	A.	This is a performance monitor attached to at least one S-band navigational RADAR system.
+	B.	This is a 9 GHz transponder capable of being received by another vessel’s S-band navigational RADAR system.
+	C.	This is a performance monitor attached to at least one X-band navigational RADAR system.
+	D.	This is a 9 GHz transponder capable of being received by vessel’s X-band navigational RADAR system.
+
+1-22D5  At what point does a SART begin transmitting?
+	A.	It immediately begins radiating when placed in the “on” position.
+	B.	It must be manually activated.
+	C.	If it has been placed in the “on” position, it will respond when it has been interrogated by a 9-GHz RADAR signal.
+	D.	If it has been placed in the “on” position, it will begin transmitting immediately upon detecting that it is in water.
+
+1-22D6  How can a SART’s effective range be maximized?
+	A.	The SART should be placed in water immediately upon activation.
+	B.	The SART should be held as high as possible.
+	C.	Switch the SART into the “high” power position.
+	D.	If possible, the SART should be mounted horizontally so that its signal matches that of the searching RADAR signal.
+
+
+
+
+
+
+
+
+
+Answer Key:	1-22D1:  D	1-22D2:  C	1-22D3:  A	1-22D4:  D	1-22D5:  C	1-22D6:  B
+
+Key Topic 23: Survival Craft VHF
+
+1-23D1  Which statement is NOT true regarding the requirements of survival craft portable two-way VHF radiotelephone equipment?
+	A.	Watertight to a depth of 1 meter for 5 minutes.
+	B.	Effective radiated power should be a minimum of 0.25 watts.
+	C.	Operates simplex on Ch-70 and at least one other channel.
+	D.	The antenna is fixed and non-removable.
+
+1-23D2  Which statement is NOT true regarding the requirements of survival craft portable two-way VHF radiotelephone equipment?
+	A.	Operation on Ch-13.
+	B.	Effective radiated power should be a minimum of 0.25 Watts.
+	C.	Simplex voice communications only.
+	D.	Operation on Ch-16.
+
+1-23D3  With what other stations may portable survival craft transceivers communicate?
+	A.	Communication is permitted between survival craft.
+	B.	Communication is permitted between survival craft and ship.
+	C.	Communication is permitted between survival craft and rescue unit.
+	D.	All of the above.
+
+1-23D4  Equipment for radiotelephony use in survival craft stations under GMDSS must have what capability?
+	A.	Operation on Ch-16.
+	B.	Operation on 457.525 MHz.
+	C.	Operation on 121.5 MHz.
+	D.	Any one of these.
+
+1-23D5  Equipment for radiotelephony use in survival craft stations under GMDSS must have what characteristic(s)?
+	A.	Operation on Ch-16.
+	B.	Watertight.
+	C.	Permanently-affixed antenna.
+	D.	All of these.
+
+1-23D6  What is the minimum power of the SCT
+	A.	Five watts.
+	B.	One watt.
+	C.	¼ watt.
+	D.	None of the above.
+
+
+
+
+
+
+
+
+
+
+Answer Key:	1-23D1:  C	1-23D2:  A	1-23D3:  D	1-23D4:  A	1-23D5:  D	1-23D6:  B
+
+Key Topic 24: NAVTEX
+
+1-24D1  NAVTEX broadcasts are sent:
+	A.	Immediately following traffic lists.
+	B.	In categories of messages indicated by a single letter or identifier.
+	C.	On request of maritime mobile stations.
+	D.	Regularly, after the radiotelephone silent periods.
+
+1-24D2  MSI can be obtained by one (or more) of the following:
+	A.	NAVTEX.
+	B.	SafetyNET.
+	C.	HF NBDP.
+	D.	All of the above.
+
+1-24D3  Which of the following is the primary frequency that is used exclusively for NAVTEX broadcasts internationally?
+	A.	518 kHz.
+	B.	2187.5 kHz.
+	C.	4209.5 kHz.
+	D.	VHF channel 16 when the vessel is sailing in Sea Area A1, and 2187.5 kHz when in Sea Area A2.
+
+1-24D4  What means are used to prevent the reception of unwanted broadcasts by vessels utilizing the NAVTEX system?
+	A.	Operating the receiver only during daytime hours.
+	B.	Coordinating reception with published broadcast schedules.
+	C.	Programming the receiver to reject unwanted broadcasts.
+	D.	Automatic receiver de-sensitization during night hours.
+
+1-24D5  When do NAVTEX broadcasts typically achieve maximum transmitting range?
+	A.	Local noontime.
+	B.	Middle of the night.
+	C.	Sunset.
+	D.	Post sunrise.
+
+1-24D6  What is the transmitting range of most NAVTEX stations?
+	A.	Typically 50-100 nautical miles (90-180 km) from shore.
+	B.	Typically upwards of 1000 nautical miles (1800 km) during the daytime.
+	C.	Typically 200-400 nautical miles (360-720 km).
+	D.	It is limited to line-of-sight or about 30 nautical miles (54 km).
+
+
+
+
+
+
+
+
+
+Answer Key:	1-24D1:  B	1-24D2:  D	1-24D3:  A	1-24D4:  C	1-24D5:  B	1-24D6:  C
+
+[END OF PROPOSED 2009 FCC COMMERCIAL ELEMENT 1 QUESTION POOL]
+
