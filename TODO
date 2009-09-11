@@ -1,18 +1,21 @@
 -----
 beta
 
+- Make the footer into a header, discuss the layout some more
+
+- Make the SessionId code gracefully deal with IPv6 ::1 addresses. Just a dirty pattern match on that address is fine for now.
+
+- Deal with the start form submit with no questions selected at all. Make it go right back to initialize.
+
 - Create a web page for this project at ui3.info to describe what it's all about and provide links to the source, darcs commands, and more
 
 - Add this project to the resume. Make it start working for you.
 
-- Add the test simulation mode that randomly picks the 76 questions
+- Add the test simulation mode that randomly picks the 100 questions
 
 - Need a real conf file to set things like logging, etc
 
 - Add an end of test results page
-
-- Include newer elements 1, 3 and 8. This will involve changes to the data parsing.
-  Will probably want to parse data into our own format and store it as serialized Haskell data.
 
 
 -----
