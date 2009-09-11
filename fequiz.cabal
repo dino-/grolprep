@@ -19,7 +19,8 @@ data-files:          css/*.css, fequiz.sqlite
 executable           fequiz.cgi
    main-is:          fequiz.hs
    hs-source-dirs:   src
-   build-depends:    base >= 3 && < 5, cgi, Crypto, directory, filepath, 
-                     HDBC, HDBC-sqlite3, hslogger, mtl, old-locale, 
-                     random, regex-compat, time, xhtml
+   build-depends:    base >= 3 && < 5, cgi, containers, convertible, 
+                     Crypto, directory, filepath, HDBC, HDBC-sqlite3, 
+                     hslogger, mtl, old-locale, random, regex-compat, 
+                     time, xhtml
    ghc-options:      -Wall

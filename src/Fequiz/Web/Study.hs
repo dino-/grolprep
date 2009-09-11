@@ -2,15 +2,21 @@
 -- License: BSD3 (see LICENSE)
 -- Author: Dino Morelli <dino@ui3.info>
 
+{-# LANGUAGE FlexibleContexts #-}
+
+
 module Fequiz.Web.Study
    where
 
 import Control.Monad
-import Data.List
+import Data.Convertible.Base
+import Data.List hiding ( lookup )
+import Data.Map ( Map, lookup )
 import Data.Maybe
 import Database.HDBC
 import Database.HDBC.Sqlite3
 import Network.CGI
+import Prelude hiding ( lookup )
 import System.FilePath
 import System.Log
 import Text.Printf
@@ -109,29 +115,57 @@ headingStats session =
       perc = (fromIntegral correct / fromIntegral passTot) * 100
 
 
+lookupSqlValue ::
+   (  Data.Convertible.Base.Convertible SqlValue a
+   ,  Ord k )
+   => k
+   -> Map k SqlValue
+   -> Maybe a
+lookupSqlValue key mp = maybe Nothing fromSql $ lookup key mp
+
+
 formStart :: App CGIResult
 formStart = do
-   startPage <- liftIO $ page theform
+   -- Retrieve the subelement info from db
+   rsSe <- liftIO $ do
+      conn <- dbPath >>= connectSqlite3
+      stmt <- prepare conn $ unlines
+         [ "SELECT id, element, desc FROM subelement "
+         , "   ORDER BY element, id"
+         , ";"
+         ]
+
+      execute stmt []
+      rs <- fetchAllRowsMap' stmt
+      disconnect conn
+      return rs
+
+   startPage <- liftIO $ page $ theform rsSe
    output $ renderHtml startPage
 
    where
-      theform = form <<
+      constructOption rsMap =
+         option ! [value (show (elValue, seValue))] << seDesc
+         where
+            seValue :: String
+            seValue = fromJust $ lookupSqlValue "id" rsMap
+
+            elValue :: Int
+            elValue = fromJust $ lookupSqlValue "element" rsMap
+
+            descValue :: String
+            descValue = fromJust $ lookupSqlValue "desc" rsMap
+
+            seDesc :: String
+            seDesc = printf "Element %d, Subelement %s: %s"
+               elValue seValue descValue
+
+      theform rsSe' = form <<
          fieldset << (
          legend << "Please select type of study"
          +++
-         p << select ! [name "file", size "12"] <<
-            (   option ! [value "element1", selected] << "Element 1 (170 questions)"
-            +++ option ! [value "subelement3a"] << "Subelement 3A - Operating procedures (40 questions)"
-            +++ option ! [value "subelement3b"] << "Subelement 3B - Radio wave propagation (42 questions)"
-            +++ option ! [value "subelement3c"] << "Subelement 3C - Radio practice (69 questions)"
-            +++ option ! [value "subelement3d"] << "Subelement 3D - Electrical principles (202 questions)"
-            +++ option ! [value "subelement3e"] << "Subelement 3E - Circuit components (150 questions)"
-            +++ option ! [value "subelement3f"] << "Subelement 3F - Practical circuits (139 questions)"
-            +++ option ! [value "subelement3g"] << "Subelement 3G - Signals and emissions (131 questions)"
-            +++ option ! [value "subelement3h"] << "Subelement 3H - Antennas and feedlines (143 questions)"
-            +++ option ! [value "element8"] << "Element 8 (321 questions)"
-            +++ option ! [value "small1"] << "small1 (6 questions)"
-            )
+         p << select ! [name "questions", size "12"] <<
+            ( map constructOption rsSe' )
          +++ p << (
             checkbox "randQ" "" +++
             label ! [thefor "randQ"] << "Ask the questions in a random order"
@@ -178,7 +212,7 @@ formPoseProblem (Problem pid q eas) = do
                           +++ label ! [thefor (show n')] << a)
 
 formAnswer :: Int -> Problem -> App CGIResult
-formAnswer g (Problem _ q eas) = do
+formAnswer g (Problem pid q eas) = do
    session <- liftM fromJust getSession
    let qord = sessCurrOrd session
 
@@ -191,7 +225,7 @@ formAnswer g (Problem _ q eas) = do
    where
       theform nas' = form << (
          [ correctness (snd $ nas' !! g)
-         , p ! [theclass "question"] << q
+         , p ! [theclass "question"] << (pid ++ ": " ++ q)
          , thediv << ansLines
          , submit (show ActAnswer) "Next question" ! [theclass "button"]
          ] )
@@ -226,7 +260,8 @@ actionSetupSession :: App CGIResult
 actionSetupSession = do
    llog INFO "actionSetupSession"
 
-   let (element, subelement) = (3, "E")  -- FIXME
+   (element, subelement) <-
+      liftM (read . fromJust) $ getInput "questions"
 
    randA <- liftM (maybe False (const True)) $ getInput "randA"
 
@@ -261,7 +296,6 @@ actionNextProblem = do
    let list = sessList session
 
    mbnp <- liftIO $ nextProblem session
-   --llog DEBUG $ show mbnp
 
    case (mbnp, null list) of
       -- We have a next problem, let's get to it
