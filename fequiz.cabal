@@ -14,19 +14,12 @@ description:         Bar Baz
 category:            Education
 tested-with:         GHC>=6.10.4
 data-dir:            resources
-data-files:          css/*.css
-                     questions/element1, questions/subelement3a,
-                     questions/subelement3b, questions/subelement3c,
-                     questions/subelement3d, questions/subelement3e,
-                     questions/subelement3f, questions/subelement3g,
-                     questions/subelement3h, questions/element8,
-                     questions/small1
+data-files:          css/*.css, fequiz.sqlite
 
 executable           fequiz.cgi
    main-is:          fequiz.hs
    hs-source-dirs:   src
    build-depends:    base >= 3 && < 5, cgi, Crypto, directory, filepath, 
-                     hslogger, mtl, old-locale, parsec, random, 
-                     regex-compat, time, xhtml
+                     HDBC, HDBC-sqlite3, hslogger, mtl, old-locale, 
+                     random, regex-compat, time, xhtml
    ghc-options:      -Wall
-   buildable:        False

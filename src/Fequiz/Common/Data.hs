@@ -17,7 +17,7 @@ type Question = String
 type Answer = Either String String
 
 data Problem = Problem ProblemId Question [Answer]
-   deriving Show
+   deriving (Read, Show)
 
 
 extractAnswer :: Either a a -> a

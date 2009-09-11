@@ -34,7 +34,7 @@ data Session = Session
    , sessPassTot  :: Int
    , sessCurr     :: Int
    , sessCurrOrd  :: [Int]
-   , sessList     :: [(String, Int)]
+   , sessList     :: [String]
    }
    deriving (Read, Show)
 

@@ -8,6 +8,8 @@ module Fequiz.Web.Study
 import Control.Monad
 import Data.List
 import Data.Maybe
+import Database.HDBC
+import Database.HDBC.Sqlite3
 import Network.CGI
 import System.FilePath
 import System.Log
@@ -28,11 +30,24 @@ removeFromList :: Int -> [a] -> [a]
 removeFromList i xs = take i xs ++ drop (i + 1) xs
 
 
-loadQuestionData :: String -> IO [Problem]
-loadQuestionData questionsName = do
-   eps <- liftM parseProblems $ getDataFileName
-      ("questions" </> questionsName) >>= readFile
-   return $ either undefined snd eps
+dbPath :: IO FilePath
+dbPath = getDataFileName $ "fequiz" <.> "sqlite"
+
+
+getProblemIds :: Int -> String -> IO [ProblemId]
+getProblemIds element subelement = do
+   conn <- dbPath >>= connectSqlite3
+   stmt <- prepare conn $ unlines
+      [ "SELECT id FROM problem WHERE"
+      , "   element=? AND"
+      , "   subelement=?"
+      , ";"
+      ]
+
+   execute stmt [toSql element, toSql subelement]
+   rs <- sFetchAllRows' stmt
+   disconnect conn
+   return $ map fromJust $ concat rs
 
 
 {- This function is used to take a list of randomized indexes to
@@ -51,9 +66,17 @@ nextProblem session = do
 
    if (scurr < length slist)
       then do
-         let (questionsName, questionNum) = slist !! scurr
-         ps <- loadQuestionData questionsName
-         return $ Just (ps !! questionNum)
+         conn <- dbPath >>= connectSqlite3
+         stmt <- prepare conn $ unlines
+            [ "SELECT probdata FROM problem WHERE "
+            , "   id=?"
+            , ";"
+            ]
+         execute stmt [toSql $ slist !! scurr]
+         rs <- sFetchAllRows' stmt
+         disconnect conn
+
+         return $ maybe Nothing (Just . read) $ head $ concat rs
       else return Nothing
 
 
@@ -121,7 +144,9 @@ formStart = do
 
 
 formPoseProblem :: Problem -> App CGIResult
-formPoseProblem (Problem _ q eas) = do
+formPoseProblem (Problem pid q eas) = do
+   llog INFO "formPoseProblem"
+
    session <- liftM fromJust getSession
    let randA = sessRandA session
 
@@ -139,7 +164,7 @@ formPoseProblem (Problem _ q eas) = do
       orderer False = return
 
       formPoseProblem' q' as = form << (
-         [ p ! [theclass "question"] << q'
+         [ p ! [theclass "question"] << (pid ++ ": " ++ q')
          , thediv << (ansControls as)
          , submit (show ActPose) "Proceed" ! [theclass "button"]
          ] )
@@ -201,25 +226,25 @@ actionSetupSession :: App CGIResult
 actionSetupSession = do
    llog INFO "actionSetupSession"
 
-   questionsName <- liftM fromJust $ getInput "file"
+   let (element, subelement) = (3, "E")  -- FIXME
+
    randA <- liftM (maybe False (const True)) $ getInput "randA"
 
-   numQuestions <- liftIO $ do
-      ps <- loadQuestionData questionsName
-      return $ length ps
+   problems <- liftIO $ getProblemIds element subelement
 
    questionOrderer <- liftM (maybe return (const shuffle))
       $ getInput "randQ"
-   questionNumbers <- liftIO $ questionOrderer [0..(numQuestions - 1)]
-   let qNameNumPairs = zip (repeat questionsName) questionNumbers
+
+   sortedProblems <- liftIO $ questionOrderer problems
+
    let session = Session
          { sessRandA    = randA
          , sessPass     = 1
          , sessPassCurr = 0
-         , sessPassTot  = length questionNumbers
+         , sessPassTot  = length sortedProblems
          , sessCurr     = 0
          , sessCurrOrd  = []
-         , sessList     = qNameNumPairs
+         , sessList     = sortedProblems
          }
    putSession session
 
@@ -236,6 +261,7 @@ actionNextProblem = do
    let list = sessList session
 
    mbnp <- liftIO $ nextProblem session
+   --llog DEBUG $ show mbnp
 
    case (mbnp, null list) of
       -- We have a next problem, let's get to it
