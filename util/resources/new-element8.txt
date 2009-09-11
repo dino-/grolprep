@@ -935,10 +935,10 @@ Key Topic 18: Power Supplies
 	D.	Maintains a constant magnetron output frequency.
 
 8-18B2  The characteristics of a field-effect transistor (FET) used in a modern RADAR switching power supply can be compared as follows:
-	A.	“On” state compares to a bipolar transistor. “Off” state compares to a 1-Megohm resistor.
-	B.	“On” state compares to a pure resistor. “Off” state compares to a mechanical relay.
-	C.	“On” state compares to an low resistance inductor. “Off” state compares to a 10-Megohm resistor.
-	D.	“On” state compares to a resistor. “Off” state compares to a capacitor.
+	A.	"On" state compares to a bipolar transistor. "Off" state compares to a 1-Megohm resistor.
+	B.	"On" state compares to a pure resistor. "Off" state compares to a mechanical relay.
+	C.	"On" state compares to an low resistance inductor. "Off" state compares to a 10-Megohm resistor.
+	D.	"On" state compares to a resistor. "Off" state compares to a capacitor.
 
 8-18B3  A pulse-width modulator in a switching power supply is used to:
 	A.	Provide the reference voltage for the regulator.
@@ -1006,7 +1006,7 @@ Key Topic 19: Receiving Systems
 
 8-19C5  What is the main difference between an analog and a digital receiver?
 	A.	Special amplification circuitry.
-	B.	The presence of decision circuitry to distinguish between “on” and “off” signal levels.
+	B.	The presence of decision circuitry to distinguish between "on" and "off" signal levels.
 	C.	An AGC stage is not required in a digital receiver.
 	D.	Digital receivers produce no distortion.
 
@@ -1384,13 +1384,13 @@ Answer Key:	8-25C1: D	8-25C2: B	8-25C3: C	8-25C4: A	8-25C5: B	8-25C6: A
 
 Key Topic 26: Power Supplies
 
-8-26C1  Prior to making “power-on” measurements on a switching power supply, you should be familiar with the supply because of the following:
+8-26C1  Prior to making "power-on" measurements on a switching power supply, you should be familiar with the supply because of the following:
 	A.	You need to know where the filter capacitors are so they can be discharged.
 	B.	If it does not use a line isolation transformer you may destroy the supply with grounded test equipment.
 	C.	It is not possible to cause a component failure by using ungrounded test equipment.
 	D.	So that measurements can be made without referring to the schematic.
 
-8-26C2  A constant frequency switching power supply regulator with an input voltage of 165 volts DC, and a switching frequency of 20 kHz, has an “ON” time of 27 microseconds when supplying 1 ampere to its load. What is the output voltage across the load?
+8-26C2  A constant frequency switching power supply regulator with an input voltage of 165 volts DC, and a switching frequency of 20 kHz, has an "ON" time of 27 microseconds when supplying 1 ampere to its load. What is the output voltage across the load?
 	A.	It cannot be determined with the information given.
 	B.	305.55 volts DC.
 	C.	89.1 volts DC.
@@ -1421,7 +1421,7 @@ Key Topic 26: Power Supplies
 	C.	The rising edge of the output waveform trails the negative zero crossing of the input waveform by 45 degrees.
 	D.	The rising edge of the output waveform trails the positive peak of the input waveform by 45 degrees.
 
-8-26C5  When monitoring the gate voltage of a power MOSFET in the switching power supply of a modern RADAR, you would expect to see the gate voltage change from “low” to “high” by how much?
+8-26C5  When monitoring the gate voltage of a power MOSFET in the switching power supply of a modern RADAR, you would expect to see the gate voltage change from "low" to "high" by how much?
 	A.	1 volt to 2 volts.
 	B.	300 microvolts to 700 microvolts.
 	C.	Greater than 2 volts.
@@ -1507,7 +1507,7 @@ Key Topic 28: Miscellaneous
 	C.	Between the magnetron and the AFC section of the receiver.
 	D.	Between the AFC section and the klystron.
 
-8-28C4  The condition known as “glint” refers to a shifting of clutter with each RADAR pulse and can be caused by a:
+8-28C4  The condition known as "glint" refers to a shifting of clutter with each RADAR pulse and can be caused by a:
 	A.	Improperly functioning MTI filter.
 	B.	Memory failure.
 	C.	Low AFC voltage.
@@ -1523,7 +1523,7 @@ Key Topic 28: Miscellaneous
 	A.	The receiver gain increases with time.
 	B.	Only moving targets will be displayed.
 	C.	The receiver AGC circuits are disabled.
-	D.	Ground clutter will be free of “rabbits.”
+	D.	Ground clutter will be free of "rabbits."
 
 
 
@@ -1819,7 +1819,7 @@ Key Topic 34: EBL, Azimuth and True Bearing
 	C.	Vessel’s own heading.
 	D.	The range of a selected target.
 
-8-34D5  Which of the following statements about “true bearing” is correct?
+8-34D5  Which of the following statements about "true bearing" is correct?
 	A.	The ship’s heading flasher is at the top of the screen.
 	B.	True North is at the top of the screen and the heading flasher indicates the vessel’s course.
 	C.	The true bearing of the nearest target is indicated.
@@ -1853,7 +1853,7 @@ Key Topic 35: Memory Systems
 	C.	255
 	D.	4,096
 
-8-35D2  While troubleshooting a memory problem in a raster scan RADAR, you discover that the “REFRESH” cycle is not operating correctly. What type of memory circuit are you working on?
+8-35D2  While troubleshooting a memory problem in a raster scan RADAR, you discover that the "REFRESH" cycle is not operating correctly. What type of memory circuit are you working on?
 	A.	SRAM
 	B.	DRAM
 	C.	ROM
@@ -1899,10 +1899,10 @@ Answer Key:	8-35D1: D	8-35D2: B	8-35D3: C	8-35D4: A	8-35D5: B	8-35D6: A
 Key Topic 36: ARPA - CAS
 
 8-36D1  The ship’s speed indication on the ARPA display can be set manually, but does not change with changes in the vessel’s speed. What other indication would point to a related equipment failure?
-	A.	“GYRO OUT” is displayed on the ARPA indicator.
-	B.	“LOG OUT” is displayed on the ARPA indicator.
-	C.	“TARGET LOST” is displayed on the ARPA indicator.
-	D.	“NORTH UP” is displayed on the ARPA indicator.
+	A.	"GYRO OUT" is displayed on the ARPA indicator.
+	B.	"LOG OUT" is displayed on the ARPA indicator.
+	C.	"TARGET LOST" is displayed on the ARPA indicator.
+	D.	"NORTH UP" is displayed on the ARPA indicator.
 
 8-36D2  What does the term ARPA/CAS refer to?
 	A.	The basic RADAR system in operation.
@@ -1922,7 +1922,7 @@ Key Topic 36: ARPA - CAS
 	C.	Range Marker.
 	D.	Heading Marker.
 
-8-36D5  What is the purpose or function of the “Trial Mode” used in most ARPA equipment?
+8-36D5  What is the purpose or function of the "Trial Mode" used in most ARPA equipment?
 	A.	It selects trial dots for targets’ recent past positions.
 	B.	It is used to display target position and your own ship’s data such as TCPA, CPA, etc.
 	C.	It is used to allow results of proposed maneuvers to be assessed.

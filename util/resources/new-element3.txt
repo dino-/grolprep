@@ -75,7 +75,7 @@ Key Topic 2:  Magnetism
 	C.	Permeability.
 	D.	Reluctance.
 
-3-2A5  What is meant by the term “back EMF”?
+3-2A5  What is meant by the term "back EMF"?
 	A.	A current equal to the applied EMF.
 	B.	An opposing EMF equal to R times C (RC) percent of the applied EMF.
 	C.	A voltage that opposes the applied EMF.
@@ -484,7 +484,7 @@ Key Topic 10:  Ohm’s Law-2
 	C.	3.7 volts.
 	D.	9 volts.
 
-3-10B6  What is the maximum rated current-carrying capacity of a resistor marked “2000 ohms, 200 watts”?
+3-10B6  What is the maximum rated current-carrying capacity of a resistor marked "2000 ohms, 200 watts"?
 	A.	0.316 amps.
 	B.	3.16 amps.
 	C.	10 amps.
@@ -650,7 +650,7 @@ Key Topic 14:  RC Time Constants-1
 	C.	One exponential period.
 	D.	A time factor of one.
 
-3-14B2  What is the meaning of the term “time constant of an RC circuit”? The time required to charge the capacitor in the circuit to:
+3-14B2  What is the meaning of the term "time constant of an RC circuit"? The time required to charge the capacitor in the circuit to:
 	A.	23.7% of the supply voltage.
 	B.	36.8% of the supply voltage.
 	C.	57.3% of the supply voltage.
@@ -662,7 +662,7 @@ Key Topic 14:  RC Time Constants-1
 	C.	A time factor of one.
 	D.	One exponential rate.
 
-3-14B4  What is the meaning of the term “time constant of an RL circuit”?  The time required for the:
+3-14B4  What is the meaning of the term "time constant of an RL circuit"?  The time required for the:
 	A.	Current in the circuit to build up to 36.8% of the maximum value.
 	B.	Voltage in the circuit to build up to 63.2% of the maximum value.
 	C.	Current in the circuit to build up to 63.2% of the maximum value.
@@ -1027,7 +1027,7 @@ Key Topic 22:  Voltage Regulators, Zener Diodes
 
 3-22C1  In a linear electronic voltage regulator:
 	A.	The output is a ramp voltage.
-	B.	The pass transistor switches from the “off” state to the “on”" state.
+	B.	The pass transistor switches from the "off" state to the "on"" state.
 	C.	The control device is switched on or off, with the duty cycle proportional to the line or load conditions.
 	D.	The conduction of a control element is varied in direct proportion to the line voltage or load current.
 
@@ -1179,7 +1179,7 @@ Answer Key:	3-24C1:  B	3-24C2:  D	3-24C3:  A	3-24C4:  C	3-24C5:  B	3-24C6:  C
 
 Key Topic 25:  Transistors-1
 
-3-25C1  What is the meaning of the term “alpha” with regard to bipolar transistors?  The change of:
+3-25C1  What is the meaning of the term "alpha" with regard to bipolar transistors?  The change of:
 	A.	Collector current with respect to base current.
 	B.	Base current with respect to collector current.
 	C.	Collector current with respect to gate current.
@@ -1191,7 +1191,7 @@ Key Topic 25:  Transistors-1
 	C.	Gate, source and sink.
 	D.	Input, output and ground.
 
-3-25C3  What is the meaning of the term “beta” with regard to bipolar transistors?  The change of:
+3-25C3  What is the meaning of the term "beta" with regard to bipolar transistors?  The change of:
 	A.	Base current with respect to emitter current.
 	B.	Collector current with respect to emitter current.
 	C.	Collector current with respect to base current.
@@ -1674,32 +1674,32 @@ Answer Key:	3-33E1:  C	3-33E2:  A	3-33E3:  D	3-33E4:  A	3-33E5:  D	3-33E6:  B
 Key Topic 34:  Logic Gates
 
 3-34E1  What is a characteristic of an AND gate?
-	A.	Produces a logic “0” at its output only if all inputs are logic “1”.
-	B.	Produces a logic “1” at its output only if all inputs are logic “1”.
-	C.	Produces a logic “1” at its output if only one input is a logic “1”.
-	D.	Produces a logic “1” at its output if all inputs are logic “0”.
+	A.	Produces a logic "0" at its output only if all inputs are logic "1".
+	B.	Produces a logic "1" at its output only if all inputs are logic "1".
+	C.	Produces a logic "1" at its output if only one input is a logic "1".
+	D.	Produces a logic "1" at its output if all inputs are logic "0".
 
 3-34E2  What is a characteristic of a NAND gate?
-	A.	Produces a logic “0” at its output only when all inputs are logic “0”.
-	B.	Produces a logic “1” at its output only when all inputs are logic “1”.
-	C.	Produces a logic “0” at its output if some but not all of its inputs are logic “1”.
-	D.	Produces a logic “0” at its output only when all inputs are logic “1”.
+	A.	Produces a logic "0" at its output only when all inputs are logic "0".
+	B.	Produces a logic "1" at its output only when all inputs are logic "1".
+	C.	Produces a logic "0" at its output if some but not all of its inputs are logic "1".
+	D.	Produces a logic "0" at its output only when all inputs are logic "1".
 
 3-34E3  What is a characteristic of an OR gate?
-	A.	Produces a logic “1” at its output if any input is logic “1”.
-	B.	Produces a logic “0” at its output if any input is logic “1”.
-	C.	Produces a logic “0” at its output if all inputs are logic “1”.
-	D.	Produces a logic “1” at its output if all inputs are logic “0”.
+	A.	Produces a logic "1" at its output if any input is logic "1".
+	B.	Produces a logic "0" at its output if any input is logic "1".
+	C.	Produces a logic "0" at its output if all inputs are logic "1".
+	D.	Produces a logic "1" at its output if all inputs are logic "0".
 
 3-34E4  What is a characteristic of a NOR gate?
-	A.	Produces a logic “0” at its output only if all inputs are logic “0”.
-	B.	Produces a logic “1” at its output only if all inputs are logic “1”.
-	C.	Produces a logic “0” at its output if any or all inputs are logic “1”.
-	D.	Produces a logic “1” at its output if some but not all of its inputs are logic “1”.
+	A.	Produces a logic "0" at its output only if all inputs are logic "0".
+	B.	Produces a logic "1" at its output only if all inputs are logic "1".
+	C.	Produces a logic "0" at its output if any or all inputs are logic "1".
+	D.	Produces a logic "1" at its output if some but not all of its inputs are logic "1".
 
 3-34E5  What is a characteristic of a NOT gate?
 	A.	Does not allow data transmission when its input is high.
-	B.	Produces a logic “0” at its output when the input is logic “1” and vice versa.
+	B.	Produces a logic "0" at its output when the input is logic "1" and vice versa.
 	C.	Allows data transmission only when its input is high.
 	D.	Produces a logic "1" at its output when the input is logic "1" and vice versa.
 
@@ -1870,7 +1870,7 @@ Key Topic 37:  Multivibrators
 
 3-37E3  What is a monostable multivibrator?
 	A.	A circuit that can be switched momentarily to the opposite binary state and then returns after a set time to its original state.
-	B.	A “clock” circuit that produces a continuous square wave oscillating between 1 and 0.
+	B.	A "clock" circuit that produces a continuous square wave oscillating between 1 and 0.
 	C.	A circuit designed to store one bit of data in either the 0 or the 1 configuration.
 	D.	A circuit that maintains a constant output voltage, regardless of variations in the input voltage.
 
@@ -1918,7 +1918,7 @@ Key Topic 38:  Memory
 	C.	Register.
 	D.	Latch.
 
-3-38E3  What does the term “IO” mean within a microprocessor system?
+3-38E3  What does the term "IO" mean within a microprocessor system?
 	A.	Integrated oscillator.
 	B.	Integer operation.
 	C.	Input-output.
@@ -1955,13 +1955,13 @@ Answer Key:	3-38E1:  C	3-38E2:  B	3-38E3:  C	3-38E4:  A	3-38E5:  D	3-38E6:  B
 
 Key Topic 39:  Microprocessors
 
-3-39E1  In a microprocessor-controlled two-way radio, a “watchdog” timer:
+3-39E1  In a microprocessor-controlled two-way radio, a "watchdog" timer:
 	A.	Verifies that the microprocessor is executing the program.
 	B.	Assures that the transmission is exactly on frequency.
 	C.	Prevents the transmitter from exceeding allowed power out.
 	D.	Connects to the system RADAR presentation.
 
-3-39E2  What does the term “DAC” refer to in a microprocessor circuit?
+3-39E2  What does the term "DAC" refer to in a microprocessor circuit?
 	A.	Dynamic access controller.
 	B.	Digital to analog converter.
 	C.	Digital access counter.
@@ -1979,7 +1979,7 @@ Key Topic 39:  Microprocessors
 	C.	ROM
 	D.	PLL
 
-3-39E5  In a microprocessor, what is the meaning of the term “ALU”?
+3-39E5  In a microprocessor, what is the meaning of the term "ALU"?
 	A.	Automatic lock/unlock.
 	B.	Arithmetical logic unit.
 	C.	Auto latch undo.
@@ -2014,7 +2014,7 @@ Key Topic 40:  Counters, Dividers, Converters
 	C.	Prevents oscillation in a low frequency counter circuit.
 	D.	Divides an HF signal so that a low-frequency counter can display the operating frequency.
 
-3-40E2  What does the term “BCD” mean?
+3-40E2  What does the term "BCD" mean?
 	A.	Binaural coded digit.
 	B.	Bit count decimal.
 	C.	Binary coded decimal.
@@ -2068,7 +2068,7 @@ Key Topic 41:  Receiver Theory
 	C.	The two-tone intermodulation distortion.
 	D.	The input impedance to the detector.
 
-3-41F2  What is the definition of the term “receiver desensitizing”?
+3-41F2  What is the definition of the term "receiver desensitizing"?
 	A.	A burst of noise when the squelch is set too low.
 	B.	A reduction in receiver sensitivity because of a strong signal on a nearby frequency.
 	C.	A burst of noise when the squelch is set too high.
@@ -2384,7 +2384,7 @@ Key Topic 47:  Filters
 3-47F4  What is an m-derived filter?
 	A.	A filter whose input impedance varies widely over the design bandwidth.
 	B.	A filter whose product of the series- and shunt-element impedances is a constant for all frequencies.
-	C.	A filter whose schematic shape is the letter “M”.
+	C.	A filter whose schematic shape is the letter "M".
 	D.	A filter that uses a trap to attenuate undesired frequencies too near cutoff for a constant-k filter.
 
 3-47F5  What is an advantage of a constant-k filter?
@@ -2700,7 +2700,7 @@ Key Topic 54:  Resonance - Tuning Networks
 3-54G1  What is an L-network?
 	A.	A low power Wi-Fi RF network connection.
 	B.	A network consisting of an inductor and a capacitor.
-	C.	A “lossy” network.
+	C.	A "lossy" network.
 	D.	A network formed by joining two low pass filters.
 
 3-54G2  What is a pi-network?
@@ -3097,7 +3097,7 @@ Key Topic 62:  Motors & Generators
 	C.	It will speed up.
 	D.	It will be unaffected.
 
-3-62I3  The expression “voltage regulation” as it applies to a shunt-wound DC generator operating at a constant frequency refers to:
+3-62I3  The expression "voltage regulation" as it applies to a shunt-wound DC generator operating at a constant frequency refers to:
 	A.	Voltage fluctuations from load to no-load.
 	B.	Voltage output efficiency.
 	C.	Voltage in the secondary compared to the primary.
@@ -3301,7 +3301,7 @@ Key Topic 66:  Transmission Lines
 	D.	The center conductor resistivity.
 
 3-66J3  Nitrogen is placed in transmission lines to:
-	A.	Improve the “skin-effect” of microwaves.
+	A.	Improve the "skin-effect" of microwaves.
 	B.	Reduce arcing in the line.
 	C.	Reduce the standing wave ratio of the line.
 	D.	Prevent moisture from entering the line.
@@ -3522,7 +3522,7 @@ Key Topic 71:  Automatic Direction Finding Equipment (ADF) & Transponders
 	C.	108.10 MHz to 111.95 MHz.
 	D.	108.00 MHz to 117.95 MHz.
 
-3-71K2  What is meant by the term “night effect” when using an aircraft’s Automatic Direction Finding (ADF) equipment?  Night effect refers to the fact that:
+3-71K2  What is meant by the term "night effect" when using an aircraft’s Automatic Direction Finding (ADF) equipment?  Night effect refers to the fact that:
 	A.	All Non Directional Beacon (NDB) transmitters are turned-off at dusk and turned-on at dawn.
 	B.	Non Directional Beacon (NDB) transmissions can bounce-off the Earth’s ionosphere at night and be received at almost any direction.
 	C.	An aircraft’s ADF transmissions will be slowed at night due to the increased density of the Earth’s atmosphere after sunset.
@@ -3639,7 +3639,7 @@ Key Topic 73:  Equipment Functions
 3-73K6  What is the function of a commercial aircraft’s SELCAL installation?  SELCAL is a type of aircraft communications __________.
 	A.	Device that allows an aircraft’s receiver to be continuously calibrated for signal selectivity.
 	B.	System where a ground-based transmitter can call a selected aircraft or group of aircraft without the flight crew monitoring the ground-station frequency.
-	C.	Transmission that uses sequential logic algorithm encryption to prevent public “eavesdropping” of crucial aircraft flight data.
+	C.	Transmission that uses sequential logic algorithm encryption to prevent public "eavesdropping" of crucial aircraft flight data.
 	D.	System where an airborne transmitter can selectively calculate the line-of-sight distance to several ground-station receivers.
 
 
@@ -3858,7 +3858,7 @@ Key Topic 78:  Measurement Procedures
 	C.	Power cannot be measured using CDMA modulation.
 	D.	None of the above.
 
-3-78L3  What is a common method used to program radios without using a “wired” connection?
+3-78L3  What is a common method used to program radios without using a "wired" connection?
 	A.	Banding.
 	B.	Using the ultraviolet from a programmed radio to repeat the programming in another.
 	C.	Infra-red communication.
@@ -3921,7 +3921,7 @@ Key Topic 79:  Repair Procedures
 	C.	A mechanical wire stripper.
 	D.	The scissor action stripping tool.
 
-3-79L5  A “hot gas bonder” is used:
+3-79L5  A "hot gas bonder" is used:
 	A.	To apply solder to the iron tip while it is heating the component.
 	B.	For non-contact melting of solder.
 	C.	To allow soldering both sides of the PC board simultaneously.
@@ -4007,7 +4007,7 @@ Key Topic 81:  Troubleshooting
 	C.	Both sidebands are being transmitting.
 	D.	The operation is normal.
 
-3-81L2  The tachometer of a building’s elevator circuit experiences interference caused by the radio system nearby. What is a common potential “fix” for the problem?
+3-81L2  The tachometer of a building’s elevator circuit experiences interference caused by the radio system nearby. What is a common potential "fix" for the problem?
 	A.	Replace the tachometer of the elevator.
 	B.	Add a .01 µF capacitor across the motor/tachometer leads.
 	C.	Add a 200 µF capacity across the motor/tachometer leads.
@@ -4168,8 +4168,8 @@ Key Topic 84:  Signal Processing, Software and Codes
 
 3-84M4  Which is the code used for SITOR-A and -B transmissions?
 	A.	The 5 bit baudot telex code.
-	B.	Each character consists of 7 bits with 3 “zeros” and 4 “ones”.
-	C.	Each character consists of 7 bits with 4 “zeros” and 3 “ones”.
+	B.	Each character consists of 7 bits with 3 "zeros" and 4 "ones".
+	C.	Each character consists of 7 bits with 4 "zeros" and 3 "ones".
 	D.	Each character has 7 bits of data and 3 bits for error correction.
 
 3-84M5  Which of the following statements is true?
@@ -4229,7 +4229,7 @@ Key Topic 85:  VHF
 3-85N5  What is the reason for the USA-INT control or function?
 	A.	It changes channels that are normally simplex channels into duplex channels.
 	B.	It changes some channels that are normally duplex channels into simplex channels.
-	C.	When the control is set to “INT” the range is increased.
+	C.	When the control is set to "INT" the range is increased.
 	D.	None of the above.
 
 3-85N6  How might an installer verify correct GPS sentence to marine DSC VHF radio?
@@ -4664,7 +4664,7 @@ Key Topic 94:  RADAR Equipment
 	C.	Inform the airport control tower or ship’s master.
 	D.	Assure no personnel are in front of the antenna.
 
-3-94O3  In the term “ARPA RADAR,” ARPA is the acronym for which of the following?
+3-94O3  In the term "ARPA RADAR," ARPA is the acronym for which of the following?
 	A.	Automatic RADAR Plotting Aid.
 	B.	Automatic RADAR Positioning Angle.
 	C.	American RADAR Programmers Association.
@@ -4907,7 +4907,7 @@ Subelement Q - SAFETY:  2 Key Topics, 2 Exam Questions
 
 Key Topic 99:  Radiation Exposure
 
-3-99Q1  Compliance with MPE, or Maximum Permissible Exposure to RF levels (as defined in FCC Part 1, OET Bulletin 65) for “controlled” environments, are averaged over _______ minutes, while “uncontrolled” RF environments are averaged over ______ minutes.
+3-99Q1  Compliance with MPE, or Maximum Permissible Exposure to RF levels (as defined in FCC Part 1, OET Bulletin 65) for "controlled" environments, are averaged over _______ minutes, while "uncontrolled" RF environments are averaged over ______ minutes.
 	A.	6, 30.
 	B.	30, 6.
 	C.	1, 15.

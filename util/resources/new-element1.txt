@@ -464,7 +464,7 @@ Key Topic 10: Distress Communications
 
 1-10B6  What is Distress traffic?
 	A.	All messages relative to the immediate assistance required by a ship, aircraft or other vehicle threatened by grave or imminent danger, such as life and safety of persons on board, or man overboard.
-	B.	In radiotelephony, the speaking of the word, “Mayday.”
+	B.	In radiotelephony, the speaking of the word, "Mayday."
 	C.	Health and welfare messages concerning property and the safety of a vessel.
 	D.	Internationally recognized communications relating to important situations.
 
@@ -485,16 +485,16 @@ Key Topic 11: Urgency and Safety Communications
 	D.	A communications alert that important personal messages must be transmitted.
 
 1-11B2  What is the internationally recognized Urgency signal?
-	A.	The letters “TTT” transmitted three times by radiotelegraphy.
-	B.	The words “PAN PAN” spoken three times before the Urgency call.
-	C.	Three oral repetitions of the word “Safety” sent before the call.
-	D.	The pronouncement of the word “Mayday.”
+	A.	The letters "TTT" transmitted three times by radiotelegraphy.
+	B.	The words "PAN PAN" spoken three times before the Urgency call.
+	C.	Three oral repetitions of the word "Safety" sent before the call.
+	D.	The pronouncement of the word "Mayday."
 
 1-11B3  What is a Safety transmission?
 	A.	A communications transmission which indicates that a station is preparing to transmit an important navigation or weather warning.
-	B.	A radiotelephony warning preceded by the words “PAN PAN.”
+	B.	A radiotelephony warning preceded by the words "PAN PAN."
 	C.	Health and welfare traffic concerning the protection of human life.
-	D.	A voice call proceeded by the words “Safety Alert.”
+	D.	A voice call proceeded by the words "Safety Alert."
 
 1-11B4  The Urgency signal concerning the safety of a ship, aircraft or person shall be sent only on the authority of:
 	A.	Master of ship.
@@ -598,7 +598,7 @@ Key Topic 13: VHF Equipment Controls
 	C.	Always adjust squelch control to its minimum level.
 	D.	Adjust squelch control to approximately twice the minimum level necessary to barely suppress any background noise.
 
-1-13C5  The “Scan” function is used to:
+1-13C5  The "Scan" function is used to:
 	A.	Monitor  Ch-16 continuously and switching to either Ch-70 or Ch-13 every 5 seconds.
 	B.	Scan Ch-16 for Distress calls.
 	C.	Scan Ch-70 for Distress alerts.
@@ -691,7 +691,7 @@ Key Topic 15: MF-HF Equipment Controls
 1-15C4  MF/HF transceiver power levels should be set:
 	A.	To the lowest level necessary for effective communications.
 	B.	To the level necessary to maximize the propagation radius.
-	C.	To the highest level possible so as to ensure other stations cannot “break-in” on the channel during use.
+	C.	To the highest level possible so as to ensure other stations cannot "break-in" on the channel during use.
 	D.	Both a) and c) are correct.
 
 1-15C5  To set-up the MF/HF transceiver for a TELEX call to a coast station, the operator must:
@@ -700,10 +700,10 @@ Key Topic 15: MF-HF Equipment Controls
 	C.	Select F1B/J2B modes or J3E mode, depending on whether ARQ or FEC is preferred.
 	D.	None of the above.
 
-1-15C6  What is the purpose of the Receiver Incremental Tuning (RIT) or “Clarifier” control?
-	A.	It acts as a “fine-tune” control on the receive frequency.
-	B.	It acts as a “fine-tune” control on the transmitted frequency.
-	C.	It acts as a “fine-tune” control on both the receive and transmitted frequencies.
+1-15C6  What is the purpose of the Receiver Incremental Tuning (RIT) or "Clarifier" control?
+	A.	It acts as a "fine-tune" control on the receive frequency.
+	B.	It acts as a "fine-tune" control on the transmitted frequency.
+	C.	It acts as a "fine-tune" control on both the receive and transmitted frequencies.
 	D.	None of the above.
 
 
@@ -744,7 +744,7 @@ Key Topic 16: MF-HF Frequency & Emission Selection
 	C.	F3E – Frequency modulation telephony.
 	D.	A3E – Amplitude modulation telephony, double sideband.
 
-1-16C5  Which of the following defines high frequency “ITU Channel 1212”?
+1-16C5  Which of the following defines high frequency "ITU Channel 1212"?
 	A.	Ch-12 in the 16 MHz band.
 	B.	Ch-1216 in the MF band.
 	C.	The 12th channel in the 12 MHz band.
@@ -772,7 +772,7 @@ Key Topic 17: Equipment Tests
 
 1-17C1  What is the proper procedure for testing a radiotelephone installation?
 	A.	A dummy antenna must be used to insure the test will not interfere with ongoing communications.
-	B.	Transmit the station’s call sign, followed by the word “test” on the frequency being used for the test.
+	B.	Transmit the station’s call sign, followed by the word "test" on the frequency being used for the test.
 	C.	Permission for the voice test must be requested and received from the nearest public coast station.
 	D.	Short tests must be confined to a single frequency and must never be conducted in port.
 
@@ -798,7 +798,7 @@ Key Topic 17: Equipment Tests
 	A.	Compose and send a brief message to your own Inmarsat-C terminal.
 	B.	Send a message to a shore terminal and wait for confirmation.
 	C.	Send a message to another ship terminal.
-	D.	If the “Send” light flashes, proper operation has been confirmed.
+	D.	If the "Send" light flashes, proper operation has been confirmed.
 
 1-17C6  When may you test a radiotelephone transmitter on the air?
 	A.	Between midnight and 6:00 AM local time.
@@ -938,7 +938,7 @@ Key Topic 20: Power Sources
 	C.	Only one of the above is required if a vessel is equipped with a second 406 EPIRB as a backup means of sending a distress alert.
 	D.	All newly constructed ships under GMDSS must have both emergency and reserve power sources for radio communications.
 
-1-20D6  What is the meaning of “Reserve Source of Energy”?
+1-20D6  What is the meaning of "Reserve Source of Energy"?
 	A.	The supply of electrical energy sufficient to operate the radio installations for the purpose of conducting Distress and Safety communications in the event of failure of the ship’s main and emergency sources of electrical power.
 	B.	High caloric value items for lifeboat, per SOLAS regulations.
 	C.	Diesel fuel stored for the purpose of operating the powered survival craft for a period equal to or exceeding the U.S.C.G. and SOLAS requirements.
@@ -972,9 +972,9 @@ Key Topic 21: EPIRBs
 
 1-21D4  How do you cancel a false EPIRB distress alert?
 	A.	Transmit a DSC distress alert cancellation.
-	B.	Transmit a broadcast message to “all stations” canceling the distress message.
+	B.	Transmit a broadcast message to "all stations" canceling the distress message.
 	C.	Notify the Coast Guard or rescue coordination center at once.
-	D.	Make a radiotelephony “distress cancellation” transmission on 2182 kHz.
+	D.	Make a radiotelephony "distress cancellation" transmission on 2182 kHz.
 
 1-21D5  What is the COSPAS-SARSAT system?
 	A.	A global satellite communications system for users in the maritime, land and aeronautical mobile services.
@@ -1015,7 +1015,7 @@ Key Topic 22: SARTs
 1-22D3  What is the purpose of the SART’s audible tone alarm?
 	A.	It informs survivors that assistance may be nearby.
 	B.	It informs survivors when the battery’s charge condition has weakened.
-	C.	It informs survivors when the SART switches to the “standby” mode.
+	C.	It informs survivors when the SART switches to the "standby" mode.
 	D.	It informs survivors that a nearby vessel is signaling on DSC.
 
 1-22D4  Which statement is true regarding the SART?
@@ -1025,15 +1025,15 @@ Key Topic 22: SARTs
 	D.	This is a 9 GHz transponder capable of being received by vessel’s X-band navigational RADAR system.
 
 1-22D5  At what point does a SART begin transmitting?
-	A.	It immediately begins radiating when placed in the “on” position.
+	A.	It immediately begins radiating when placed in the "on" position.
 	B.	It must be manually activated.
-	C.	If it has been placed in the “on” position, it will respond when it has been interrogated by a 9-GHz RADAR signal.
-	D.	If it has been placed in the “on” position, it will begin transmitting immediately upon detecting that it is in water.
+	C.	If it has been placed in the "on" position, it will respond when it has been interrogated by a 9-GHz RADAR signal.
+	D.	If it has been placed in the "on" position, it will begin transmitting immediately upon detecting that it is in water.
 
 1-22D6  How can a SART’s effective range be maximized?
 	A.	The SART should be placed in water immediately upon activation.
 	B.	The SART should be held as high as possible.
-	C.	Switch the SART into the “high” power position.
+	C.	Switch the SART into the "high" power position.
 	D.	If possible, the SART should be mounted horizontally so that its signal matches that of the searching RADAR signal.
 
 
