@@ -67,9 +67,13 @@ inetNtoi = intercalate "." . map show . reverse . inetNtoi'
 {- Convert a dotted quad IP address string to an Integer
 -}
 inetIton :: String -> Integer
+
+-- This is an ugly, ugly fix for machines reporting localhost with IPv6
+-- We've observed Ubuntu doing this lately.
+inetIton "::1" = inetIton "127.0.0.1"
+
 inetIton ip = foldl1 f $ map read $ split '.' ip
    where
-      --f n r = (Data.Bits.shiftL n 8) + r
       f n r = (shiftL n 8) + r
 
 

@@ -1,10 +1,6 @@
 -----
 beta
 
-- Make the footer into a header, discuss the layout some more
-
-- Make the SessionId code gracefully deal with IPv6 ::1 addresses. Just a dirty pattern match on that address is fine for now.
-
 - Deal with the start form submit with no questions selected at all. Make it go right back to initialize.
 
 - Create a web page for this project at ui3.info to describe what it's all about and provide links to the source, darcs commands, and more
@@ -36,6 +32,8 @@ release
 
 -----
 feature additions
+
+- Add IPv6 support to the SessionId code. It will fail now to compute a session id.
 
 - Could the session data be stored on Amazon S3? How about the question data? Think about it.
 
