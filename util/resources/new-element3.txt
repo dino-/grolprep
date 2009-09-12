@@ -30,9 +30,9 @@ Key Topic 1:  Electrical Elements
 	D.	Inductor.
 
 3-1A5  What formula would determine the inductive reactance of a coil if frequency and coil inductance are known?
-	A.	XL = ( f L
-	B.	XL = 2( f L
-	C.	XL = 1 / 2( f C
+	A.	XL = &#928 f L
+	B.	XL = 2 &#928 f L
+	C.	XL = 1 / 2 &#928 f C
 	D.	XL = 1 / R2+X2
 
 3-1A6  What is the term for the out-of-phase power associated with inductors and capacitors?
