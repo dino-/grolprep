@@ -260,30 +260,33 @@ actionSetupSession :: App CGIResult
 actionSetupSession = do
    llog INFO "actionSetupSession"
 
-   (element, subelement) <-
-      liftM (read . fromJust) $ getInput "questions"
+   mbQuestionsChoice <- readInput "questions"
+   case mbQuestionsChoice of
+      Just (element, subelement) -> do
+         randA <- liftM (maybe False (const True)) $ getInput "randA"
 
-   randA <- liftM (maybe False (const True)) $ getInput "randA"
+         problems <- liftIO $ getProblemIds element subelement
 
-   problems <- liftIO $ getProblemIds element subelement
+         questionOrderer <- liftM (maybe return (const shuffle))
+            $ getInput "randQ"
 
-   questionOrderer <- liftM (maybe return (const shuffle))
-      $ getInput "randQ"
+         sortedProblems <- liftIO $ questionOrderer problems
 
-   sortedProblems <- liftIO $ questionOrderer problems
+         let session = Session
+               { sessRandA    = randA
+               , sessPass     = 1
+               , sessPassCurr = 0
+               , sessPassTot  = length sortedProblems
+               , sessCurr     = 0
+               , sessCurrOrd  = []
+               , sessList     = sortedProblems
+               }
+         putSession session
 
-   let session = Session
-         { sessRandA    = randA
-         , sessPass     = 1
-         , sessPassCurr = 0
-         , sessPassTot  = length sortedProblems
-         , sessCurr     = 0
-         , sessCurrOrd  = []
-         , sessList     = sortedProblems
-         }
-   putSession session
+         actionNextProblem
 
-   actionNextProblem
+      -- No questions were selected, loop back to the beginning
+      Nothing -> actionInitialize
 
 
 actionNextProblem :: App CGIResult
