@@ -184,7 +184,7 @@ Key Topic 4: Power, Pulse Width, PRR
 	C.	1,000 watts.
 	D.	None of these.
 
-8-4A6  8L37 (C) (250) A search RADAR has a pulse width of 1.0 microsecond, a pulse repetition frequency (PRF) of 900 Hz, and an average power of 18 watts. The unit’s peak power is:
+8-4A6  8L37 (C) (250) A search RADAR has a pulse width of 1.0 microsecond, a pulse repetition frequency (PRF) of 900 Hz, and an average power of 18 watts. The unit's peak power is:
 	A.	200 kilowatts.
 	B.	180 kilowatts.
 	C.	20 kilowatts.
@@ -431,7 +431,7 @@ Key Topic 9: Circuits-1
 8-9A1  Blocking oscillators operate on the formula of:
 	A.	T = R x C.
 	B.	I = E/R.
-	C.	By using the receiver’s AGC.
+	C.	By using the receiver's AGC.
 	D.	None of the above are correct.
 
 8-9A2   The block diagram of a typical RADAR system microprocessor is shown in Fig. 8A2. Choose the most correct statement regarding this system.
@@ -736,8 +736,8 @@ Key Topic 14: Pulse Forming Networks Modulation
 8-14B2  Pulse transformers and pulse-forming networks are commonly used to shape the microwave energy burst RADAR transmitter. The switching devices most often used in such pulse-forming circuits are:
 	A.	Power MOSFETS and Triacs.
 	B.	Switching transistors.
-	C.	Thyratrons and BJT’s.
-	D.	SCR’s and Thyratrons.
+	C.	Thyratrons and BJT's.
+	D.	SCR's and Thyratrons.
 
 8-14B3  The purpose of the pulse-forming network is to:
 	A.	Determine the width of the modulating pulses.
@@ -987,8 +987,8 @@ Key Topic 19: Receiving Systems
 	D.	None of the above.
 
 8-19C2  Logarithmic receivers:
-	A.	Can’t be damaged.
-	B.	Can’t be saturated.
+	A.	Can't be damaged.
+	B.	Can't be saturated.
 	C.	Should not be used in RADAR systems.
 	D.	Have low sensitivity.
 
@@ -1564,7 +1564,7 @@ Key Topic 29: Displays
 	A.	Current passes through the crystal causing them to align.
 	B.	When voltage is reduced to the raster scan display.
 	C.	When the deflection coils are resonant.
-	D.	When the ships antenna’s bearing is true north.
+	D.	When the ships antenna's bearing is true north.
 
 8-29D5  In a raster-type display, the electron beam is scanned:
 	A.	From the center of the display to the outer edges.
@@ -1796,7 +1796,7 @@ Answer Key:	8-33D1: C	8-33D2: A	8-33D3: D	8-33D4: A	8-33D5: D	8-33D6: B
 Key Topic 34: EBL, Azimuth and True Bearing
 
 8-34D1  The purpose of the Electronic Bearing Line is to:
-	A.	Indicate your own vessel’s heading.
+	A.	Indicate your own vessel's heading.
 	B.	Measure the bearing of a specific target.
 	C.	Indicate True North.
 	D.	Display the range of a specific target.
@@ -1816,12 +1816,12 @@ Key Topic 34: EBL, Azimuth and True Bearing
 8-34D4  Bearing information from the gyro is used to provide the following:
 	A.	The heading of the nearest target.
 	B.	Range and bearing to the nearest target.
-	C.	Vessel’s own heading.
+	C.	Vessel's own heading.
 	D.	The range of a selected target.
 
 8-34D5  Which of the following statements about "true bearing" is correct?
-	A.	The ship’s heading flasher is at the top of the screen.
-	B.	True North is at the top of the screen and the heading flasher indicates the vessel’s course.
+	A.	The ship's heading flasher is at the top of the screen.
+	B.	True North is at the top of the screen and the heading flasher indicates the vessel's course.
 	C.	The true bearing of the nearest target is indicated.
 	D.	The relative bearing of the nearest target is indicated.
 
@@ -1898,7 +1898,7 @@ Answer Key:	8-35D1: D	8-35D2: B	8-35D3: C	8-35D4: A	8-35D5: B	8-35D6: A
 
 Key Topic 36: ARPA - CAS
 
-8-36D1  The ship’s speed indication on the ARPA display can be set manually, but does not change with changes in the vessel’s speed. What other indication would point to a related equipment failure?
+8-36D1  The ship's speed indication on the ARPA display can be set manually, but does not change with changes in the vessel's speed. What other indication would point to a related equipment failure?
 	A.	"GYRO OUT" is displayed on the ARPA indicator.
 	B.	"LOG OUT" is displayed on the ARPA indicator.
 	C.	"TARGET LOST" is displayed on the ARPA indicator.
@@ -1907,30 +1907,30 @@ Key Topic 36: ARPA - CAS
 8-36D2  What does the term ARPA/CAS refer to?
 	A.	The basic RADAR system in operation.
 	B.	The device which displays the optional U.S.C.G. Acquisition and Search RADAR information on a CRT display.
-	C.	The device which acquires and tracks targets that are displayed on the RADAR indicator’s CRT.
+	C.	The device which acquires and tracks targets that are displayed on the RADAR indicator's CRT.
 	D.	The device which allows the ship to automatically steer around potential hazards.
 
 8-36D3  Which of the following would not be considered an input to the computer of a collision avoidance system?
-	A.	Own ship’s exact position from navigation satellite receiver.
-	B.	Own ship’s gyrocompass heading.
-	C.	Own ship’s speed from Doppler log.
-	D.	Own ship’s wind velocity from an anemometer.
+	A.	Own ship's exact position from navigation satellite receiver.
+	B.	Own ship's gyrocompass heading.
+	C.	Own ship's speed from Doppler log.
+	D.	Own ship's wind velocity from an anemometer.
 
-8-36D4  Which answer best describes a line on the display which indicates a target’s position. The speed is shown by the length of the line and the course by the direction of the line.
+8-36D4  Which answer best describes a line on the display which indicates a target's position. The speed is shown by the length of the line and the course by the direction of the line.
 	A.	Vector.
 	B.	Electronic Bearing Line.
 	C.	Range Marker.
 	D.	Heading Marker.
 
 8-36D5  What is the purpose or function of the "Trial Mode" used in most ARPA equipment?
-	A.	It selects trial dots for targets’ recent past positions.
-	B.	It is used to display target position and your own ship’s data such as TCPA, CPA, etc.
+	A.	It selects trial dots for targets' recent past positions.
+	B.	It is used to display target position and your own ship's data such as TCPA, CPA, etc.
 	C.	It is used to allow results of proposed maneuvers to be assessed.
 	D.	None of these.
 
 8-36D6  The ARPA term CPA refers to:
-	A.	The furthest point a ship or target will get to your own ship’s bow.
-	B.	Direction of target relative to your own ship’s direction.
+	A.	The furthest point a ship or target will get to your own ship's bow.
+	B.	Direction of target relative to your own ship's direction.
 	C.	The combined detection and processing of targets.
 	D.	The closest point a ship or target will approach your own ship.
 
@@ -2220,7 +2220,7 @@ Key Topic 42: Waveguides-1
 	D.	It has lower transmission losses than other feedline types.
 
 8-42E5  Wave guide theory is based on the principals of:
-	A.	Ohm’s Law.
+	A.	Ohm's Law.
 	B.	High standing waves.
 	C.	Skin effect and use of ¼ wave stubs.
 	D.	None of the above.
@@ -2628,7 +2628,7 @@ Key Topic 50: Safety
 
 8-50F2  Before testing a RADAR transmitter, it would be a good idea to:
 	A.	Make sure no one is on the deck.
-	B.	Make sure the magnetron’s magnetic field is far away from the magnetron.
+	B.	Make sure the magnetron's magnetic field is far away from the magnetron.
 	C.	Make sure there are no explosives or flammable cargo being loaded.
 	D.	Make sure the Coast Guard has been notified.
 

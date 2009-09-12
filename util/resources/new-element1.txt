@@ -70,19 +70,19 @@ Key Topic 2: License Requirements
 	A.	The operator must hold a General Radiotelephone Operator License or higher-class license.
 	B.	The operator must hold a Restricted Radiotelephone Operator Permit or higher-class license.
 	C.	The operator must hold a Marine Radio Operator Permit or higher-class license.
-	D.	Two operators on board must hold a GMDSS Radio Operator License or a Restricted GMDSS Radio Operator License, depending on the ship’s operating areas.
+	D.	Two operators on board must hold a GMDSS Radio Operator License or a Restricted GMDSS Radio Operator License, depending on the ship's operating areas.
 
 1-2A5  What is the minimum radio operator requirement for ships subject to the Great Lakes Radio Agreement?
-	A.	Third Class Radiotelegraph Operator’s Certificate.
+	A.	Third Class Radiotelegraph Operator's Certificate.
 	B.	General Radiotelephone Operator License.
 	C.	Marine Radio Operator Permit.
 	D.	Restricted Radiotelephone Operator Permit.
 
 1-2A6  What is a requirement of every commercial operator on duty and in charge of a transmitting system?
-	A.	A copy of the Proof-of-Passing Certificate (PPC) must be in the station’s records.
-	B.	The original license or a photocopy must be posted or in the operator’s personal possession and available for inspection.
-	C.	The FCC Form 605 certifying the operator’s qualifications must be readily available at the transmitting system site.
-	D.	A copy of the operator’s license must be supplied to the radio station’s supervisor as evidence of technical qualification.
+	A.	A copy of the Proof-of-Passing Certificate (PPC) must be in the station's records.
+	B.	The original license or a photocopy must be posted or in the operator's personal possession and available for inspection.
+	C.	The FCC Form 605 certifying the operator's qualifications must be readily available at the transmitting system site.
+	D.	A copy of the operator's license must be supplied to the radio station's supervisor as evidence of technical qualification.
 
 
 
@@ -150,17 +150,17 @@ Key Topic 4: Logkeeping
 1-4A2  Who is responsible for the proper maintenance of station logs?
 	A.	The station licensee.
 	B.	The commercially-licensed radio operator in charge of the station.
-	C.	The ship’s master and the station licensee.
+	C.	The ship's master and the station licensee.
 	D.	The station licensee and the radio operator in charge of the station.
 
 1-4A3  Where must ship station logs be kept during a voyage?
 	A.	At the principal radiotelephone operating position.
-	B.	They must be secured in the vessel’s strongbox for safekeeping.
+	B.	They must be secured in the vessel's strongbox for safekeeping.
 	C.	In the personal custody of the licensed commercial radio operator.
-	D.	All logs are turned over to the ship’s master when the radio operator goes off duty.
+	D.	All logs are turned over to the ship's master when the radio operator goes off duty.
 
 1-4A4  What is the proper procedure for making a correction in the station log?
-	A.	The ship’s master must be notified, approve and initial all changes to the station log.
+	A.	The ship's master must be notified, approve and initial all changes to the station log.
 	B.	The mistake may be erased and the correction made and initialized only by the radio operator making the original error.
 	C.	The original person making the entry must strike out the error, initial the correction and indicate the date of the correction.
 	D.	Rewrite the new entry in its entirety directly below the incorrect notation and initial the change.
@@ -203,7 +203,7 @@ Key Topic 5: Log Entries
 	D.	None of the above.
 
 1-5A3  Where should the GMDSS radio log be kept on board ship?
-	A.	Captain’s office.
+	A.	Captain's office.
 	B.	Sea cabin.
 	C.	At the GMDSS operating position.
 	D.	Anywhere on board the vessel.
@@ -217,7 +217,7 @@ Key Topic 5: Log Entries
 1-5A5  Which of the following logkeeping statements is true?
 	A.	Entries relating to pre-voyage, pre-departure and daily tests are required.
 	B.	Both a) and c)
-	C.	A summary of all required Distress communications heard and Urgency communications affecting the station’s own ship.  Also, all Safety communications (other than VHF) affecting the station’s own ship must be logged.
+	C.	A summary of all required Distress communications heard and Urgency communications affecting the station's own ship.  Also, all Safety communications (other than VHF) affecting the station's own ship must be logged.
 	D.	Routine daily MF-HF and Inmarsat-C transmissions do not have to be logged.
 
 1-5A6  Which of the following statements concerning log entries is false?
@@ -244,7 +244,7 @@ Key Topic 6: Miscellaneous Rules & Regulations
 	A.	The regulations of the International Maritime Organization (IMO) and Radio Officers Union.
 	B.	Part 80 of the FCC Rules plus the international Radio Regulations and agreements to which the United States is a party.
 	C.	The Maritime Mobile Directives of the International Telecommunication Union.
-	D.	Those of the FCC’s Wireless Telecommunications Bureau, Maritime Mobile Service, Washington, DC 20554.
+	D.	Those of the FCC's Wireless Telecommunications Bureau, Maritime Mobile Service, Washington, DC 20554.
 
 1-6A2  When may the operator of a ship radio station allow an unlicensed person to speak over the transmitter?
 	A.	At no time.  Only commercially-licensed radio operators may modulate the transmitting apparatus.
@@ -256,19 +256,19 @@ Key Topic 6: Miscellaneous Rules & Regulations
 	A.	To a Commercial Operator Licensing Examination Manager (COLE Manager).
 	B.	To the Federal Communications Commission, Washington, DC 20554.
 	C.	To the Engineer-in-Charge of the FCC District Office nearest the proposed place of inspection.
-	D.	To an FCC-licensed technician holding a GMDSS Radio Maintainer’s License.
+	D.	To an FCC-licensed technician holding a GMDSS Radio Maintainer's License.
 
-1-6A4  Who has ultimate control of service at a ship’s radio station?
+1-6A4  Who has ultimate control of service at a ship's radio station?
 	A.	The master of the ship.
-	B.	A holder of a First Class Radiotelegraph Certificate with a six months’ service endorsement.
+	B.	A holder of a First Class Radiotelegraph Certificate with a six months' service endorsement.
 	C.	The Radio Officer-in-Charge authorized by the captain of the vessel.
 	D.	An appointed licensed radio operator who agrees to comply with all Radio Regulations in force.
 
 1-6A5  Where must the principal radiotelephone operating position be installed in a ship station?
 	A.	At the principal radio operating position of the vessel.
-	B.	In the chart room, master’s quarters or wheel house.
+	B.	In the chart room, master's quarters or wheel house.
 	C.	In the room or an adjoining room from which the ship is normally steered while at sea.
-	D.	At the level of the main wheel house or at least one deck above the ship’s main deck.
+	D.	At the level of the main wheel house or at least one deck above the ship's main deck.
 
 1-6A6  By international agreement, which ships must carry radio equipment for the safety of life at sea?
 	A.	All ships traveling more than 100 miles out to sea.
@@ -299,10 +299,10 @@ Key Topic 7: Bridge-to-Bridge Operations
 	D.	Interdepartmental Harbor and Port Patrol (IHPP).
 
 1-7B2  What is a bridge-to-bridge station?
-	A.	An internal communications system linking the wheel house with the ship’s primary radio operating position and other integral ship control points.
+	A.	An internal communications system linking the wheel house with the ship's primary radio operating position and other integral ship control points.
 	B.	An inland waterways and coastal radio station serving ship stations operating within the United States.
 	C.	A portable ship station necessary to eliminate frequent application to operate a ship station on board different vessels.
-	D.	A VHF radio station located on a ship’s navigational bridge or main control station that is used only for navigational communications.
+	D.	A VHF radio station located on a ship's navigational bridge or main control station that is used only for navigational communications.
 
 1-7B3  When may a bridge-to-bridge transmission be more than 1 watt?
 	A.	When broadcasting a distress message and rounding a bend in a river or traveling in a blind spot.
@@ -364,7 +364,7 @@ Key Topic 8: Operating Procedures-1
 
 1-8B5  How does a coast station notify a ship that it has a message for the ship?
 	A.	By making a directed transmission on 2182 kHz or 156.800 MHz.
-	B.	The coast station changes to the vessel’s known working frequency.
+	B.	The coast station changes to the vessel's known working frequency.
 	C.	By establishing communications using the eight-digit maritime mobile service identification.
 	D.	The coast station may transmit, at intervals, lists of call signs in alphabetical order for which they have traffic.
 
@@ -439,7 +439,7 @@ Key Topic 10: Distress Communications
 	D.	All of the above.
 
 1-10B2  What are the highest priority communications from ships at sea?
-	A.	All critical message traffic authorized by the ship’s master.
+	A.	All critical message traffic authorized by the ship's master.
 	B.	Navigation and meteorological warnings.
 	C.	Distress calls are highest and then communications preceded by Urgency and then Safety signals.
 	D.	Authorized government communications for which priority right has been claimed.
@@ -535,7 +535,7 @@ Key Topic 12: GMDSS
 1-12B2  The primary purpose of the GMDSS is to:
 	A.	Allow more effective control of SAR situations by vessels.
 	B.	Provide additional shipboard systems for more effective company communications.
-	C.	Automate and improve emergency communications for the world’s shipping industry.
+	C.	Automate and improve emergency communications for the world's shipping industry.
 	D.	Provide effective and inexpensive communications.
 
 1-12B3  What is the basic concept of GMDSS?
@@ -640,7 +640,7 @@ Key Topic 14: VHF Channel Selection
 	A.	DSC on Ch-70.
 	B.	VHF-FM on Ch-16.
 	C.	VHF-FM on Ch-13 in most areas of the continental United States.
-	D.	The vessel’s VHF working frequency.
+	D.	The vessel's VHF working frequency.
 
 1-14C5  Which channel would most likely be used for routine ship-to-ship voice traffic?
 	A.	Ch-16.
@@ -724,7 +724,7 @@ Key Topic 16: MF-HF Frequency & Emission Selection
 	A.	Only on 2182 kHz in ITU Region 2.
 	B.	On 2182 kHz or Ch-16, unless the station knows that the called vessel maintains a simultaneous watch on another intership working frequency.
 	C.	On the appropriate calling channel of the ship station at 15 minutes past the hour.
-	D.	On the vessel’s unique working radio channel assigned by the Federal Communications Commission.
+	D.	On the vessel's unique working radio channel assigned by the Federal Communications Commission.
 
 1-16C2  What is the MF radiotelephony calling and Distress frequency?
 	A.	2670 kHz.
@@ -772,7 +772,7 @@ Key Topic 17: Equipment Tests
 
 1-17C1  What is the proper procedure for testing a radiotelephone installation?
 	A.	A dummy antenna must be used to insure the test will not interfere with ongoing communications.
-	B.	Transmit the station’s call sign, followed by the word "test" on the frequency being used for the test.
+	B.	Transmit the station's call sign, followed by the word "test" on the frequency being used for the test.
 	C.	Permission for the voice test must be requested and received from the nearest public coast station.
 	D.	Short tests must be confined to a single frequency and must never be conducted in port.
 
@@ -921,16 +921,16 @@ Key Topic 20: Power Sources
 1-20D2  What are the characteristics of the Reserve Source of Energy under GMDSS?
 	A.	Supplies independent HF and MF installations at the same time.
 	B.	Cannot be independent of the propelling power of the ship.
-	C.	Must be independent of the ship’s electrical system when the RSE is needed to supply power to the GMDSS equipment.
-	D.	Must be incorporated into the ship’s electrical system.
+	C.	Must be independent of the ship's electrical system when the RSE is needed to supply power to the GMDSS equipment.
+	D.	Must be incorporated into the ship's electrical system.
 
-1-20D3  Which of the following terms is defined as a back-up power source that provides power to radio installations for the purpose of conducting Distress and Safety communications when the vessel’s main and emergency generators cannot?
+1-20D3  Which of the following terms is defined as a back-up power source that provides power to radio installations for the purpose of conducting Distress and Safety communications when the vessel's main and emergency generators cannot?
 	A.	Emergency Diesel Generator.	C.	Reserve Source of Diesel Power.
 	B.	Reserve Source of Energy.	D.	Emergency Back-up Generator.
 
 1-20D4  In the event of failure of the main and emergency sources of electrical power, what is the term for the source required to supply the GMDSS console with power for conducting distress and other radio communications?
 	A.	Emergency power.	C.	Reserve source of energy.
-	B.	Ship’s emergency diesel generator.	D.	Ship’s standby generator
+	B.	Ship's emergency diesel generator.	D.	Ship's standby generator
 
 1-20D5  What is the requirement for emergency and reserve power in GMDSS radio installations?
 	A.	An emergency power source for radio communications is not required if a vessel has proper reserve power (batteries).
@@ -939,7 +939,7 @@ Key Topic 20: Power Sources
 	D.	All newly constructed ships under GMDSS must have both emergency and reserve power sources for radio communications.
 
 1-20D6  What is the meaning of "Reserve Source of Energy"?
-	A.	The supply of electrical energy sufficient to operate the radio installations for the purpose of conducting Distress and Safety communications in the event of failure of the ship’s main and emergency sources of electrical power.
+	A.	The supply of electrical energy sufficient to operate the radio installations for the purpose of conducting Distress and Safety communications in the event of failure of the ship's main and emergency sources of electrical power.
 	B.	High caloric value items for lifeboat, per SOLAS regulations.
 	C.	Diesel fuel stored for the purpose of operating the powered survival craft for a period equal to or exceeding the U.S.C.G. and SOLAS requirements.
 	D.	None of these.
@@ -985,7 +985,7 @@ Key Topic 21: EPIRBs
 1-21D6  What is an advantage of a 406 MHz satellite EPIRB?
 	A.	It is compatible with the geostationary COSPAS-SARSAT and Global Maritime Distress and Safety System (GMDSS) regulations.
 	B.	Provides the fastest and most accurate way the Coast Guard has of locating and rescuing persons in distress.
-	C.	Includes a digitally encoded message containing the ship’s identity and nationality.
+	C.	Includes a digitally encoded message containing the ship's identity and nationality.
 	D.	All of the above.
 
 
@@ -1012,17 +1012,17 @@ Key Topic 22: SARTs
 	C.	A series of 12 equally spaced dots.
 	D.	A series of twenty dashes.
 
-1-22D3  What is the purpose of the SART’s audible tone alarm?
+1-22D3  What is the purpose of the SART's audible tone alarm?
 	A.	It informs survivors that assistance may be nearby.
-	B.	It informs survivors when the battery’s charge condition has weakened.
+	B.	It informs survivors when the battery's charge condition has weakened.
 	C.	It informs survivors when the SART switches to the "standby" mode.
 	D.	It informs survivors that a nearby vessel is signaling on DSC.
 
 1-22D4  Which statement is true regarding the SART?
 	A.	This is a performance monitor attached to at least one S-band navigational RADAR system.
-	B.	This is a 9 GHz transponder capable of being received by another vessel’s S-band navigational RADAR system.
+	B.	This is a 9 GHz transponder capable of being received by another vessel's S-band navigational RADAR system.
 	C.	This is a performance monitor attached to at least one X-band navigational RADAR system.
-	D.	This is a 9 GHz transponder capable of being received by vessel’s X-band navigational RADAR system.
+	D.	This is a 9 GHz transponder capable of being received by vessel's X-band navigational RADAR system.
 
 1-22D5  At what point does a SART begin transmitting?
 	A.	It immediately begins radiating when placed in the "on" position.
@@ -1030,7 +1030,7 @@ Key Topic 22: SARTs
 	C.	If it has been placed in the "on" position, it will respond when it has been interrogated by a 9-GHz RADAR signal.
 	D.	If it has been placed in the "on" position, it will begin transmitting immediately upon detecting that it is in water.
 
-1-22D6  How can a SART’s effective range be maximized?
+1-22D6  How can a SART's effective range be maximized?
 	A.	The SART should be placed in water immediately upon activation.
 	B.	The SART should be held as high as possible.
 	C.	Switch the SART into the "high" power position.

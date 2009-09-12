@@ -64,10 +64,10 @@ Key Topic 2:  Magnetism
 	D.	The force that drives current through a resistor.
 
 3-2A3  When induced currents produce expanding magnetic fields around conductors in a direction that opposes the original magnetic field, this is known as:
-	A.	Lenz’s law.
+	A.	Lenz's law.
 	B.	Gilbert's law.
-	C.	Maxwell’s law.
-	D.	Norton’s law.
+	C.	Maxwell's law.
+	D.	Norton's law.
 
 3-2A4  The opposition to the creation of magnetic lines of force in a magnetic circuit is known as:
 	A.	Eddy currents.
@@ -404,7 +404,7 @@ Answer Key:	3-8A1:  C	3-8A2:  B	3-8A3:  C	3-8A4:  A	3-8A5:  D	3-8A6:  B
 
 Subelement B - Electrical Math:  10 Key Topics, 10 Exam Questions, 3 Drawings
 
-Key Topic 9:  Ohm’s Law-1
+Key Topic 9:  Ohm's Law-1
 
 3-9B1  What value of series resistor would be needed to obtain a full scale deflection on a 50 microamp DC meter with an applied voltage of 200 volts DC?
 	A.	4 megohms.
@@ -452,7 +452,7 @@ Key Topic 9:  Ohm’s Law-1
 
 Answer Key:	3-9B1:  A	3-9B2:  B	3-9B3:  D	3-9B4:  A	3-9B5:  B	3-9B6:  C
 
-Key Topic 10:  Ohm’s Law-2
+Key Topic 10:  Ohm's Law-2
 
 3-10B1  What is the peak-to-peak RF voltage on the 50 ohm output of a 100 watt transmitter?
 	A.	70 volts.
@@ -1212,8 +1212,8 @@ Key Topic 25:  Transistors-1
 3-25C6  What does it mean for a transistor to be fully saturated?
 	A.	The collector current is at its maximum value.
 	B.	The collector current is at its minimum value.
-	C.	The transistor’s Alpha is at its maximum value.
-	D.	The transistor’s Beta is at its maximum value.
+	C.	The transistor's Alpha is at its maximum value.
+	D.	The transistor's Beta is at its maximum value.
 
 
 
@@ -1256,7 +1256,7 @@ Key Topic 26:  Transistors-2
 	C.	The base-emitter junction is reverse biased and the collector-base junction is forward biased.
 	D.	The base-emitter junction is forward biased and the collector-base junction is reverse biased.
 
-3-26C5  For current to flow in an NPN silicon transistor’s emitter-collector junction, the base must be:
+3-26C5  For current to flow in an NPN silicon transistor's emitter-collector junction, the base must be:
 	A.	At least 0.4 volts positive with respect to the emitter.
 	B.	At a negative voltage with respect to the emitter.
 	C.	At least 0.7 volts positive with respect to the emitter.
@@ -1456,9 +1456,9 @@ Key Topic 30:  Op Amps
 
 3-30D3  Gain of a closed-loop op-amp circuit is determined by?
 	A.	The maximum operating frequency divided by the square root of the load impedance.
-	B.	The op-amp’s external feedback network.
+	B.	The op-amp's external feedback network.
 	C.	Supply voltage and slew rate.
-	D.	The op-amp’s internal feedback network.
+	D.	The op-amp's internal feedback network.
 
 3-30D4  Where is the external feedback network connected to control the gain of a closed-loop op-amp circuit?
 	A.	Between the differential inputs.
@@ -1766,9 +1766,9 @@ Key Topic 35:  Logic Levels
 	D.	None of the above are correct.
 
 3-35E6  What is a truth table?
-	A.	A list of input combinations and their corresponding outputs that characterizes a digital device’s function.
+	A.	A list of input combinations and their corresponding outputs that characterizes a digital device's function.
 	B.	A table of logic symbols that indicate the high logic states of an op-amp.
-	C.	A diagram showing logic states when the digital device’s output is true.
+	C.	A diagram showing logic states when the digital device's output is true.
 	D.	A table of logic symbols that indicates the low logic states of an op-amp.
 
 
@@ -1924,7 +1924,7 @@ Key Topic 38:  Memory
 	C.	Input-output.
 	D.	Internal operation.
 
-3-38E4  What is the name for a microprocessor’s sequence of commands and instructions?
+3-38E4  What is the name for a microprocessor's sequence of commands and instructions?
 	A.	Program.
 	B.	Sequence.
 	C.	Data string.
@@ -2120,7 +2120,7 @@ Key Topic 42: RF Amplifiers
 3-42F2  What is the primary purpose of an RF amplifier in a receiver?
 	A.	To provide most of the receiver gain.
 	B.	To vary the receiver image rejection by utilizing the AGC.
-	C.	To improve the receiver’s noise figure.
+	C.	To improve the receiver's noise figure.
 	D.	To develop the AGC voltage.
 
 3-42F3  How much gain should be used in the RF amplifier stage of a receiver?
@@ -2168,7 +2168,7 @@ Key Topic 43:  Oscillators
 	A.	It can be phase locked.
 	B.	It can be remotely tuned.
 	C.	It is stable.
-	D.	It has little or no effect on the crystal’s stability.
+	D.	It has little or no effect on the crystal's stability.
 
 3-43F2  What is the oscillator stage called in a frequency synthesizer?
 	A.	VCO.	C.	Phase detector.
@@ -3194,7 +3194,7 @@ Key Topic 64:  Voltage, Current and Power Relationships
 3-64J2  The voltage produced in a receiving antenna is:
 	A.	Out of phase with the current if connected properly.
 	B.	Out of phase with the current if cut to 1/3 wavelength.
-	C.	Variable depending on the station’s SWR.
+	C.	Variable depending on the station's SWR.
 	D.	Always proportional to the received field strength.
 
 3-64J3  Which of the following represents the best standing wave ratio (SWR)?
@@ -3387,7 +3387,7 @@ Subelement K - Aircraft:  6 Key Topics, 6 Exam Questions
 
 Key Topic 68:  Distance Measuring Equipment
 
-3-68K1  What is the frequency range of the Distance Measuring Equipment (DME) used to indicate an aircraft’s slant range distance to a selected ground-based navigation station?
+3-68K1  What is the frequency range of the Distance Measuring Equipment (DME) used to indicate an aircraft's slant range distance to a selected ground-based navigation station?
 	A.	108.00 MHz to 117.95 MHz.
 	B.	108.10 MHz to 111.95 MHz.
 	C.	962 MHz to 1213 MHz.
@@ -3405,11 +3405,11 @@ Key Topic 68:  Distance Measuring Equipment
 	C.	Operation at close range.
 	D.	Clear other traffic for a reply.
 
-3-68K4  What is the main underlying operating principle of an aircraft’s Distance Measuring Equipment (DME)?
-	A.	A measurable amount of time is required to send and receive a radio signal through the Earth’s atmosphere.
-	B.	The difference between the peak values of two DC voltages may be used to determine an aircraft’s distance to another aircraft.
-	C.	A measurable frequency compression of an AC signal may be used to determine an aircraft’s altitude above the earth.
-	D.	A phase inversion between two AC voltages may be used to determine an aircraft’s distance to the exit ramp of an airport’s runway.
+3-68K4  What is the main underlying operating principle of an aircraft's Distance Measuring Equipment (DME)?
+	A.	A measurable amount of time is required to send and receive a radio signal through the Earth's atmosphere.
+	B.	The difference between the peak values of two DC voltages may be used to determine an aircraft's distance to another aircraft.
+	C.	A measurable frequency compression of an AC signal may be used to determine an aircraft's altitude above the earth.
+	D.	A phase inversion between two AC voltages may be used to determine an aircraft's distance to the exit ramp of an airport's runway.
 
 3-68K5  What radio navigation aid determines the distance from an aircraft to a selected VORTAC station by measuring the length of time the radio signal takes to travel to and from the station?
 	A.	RADAR.
@@ -3461,9 +3461,9 @@ Key Topic 69:  VHF Omnidirectional Range (VOR)
 
 3-69K6  What is the main underlying operating principle of the Very-high-frequency Omnidirectional Range (VOR) aircraft navigational system?
 	A.	A definite amount of time is required to send and receive a radio signal.
-	B.	The difference between the peak values of two DC voltages may be used to determine an aircraft’s altitude above a selected VOR station.
-	C.	A phase difference between two AC voltages may be used to determine an aircraft’s azimuth position in relation to a selected VOR station.
-	D.	A phase difference between two AC voltages may be used to determine an aircraft’s distance from a selected VOR station.
+	B.	The difference between the peak values of two DC voltages may be used to determine an aircraft's altitude above a selected VOR station.
+	C.	A phase difference between two AC voltages may be used to determine an aircraft's azimuth position in relation to a selected VOR station.
+	D.	A phase difference between two AC voltages may be used to determine an aircraft's distance from a selected VOR station.
 
 
 
@@ -3481,10 +3481,10 @@ Key Topic 70:  Instrument Landing System (ILS)
 	D.	108.10 MHz to 111.95 MHz.
 
 3-70K2  What is the frequency range of the marker beacon system used to indicate an aircraft's position during an Instrument Landing System (ILS) approach to an airport's runway?
-	A.	The outer, middle, and inner marker beacons’ UHF frequencies are unique for each ILS equipped airport to provide unambiguous frequency-protected reception areas in the 329.15 to 335.00 MHz range.
-	B.	The outer marker beacon’s carrier frequency is 400 MHz, the middle marker beacon’s carrier frequency is 1300 MHz, and the inner marker beacon’s carrier frequency is 3000 MHz.
-	C.	The outer, the middle, and the inner marker beacon’s carrier frequencies are all 75 MHz but the marker beacons are 95% tone-modulated at 400 Hz (outer), 1300 Hz (middle), and 3000 Hz (inner).
-	D.	The outer, marker beacon’s carrier frequency is 3000 kHz, the middle marker beacon’s carrier frequency is 1300 kHz, and the inner marker beacon’s carrier frequency is 400 kHz.
+	A.	The outer, middle, and inner marker beacons' UHF frequencies are unique for each ILS equipped airport to provide unambiguous frequency-protected reception areas in the 329.15 to 335.00 MHz range.
+	B.	The outer marker beacon's carrier frequency is 400 MHz, the middle marker beacon's carrier frequency is 1300 MHz, and the inner marker beacon's carrier frequency is 3000 MHz.
+	C.	The outer, the middle, and the inner marker beacon's carrier frequencies are all 75 MHz but the marker beacons are 95% tone-modulated at 400 Hz (outer), 1300 Hz (middle), and 3000 Hz (inner).
+	D.	The outer, marker beacon's carrier frequency is 3000 kHz, the middle marker beacon's carrier frequency is 1300 kHz, and the inner marker beacon's carrier frequency is 400 kHz.
 
 3-70K3  Which of the following is a required component of an Instrument Landing System (ILS)?
 	A.	Altimeter: shows aircraft height above sea-level.
@@ -3492,7 +3492,7 @@ Key Topic 70:  Instrument Landing System (ILS)
 	C.	VHF Communications: provide communications to aircraft.
 	D.	Distance Measuring Equipment: shows aircraft distance to VORTAC station.
 
-3-70K4  What type of antenna is used in an aircraft’s Instrument Landing System (ILS) glideslope installation?
+3-70K4  What type of antenna is used in an aircraft's Instrument Landing System (ILS) glideslope installation?
 	A.	A vertically polarized antenna that radiates an omnidirectional antenna pattern.
 	B.	A balanced loop reception antenna.
 	C.	A folded dipole reception antenna.
@@ -3501,7 +3501,7 @@ Key Topic 70:  Instrument Landing System (ILS)
 3-70K5  Choose the only correct statement about the localizer beam system used by aircraft to find the centerline of a runway during an Instrument Landing System (ILS) approach to an airport.  The localizer beam system:
 	A.	Operates within the assigned frequency range of 108.10 to 111.95 GHz.
 	B.	Produces two amplitude modulated antenna patterns; one pattern above and one pattern below the normal 2.5 degree approach glide path of the aircraft.
-	C.	Frequencies are automatically tuned-in when the proper glide slope frequency is selected on the aircraft’s Navigation and Communication (NAV/COMM) transceiver.
+	C.	Frequencies are automatically tuned-in when the proper glide slope frequency is selected on the aircraft's Navigation and Communication (NAV/COMM) transceiver.
 	D.	Produces two amplitude modulated antenna patterns; one pattern with an audio frequency of 90 Hz and one pattern with an audio frequency of 150 Hz, one left of the runway centerline and one right of the runway centerline.
 
 3-70K6  On runway approach, an ILS Localizer shows:
@@ -3516,41 +3516,41 @@ Answer Key:	3-70K1:  D	3-70K2:  C	3-70K3:  B	3-70K4:  C	3-70K5:  D	3-70K6:  A
 
 Key Topic 71:  Automatic Direction Finding Equipment (ADF) & Transponders
 
-3-71K1  What is the frequency range of an aircraft’s Automatic Direction Finding (ADF) equipment?
+3-71K1  What is the frequency range of an aircraft's Automatic Direction Finding (ADF) equipment?
 	A.	190 kHz to 1750 kHz.
 	B.	190 MHz to 1750 MHz.
 	C.	108.10 MHz to 111.95 MHz.
 	D.	108.00 MHz to 117.95 MHz.
 
-3-71K2  What is meant by the term "night effect" when using an aircraft’s Automatic Direction Finding (ADF) equipment?  Night effect refers to the fact that:
+3-71K2  What is meant by the term "night effect" when using an aircraft's Automatic Direction Finding (ADF) equipment?  Night effect refers to the fact that:
 	A.	All Non Directional Beacon (NDB) transmitters are turned-off at dusk and turned-on at dawn.
-	B.	Non Directional Beacon (NDB) transmissions can bounce-off the Earth’s ionosphere at night and be received at almost any direction.
-	C.	An aircraft’s ADF transmissions will be slowed at night due to the increased density of the Earth’s atmosphere after sunset.
-	D.	An aircraft’s ADF antennas usually collect dew moisture after sunset which decreases their effective reception distance from an NDB transmitter.
+	B.	Non Directional Beacon (NDB) transmissions can bounce-off the Earth's ionosphere at night and be received at almost any direction.
+	C.	An aircraft's ADF transmissions will be slowed at night due to the increased density of the Earth's atmosphere after sunset.
+	D.	An aircraft's ADF antennas usually collect dew moisture after sunset which decreases their effective reception distance from an NDB transmitter.
 
-3-71K3  What are the transmit and receive frequencies of an aircraft’s mode C transponder operating in the Air Traffic Control RADAR Beacon System (ATCRBS)?
+3-71K3  What are the transmit and receive frequencies of an aircraft's mode C transponder operating in the Air Traffic Control RADAR Beacon System (ATCRBS)?
 	A.	Transmit at 1090 MHz, and receive at 1030 MHz
 	B.	Transmit at 1030 kHz, and receive at 1090 kHz
 	C.	Transmit at 1090 kHz, and receive at 1030 kHz
 	D.	Transmit at 1030 MHz, and receive at 1090 MHz
 
-3-71K4  In addition to duplicating the functions of a mode C transponder, an aircraft’s mode S transponder can also provide:
+3-71K4  In addition to duplicating the functions of a mode C transponder, an aircraft's mode S transponder can also provide:
 	A.	Primary RADAR surveillance capabilities.
 	B.	Long range lightning detection.
 	C.	Mid-Air collision avoidance capabilities.
 	D.	Backup VHF voice communication abilities.
 
-3-71K5  What type of encoding is used in an aircraft’s mode C transponder transmission to a ground station of the Air Traffic Control RADAR Beacon System (ATCRBS)?
+3-71K5  What type of encoding is used in an aircraft's mode C transponder transmission to a ground station of the Air Traffic Control RADAR Beacon System (ATCRBS)?
 	A.	Differential phase shift keying.
 	B.	Pulse position modulation.
 	C.	Doppler effect compressional encryption.
 	D.	Amplitude modulation at 95%.
 
-3-71K6  Choose the only correct statement about an aircraft’s Automatic Direction Finding (ADF) equipment.
-	A.	An aircraft’s ADF transmission exhibits primarily a line-of-sight range to the ground-based target station and will not follow the curvature of the Earth.
-	B.	Only a single omnidirectional sense antenna is required to receive an NDB transmission and process the signal to calculate the aircraft’s bearing to the selected ground station.
-	C.	All frequencies in the ADF’s operating range except the commercial standard broadcast stations (550 to 1660 kHz) can be utilized as a navigational Non Directional Beacon (NDB) signal.
-	D.	An aircraft’s ADF antennas can receive transmissions that are over the Earth’s horizon (sometimes several hundred miles away) since these signals will follow the curvature of the Earth.
+3-71K6  Choose the only correct statement about an aircraft's Automatic Direction Finding (ADF) equipment.
+	A.	An aircraft's ADF transmission exhibits primarily a line-of-sight range to the ground-based target station and will not follow the curvature of the Earth.
+	B.	Only a single omnidirectional sense antenna is required to receive an NDB transmission and process the signal to calculate the aircraft's bearing to the selected ground station.
+	C.	All frequencies in the ADF's operating range except the commercial standard broadcast stations (550 to 1660 kHz) can be utilized as a navigational Non Directional Beacon (NDB) signal.
+	D.	An aircraft's ADF antennas can receive transmissions that are over the Earth's horizon (sometimes several hundred miles away) since these signals will follow the curvature of the Earth.
 
 
 
@@ -3558,19 +3558,19 @@ Answer Key:	3-71K1:  A	3-71K2:  B	3-71K3:  A	3-71K4:  C	3-71K5:  B	3-71K6:  D
 
 Key Topic 72:  Aircraft Antenna Systems and Frequencies
 
-3-72K1  What type of antenna pattern is radiated from a ground station phased-array directional antenna when transmitting the PPM pulses in a Mode S interrogation signal of an aircraft’s Traffic alert and Collision Avoidance System (TCAS) installation?
+3-72K1  What type of antenna pattern is radiated from a ground station phased-array directional antenna when transmitting the PPM pulses in a Mode S interrogation signal of an aircraft's Traffic alert and Collision Avoidance System (TCAS) installation?
 	A.	1090 MHz directional pattern.
 	B.	1030 MHz omnidirectional pattern.
 	C.	1090 MHz omnidirectional pattern.
 	D.	1030 MHz directional pattern.
 
-3-72K2  What type of antenna is used in an aircraft’s Instrument Landing System (ILS) marker beacon installation?
+3-72K2  What type of antenna is used in an aircraft's Instrument Landing System (ILS) marker beacon installation?
 	A.	An electronically steerable phased-array antenna that radiates a directional antenna pattern.
 	B.	A folded dipole reception antenna.
 	C.	A balanced loop reception antenna.
 	D.	A horizontally polarized antenna that radiates an omnidirectional antenna pattern.
 
-3-72K3  What is the frequency range of an aircraft’s Very High Frequency (VHF) communications?
+3-72K3  What is the frequency range of an aircraft's Very High Frequency (VHF) communications?
 	A.	118.000 MHz to 136.975 MHz (worldwide up to 151.975 MHz).
 	B.	108.00 MHz to 117.95 MHz.
 	C.	329.15 MHz to 335.00 MHz.
@@ -3582,13 +3582,13 @@ Key Topic 72:  Aircraft Antenna Systems and Frequencies
 	C.	121.5 and 243 MHz.
 	D.	121.5, 243 and 406 MHz.
 
-3-72K5  What is the frequency range of an aircraft’s radio altimeter?
+3-72K5  What is the frequency range of an aircraft's radio altimeter?
 	A.	962 MHz to 1213 MHz.
 	B.	329.15 MHz to 335.00 MHz.
 	C.	4250 MHz to 4350 MHz.
 	D.	108.00 MHz to 117.95 MHz.
 
-3-72K6  What type of antenna is attached to an aircraft’s Mode C transponder installation and used to receive 1030 MHz interrogation signals from the Air Traffic Control Radar Beacon System (ATCRBS)?
+3-72K6  What type of antenna is attached to an aircraft's Mode C transponder installation and used to receive 1030 MHz interrogation signals from the Air Traffic Control Radar Beacon System (ATCRBS)?
 	A.	An electronically steerable phased-array directional antenna.
 	B.	An L-band monopole blade-type omnidirectional antenna.
 	C.	A folded dipole reception antenna.
@@ -3630,14 +3630,14 @@ Key Topic 73:  Equipment Functions
 	C.	First test the transmitter connected to a matched load.
 	D.	Measure power supply voltages to prevent circuit damage.
 
-3-73K5  What type of antenna is used in an aircraft’s Very High Frequency Omnidirectional Range (VOR) and Localizer (LOC) installations?
+3-73K5  What type of antenna is used in an aircraft's Very High Frequency Omnidirectional Range (VOR) and Localizer (LOC) installations?
 	A.	Vertically polarized antenna that radiates an omnidirectional antenna pattern.
 	B.	Horizontally polarized omnidirection reception antenna.
 	C.	Balanced loop transmission antenna.
 	D.	Folded dipole reception antenna.
 
-3-73K6  What is the function of a commercial aircraft’s SELCAL installation?  SELCAL is a type of aircraft communications __________.
-	A.	Device that allows an aircraft’s receiver to be continuously calibrated for signal selectivity.
+3-73K6  What is the function of a commercial aircraft's SELCAL installation?  SELCAL is a type of aircraft communications __________.
+	A.	Device that allows an aircraft's receiver to be continuously calibrated for signal selectivity.
 	B.	System where a ground-based transmitter can call a selected aircraft or group of aircraft without the flight crew monitoring the ground-station frequency.
 	C.	Transmission that uses sequential logic algorithm encryption to prevent public "eavesdropping" of crucial aircraft flight data.
 	D.	System where an airborne transmitter can selectively calculate the line-of-sight distance to several ground-station receivers.
@@ -4007,7 +4007,7 @@ Key Topic 81:  Troubleshooting
 	C.	Both sidebands are being transmitting.
 	D.	The operation is normal.
 
-3-81L2  The tachometer of a building’s elevator circuit experiences interference caused by the radio system nearby. What is a common potential "fix" for the problem?
+3-81L2  The tachometer of a building's elevator circuit experiences interference caused by the radio system nearby. What is a common potential "fix" for the problem?
 	A.	Replace the tachometer of the elevator.
 	B.	Add a .01 µF capacitor across the motor/tachometer leads.
 	C.	Add a 200 µF capacity across the motor/tachometer leads.
@@ -4019,8 +4019,8 @@ Key Topic 81:  Troubleshooting
 	C.	A wattmeter.
 	D.	A signal generator.
 
-3-81L4  In a software-defined transceiver, what would be the best way for a technician to make a quick overall evaluation of the radio’s operational condition?
-	A.	Set up a spectrum analyzer and service monitor and manually verify the manufacturer’s specifications.
+3-81L4  In a software-defined transceiver, what would be the best way for a technician to make a quick overall evaluation of the radio's operational condition?
+	A.	Set up a spectrum analyzer and service monitor and manually verify the manufacturer's specifications.
 	B.	Use another radio on the same frequency to check the transmitter.
 	C.	Use the built-in self-test feature.
 	D.	Using on-board self-test routines are strictly prohibited by the FCC in commercial transmitters.  Amateur Radio is the only service currently authorized to use them.
@@ -4325,7 +4325,7 @@ Key Topic 87:  Survival Craft Equipment: VHF, SARTs & EPIRBs
 3-87N5  Which of the following statements concerning satellite EPIRBs is true?
 	A.	Once activated, these EPIRBs transmit a signal for use in identifying the vessel and for determining the position of the beacon.
 	B.	The coded signal identifies the nature of the distress situation.
-	C.	The coded signal only identifies the vessel’s name and port of registry.
+	C.	The coded signal only identifies the vessel's name and port of registry.
 	D.	If the GMDSS Radio Operator does not program the EPIRB, it will transmit default information such as the follow-on communications frequency and mode.
 
 3-87N6  What statement is true regarding 406 MHz EPIRB transmissions?
@@ -4661,7 +4661,7 @@ Key Topic 94:  RADAR Equipment
 3-94O2  Prior to testing any RADAR system, the operator should first:
 	A.	Check the system grounds.
 	B.	Assure the display unit is operating normally.
-	C.	Inform the airport control tower or ship’s master.
+	C.	Inform the airport control tower or ship's master.
 	D.	Assure no personnel are in front of the antenna.
 
 3-94O3  In the term "ARPA RADAR," ARPA is the acronym for which of the following?
@@ -4682,7 +4682,7 @@ Key Topic 94:  RADAR Equipment
 	C.	0.05
 	D.	0.5
 
-3-94O6  RADAR collision avoidance systems utilize inputs from each of the following except your ship’s:
+3-94O6  RADAR collision avoidance systems utilize inputs from each of the following except your ship's:
 	A.	Gyrocompass.
 	B.	Navigation position receiver.
 	C.	Anemometer.
@@ -4782,7 +4782,7 @@ Key Topic 96:  INMARSAT Communications Systems-1
 3-96P5  Which of the following statements concerning INMARSAT geostationary satellites is true?
 	A.	They are in a polar orbit, in order to provide true global coverage.
 	B.	They are in an equatorial orbit, in order to provide true global coverage.
-	C.	They provide coverage to vessels in nearly all of the world’s navigable waters.
+	C.	They provide coverage to vessels in nearly all of the world's navigable waters.
 	D.	Vessels sailing in equatorial waters are able to use only one satellite, whereas other vessels are able to choose between at least two satellites.
 
 3-96P6  Which of the following conditions can render INMARSAT -B communications impossible?
@@ -4969,7 +4969,7 @@ Key Topic 100:  Safety Steps
 3-100Q3  Should you use a power drill without eye protection?
 	A.	Yes.
 	B.	No.
-	C.	It’s okay as long as you keep your face away from the drill bit.
+	C.	It's okay as long as you keep your face away from the drill bit.
 	D.	Only in an extreme emergency.
 
 3-100Q4  What class of fire is one that is caused by an electrical short circuit and what is the preferred substance used to extinguish that type of fire?
