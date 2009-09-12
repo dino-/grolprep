@@ -1,4 +1,9 @@
 -----
+There is a tool to regenerate the sqlite database in resources/ from the source text files in util/resources/ :
+
+   bin/db-regen.sh
+
+-----
 The randomly chosen simulations of real tests are to be generated like this:
 
 there are three different tests that need to be generated
