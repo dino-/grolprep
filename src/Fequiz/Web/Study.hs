@@ -198,7 +198,7 @@ formPoseProblem (Problem pid q eas) = do
       orderer False = return
 
       formPoseProblem' q' as = form << (
-         [ p ! [theclass "question"] << (pid ++ ": " ++ q')
+         [ p ! [theclass "question"] << (pid ++ ": " +++ (primHtml q'))
          , thediv << (ansControls as)
          , submit (show ActPose) "Proceed" ! [theclass "button"]
          ] )
@@ -209,7 +209,7 @@ formPoseProblem (Problem pid q eas) = do
                   f (n', a) =
                      -- we pass empty string to radio so we can explictly set different name and id attributes 
                      p << ((radio "" (show n') ! [theclass "hanging", name "answer", strAttr "id" (show n')])
-                          +++ label ! [thefor (show n')] << a)
+                          +++ label ! [thefor (show n')] << (primHtml a))
 
 formAnswer :: Int -> Problem -> App CGIResult
 formAnswer g (Problem pid q eas) = do
@@ -225,7 +225,7 @@ formAnswer g (Problem pid q eas) = do
    where
       theform nas' = form << (
          [ correctness (snd $ nas' !! g)
-         , p ! [theclass "question"] << (pid ++ ": " ++ q)
+         , p ! [theclass "question"] << (pid ++ ": " +++ (primHtml q))
          , thediv << ansLines
          , submit (show ActAnswer) "Next question" ! [theclass "button"]
          ] )
@@ -239,9 +239,11 @@ formAnswer g (Problem pid q eas) = do
                where
                   f :: (Int, Either String String) -> Html
                   f (n', Left  a)
-                     | n' == g    = p ! [theclass "incorrect-ans"] << a
-                     | otherwise  = p << a
-                  f (_ , Right a) = p ! [theclass "correct-ans"] << a
+                     | n' == g    =
+                           p ! [theclass "incorrect-ans"] << (primHtml a)
+                     | otherwise  = p << (primHtml a)
+                  f (_ , Right a) =
+                           p ! [theclass "correct-ans"] << (primHtml a)
 
 
 {- Action handlers
