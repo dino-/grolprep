@@ -25,8 +25,8 @@ import Text.XHtml.Strict
 import Fequiz.Common.Data
 import Fequiz.Common.Log
 import Fequiz.Common.Shuffle
-import Fequiz.Common.Util
 import Fequiz.Web.Session
+import Fequiz.Web.Util
 import Paths_fequiz
 
 

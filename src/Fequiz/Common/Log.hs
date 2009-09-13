@@ -6,24 +6,21 @@ module Fequiz.Common.Log
    ( initLogging, logM, llog, logTest )
    where
 
-import Control.Monad ( liftM )
 import Control.Monad.Trans
-import Data.Time.Clock ( getCurrentTime )
-import Data.Time.Format ( formatTime )
-import Data.Time.LocalTime ( utcToLocalZonedTime )
-import System.Locale ( defaultTimeLocale )
 import System.Log.Handler.Simple ( fileHandler )
 import qualified System.Log.Logger as L ( logM )
 import           System.Log.Logger hiding ( logM )
 import Text.Printf
 
+import Fequiz.Common.Util
 
+{-
 -- Format the time right now given a formatting string
 formattedDate :: String -> IO String
 formattedDate formatString =
    liftM (formatTime defaultTimeLocale formatString)
       $ getCurrentTime >>= utcToLocalZonedTime
-
+-}
 
 {- Log a message to the root logger with timestamp and priority
    included

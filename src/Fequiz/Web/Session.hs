@@ -18,7 +18,6 @@ import Data.Maybe
 import Network.CGI
 import Network.CGI.Monad
 import Network.CGI.Protocol
-import System.Directory
 import System.FilePath
 import System.IO
 import System.IO.Error
@@ -59,20 +58,6 @@ runApp (App a) = do
    env <- getCGIVars
    hRunCGI env stdin stdout (runCGIT (evalStateT a Nothing))
    return ()
-
-
-{- Make a directory if it doesn't already exist
--}
-mkdir :: FilePath -> IO ()
-mkdir path =
-   doesDirectoryExist path >>= (flip unless $ createDirectory path)
-
-
-{- Remove a file given a file path. Does nothing at all if the file
-   does not exist.
--}
-unlink :: FilePath -> IO ()
-unlink path = doesFileExist path >>= (flip when $ removeFile path)
 
 
 loadSession :: String -> IO Session

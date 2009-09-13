@@ -8,10 +8,10 @@ import Network.CGI
 import System.Log
 
 import Fequiz.Common.Log
-import Fequiz.Common.Util
+import Fequiz.Web.Feedback
 import Fequiz.Web.Session
 import Fequiz.Web.Study
-import Fequiz.Web.Feedback
+import Fequiz.Web.Util
 
 
 {- This is sort of our main event entry point. The web application
