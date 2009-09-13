@@ -21,7 +21,10 @@ import Network.CGI.Protocol
 import System.Directory
 import System.FilePath
 import System.IO
+import System.IO.Error
+import System.Log
 
+import Fequiz.Common.Log
 import Fequiz.Common.Util
 import Fequiz.Web.SessionId
 import Paths_fequiz
@@ -101,8 +104,14 @@ getSession = do
       mbSessionId <- getCookie appId
       case mbSessionId of
          Just sessionId -> do
-            session <- liftIO $ loadSession sessionId
-            put $ Just session
+            esess <- liftIO $ try $ loadSession sessionId
+            case esess of
+               Right session -> put $ Just session
+               Left _ -> do
+                  llog INFO
+                     "stale client session cookie detected, removed"
+                  destroySession
+                  return ()
          Nothing -> return ()
    get
 

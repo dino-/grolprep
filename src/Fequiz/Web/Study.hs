@@ -334,28 +334,32 @@ actionCorrectProblem = do
    llog INFO "actionCorrectProblem"
 
    -- Get current session and extract some things from it
-   session <- liftM fromJust getSession
-   let curr = sessCurr session
-   let list = sessList session
+   mbSession <- getSession
+   case mbSession of
+      Just session -> do
+         let curr = sessCurr session
+         let list = sessList session
 
-   -- Evaluate the user's answer
-   mbnp <- liftIO $ nextProblem session
-   let problem@(Problem _ _ as) = fromJust mbnp
+         -- Evaluate the user's answer
+         mbnp <- liftIO $ nextProblem session
+         let problem@(Problem _ _ as) = fromJust mbnp
 
-   -- Reconstitute the order of the answers from when the question
-   -- was asked. We cleverly stored this in the session.
-   let currOrd = sessCurrOrd session
-   let ast = combineIxAndAns currOrd as
+         -- Reconstitute the order of the answers from when the question
+         -- was asked. We cleverly stored this in the session.
+         let currOrd = sessCurrOrd session
+         let ast = combineIxAndAns currOrd as
 
-   answer <- liftM fromJust $ readInput "answer"
+         answer <- liftM fromJust $ readInput "answer"
 
-   let (newCurr, newList) = case (snd $ ast !! answer) of
-         Right _ -> (curr, removeFromList curr list)
-         Left _  -> (curr + 1, list)
+         let (newCurr, newList) = case (snd $ ast !! answer) of
+               Right _ -> (curr, removeFromList curr list)
+               Left _  -> (curr + 1, list)
 
-   -- Make the new session and set it
-   let newSession =
-         session { sessCurr = newCurr , sessList = newList }
-   putSession newSession
+         -- Make the new session and set it
+         let newSession =
+               session { sessCurr = newCurr , sessList = newList }
+         putSession newSession
 
-   formAnswer answer problem
+         formAnswer answer problem
+
+      Nothing -> actionInitialize
