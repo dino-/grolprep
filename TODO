@@ -1,6 +1,23 @@
 -----
 beta
 
+- Fequiz.Common.Log.formattedDate commented out and not deleted
+
+- fequiz.hs dispatchStudy mbSession only really needs to be a Bool
+   do this: haveSess = liftM (maybe False (const True)) getSession
+
+- Reexport System.Log in Fequiz.Common.Log so we don't have to explicitly import it to get the Priority type
+
+- Fequiz.Web.Study: clean up some putSession code to be one line
+
+- Put in some SQL error handling
+
+- May be possible to use Database.HDBC.quickQuery' in some places
+
+- Be smarter about installation directory permissions. Tricky, this is distro-specific.
+
+- Need a feedback form for reporting problems. Have this do something simple at first, store data in a file on the server.
+
 - Create a web page for this project at ui3.info to describe what it's all about and provide links to the source, darcs commands, and more
 
 - Add this project to the resume. Make it start working for you.
@@ -20,8 +37,6 @@ release
 - Fill out missing cabal info
 
 - Work on the styles to make everything look and work better
-
-- Need a feedback form for reporting problems. Have this do something simple at first, append data to a file on the server.
 
 - More explanatory information on the start page. Maybe links to the VT aviation site and also the FCC?
 
