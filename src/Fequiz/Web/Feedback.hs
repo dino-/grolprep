@@ -19,6 +19,20 @@ import Fequiz.Web.Util
 import Paths_fequiz
 
 
+{- Dispatches HTML requests for /feedback URLs
+-}
+dispatchFeedback :: App CGIResult
+dispatchFeedback = do
+   -- Figure out which form button was used for submit
+   mbForm <- getButtonPressed
+   llog DEBUG $ "form button: " ++ show mbForm
+
+   -- Map form button pressed into actions
+   case (mbForm) of
+      (Just ActFeedback ) -> actionFeedbackHandler
+      (_                ) -> actionFeedbackPage
+
+
 {- HTML pages and forms 
 -}
 formFeedback :: Html

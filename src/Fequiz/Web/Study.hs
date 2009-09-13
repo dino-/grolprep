@@ -30,6 +30,27 @@ import Fequiz.Web.Util
 import Paths_fequiz
 
 
+{- Dispatches HTML requests for study URLs
+-}
+dispatchStudy :: App CGIResult
+dispatchStudy = do
+   mbSession <- getSession
+   llog DEBUG $ "session: " ++ show mbSession
+
+   -- Figure out which form button was used for submit
+   mbForm <- getButtonPressed
+   llog DEBUG $ "form button: " ++ show mbForm
+
+   -- Map session status and form button pressed into actions
+   case (mbSession, mbForm) of
+      (Nothing, Nothing       ) -> actionInitialize
+      (Nothing, Just ActStart ) -> actionSetupSession
+      (_,       Just ActPose  ) -> actionCorrectProblem
+      (_,       Just ActQuit  ) -> actionInitialize
+      (Just _,  _             ) -> actionNextProblem
+      (_,       _             ) -> actionInitialize
+
+
 {- Remove an indexed element from a list
 -}
 removeFromList :: Int -> [a] -> [a]
