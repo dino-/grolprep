@@ -14,13 +14,6 @@ import Text.Printf
 
 import Fequiz.Common.Util
 
-{-
--- Format the time right now given a formatting string
-formattedDate :: String -> IO String
-formattedDate formatString =
-   liftM (formatTime defaultTimeLocale formatString)
-      $ getCurrentTime >>= utcToLocalZonedTime
--}
 
 {- Log a message to the root logger with timestamp and priority
    included
