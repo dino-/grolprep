@@ -2,10 +2,15 @@
 -- License: BSD3 (see LICENSE)
 -- Author: Dino Morelli <dino@ui3.info>
 
-import Data.List
+import Control.Monad
+import Data.Map ( lookup )
+import Data.Maybe
 import Network.CGI
+import Prelude hiding ( lookup )
 
+import Fequiz.Common.Conf
 import Fequiz.Common.Log
+import Fequiz.Common.Util
 import Fequiz.Web.Feedback
 import Fequiz.Web.Session
 import Fequiz.Web.Study
@@ -26,5 +31,11 @@ cgiMain = do
 
 main :: IO ()
 main = do
-   initLogging "/var/tmp/fequiz.log" DEBUG
+   confMap <- liftM parseToMap $ 
+      getRelDataFileName "fequiz.conf" >>= readFile
+   let logPath = fromJust $ lookup "log-path" confMap
+   let logPriority = read . fromJust $ lookup "log-priority" confMap
+
+   initLogging logPath logPriority
+
    runApp cgiMain

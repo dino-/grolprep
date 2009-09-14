@@ -14,7 +14,7 @@ description:         Bar Baz
 category:            Education
 tested-with:         GHC>=6.10.4
 data-dir:            resources
-data-files:          css/*.css, fequiz.sqlite
+data-files:          css/*.css, fequiz.conf, fequiz.sqlite
 
 executable           fequiz.cgi
    main-is:          fequiz.hs
