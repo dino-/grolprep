@@ -111,7 +111,7 @@ nextProblem session = do
 -}
 
 formCancel :: Html
-formCancel = form << (
+formCancel = form ! [ method "POST" ] << (
    submit (show ActQuit) "Cancel test session" ! [theclass "button"]
    )
 
@@ -181,7 +181,7 @@ formStart = do
             seDesc = printf "Element %d, Subelement %s: %s"
                elValue seValue descValue
 
-      theform rsSe' = form <<
+      theform rsSe' = form ! [ method "POST" ] <<
          fieldset << (
          legend << "Please select type of study"
          +++
@@ -218,7 +218,7 @@ formPoseProblem (Problem pid q eas) = do
       orderer True  = shuffle
       orderer False = return
 
-      formPoseProblem' q' as = form << (
+      formPoseProblem' q' as = form ! [ method "POST" ] << (
          [ p ! [theclass "question"] << (pid ++ ": " +++ (primHtml q'))
          , thediv << (ansControls as)
          , submit (show ActPose) "Proceed" ! [theclass "button"]
@@ -244,7 +244,7 @@ formAnswer g (Problem pid q eas) = do
    output $ renderHtml answerPage
 
    where
-      theform nas' = form << (
+      theform nas' = form ! [ method "POST" ] << (
          [ correctness (snd $ nas' !! g)
          , p ! [theclass "question"] << (pid ++ ": " +++ (primHtml q))
          , thediv << ansLines
