@@ -35,7 +35,7 @@ import Paths_fequiz
 dispatchStudy :: App CGIResult
 dispatchStudy = do
    mbSession <- getSession
-   llog DEBUG $ "session: " ++ show mbSession
+   --llog DEBUG $ "session: " ++ show mbSession
 
    -- Figure out which form button was used for submit
    mbForm <- getButtonPressed
