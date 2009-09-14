@@ -1,12 +1,7 @@
 -----
 beta
 
-- Fequiz.Common.Log.formattedDate commented out and not deleted
-
-- fequiz.hs dispatchStudy mbSession only really needs to be a Bool
-   do this: haveSess = liftM (maybe False (const True)) getSession
-
-- Reexport System.Log in Fequiz.Common.Log so we don't have to explicitly import it to get the Priority type
+- Switch everything to use url patterns like /feedback does already. At the moment, this means the study section.
 
 - Put in some SQL error handling
 

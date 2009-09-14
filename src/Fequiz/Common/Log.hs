@@ -3,7 +3,9 @@
 -- Author: Dino Morelli <dino@ui3.info>
 
 module Fequiz.Common.Log
-   ( initLogging, logM, llog, logTest )
+   ( initLogging, logM, llog, logTest
+   , Priority (..)  -- Re-exported from System.Log
+   )
    where
 
 import Control.Monad.Trans

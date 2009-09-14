@@ -21,7 +21,6 @@ import Network.CGI.Protocol
 import System.FilePath
 import System.IO
 import System.IO.Error
-import System.Log
 
 import Fequiz.Common.Log
 import Fequiz.Common.Util

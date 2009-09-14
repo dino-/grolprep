@@ -18,7 +18,6 @@ import Database.HDBC.Sqlite3
 import Network.CGI
 import Prelude hiding ( lookup )
 import System.FilePath
-import System.Log
 import Text.Printf
 import Text.XHtml.Strict
 

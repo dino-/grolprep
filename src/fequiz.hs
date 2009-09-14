@@ -4,7 +4,6 @@
 
 import Data.List
 import Network.CGI
-import System.Log
 
 import Fequiz.Common.Log
 import Fequiz.Web.Feedback

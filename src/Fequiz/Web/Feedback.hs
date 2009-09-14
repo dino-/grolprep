@@ -9,7 +9,6 @@ import Control.Monad
 import Data.Maybe
 import Network.CGI
 import System.FilePath
-import System.Log
 import Text.XHtml.Strict
 
 import Fequiz.Common.Log
