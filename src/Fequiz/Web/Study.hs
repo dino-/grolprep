@@ -295,7 +295,7 @@ actionSetupSession = do
 
          sortedProblems <- liftIO $ questionOrderer problems
 
-         let session = Session
+         putSession $ Session
                { sessRandA    = randA
                , sessPass     = 1
                , sessPassCurr = 0
@@ -304,7 +304,6 @@ actionSetupSession = do
                , sessCurrOrd  = []
                , sessList     = sortedProblems
                }
-         putSession session
 
          actionNextProblem
 
@@ -326,9 +325,7 @@ actionNextProblem = do
    case (mbnp, null list) of
       -- We have a next problem, let's get to it
       (Just np, _    ) -> do
-         let newSession =
-               session { sessPassCurr = passCurr + 1 }
-         putSession newSession
+         putSession $ session { sessPassCurr = passCurr + 1 }
          formPoseProblem np
 
       -- No next problem and there are no more
@@ -339,13 +336,12 @@ actionNextProblem = do
       -- problems remain. Start next pass.
       (_      , False) -> do
          let pass = sessPass session
-         let newSession = session
+         putSession $ session
                { sessPass = pass + 1
                , sessPassCurr = 0
                , sessPassTot = (length list)
                , sessCurr = 0
                }
-         putSession newSession
 
          actionNextProblem
 
@@ -377,9 +373,7 @@ actionCorrectProblem = do
                Left _  -> (curr + 1, list)
 
          -- Make the new session and set it
-         let newSession =
-               session { sessCurr = newCurr , sessList = newList }
-         putSession newSession
+         putSession $ session { sessCurr = newCurr , sessList = newList }
 
          formAnswer answer problem
 

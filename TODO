@@ -8,8 +8,6 @@ beta
 
 - Reexport System.Log in Fequiz.Common.Log so we don't have to explicitly import it to get the Priority type
 
-- Fequiz.Web.Study: clean up some putSession code to be one line
-
 - Put in some SQL error handling
 
 - May be possible to use Database.HDBC.quickQuery' in some places
