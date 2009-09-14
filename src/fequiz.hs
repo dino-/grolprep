@@ -17,9 +17,6 @@ import Fequiz.Web.Study
 -}
 cgiMain :: App CGIResult
 cgiMain = do
-   qs <- queryString
-   llog DEBUG $ "query string: " ++ qs
-
    path <- pathInfo
    llog DEBUG $ "pathInfo: " ++ path
 
