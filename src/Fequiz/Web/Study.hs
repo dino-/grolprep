@@ -351,8 +351,13 @@ actionCorrectProblem = do
 
    -- Get current session and extract some things from it
    mbSession <- getSession
-   case mbSession of
-      Just session -> do
+
+   -- Pull the answer they selected out of the form
+   mbAnswer <- readInput "answer"
+
+   case (mbSession, mbAnswer) of
+      -- We have a session and the user answered, correct it
+      (Just session, Just answer) -> do
          let curr = sessCurr session
          let list = sessList session
 
@@ -365,8 +370,6 @@ actionCorrectProblem = do
          let currOrd = sessCurrOrd session
          let ast = combineIxAndAns currOrd as
 
-         answer <- liftM fromJust $ readInput "answer"
-
          let (newCurr, newList) = case (snd $ ast !! answer) of
                Right _ -> (curr, removeFromList curr list)
                Left _  -> (curr + 1, list)
@@ -376,4 +379,12 @@ actionCorrectProblem = do
 
          formAnswer answer problem
 
-      Nothing -> actionInitialize
+      -- We have no session and yet they somehow arrived at this form
+      -- Get out of here and go back to the beginning
+      (Nothing, _) -> actionInitialize
+
+      -- The user has submit the form with no answer selected
+      -- Kick them right back to the pose problem form
+      (Just session, _) -> do
+         mbnp <- liftIO $ nextProblem session
+         formPoseProblem $ fromJust mbnp
