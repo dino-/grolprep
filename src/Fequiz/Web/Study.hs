@@ -18,6 +18,7 @@ import Database.HDBC.Sqlite3
 import Network.CGI
 import Prelude hiding ( lookup )
 import System.FilePath
+import System.Random
 import Text.Printf
 import Text.XHtml.Strict
 
@@ -60,8 +61,51 @@ dbPath :: IO FilePath
 dbPath = getDataFileName $ "fequiz" <.> "sqlite"
 
 
-getProblemIds :: Int -> String -> IO [ProblemId]
-getProblemIds element subelement = do
+getSimProblemIds :: Int -> IO [ProblemId]
+getSimProblemIds element = do
+   conn <- dbPath >>= connectSqlite3
+
+   -- Get all the keytopics for the specified element
+   keytopics <- liftM concat $
+      quickQuery' conn ( unlines
+         [ "SELECT id FROM keytopic WHERE "
+         , "   element=?"
+         , "   ORDER BY id"
+         , ";"
+         ] )
+         [toSql element]
+
+   -- Get all the question ids for these keytopics
+   allProbIds <- mapM 
+      ( \keytopic -> liftM concat $ 
+         quickQuery' conn ( unlines
+            [ "SELECT id FROM problem WHERE "
+            , "   element=? AND"
+            , "   keytopic=?"
+            , ";"
+            ] )
+         [toSql element, keytopic] 
+      )
+      keytopics
+
+   disconnect conn
+
+   -- Reduce that list of lists down to one randomly-selected item
+   -- from each inner list
+   randProbIdsSV <- mapM
+      (\is -> do
+         idx <- randomRIO (0, (length is) - 1)
+         return $ is !! idx
+      )
+      allProbIds
+
+   -- Convert this last list from [SqlValue] to [ProblemId]
+   -- and return
+   return $ map fromSql randProbIdsSV
+
+
+getRegularProblemIds :: Int -> String -> IO [ProblemId]
+getRegularProblemIds element subelement = do
    conn <- dbPath >>= connectSqlite3
    stmt <- prepare conn $ unlines
       [ "SELECT id FROM problem WHERE"
@@ -164,8 +208,12 @@ formStart = do
    output $ renderHtml startPage
 
    where
-      constructOption rsMap =
-         option ! [value (show (elValue, seValue))] << seDesc
+      constructSimOption n =
+         option ! [value (show $ StudySimulation n)]
+            << ((printf "Simulate Element %d exam" n) :: String)
+
+      constructNormalOption rsMap =
+         option ! [value (show $ StudyRegular elValue seValue)] << seDesc
          where
             seValue :: String
             seValue = fromJust $ lookupSqlValue "id" rsMap
@@ -185,7 +233,10 @@ formStart = do
          legend << "Please select type of study"
          +++
          p << select ! [name "questions", size "12"] <<
-            ( map constructOption rsSe' )
+            (  map constructSimOption [1, 3, 8]
+               ++
+               map constructNormalOption rsSe'
+            )
          +++ p << (
             checkbox "randQ" "" +++
             label ! [thefor "randQ"] << "Ask the questions in a random order"
@@ -284,10 +335,35 @@ actionSetupSession = do
 
    mbQuestionsChoice <- readInput "questions"
    case mbQuestionsChoice of
-      Just (element, subelement) -> do
+      Just (StudySimulation element) -> do
+         -- Leaving much of this randomization code alone for now
+         -- until we hear how the simulation tests are to work
+
          randA <- liftM (maybe False (const True)) $ getInput "randA"
 
-         problems <- liftIO $ getProblemIds element subelement
+         problems <- liftIO $ getSimProblemIds element
+
+         questionOrderer <- liftM (maybe return (const shuffle))
+            $ getInput "randQ"
+
+         sortedProblems <- liftIO $ questionOrderer problems
+
+         putSession $ Session
+               { sessRandA    = randA
+               , sessPass     = 1
+               , sessPassCurr = 0
+               , sessPassTot  = length sortedProblems
+               , sessCurr     = 0
+               , sessCurrOrd  = []
+               , sessList     = sortedProblems
+               }
+
+         actionNextProblem
+
+      Just (StudyRegular element subelement) -> do
+         randA <- liftM (maybe False (const True)) $ getInput "randA"
+
+         problems <- liftIO $ getRegularProblemIds element subelement
 
          questionOrderer <- liftM (maybe return (const shuffle))
             $ getInput "randQ"

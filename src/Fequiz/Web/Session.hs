@@ -7,7 +7,7 @@
 
 
 module Fequiz.Web.Session
-   ( Session (..)
+   ( Session (..), StudyType (..)
    , App, runApp
    , getSession, putSession, destroySession
    )
@@ -26,6 +26,12 @@ import Fequiz.Common.Log
 import Fequiz.Common.Util
 import Fequiz.Web.SessionId
 import Paths_fequiz
+
+
+data StudyType
+   = StudySimulation Int      -- Which element to run sim test
+   | StudyRegular Int String  -- Which element and subelement
+   deriving (Read, Show)
 
 
 data Session = Session
