@@ -4,33 +4,6 @@ There is a tool to regenerate the sqlite database in resources/ from the source 
    bin/db-regen.sh
 
 -----
-The randomly chosen simulations of real tests are to be generated like this:
-
-there are three different tests that need to be generated
-Elements 1, 3 and 8
-
-File  1.txt  needs 24 of 170
-
-That will become one 24 question test - Element 1
-
-
-File 3a.txt needs  3  of   40
-File 3b.txt needs  3  of   42
-File 3c.txt needs  6  of   69
-File 3d.txt needs 17  of  202
-File 3e.txt needs 10  of  150
-File 3f.txt needs 17  of  139
-File 3g.txt needs 10  of  131
-File 3h.txt needs 10  of  143
-
-That will become one 76 question test - Element 3
-
-
-File 8.txt  needs 50  of  321
-
-That will become one 50 question test - Element 8
-
------
 2009-09-04 Information about the new questions scheduling:
 
 For the FCC testing, as you know, they are switching to the new test
@@ -83,6 +56,7 @@ Under Arch Linux:
 
 -----
 2009-08-19
+NOTE: 2009-09-17 this is out of date
 
 page flow                     c  submit
 - first time at site          n
