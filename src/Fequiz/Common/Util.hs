@@ -37,8 +37,8 @@ appId = printf "%s-%s" appName appVersion
 getRelDataFileName :: String -> IO String
 getRelDataFileName s = do
    fullPath <- getDataFileName s
-   return $ (++) "../" $ maybe s head $
-      matchRegex (mkRegex "(share.*)$") fullPath
+   return $ maybe s head $
+      matchRegex (mkRegex "(/fequiz.*)$") fullPath
 
 
 {- Make a directory if it doesn't already exist

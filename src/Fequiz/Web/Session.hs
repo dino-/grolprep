@@ -65,6 +65,11 @@ runApp (App a) = do
    return ()
 
 
+newFequizCookie :: String -> String -> Cookie
+newFequizCookie aid sid = do
+   let rawcookie = newCookie aid sid
+   rawcookie { cookiePath = Just "/" } 
+
 loadSession :: String -> IO Session
 loadSession sessionId = do
    path <- getDataFileName $ "session" </> sessionId
@@ -114,8 +119,7 @@ putSession session = do
       Nothing -> do
          ip <- remoteAddr
          sid <- liftIO $ generateSessionId ip
-         let cookie = newCookie appId sid
-         setCookie cookie
+         setCookie $ newFequizCookie appId sid
          return sid
 
    liftIO $ saveSession sessionId session
@@ -128,8 +132,7 @@ destroySession = do
    case existingCookie of
       Just sessionId -> do
          liftIO $ deleteSession sessionId
-         let cookie = newCookie appId ""
-         deleteCookie cookie
+         deleteCookie $ newFequizCookie appId ""
       Nothing -> return ()
 
    put Nothing

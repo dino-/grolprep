@@ -29,6 +29,12 @@ data Action
    deriving (Read, Show)
 
 
+{- The base URL of the application
+-}
+baseUrl :: String
+baseUrl = "/fequiz/bin/fequiz.cgi"
+
+
 {- If you add a constructor the the Action type above, you MUST add
    it to the list of constructed datum below.
 -}
@@ -80,6 +86,6 @@ footer :: [Html]
 footer =  
 --   [ anchor ! [href "/fequiz/bin/fequiz.cgi/about"] << "About" 
 --   , spaceHtml
-   [ anchor ! [href "/fequiz/bin/fequiz.cgi/feedback"] << "Feedback"
+   [ anchor ! [href $ baseUrl ++ "/feedback" ] << "Feedback"
    ]
    
