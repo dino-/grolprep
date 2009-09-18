@@ -925,12 +925,16 @@ Key Topic 20: Power Sources
 	D.	Must be incorporated into the ship's electrical system.
 
 1-20D3  Which of the following terms is defined as a back-up power source that provides power to radio installations for the purpose of conducting Distress and Safety communications when the vessel's main and emergency generators cannot?
-	A.	Emergency Diesel Generator.	C.	Reserve Source of Diesel Power.
-	B.	Reserve Source of Energy.	D.	Emergency Back-up Generator.
+	A.	Emergency Diesel Generator.
+	B.	Reserve Source of Energy.
+	C.	Reserve Source of Diesel Power.
+	D.	Emergency Back-up Generator.
 
 1-20D4  In the event of failure of the main and emergency sources of electrical power, what is the term for the source required to supply the GMDSS console with power for conducting distress and other radio communications?
-	A.	Emergency power.	C.	Reserve source of energy.
-	B.	Ship's emergency diesel generator.	D.	Ship's standby generator
+	A.	Emergency power.
+	B.	Ship's emergency diesel generator.
+	C.	Reserve source of energy.
+	D.	Ship's standby generator
 
 1-20D5  What is the requirement for emergency and reserve power in GMDSS radio installations?
 	A.	An emergency power source for radio communications is not required if a vessel has proper reserve power (batteries).

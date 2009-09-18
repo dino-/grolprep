@@ -2171,8 +2171,10 @@ Key Topic 43:  Oscillators
 	D.	It has little or no effect on the crystal's stability.
 
 3-43F2  What is the oscillator stage called in a frequency synthesizer?
-	A.	VCO.	C.	Phase detector.
-	B.	Divider.	D.	Reference standard.
+	A.	VCO.
+	B.	Divider.
+	C.	Phase detector.
+	D.	Reference standard.
 
 3-43F3  What are three major oscillator circuits found in radio equipment?
 	A.	Taft, Pierce, and negative feedback.
@@ -2378,8 +2380,10 @@ Key Topic 47:  Filters
 	D.	A is a low pass curve and D is a band stop curve.
 
 3-47F3  What are the three general groupings of filters?
-	A.	High-pass, low-pass and band-pass.	C.	Audio, radio and capacitive.
-	B.	Inductive, capacitive and resistive.	D.	Hartley, Colpitts and Pierce.
+	A.	High-pass, low-pass and band-pass.
+	B.	Inductive, capacitive and resistive.
+	C.	Audio, radio and capacitive.
+	D.	Hartley, Colpitts and Pierce.
 
 3-47F4  What is an m-derived filter?
 	A.	A filter whose input impedance varies widely over the design bandwidth.
