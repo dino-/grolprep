@@ -66,9 +66,10 @@ runApp (App a) = do
 
 
 newFequizCookie :: String -> String -> Cookie
-newFequizCookie aid sid = do
-   let rawcookie = newCookie aid sid
+newFequizCookie aid sid = 
    rawcookie { cookiePath = Just "/" } 
+   where rawcookie = newCookie aid sid
+
 
 loadSession :: String -> IO Session
 loadSession sessionId = do
