@@ -500,7 +500,7 @@ Answer Key:	3-10B1:  D	3-10B2:  C	3-10B3:  B	3-10B4:  C	3-10B5:  D	3-10B6:  A
 
 Key Topic 11:  Frequency
 
-3-11B1  What is the most the actual transmit frequency could differ from a reading of 462,100,000 Hertz on a frequency counter with a time base accuracy of ± 0.1 ppm?
+3-11B1  What is the most the actual transmit frequency could differ from a reading of 462,100,000 Hertz on a frequency counter with a time base accuracy of &#177; 0.1 ppm?
 	A.	46.21 Hz.
 	B.	0.1 MHz.
 	C.	462.1 Hz.
@@ -518,19 +518,19 @@ Key Topic 11:  Frequency
 	C.	2000 Hz.
 	D.	3000 Hz.
 
-3-11B4  What is the most the actual transmitter frequency could differ from a reading of 156,520,000 hertz on a frequency counter with a time base accuracy of ± 1.0 ppm?
+3-11B4  What is the most the actual transmitter frequency could differ from a reading of 156,520,000 hertz on a frequency counter with a time base accuracy of &#177; 1.0 ppm?
 	A.	165.2 Hz.
 	B.	15.652 kHz.
 	C.	156.52 Hz.
 	D.	1.4652 MHz.
 
-3-11B5  What is the most the actual transmitter frequency could differ from a reading of 156,520,000 Hertz on a frequency counter with a time base accuracy of +/- 10 ppm?
+3-11B5  What is the most the actual transmitter frequency could differ from a reading of 156,520,000 Hertz on a frequency counter with a time base accuracy of &#177; 10 ppm?
 	A.	146.52 Hz.
 	B.	1565.20 Hz.
 	C.	10 Hz.
 	D.	156.52 kHz.
 
-3-11B6  What is the most the actual transmitter frequency could differ from a reading of 462,100,000 hertz on a frequency counter with a time base accuracy of ± 1.0 ppm?
+3-11B6  What is the most the actual transmitter frequency could differ from a reading of 462,100,000 hertz on a frequency counter with a time base accuracy of &#177; 1.0 ppm?
 	A.	46.21 MHz.
 	B.	10 Hz.
 	C.	1.0 MHz.
