@@ -1,8 +1,6 @@
 -----
 beta
 
-- Switch everything to use url patterns like /feedback does already. At the moment, this means the study section.
-
 - Feedback needs to continue on to something, like a post-feedback page, that will then go back to where it came from. Is this doable?
 
 - Add an end of test results page
