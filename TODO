@@ -1,8 +1,6 @@
 -----
 beta
 
-- Put test type, element, subelement and keytopic full info on each problem page. Both pose and answer.
-
 - Switch everything to use url patterns like /feedback does already. At the moment, this means the study section.
 
 - Feedback needs to continue on to something, like a post-feedback page, that will then go back to where it came from. Is this doable?
@@ -16,6 +14,8 @@ beta
 
 -----
 release
+
+- May need to add something to the state about the type of study that's being performed. Simulation or "normal" study. So that we can display it with each question.
 
 - Put in some SQL error handling
 

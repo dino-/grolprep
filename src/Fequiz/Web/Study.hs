@@ -161,8 +161,9 @@ formCancel = form ! [ method "POST" ] << (
 
 headingStats :: Session -> Html
 headingStats session =
-   p << (printf "Pass %d, question %d of %d total in this pass"
-      pass passCurr passTot :: String)
+   p ! [theclass "question"] <<
+      (printf "Pass %d, question %d of %d total in this pass"
+         pass passCurr passTot :: String)
    +++
    p << (printf "%d (%0.1f%%) correct so far for this pass"
       correct perc :: String)
@@ -248,6 +249,58 @@ formStart = do
          )
 
 
+getProblemMetaInfo :: String -> 
+   IO ((Int, String), (String, String), (Int, String))
+getProblemMetaInfo problemId = do
+   conn <- dbPath >>= connectSqlite3
+
+   stmt <- prepare conn $ unlines
+         [ "SELECT element, subelement, keytopic "
+         , "   FROM problem "
+         , "   WHERE "
+         , "      id=?"
+         , ";"
+         ]
+   execute stmt [toSql problemId]
+   pRs <- liftM head $ fetchAllRowsMap' stmt
+
+   let sEl = fromJust $ lookup "element" pRs
+   let sSe = fromJust $ lookup "subelement" pRs
+   let sKt = fromJust $ lookup "keytopic" pRs
+
+   (elDesc:_) <- liftM concat $
+      quickQuery' conn ( unlines
+         [ "SELECT desc FROM element WHERE "
+         , "   id=?"
+         , ";"
+         ] )
+         [sEl]
+
+   (seDesc:_) <- liftM concat $
+      quickQuery' conn ( unlines
+         [ "SELECT desc FROM subelement WHERE "
+         , "   id=? AND element=?"
+         , ";"
+         ] )
+         [sSe, sEl]
+
+   (ktDesc:_) <- liftM concat $
+      quickQuery' conn ( unlines
+         [ "SELECT desc FROM keytopic WHERE "
+         , "   id=? AND element=? AND subelement=?"
+         , ";"
+         ] )
+         [sKt, sEl, sSe]
+
+   disconnect conn
+
+   return
+      ( (fromSql sEl, fromSql elDesc)
+      , (fromSql sSe, fromSql seDesc)
+      , (fromSql sKt, fromSql ktDesc)
+      )
+
+
 formPoseProblem :: Problem -> App CGIResult
 formPoseProblem (Problem pid q eas) = do
    llog INFO "formPoseProblem"
@@ -260,13 +313,24 @@ formPoseProblem (Problem pid q eas) = do
    let nas = combineIxAndAns qord $ map extractAnswer eas
 
    let fpp = formPoseProblem' q nas
+   mi <- liftIO metaInfo
    posePage <- liftIO $ page $ formCancel +++ 
-      (headingStats session) +++ fpp
+      mi +++ fpp +++ (headingStats session)
    output $ renderHtml posePage
 
    where
       orderer True  = shuffle
       orderer False = return
+
+      metaInfo = do
+         ((_, elDesc), (seId, seDesc), (ktId, ktDesc))
+            <- getProblemMetaInfo pid
+
+         return $
+            [ p << ((printf "%s" elDesc) :: String)
+            , p << ((printf "Subelement %s: %s, Key Topic %d: %s"
+                        seId seDesc ktId ktDesc) :: String)
+            ]
 
       formPoseProblem' q' as = form ! [ method "POST" ] << (
          [ p ! [theclass "question"] << (pid ++ ": " +++ (primHtml q'))
@@ -289,11 +353,22 @@ formAnswer g (Problem pid q eas) = do
 
    let nas = combineIxAndAns qord eas
 
+   mi <- liftIO metaInfo
    answerPage <- liftIO $ page $ formCancel +++
-      (headingStats session) +++ theform nas
+      mi +++ (theform nas) +++ (headingStats session)
    output $ renderHtml answerPage
 
    where
+      metaInfo = do
+         ((_, elDesc), (seId, seDesc), (ktId, ktDesc))
+            <- getProblemMetaInfo pid
+
+         return $
+            [ p << ((printf "%s" elDesc) :: String)
+            , p << ((printf "Subelement %s: %s, Key Topic %d: %s"
+                        seId seDesc ktId ktDesc) :: String)
+            ]
+
       theform nas' = form ! [ method "POST" ] << (
          [ correctness (snd $ nas' !! g)
          , p ! [theclass "question"] << (pid ++ ": " +++ (primHtml q))
