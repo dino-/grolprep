@@ -8,9 +8,11 @@ copyright:           2009 Dino Morelli
 author:              Dino Morelli
 maintainer:          Dino Morelli <dino@ui3.info>
 stability:           experimental
---homepage:            http://foo/bar/baz.html
-synopsis:            Foo
-description:         Bar Baz
+homepage:            http://ui3.info/d/proj/fequiz-web.html
+synopsis:            FCC Exam Quiz software
+description:         This is a web application for studying the FCC 
+                     Commercial Radio Operator License questions in 
+                     preparation of taking the exams.
 category:            Education
 tested-with:         GHC>=6.10.4
 data-dir:            resources

@@ -5,10 +5,6 @@ beta
 
 - Feedback needs to continue on to something, like a post-feedback page, that will then go back to where it came from. Is this doable?
 
-- Create a web page for this project at ui3.info to describe what it's all about and provide links to the source, darcs commands, and more
-
-- Add this project to the resume. Make it start working for you.
-
 - Add an end of test results page
 
 
@@ -20,8 +16,6 @@ release
 - Put in some SQL error handling
 
 - Need to set the cookie expiration time, let's say a week
-
-- Fill out missing cabal info
 
 - Work on the styles to make everything look and work better
 
