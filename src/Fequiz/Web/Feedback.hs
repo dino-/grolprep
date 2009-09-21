@@ -34,6 +34,7 @@ dispatchFeedback = do
 
 {- HTML pages and forms 
 -}
+
 formFeedback :: Html
 formFeedback =  do
    let labelStyle = "display: block; width: 150px; float: left; margin: 2px 4px 6px 4px; text-align: right; vertical-align: top"
@@ -44,7 +45,14 @@ formFeedback =  do
             (textarea ! [rows "20", cols "40", name "comment"]) noHtml]
       , p << [label ! [thestyle labelStyle] << "", submit "ActFeedback" "Submit" ! [theclass "button"] ]
       ] ) 
-   
+
+
+pageThankYou :: Html
+pageThankYou = 
+   p << "Thank you for your feedback!"
+   +++
+   p <<  ( "Now return to: " +++ anchor ! [ href $ baseUrl ] << "Fequiz" +++ "." )
+
 
 {- Action handlers
 -}
@@ -68,7 +76,9 @@ actionFeedbackHandler = do
    liftIO $ do       
       fname <- formattedDate "%Y%m%d%H%M%S"
       saveFeedback fname ( "Email:" ++ email ++ "\nSubject:" ++ subj ++ "\nComment:" ++ comment )
-   output $ renderHtml $ form << ( "Thank you " ++ email )
+   thankyouPage <- liftIO $ page $ pageThankYou
+   output $ renderHtml thankyouPage
+
 
 {- Saves feedback submission to file 
 -}
