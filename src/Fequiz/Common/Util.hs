@@ -24,7 +24,7 @@ import Paths_fequiz
 -}
 appName, appVersion, appId :: String
 appName = "fequiz"
-appVersion = "1.0.0.7"
+appVersion = "1.0.1.0"
 appId = printf "%s-%s" appName appVersion
 
 
