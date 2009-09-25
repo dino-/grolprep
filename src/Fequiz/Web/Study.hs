@@ -231,23 +231,28 @@ formStart = do
 
       theform rsSe' = form ! [ method "POST", action $ baseUrl ++ "/study" ] <<
          fieldset << (
-         legend << "Please select type of study"
-         +++
-         p << select ! [name "questions", size "12"] <<
-            (  map constructSimOption [1, 3, 8]
-               ++
-               map constructNormalOption rsSe'
-            )
-         +++ p << (
-            checkbox "randQ" "" +++
-            label ! [thefor "randQ"] << "Ask the questions in a random order"
-            )
-         +++ p << (checkbox "randA" "" +++
-            label ! [thefor "randA"] << "Randomly order the answers of each question"
-            )
-         +++ p << submit (show ActStart) "Start study session" ! [theclass "button"]
+            legend << "Please select type of study"
+            +++
+            p << select ! [name "questions", size "12"] <<
+               (  map constructSimOption [1, 3, 8]
+                  ++
+                  map constructNormalOption rsSe'
+               )
+            +++ p << (
+               checkbox "randQ" "" +++
+               label ! [thefor "randQ"] << "Ask the questions in a random order"
+               )
+            +++ p << (checkbox "randA" "" +++
+               label ! [thefor "randA"] << "Randomly order the answers of each question"
+               )
+            +++ p << submit (show ActStart) "Start study session" ! [theclass "button"]
          )
+         +++ footer
 
+footer :: [Html]
+footer =  
+   [ anchor ! [href $ baseUrl ++ "/feedback" ] << "Feedback"
+   ]
 
 getProblemMetaInfo :: String -> 
    IO ((Int, String), (String, String), (Int, String))

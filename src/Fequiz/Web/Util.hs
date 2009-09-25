@@ -79,13 +79,6 @@ page b = do
              thetype "text/css"]
       )
       +++
-      body << ([(p << appId), b]  ++ footer )
+      body << [(p << appId), b] 
       )
 
-footer :: [Html]
-footer =  
---   [ anchor ! [href "/fequiz/bin/fequiz.cgi/about"] << "About" 
---   , spaceHtml
-   [ anchor ! [href $ baseUrl ++ "/feedback" ] << "Feedback"
-   ]
-   
