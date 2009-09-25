@@ -1,12 +1,4 @@
 -----
-beta
-
-- Feedback needs to continue on to something, like a post-feedback page, that will then go back to where it came from. Is this doable?
-
-- Add an end of test results page
-
-
------
 release
 
 - Start using fastcgi
@@ -21,6 +13,8 @@ release
 
 - More explanatory information on the start page. Maybe links to the VT aviation site and also the FCC?
 
+- Add an end of test results page
+
 - Generate a statically linked binary
 
 
@@ -31,18 +25,10 @@ feature additions
 
 - Add IPv6 support to the SessionId code. It will fail now to compute a session id.
 
-- Could the session data be stored on Amazon S3? How about the question data? Think about it.
-
-- Support the questions with images, there are a couple.
-
-- Add elements 2, 4, 5... that are not used by the VT aviation people at all, but may be useful to the general population
+- Support the questions with images, there are many
 
 
 -----
 general TODO thoughts
-
-- Put working installations of both the latest release and nightly builds on the server
-
-- What about special http server configuration? Maybe a script in util.
 
 - May want to read that old old page about avoiding SQL injection attacks with Haskell. Track it down.
