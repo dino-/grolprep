@@ -2,7 +2,7 @@
 -- License: BSD3 (see LICENSE)
 -- Author: Dino Morelli <dino@ui3.info>
 
-module Fequiz.Common.Log
+module Grolprep.Common.Log
    ( initLogging, logM, llog, logTest
    , Priority (..)  -- Re-exported from System.Log
    )
@@ -14,7 +14,7 @@ import qualified System.Log.Logger as L ( logM )
 import           System.Log.Logger hiding ( logM )
 import Text.Printf
 
-import Fequiz.Common.Util
+import Grolprep.Common.Util
 
 
 {- Log a message to the root logger with timestamp and priority

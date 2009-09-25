@@ -2,7 +2,7 @@
 -- License: BSD3 (see LICENSE)
 -- Author: Dino Morelli <dino@ui3.info>
 
-module Fequiz.Common.Util
+module Grolprep.Common.Util
    where
 
 import Control.Monad
@@ -17,13 +17,13 @@ import System.Locale ( defaultTimeLocale )
 import Text.Printf
 import Text.Regex
 
-import Paths_fequiz
+import Paths_grolprep
 
 
 {- Some identifying info for this application
 -}
 appName, appVersion, appId :: String
-appName = "fequiz"
+appName = "grolprep"
 appVersion = "1.0.1.0"
 appId = printf "%s-%s" appName appVersion
 
@@ -38,7 +38,7 @@ getRelDataFileName :: String -> IO String
 getRelDataFileName s = do
    fullPath <- getDataFileName s
    return $ maybe s head $
-      matchRegex (mkRegex "(/fequiz.*)$") fullPath
+      matchRegex (mkRegex "(/grolprep.*)$") fullPath
 
 
 {- Make a directory if it doesn't already exist

@@ -3,7 +3,7 @@
 -- Author: Dino Morelli <dino@ui3.info>
 
 
-module Fequiz.Web.SessionId
+module Grolprep.Web.SessionId
    ( generateSessionId
    )
    where

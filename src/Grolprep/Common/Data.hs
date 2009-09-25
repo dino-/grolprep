@@ -3,7 +3,7 @@
 -- Author: Dino Morelli <dino@ui3.info>
 
 
-module Fequiz.Common.Data
+module Grolprep.Common.Data
    ( ProblemId, Question, Answer, Problem (..)
    , extractAnswer
    )

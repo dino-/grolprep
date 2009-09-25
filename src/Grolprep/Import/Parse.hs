@@ -3,7 +3,7 @@
 -- Author: Dino Morelli <dino@ui3.info>
 
 
-module Fequiz.Import.Parse
+module Grolprep.Import.Parse
    ( Element (..), SubElement (..), KeyTopic (..)
    , parseProblems
    )
@@ -16,7 +16,7 @@ import Data.Maybe
 --import Debug.Trace
 import Text.ParserCombinators.Parsec
 
-import Fequiz.Common.Data
+import Grolprep.Common.Data
 
 
 data Element = Element Int String [SubElement]
@@ -187,4 +187,4 @@ element = do
 
 
 parseProblems :: String -> Either ParseError Element
-parseProblems = parse element "fequiz FCC study data parse"
+parseProblems = parse element "grolprep study data parse"

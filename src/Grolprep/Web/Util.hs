@@ -2,7 +2,7 @@
 -- License: BSD3 (see LICENSE)
 -- Author: Dino Morelli <dino@ui3.info>
 
-module Fequiz.Web.Util
+module Grolprep.Web.Util
    where
 
 import Control.Monad
@@ -11,7 +11,7 @@ import Data.Maybe
 import Network.CGI
 import Text.XHtml.Strict
 
-import Fequiz.Common.Util
+import Grolprep.Common.Util
 
 
 {- This represents a type-safe enumeration of the possible form actions
@@ -32,7 +32,7 @@ data Action
 {- The base URL of the application
 -}
 baseUrl :: String
-baseUrl = "/fequiz/bin/fequiz.cgi"
+baseUrl = "/grolprep/bin/fcc-grol-prep.cgi"
 
 
 {- If you add a constructor the the Action type above, you MUST add

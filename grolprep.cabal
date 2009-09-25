@@ -1,4 +1,4 @@
-name:                fequiz
+name:                grolprep
 version:             1.0.1.0
 cabal-version:       >= 1.2
 build-type:          Simple
@@ -8,18 +8,19 @@ copyright:           2009 Dino Morelli
 author:              Dino Morelli
 maintainer:          Dino Morelli <dino@ui3.info>
 stability:           experimental
-homepage:            http://ui3.info/d/proj/fequiz-web.html
-synopsis:            FCC Exam Quiz software
-description:         This is a web application for studying the FCC 
-                     Commercial Radio Operator License questions in 
-                     preparation of taking the exams.
+homepage:            http://ui3.info/d/proj/grolprep.html
+synopsis:            FCC GROL examination preparation software
+description:         This is a web application for studying for FCC 
+                     General Radio Operator License questions (including 
+                     the Radar endorsement) in preparation of taking the 
+                     exams.
 category:            Education
 tested-with:         GHC>=6.10.4
 data-dir:            resources
-data-files:          css/*.css, fequiz.conf, fequiz.sqlite
+data-files:          css/*.css, grolprep.conf, grolprep.sqlite
 
-executable           fequiz.cgi
-   main-is:          fequiz.hs
+executable           fcc-grol-prep.cgi
+   main-is:          grolprep.hs
    hs-source-dirs:   src
    build-depends:    base >= 3 && < 5, cgi, containers, convertible, 
                      Crypto, directory, filepath, HDBC, HDBC-sqlite3, 

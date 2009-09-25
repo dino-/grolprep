@@ -5,7 +5,7 @@
 {- |
    Simple module for loading config files
 -}
-module Fequiz.Common.Conf
+module Grolprep.Common.Conf
    ( ConfMap, parseToMap )
    where
 

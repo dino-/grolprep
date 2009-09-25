@@ -5,7 +5,7 @@
 {-# LANGUAGE FlexibleContexts #-}
 
 
-module Fequiz.Web.Study
+module Grolprep.Web.Study
    where
 
 import Control.Monad
@@ -22,12 +22,12 @@ import System.Random
 import Text.Printf
 import Text.XHtml.Strict
 
-import Fequiz.Common.Data
-import Fequiz.Common.Log
-import Fequiz.Common.Shuffle
-import Fequiz.Web.Session
-import Fequiz.Web.Util
-import Paths_fequiz
+import Grolprep.Common.Data
+import Grolprep.Common.Log
+import Grolprep.Common.Shuffle
+import Grolprep.Web.Session
+import Grolprep.Web.Util
+import Paths_grolprep
 
 
 {- Dispatches HTML requests for study URLs
@@ -58,7 +58,7 @@ removeFromList i xs = take i xs ++ drop (i + 1) xs
 
 
 dbPath :: IO FilePath
-dbPath = getDataFileName $ "fequiz" <.> "sqlite"
+dbPath = getDataFileName $ "grolprep" <.> "sqlite"
 
 
 getSimProblemIds :: Int -> IO [ProblemId]

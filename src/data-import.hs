@@ -12,8 +12,8 @@ import System.Environment
 import System.FilePath
 import System.IO
 
-import Fequiz.Common.Data
-import Fequiz.Import.Parse
+import Grolprep.Common.Data
+import Grolprep.Import.Parse
 
 
 {- Create the necessary tables
@@ -123,7 +123,7 @@ storeProblem conn eid seid kid p@(Problem pid _ _) = do
 
 main :: IO ()
 main = do
-   let dbPath = "resources" </> "fequiz" <.> "sqlite"
+   let dbPath = "resources" </> "grolprep" <.> "sqlite"
 
    dbExists <- doesFileExist dbPath
 

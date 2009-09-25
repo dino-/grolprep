@@ -6,7 +6,7 @@
 {-# LANGUAGE FlexibleInstances #-}
 
 
-module Fequiz.Web.Session
+module Grolprep.Web.Session
    ( Session (..), StudyType (..)
    , App, runApp
    , getSession, putSession, destroySession
@@ -22,10 +22,10 @@ import System.FilePath
 import System.IO
 import System.IO.Error
 
-import Fequiz.Common.Log
-import Fequiz.Common.Util
-import Fequiz.Web.SessionId
-import Paths_fequiz
+import Grolprep.Common.Log
+import Grolprep.Common.Util
+import Grolprep.Web.SessionId
+import Paths_grolprep
 
 
 data StudyType
@@ -65,8 +65,8 @@ runApp (App a) = do
    return ()
 
 
-newFequizCookie :: String -> String -> Cookie
-newFequizCookie aid sid = 
+newGrolprepCookie :: String -> String -> Cookie
+newGrolprepCookie aid sid = 
    rawcookie { cookiePath = Just "/" } 
    where rawcookie = newCookie aid sid
 
@@ -120,7 +120,7 @@ putSession session = do
       Nothing -> do
          ip <- remoteAddr
          sid <- liftIO $ generateSessionId ip
-         setCookie $ newFequizCookie appId sid
+         setCookie $ newGrolprepCookie appId sid
          return sid
 
    liftIO $ saveSession sessionId session
@@ -133,7 +133,7 @@ destroySession = do
    case existingCookie of
       Just sessionId -> do
          liftIO $ deleteSession sessionId
-         deleteCookie $ newFequizCookie appId ""
+         deleteCookie $ newGrolprepCookie appId ""
       Nothing -> return ()
 
    put Nothing

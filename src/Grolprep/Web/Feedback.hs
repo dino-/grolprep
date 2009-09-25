@@ -2,7 +2,7 @@
 -- License: BSD3 (see LICENSE)
 -- Author: Dino Morelli <dino@ui3.info>
 
-module Fequiz.Web.Feedback
+module Grolprep.Web.Feedback
    where
 
 import Control.Monad
@@ -11,11 +11,11 @@ import Network.CGI
 import System.FilePath
 import Text.XHtml.Strict
 
-import Fequiz.Common.Log
-import Fequiz.Common.Util
-import Fequiz.Web.Session
-import Fequiz.Web.Util
-import Paths_fequiz
+import Grolprep.Common.Log
+import Grolprep.Common.Util
+import Grolprep.Web.Session
+import Grolprep.Web.Util
+import Paths_grolprep
 
 
 {- Dispatches HTML requests for /feedback URLs
@@ -51,7 +51,7 @@ pageThankYou :: Html
 pageThankYou = 
    p << "Thank you for your feedback!"
    +++
-   p <<  ( "Now return to: " +++ anchor ! [ href $ baseUrl ] << "Fequiz" +++ "." )
+   p <<  ( "Now return to: " +++ anchor ! [ href $ baseUrl ] << "grolprep" +++ "." )
 
 
 {- Action handlers
