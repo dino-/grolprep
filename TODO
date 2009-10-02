@@ -1,21 +1,25 @@
 -----
 release
 
+- Need to set the cookie expiration time, let's say a week
+
+- More explanatory information on the start page. Maybe links to the VT aviation site and also the FCC?
+
+- SEO
+   - Use <h?> tags in static pages
+   - site index document when we know what domain it's going to be on
+
+- Work on the styles to make everything look and work better. Need to redesign code to allow stylesheets for individual pages.
+
+- Generate a statically linked binary
+
 - Start using fastcgi
+
+- Add an end of test results page
 
 - May need to add something to the state about the type of study that's being performed. Simulation or "normal" study. So that we can display it with each question.
 
 - Put in some SQL error handling
-
-- Need to set the cookie expiration time, let's say a week
-
-- Work on the styles to make everything look and work better
-
-- More explanatory information on the start page. Maybe links to the VT aviation site and also the FCC?
-
-- Add an end of test results page
-
-- Generate a statically linked binary
 
 
 -----
