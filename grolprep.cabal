@@ -24,6 +24,6 @@ executable           fcc-grol-prep.cgi
    hs-source-dirs:   src
    build-depends:    base >= 3 && < 5, cgi, containers, convertible, 
                      Crypto, directory, filepath, HDBC, HDBC-sqlite3, 
-                     hslogger, mtl, old-locale, random, regex-compat, 
-                     time, xhtml
+                     hslogger, mtl, old-locale, old-time, random, 
+                     regex-compat, time, xhtml
    ghc-options:      -Wall

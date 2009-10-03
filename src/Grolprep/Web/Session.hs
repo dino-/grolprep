@@ -21,6 +21,7 @@ import Network.CGI.Protocol
 import System.FilePath
 import System.IO
 import System.IO.Error
+import System.Time
 
 import Grolprep.Common.Log
 import Grolprep.Common.Util
@@ -65,10 +66,18 @@ runApp (App a) = do
    return ()
 
 
-newGrolprepCookie :: String -> String -> Cookie
-newGrolprepCookie aid sid = 
-   rawcookie { cookiePath = Just "/" } 
-   where rawcookie = newCookie aid sid
+newGrolprepCookie :: String -> String -> IO Cookie
+newGrolprepCookie aid sid = do
+   let rawcookie = newCookie aid sid
+   expiration <- cookieExpiration
+   return $ rawcookie { cookiePath = Just "/" , cookieExpires = Just expiration } 
+
+
+cookieExpiration :: IO CalendarTime
+cookieExpiration = do
+   now <- getClockTime
+   let week = noTimeDiff { tdDay = 7 }
+   toCalendarTime $ addToClockTime week now
 
 
 loadSession :: String -> IO Session
@@ -120,7 +129,8 @@ putSession session = do
       Nothing -> do
          ip <- remoteAddr
          sid <- liftIO $ generateSessionId ip
-         setCookie $ newGrolprepCookie appId sid
+         c <- liftIO $ newGrolprepCookie appId sid
+         setCookie c 
          return sid
 
    liftIO $ saveSession sessionId session
@@ -133,7 +143,8 @@ destroySession = do
    case existingCookie of
       Just sessionId -> do
          liftIO $ deleteSession sessionId
-         deleteCookie $ newGrolprepCookie appId ""
+         c <- liftIO $ newGrolprepCookie appId ""
+         deleteCookie c 
       Nothing -> return ()
 
    put Nothing
