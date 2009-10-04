@@ -216,7 +216,7 @@ formStart = do
       disconnect conn
       return (rs13', rs8')
 
-   startPage <- liftIO $ page $ theform rs13 rs8
+   startPage <- liftIO $ page $ about +++ (theform rs13 rs8)
    output $ renderHtml startPage
 
    where
@@ -239,6 +239,29 @@ formStart = do
             seDesc :: String
             seDesc = printf "Element %d, Subelement %s: %s"
                elValue seValue descValue
+
+      about = 
+         h1 << "GROLPrep: FCC General Radio Operators License exam preparation"
+         +++
+         h2 << 
+            (
+            "This site provides a study tool and test simulator for the FCC GROL and Radar Endorsement examinations.  It is used by students of the " 
+            +++ anchor ! [href $ "http://www.burlingtonaviationtech.org" ] 
+               << "Burlington Aviation Technology at the Vermont Aircraft Maintenance School"
+            +++ "."
+            )
+         +++ 
+         p << "Features of GROLPrep: " +++ unordList 
+            [ "questions and answers can be presented in a random order"
+            , "drills questions answered incorrectly"
+            , "simulate complete examination"
+            , "study selected elements"
+            ]  
+         +++
+         h2 << ("The source test data questions can be acquired from the "
+            +++ (anchor ! [href $ "http://wireless.fcc.gov/commoperators/index.htm?job=question_pools" ]  << "FCC Commercial Radio Operators License" )
+            +++ " site.")
+
 
       theform rs13' rs8' =
          let study13 = "study13"
