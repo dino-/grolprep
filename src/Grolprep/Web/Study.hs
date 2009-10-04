@@ -192,20 +192,31 @@ lookupSqlValue key mp = maybe Nothing fromSql $ lookup key mp
 formStart :: App CGIResult
 formStart = do
    -- Retrieve the subelement info from db
-   rsSe <- liftIO $ do
+   (rs13, rs8) <- liftIO $ do
       conn <- dbPath >>= connectSqlite3
-      stmt <- prepare conn $ unlines
+
+      stmt1 <- prepare conn $ unlines
          [ "SELECT id, element, desc FROM subelement "
+         , "   WHERE element = ? or element = ?"
          , "   ORDER BY element, id"
          , ";"
          ]
+      execute stmt1 [toSql (1::Int), toSql (3::Int)]
+      rs13' <- fetchAllRowsMap' stmt1
 
-      execute stmt []
-      rs <- fetchAllRowsMap' stmt
+      stmt2 <- prepare conn $ unlines
+         [ "SELECT id, element, desc FROM subelement "
+         , "   WHERE element = ?"
+         , "   ORDER BY element, id"
+         , ";"
+         ]
+      execute stmt2 [toSql (8::Int)]
+      rs8' <- fetchAllRowsMap' stmt2
+
       disconnect conn
-      return rs
+      return (rs13', rs8')
 
-   startPage <- liftIO $ page $ theform rsSe
+   startPage <- liftIO $ page $ theform rs13 rs8
    output $ renderHtml startPage
 
    where
@@ -229,15 +240,35 @@ formStart = do
             seDesc = printf "Element %d, Subelement %s: %s"
                elValue seValue descValue
 
-      theform rsSe' = form ! [ method "POST", action $ baseUrl ++ "/study" ] <<
-         fieldset << (
-            legend << "Please select type of study"
+      theform rs13' rs8' =
+         let study13 = "study13"
+             study8  = "study8"
+         in
+         form ! [ method "POST", action $ baseUrl ++ "/study" ] <<
+            (
+            p << "Please select type of study"
             +++
-            p << select ! [name "questions", size "12"] <<
-               (  map constructSimOption [1, 3, 8]
-                  ++
-                  map constructNormalOption rsSe'
-               )
+            fieldset << (
+               (radio "" study13 ! [name "studyType", strAttr "id" study13]
+                  +++ label ! [thefor study13] << "GROL (Elements 1 and 3)")
+               +++
+               p << select ! [name "questions13", size "12"] <<
+                  (  map constructSimOption [1, 3]
+                     ++
+                     map constructNormalOption rs13'
+                  )
+            )
+            +++
+            fieldset << (
+               (radio "" study8 ! [name "studyType", strAttr "id" study8]
+                  +++ label ! [thefor study8] << "Radar Endorsement (Element 8)")
+               +++
+               p << select ! [name "questions8", size "12"] <<
+                  (  map constructSimOption [8]
+                     ++
+                     map constructNormalOption rs8'
+                  )
+            )
             +++ p << (
                checkbox "randQ" "" +++
                label ! [thefor "randQ"] << "Ask the questions in a random order"
@@ -246,8 +277,9 @@ formStart = do
                label ! [thefor "randA"] << "Randomly order the answers of each question"
                )
             +++ p << submit (show ActStart) "Start study session" ! [theclass "button"]
-         )
+            )
          +++ footer
+
 
 footer :: [Html]
 footer =  
@@ -413,7 +445,12 @@ actionSetupSession :: App CGIResult
 actionSetupSession = do
    llog INFO "actionSetupSession"
 
-   mbQuestionsChoice <- readInput "questions"
+   mbStudyType <- getInput "studyType"
+   mbQuestionsChoice <- case mbStudyType of
+      Just "study13" -> readInput "questions13"
+      Just "study8"  -> readInput "questions8"
+      _              -> return Nothing
+
    case mbQuestionsChoice of
       Just (StudySimulation element) -> do
          -- Leaving much of this randomization code alone for now

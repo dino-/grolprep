@@ -31,3 +31,4 @@ p { clear: left; }
 
 .incorrect-ans { color: red; }
 
+fieldset { display:inline; }
