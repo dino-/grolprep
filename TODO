@@ -3,6 +3,8 @@ release
 
 - More explanatory information on the start page. Maybe links to the VT aviation site and also the FCC?
 
+- Split front page up into a new information-rich front page that then links to the setup form page
+
 - SEO
    - Use <h?> tags in static pages
    - site index document when we know what domain it's going to be on
