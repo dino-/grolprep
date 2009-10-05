@@ -24,6 +24,7 @@ import Text.XHtml.Strict
 
 import Grolprep.Common.Data
 import Grolprep.Common.Log
+import Grolprep.Common.Util
 import Grolprep.Common.Shuffle
 import Grolprep.Web.Session
 import Grolprep.Web.Util
@@ -216,16 +217,18 @@ formStart = do
       disconnect conn
       return (rs13', rs8')
 
-   startPage <- liftIO $ page $ about +++ (theform rs13 rs8)
+   startPage <- liftIO $ page $ theform rs13 rs8
    output $ renderHtml startPage
 
    where
-      constructSimOption n =
-         option ! [value (show $ StudySimulation n)]
-            << ((printf "Simulate Element %d exam" n) :: String)
+      constructSimOptionJs n =
+         printf "         new Option('%s', '%s', false, false),"
+            ((printf "Simulate Element %d exam" n) :: String)
+            (show $ StudySimulation n)
 
-      constructNormalOption rsMap =
-         option ! [value (show $ StudyRegular elValue seValue)] << seDesc
+      constructNormalOptionJs rsMap =
+         printf "         new Option('%s', '%s', false, false),"
+            seDesc (show $ StudyRegular elValue seValue)
          where
             seValue :: String
             seValue = fromJust $ lookupSqlValue "id" rsMap
@@ -266,31 +269,29 @@ formStart = do
       theform rs13' rs8' =
          let study13 = "study13"
              study8  = "study8"
-         in
-         form ! [ method "POST", action $ baseUrl ++ "/study" ] <<
+         in thediv << (
+         script << primHtml (
+            "\n      var questionOpts13 = [\n" ++
+            (unlines (map constructSimOptionJs [1, 3])) ++
+            (unlines (map constructNormalOptionJs rs13')) ++ "      ];" ++
+
+            "\n      var questionOpts8 = [\n" ++
+            (constructSimOptionJs 8) ++
+            (unlines (map constructNormalOptionJs rs8')) ++ "      ];"
+         )
+         +++
+         form ! [ identifier "setupForm", method "POST", action $ baseUrl ++ "/study" ] <<
             (
             p << "Please select type of study"
             +++
             fieldset << (
-               (radio "" study13 ! [name "studyType", strAttr "id" study13]
+               (radio "" study13 ! [name "studyType", strAttr "id" study13, checked , strAttr "onclick" "populateQuestionsList()"]
                   +++ label ! [thefor study13] << "GROL (Elements 1 and 3)")
                +++
-               p << select ! [name "questions13", size "12"] <<
-                  (  map constructSimOption [1, 3]
-                     ++
-                     map constructNormalOption rs13'
-                  )
-            )
-            +++
-            fieldset << (
-               (radio "" study8 ! [name "studyType", strAttr "id" study8]
+               (radio "" study8 ! [name "studyType", strAttr "id" study8, strAttr "onclick" "populateQuestionsList()"]
                   +++ label ! [thefor study8] << "Radar Endorsement (Element 8)")
                +++
-               p << select ! [name "questions8", size "12"] <<
-                  (  map constructSimOption [8]
-                     ++
-                     map constructNormalOption rs8'
-                  )
+               p << select ! [identifier "questions", name "questions", size "12"] << noHtml
             )
             +++ p << (
                checkbox "randQ" "" +++
@@ -301,6 +302,7 @@ formStart = do
                )
             +++ p << submit (show ActStart) "Start study session" ! [theclass "button"]
             )
+         )
          +++ footer
 
 
@@ -468,12 +470,7 @@ actionSetupSession :: App CGIResult
 actionSetupSession = do
    llog INFO "actionSetupSession"
 
-   mbStudyType <- getInput "studyType"
-   mbQuestionsChoice <- case mbStudyType of
-      Just "study13" -> readInput "questions13"
-      Just "study8"  -> readInput "questions8"
-      _              -> return Nothing
-
+   mbQuestionsChoice <- readInput "questions"
    case mbQuestionsChoice of
       Just (StudySimulation element) -> do
          -- Leaving much of this randomization code alone for now
