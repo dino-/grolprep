@@ -217,7 +217,22 @@ formStart = do
       disconnect conn
       return (rs13', rs8')
 
-   startPage <- liftIO $ page $ theform rs13 rs8
+   startPage <- liftIO $ do
+      cssPath <- getRelDataFileName "css/question.css"
+      scriptPath <- getRelDataFileName "scripts/formStart.js"
+      return (
+         (header <<
+            thetitle << appId
+            +++
+            thelink noHtml ! [href cssPath, rel "stylesheet", 
+                thetype "text/css"]
+            +++
+            script ! [src scriptPath] << noHtml
+         )
+         +++
+         body ! [strAttr "onload" "populateQuestionsList()"] <<
+            [(p << appId), about, (theform rs13 rs8)] 
+         )
    output $ renderHtml startPage
 
    where
