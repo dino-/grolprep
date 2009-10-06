@@ -60,7 +60,7 @@ pageThankYou =
 actionFeedbackPage :: App CGIResult
 actionFeedbackPage = do 
    llog INFO "actionFeedbackPage"
-   feedbackPage <- liftIO $ page $ formFeedback
+   feedbackPage <- liftIO $ page [] $ formFeedback
    output $ renderHtml feedbackPage
 
 
@@ -76,7 +76,7 @@ actionFeedbackHandler = do
    liftIO $ do       
       fname <- formattedDate "%Y%m%d%H%M%S"
       saveFeedback fname ( "Email:" ++ email ++ "\nSubject:" ++ subj ++ "\nComment:" ++ comment )
-   thankyouPage <- liftIO $ page $ pageThankYou
+   thankyouPage <- liftIO $ page [] $ pageThankYou
    output $ renderHtml thankyouPage
 
 

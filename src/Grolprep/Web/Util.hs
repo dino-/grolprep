@@ -65,18 +65,27 @@ getButtonPressed = do
    return $ foldr mplus Nothing mbfs
 
 
+createCssLinks :: [FilePath] -> IO [Html]
+createCssLinks = mapM createLink
+   where
+      createLink path = do
+         cssPath <- getRelDataFileName path
+         return $ thelink noHtml ! [href cssPath, rel "stylesheet", 
+             thetype "text/css"]
+
+
+
 {- Convenience function to deal with some of the repetitive parts
    included in every HTML document
 -}
-page :: Html -> IO Html
-page b = do
-   cssPath <- getRelDataFileName "css/question.css"
+page :: [FilePath] -> Html -> IO Html
+page cssPaths b = do
+   cssLinks <- createCssLinks $ "css/common.css" : cssPaths
    return (
       (header <<
          thetitle << appId
          +++
-         thelink noHtml ! [href cssPath, rel "stylesheet", 
-             thetype "text/css"]
+         cssLinks
       )
       +++
       body << [(p << appId), b] 

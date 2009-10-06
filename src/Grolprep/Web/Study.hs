@@ -391,7 +391,7 @@ formPoseProblem (Problem pid q eas) = do
 
    let fpp = formPoseProblem' q nas
    mi <- liftIO metaInfo
-   posePage <- liftIO $ page $ formCancel +++ 
+   posePage <- liftIO $ page [] $ formCancel +++ 
       mi +++ fpp +++ (headingStats session)
    output $ renderHtml posePage
 
@@ -431,7 +431,7 @@ formAnswer g (Problem pid q eas) = do
    let nas = combineIxAndAns qord eas
 
    mi <- liftIO metaInfo
-   answerPage <- liftIO $ page $ formCancel +++
+   answerPage <- liftIO $ page [] $ formCancel +++
       mi +++ (theform nas) +++ (headingStats session)
    output $ renderHtml answerPage
 
