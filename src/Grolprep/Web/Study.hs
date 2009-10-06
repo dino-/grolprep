@@ -218,14 +218,13 @@ formStart = do
       return (rs13', rs8')
 
    startPage <- liftIO $ do
-      cssPath <- getRelDataFileName "css/question.css"
       scriptPath <- getRelDataFileName "scripts/formStart.js"
+      cssLinks <- createCssLinks [ "css/setup.css" ]
       return (
          (header <<
             thetitle << appId
             +++
-            thelink noHtml ! [href cssPath, rel "stylesheet", 
-                thetype "text/css"]
+            cssLinks
             +++
             script ! [src scriptPath] << noHtml
          )
@@ -269,12 +268,12 @@ formStart = do
             +++ "."
             )
          +++ 
-         p << "Features of GROLPrep: " +++ unordList 
+         thediv << (p << "Features of GROLPrep: " +++ unordList 
             [ "questions and answers can be presented in a random order"
             , "drills questions answered incorrectly"
             , "simulate complete examination"
             , "study selected elements"
-            ]  
+            ] )
          +++
          h2 << ("The source test data questions can be acquired from the "
             +++ (anchor ! [href $ "http://wireless.fcc.gov/commoperators/index.htm?job=question_pools" ]  << "FCC Commercial Radio Operators License" )

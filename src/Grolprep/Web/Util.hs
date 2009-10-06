@@ -66,7 +66,7 @@ getButtonPressed = do
 
 
 createCssLinks :: [FilePath] -> IO [Html]
-createCssLinks = mapM createLink
+createCssLinks paths = mapM createLink ("css/common.css" : paths)
    where
       createLink path = do
          cssPath <- getRelDataFileName path
@@ -80,7 +80,7 @@ createCssLinks = mapM createLink
 -}
 page :: [FilePath] -> Html -> IO Html
 page cssPaths b = do
-   cssLinks <- createCssLinks $ "css/common.css" : cssPaths
+   cssLinks <- createCssLinks cssPaths
    return (
       (header <<
          thetitle << appId
