@@ -260,6 +260,15 @@ formStart = do
       about = 
          h1 << "GROLPrep: FCC General Radio Operators License exam preparation"
          +++
+         thediv ! [ strAttr "class" "features" ] << ( 
+            p ! [ strAttr "class" "features" ] << "Features of GROLPrep: " 
+            +++ unordList 
+            [ "questions and answers can be presented in a random order"
+            , "drills questions answered incorrectly"
+            , "simulate complete examination"
+            , "study selected elements"
+            ] ! [ strAttr "class" "features" ] )
+         +++
          h2 << 
             (
             "This site provides a study tool and test simulator for the FCC GROL and Radar Endorsement examinations.  It is used by students of the " 
@@ -268,13 +277,6 @@ formStart = do
             +++ "."
             )
          +++ 
-         thediv << (p << "Features of GROLPrep: " +++ unordList 
-            [ "questions and answers can be presented in a random order"
-            , "drills questions answered incorrectly"
-            , "simulate complete examination"
-            , "study selected elements"
-            ] )
-         +++
          h2 << ("The source test data questions can be acquired from the "
             +++ (anchor ! [href $ "http://wireless.fcc.gov/commoperators/index.htm?job=question_pools" ]  << "FCC Commercial Radio Operators License" )
             +++ " site.")

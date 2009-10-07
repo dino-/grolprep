@@ -11,8 +11,23 @@ h2 {
    font-weight: normal ;
 }
 
-div {
+div.features {
    font-size: .75em ;
+   background-color: #E8EA7C ;
+   float: right ;
+   width: 25% ;
+   padding-left: 2% ; 
+   padding-right: 2% ; 
+}
+
+p.features {
+   font-family: Taoma, Geneva, sans-serif ;
+   font-size: 1.3em ;
+}
+
+ul.features {
+   list-style: square ;
+   padding-left: 5% ;
 }
 
 A:link {
