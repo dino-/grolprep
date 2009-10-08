@@ -258,7 +258,14 @@ formStart = do
                elValue seValue descValue
 
       about = 
-         h1 << "GROLPrep: FCC General Radio Operators License exam preparation"
+         thediv ! [ strAttr "class" "features" ] << ( 
+            p ! [ strAttr "class" "features" ] << "Features of GROLPrep: " 
+            +++ unordList 
+            [ "questions and answers can be presented in a random order"
+            , "drills questions answered incorrectly"
+            , "simulate complete examination"
+            , "study selected elements"
+            ] ! [ strAttr "class" "features" ] )
          +++
          h2 << 
             (
