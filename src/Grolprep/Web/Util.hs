@@ -74,6 +74,17 @@ createCssLinks paths = mapM createLink ("css/common.css" : paths)
              thetype "text/css"]
 
 
+titleBar :: Html
+titleBar = thetitle << "GROLPrep"
+
+
+heading :: Html
+heading =  h1 ! [theclass "banner heading"] << "GROLPrep: FCC General Radio Operators License exam preparation"
+
+
+footer :: Html
+footer = h1 ! [theclass "banner footer"] << appId
+
 
 {- Convenience function to deal with some of the repetitive parts
    included in every HTML document
@@ -83,11 +94,15 @@ page cssPaths b = do
    cssLinks <- createCssLinks cssPaths
    return (
       (header <<
-         thetitle << appId
+         titleBar
          +++
          cssLinks
       )
       +++
-      body << [(p << appId), b] 
+      body <<
+         [ heading
+         , b
+         , footer
+         ] 
       )
 

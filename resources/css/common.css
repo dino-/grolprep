@@ -32,3 +32,18 @@ p { clear: left; }
 .incorrect-ans { color: red; }
 
 fieldset { display:inline; }
+
+h1.banner { 
+   font-family: sans-serif ;
+   color: #eeeeee ;
+   background-color: #87A5C4 ;
+   padding: 0.5em ;
+}
+
+h1.heading { 
+   font-size: 1.5em ;
+}
+
+h1.footer { 
+   font-size: 1.0em ;
+}

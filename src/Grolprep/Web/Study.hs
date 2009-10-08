@@ -222,7 +222,7 @@ formStart = do
       cssLinks <- createCssLinks [ "css/setup.css" ]
       return (
          (header <<
-            thetitle << appId
+            titleBar
             +++
             cssLinks
             +++
@@ -230,7 +230,7 @@ formStart = do
          )
          +++
          body ! [strAttr "onload" "populateQuestionsList()"] <<
-            [(p << appId), about, (theform rs13 rs8)] 
+            [heading, about, (theform rs13 rs8), footer] 
          )
    output $ renderHtml startPage
 
@@ -259,15 +259,6 @@ formStart = do
 
       about = 
          h1 << "GROLPrep: FCC General Radio Operators License exam preparation"
-         +++
-         thediv ! [ strAttr "class" "features" ] << ( 
-            p ! [ strAttr "class" "features" ] << "Features of GROLPrep: " 
-            +++ unordList 
-            [ "questions and answers can be presented in a random order"
-            , "drills questions answered incorrectly"
-            , "simulate complete examination"
-            , "study selected elements"
-            ] ! [ strAttr "class" "features" ] )
          +++
          h2 << 
             (
@@ -319,11 +310,11 @@ formStart = do
             +++ p << submit (show ActStart) "Start study session" ! [theclass "button"]
             )
          )
-         +++ footer
+         +++ feedback
 
 
-footer :: [Html]
-footer =  
+feedback :: [Html]
+feedback =  
    [ anchor ! [href $ baseUrl ++ "/feedback" ] << "Feedback"
    ]
 
