@@ -254,7 +254,7 @@ formStart = do
             ((printf "Simulate Element %d exam" n) :: String)
             (show $ StudySimulation n)
 
-      constructNormalOptionJs rsMap =
+      constructStudyOptionJs rsMap =
          printf "         new Option('%s', '%s', false, false),"
             seDesc (show $ StudyRegular elValue seValue)
          where
@@ -301,11 +301,11 @@ formStart = do
          script << primHtml (
             "\n      var questionOpts13 = [\n" ++
             (unlines (map constructSimOptionJs [1, 3])) ++
-            (unlines (map constructNormalOptionJs rs13')) ++ "      ];" ++
+            (unlines (map constructStudyOptionJs rs13')) ++ "      ];" ++
 
             "\n      var questionOpts8 = [\n" ++
             (constructSimOptionJs 8) ++
-            (unlines (map constructNormalOptionJs rs8')) ++ "      ];"
+            (unlines (map constructStudyOptionJs rs8')) ++ "      ];"
          )
          +++
          form ! [ identifier "setupForm", method "POST", action $ baseUrl ++ "/study" ] <<
