@@ -235,7 +235,14 @@ formStart = do
              thediv ! [theclass "banner"] << h2 ! [theclass "footer"] << (
                "GROLPrep " +++
                thespan ! [theclass "banner-dark-text"] << appVersion
-               +++ feedback
+               +++
+               thespan ! [theclass "feedback"] << (
+                  anchor ! [theclass "feedback", href "http://ui3.info/d/proj/grolprep"] << "developer site"
+                  +++
+                  (thespan ! [theclass "banner-dark-text"] << primHtml " &middot; ")
+                  +++
+                  feedback
+                  )
                )
             )
          )
