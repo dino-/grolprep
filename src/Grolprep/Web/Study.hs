@@ -233,16 +233,20 @@ formStart = do
             ([heading, about, (theform rs13 rs8)] 
              +++
              thediv ! [theclass "banner"] << h2 ! [theclass "footer"] << (
-               "GROLPrep " +++
-               thespan ! [theclass "banner-dark-text"] << appVersion
-               +++
-               thespan ! [theclass "feedback"] << (
-                  anchor ! [theclass "feedback", href "http://ui3.info/d/proj/grolprep"] << "developer site"
+               -- This is the right-side content, it floats
+               thespan ! [theclass "footer-right"] << (
+                  anchor ! [theclass "footer-right", href "http://ui3.info/d/proj/grolprep"] << "developer site"
                   +++
                   (thespan ! [theclass "banner-dark-text"] << primHtml " &middot; ")
                   +++
                   feedback
                   )
+
+               +++
+
+               -- This is the left-side content, NOT floating
+               "GROLPrep " +++
+               thespan ! [theclass "banner-dark-text"] << appVersion
                )
             )
          )
@@ -334,9 +338,11 @@ formStart = do
 
 
 feedback :: Html
-feedback = thespan <<
-   anchor ! [theclass "feedback", href $ baseUrl ++ "/feedback"]
-      << "feedback"
+feedback = anchor !
+   [ theclass "footer-right"
+   , href $ baseUrl ++ "/feedback"
+   ]
+   << "feedback"
 
 
 getProblemMetaInfo :: String -> 
