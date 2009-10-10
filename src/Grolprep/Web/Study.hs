@@ -230,7 +230,14 @@ formStart = do
          )
          +++
          body ! [strAttr "onload" "populateQuestionsList()"] <<
-            [heading, about, (theform rs13 rs8), footer] 
+            ([heading, about, (theform rs13 rs8)] 
+             +++
+             thediv ! [theclass "banner"] << h2 ! [theclass "footer"] << (
+               "GROLPrep " +++
+               thespan ! [theclass "banner-dark-text"] << appVersion
+               +++ feedback
+               )
+            )
          )
    output $ renderHtml startPage
 
@@ -259,24 +266,24 @@ formStart = do
 
       about = 
          thediv ! [ strAttr "class" "features" ] << ( 
-            p ! [ strAttr "class" "features" ] << "Features of GROLPrep: " 
-            +++ unordList 
-            [ "questions and answers can be presented in a random order"
-            , "drills questions answered incorrectly"
-            , "simulate complete examination"
-            , "study selected elements"
-            ] ! [ strAttr "class" "features" ] )
+            p ! [ strAttr "class" "features" ] << "Features of GROLPrep" 
+            +++ ulist ! [ strAttr "class" "features" ] <<
+               [ li ! [theclass "features"] << "Questions and answers can be presented in a random order"
+               , li ! [theclass "features"] << "Drills you on questions answered incorrectly with additional passes"
+               , li ! [theclass "features"] << "Simulate complete examinations"
+               , li ! [theclass "features"] << "Study specific subelements"
+               ] )
          +++
-         h2 << 
+         h3 << 
             (
-            "This site provides a study tool and test simulator for the FCC GROL and Radar Endorsement examinations.  It is used by students of the " 
-            +++ anchor ! [href $ "http://www.burlingtonaviationtech.org" ] 
+            "This site provides a study tool and test simulator for the FCC GROL and Radar Endorsement examinations. GROLPrep is used by students of the " 
+            +++ anchor ! [href "http://www.burlingtonaviationtech.org" ] 
                << "Burlington Aviation Technology at the Vermont Aircraft Maintenance School"
             +++ "."
             )
          +++ 
-         h2 << ("The source test data questions can be acquired from the "
-            +++ (anchor ! [href $ "http://wireless.fcc.gov/commoperators/index.htm?job=question_pools" ]  << "FCC Commercial Radio Operators License" )
+         h3 << ("The source test questions can be acquired from the "
+            +++ (anchor ! [href "http://wireless.fcc.gov/commoperators/index.htm?job=question_pools" ]  << "FCC Commercial Radio Operators License" )
             +++ " site.")
 
 
@@ -296,7 +303,7 @@ formStart = do
          +++
          form ! [ identifier "setupForm", method "POST", action $ baseUrl ++ "/study" ] <<
             (
-            p << "Please select type of study"
+            p << "Let's get started! Please select type of study"
             +++
             fieldset << (
                (radio "" study13 ! [name "studyType", strAttr "id" study13, checked , strAttr "onclick" "populateQuestionsList()"]
@@ -317,13 +324,13 @@ formStart = do
             +++ p << submit (show ActStart) "Start study session" ! [theclass "button"]
             )
          )
-         +++ feedback
 
 
-feedback :: [Html]
-feedback =  
-   [ anchor ! [href $ baseUrl ++ "/feedback" ] << "Feedback"
-   ]
+feedback :: Html
+feedback = thespan <<
+   anchor ! [theclass "feedback", href $ baseUrl ++ "/feedback"]
+      << "feedback"
+
 
 getProblemMetaInfo :: String -> 
    IO ((Int, String), (String, String), (Int, String))

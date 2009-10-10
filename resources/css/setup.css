@@ -1,4 +1,4 @@
-h2 {
+h3 {
    font-size: 1em ;
    font-weight: normal ;
 }
@@ -13,7 +13,7 @@ div.features {
 }
 
 p.features {
-   font-family: Taoma, Geneva, sans-serif ;
+   font-family: Tahoma, Geneva, sans-serif ;
    font-size: 1.3em ;
 }
 
@@ -22,14 +22,14 @@ ul.features {
    padding-left: 5% ;
 }
 
+li.features {
+   margin-top: 1.0em;
+}
+
 A:link {
-   font-weight: bold ;
-   text-decoration: none ;
    color: #749BC1 ;
 }
 
 A:visited {
-   font-weight: bold ;
-   text-decoration: none ;
    color: #749BC1 ;
 }

@@ -79,11 +79,17 @@ titleBar = thetitle << "GROLPrep"
 
 
 heading :: Html
-heading =  h1 ! [theclass "banner heading"] << "GROLPrep: FCC General Radio Operators License exam preparation"
+heading = (thediv ! [theclass "banner"]) << (h1 ! [theclass "heading"]) << (
+   "GROLPrep" +++
+   (thespan ! [theclass "banner-dark-text"] << primHtml " &middot;")
+   +++
+   thespan ! [theclass "heading-smaller"] << " FCC General Radio Operators License exam preparation"
+   )
 
 
 footer :: Html
-footer = h1 ! [theclass "banner footer"] << appId
+footer = thediv ! [theclass "banner"] << h2 ! [theclass "footer"] << (
+   "GROLPrep " +++ thespan ! [theclass "banner-dark-text"] << appVersion )
 
 
 {- Convenience function to deal with some of the repetitive parts

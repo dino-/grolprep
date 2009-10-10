@@ -33,17 +33,48 @@ p { clear: left; }
 
 fieldset { display:inline; }
 
-h1.banner { 
-   font-family: sans-serif ;
+div.banner {
    color: #eeeeee ;
    background-color: #87A5C4 ;
-   padding: 0.5em ;
 }
 
-h1.heading { 
+h1.heading {
+   padding: 0.2em;
+   font-family: sans-serif;
    font-size: 1.5em ;
+   font-weight: bold;
 }
 
-h1.footer { 
+.heading-smaller {
+   font-size: smaller;
+}
+
+.footer {
+   padding: 0.2em;
+   font-family: sans-serif;
    font-size: 1.0em ;
+   font-weight: normal;
+}
+
+.banner-dark-text {
+   color: #333333;
+   font-size: smaller;
+}
+
+.feedback {
+   float: right;
+   font-family: sans-serif;
+   font-size: smaller;
+   font-style: italic;
+   font-weight: bold;
+}
+
+a:link.feedback {
+   color: #eeeeee;
+   text-decoration: none ;
+}
+
+a:visited.feedback {
+   color: #eeeeee;
+   text-decoration: none ;
 }
