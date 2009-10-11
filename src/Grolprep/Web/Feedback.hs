@@ -74,7 +74,7 @@ actionFeedbackHandler = do
    email <- liftM fromJust $ getInput "email"
    subj <- liftM fromJust $ getInput "subject"
    comment <- liftM fromJust $ getInput "comment"
-   llog DEBUG $ "email: " ++ email ++ " subj: " ++ subj ++ " comment: " ++ comment
+   --llog DEBUG $ "email: " ++ email ++ " subj: " ++ subj ++ " comment: " ++ comment
    commentorIp <- remoteAddr
    liftIO $ do       
       fname <- formattedDate "%Y%m%d-%H%M%S"
