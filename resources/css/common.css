@@ -2,6 +2,7 @@
    border-top: solid 1.0mm;
    margin-top: 1.0em;
    padding-top: 0.5em;
+   clear: both;
 }
 
 .button {
@@ -82,4 +83,9 @@ a:visited.footer-right {
    color: #eeeeee;
    text-decoration: none ;
    font-size: smaller;
+}
+
+img.problem {
+   float: right;
+   width: auto;
 }

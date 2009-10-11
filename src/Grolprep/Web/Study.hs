@@ -62,6 +62,13 @@ dbPath :: IO FilePath
 dbPath = getDataFileName $ "grolprep" <.> "sqlite"
 
 
+imgRegion :: Maybe FilePath -> IO Html
+imgRegion Nothing = return noHtml
+imgRegion (Just im) = do
+   path <- getRelDataFileName $ "figures" </> im <.> "png"
+   return $ image ! [theclass "problem", src path]
+
+
 getSimProblemIds :: Int -> IO [ProblemId]
 getSimProblemIds element = do
    conn <- dbPath >>= connectSqlite3
@@ -130,7 +137,7 @@ combineIxAndAns xs ys =
    sortBy (\x y -> compare (fst x) (fst y)) $ zip xs ys
 
 
-nextProblem :: Session -> IO (Maybe Problem)
+nextProblem :: Session -> IO (Maybe Problem, Maybe String)
 nextProblem session = do
    let scurr = sessCurr session
    let slist = sessList session
@@ -139,16 +146,21 @@ nextProblem session = do
       then do
          conn <- dbPath >>= connectSqlite3
          stmt <- prepare conn $ unlines
-            [ "SELECT probdata FROM problem WHERE "
-            , "   id=?"
+            [ "SELECT p.probdata, f.figure "
+            , "   FROM problem p "
+            , "   LEFT JOIN figure f "
+            , "   ON p.id = f.id "
+            , "   WHERE "
+            , "      p.id=?"
             , ";"
             ]
          execute stmt [toSql $ slist !! scurr]
-         rs <- sFetchAllRows' stmt
+         rs <- liftM concat $ sFetchAllRows' stmt
          disconnect conn
 
-         return $ maybe Nothing (Just . read) $ head $ concat rs
-      else return Nothing
+         let mbProblem = maybe Nothing (Just . read) $ head rs
+         return (mbProblem, last rs)
+      else return (Nothing, Nothing)
 
 
 {- HTML pages and forms 
@@ -283,6 +295,7 @@ formStart = do
                , li ! [theclass "features"] << "Drills you on questions answered incorrectly with additional passes"
                , li ! [theclass "features"] << "Simulate complete examinations"
                , li ! [theclass "features"] << "Study specific subelements"
+               , li ! [theclass "features"] << "Figure illustrations included!"
                ] )
          +++
          h3 << 
@@ -397,8 +410,8 @@ getProblemMetaInfo problemId = do
       )
 
 
-formPoseProblem :: Problem -> App CGIResult
-formPoseProblem (Problem pid q eas) = do
+formPoseProblem :: Problem -> Maybe String -> App CGIResult
+formPoseProblem (Problem pid q eas) mbim = do
    llog INFO "formPoseProblem"
 
    session <- liftM fromJust getSession
@@ -408,7 +421,9 @@ formPoseProblem (Problem pid q eas) = do
    putSession $ session { sessCurrOrd = qord }
    let nas = combineIxAndAns qord $ map extractAnswer eas
 
-   let fpp = formPoseProblem' q nas
+   im <- liftIO $ imgRegion mbim
+
+   let fpp = formPoseProblem' q nas im
    mi <- liftIO metaInfo
    posePage <- liftIO $ page [] $ formCancel +++ 
       mi +++ fpp +++ (headingStats session)
@@ -428,11 +443,15 @@ formPoseProblem (Problem pid q eas) = do
                         seId seDesc ktId ktDesc) :: String)
             ]
 
-      formPoseProblem' q' as = form ! [ method "POST", action $ baseUrl ++ "/study" ] << (
-         [ p ! [theclass "question"] << (pid ++ ": " +++ (primHtml q'))
-         , thediv << (ansControls as)
-         , submit (show ActPose) "Proceed" ! [theclass "button"]
-         ] )
+      formPoseProblem' q' as im' =
+         form ! [theclass "question", method "POST", action $ baseUrl ++ "/study" ] <<
+            ( im' +++
+            thediv <<
+               [ p << (pid ++ ": " +++ (primHtml q'))
+               , thediv << (ansControls as)
+               , submit (show ActPose) "Proceed" ! [theclass "button"]
+               ]
+            )
          where
             ansControls as' = map f as'
                where
@@ -442,16 +461,18 @@ formPoseProblem (Problem pid q eas) = do
                      p << ((radio "" (show n') ! [theclass "hanging", name "answer", strAttr "id" (show n')])
                           +++ label ! [thefor (show n')] << (primHtml a))
 
-formAnswer :: Int -> Problem -> App CGIResult
-formAnswer g (Problem pid q eas) = do
+formAnswer :: Int -> Problem -> Maybe String -> App CGIResult
+formAnswer g (Problem pid q eas) mbim = do
    session <- liftM fromJust getSession
    let qord = sessCurrOrd session
 
    let nas = combineIxAndAns qord eas
 
    mi <- liftIO metaInfo
+   im <- liftIO $ imgRegion mbim
+
    answerPage <- liftIO $ page [] $ formCancel +++
-      mi +++ (theform nas) +++ (headingStats session)
+      mi +++ (theform nas im) +++ (headingStats session)
    output $ renderHtml answerPage
 
    where
@@ -465,12 +486,16 @@ formAnswer g (Problem pid q eas) = do
                         seId seDesc ktId ktDesc) :: String)
             ]
 
-      theform nas' = form ! [ method "POST", action $ baseUrl ++ "/study" ] << (
-         [ correctness (snd $ nas' !! g)
-         , p ! [theclass "question"] << (pid ++ ": " +++ (primHtml q))
-         , thediv << ansLines
-         , submit (show ActAnswer) "Next question" ! [theclass "button"]
-         ] )
+      theform nas' im' =
+         correctness (snd $ nas' !! g) +++
+         form ! [theclass "question", method "POST", action $ baseUrl ++ "/study" ] << (
+            im' +++
+            thediv <<
+               [ p << (pid ++ ": " +++ (primHtml q))
+               , thediv << ansLines
+               , submit (show ActAnswer) "Next question" ! [theclass "button"]
+               ]
+            )
          where
             correctness (Right _) =
                p ! [theclass "correct-ans"] << "CORRECT"
@@ -566,13 +591,13 @@ actionNextProblem = do
    let passCurr = sessPassCurr session
    let list = sessList session
 
-   mbnp <- liftIO $ nextProblem session
+   (mbnp, mbim) <- liftIO $ nextProblem session
 
    case (mbnp, null list) of
       -- We have a next problem, let's get to it
       (Just np, _    ) -> do
          putSession $ session { sessPassCurr = passCurr + 1 }
-         formPoseProblem np
+         formPoseProblem np mbim
 
       -- No next problem and there are no more
       -- not-correctly-answered. We're done.
@@ -609,7 +634,7 @@ actionCorrectProblem = do
          let list = sessList session
 
          -- Evaluate the user's answer
-         mbnp <- liftIO $ nextProblem session
+         (mbnp, mbim) <- liftIO $ nextProblem session
          let problem@(Problem _ _ as) = fromJust mbnp
 
          -- Reconstitute the order of the answers from when the question
@@ -624,7 +649,7 @@ actionCorrectProblem = do
          -- Make the new session and set it
          putSession $ session { sessCurr = newCurr , sessList = newList }
 
-         formAnswer answer problem
+         formAnswer answer problem mbim
 
       -- We have no session and yet they somehow arrived at this form
       -- Get out of here and go back to the beginning
@@ -633,5 +658,5 @@ actionCorrectProblem = do
       -- The user has submit the form with no answer selected
       -- Kick them right back to the pose problem form
       (Just session, _) -> do
-         mbnp <- liftIO $ nextProblem session
-         formPoseProblem $ fromJust mbnp
+         (mbnp, mbim) <- liftIO $ nextProblem session
+         formPoseProblem (fromJust mbnp) mbim

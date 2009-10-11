@@ -29,8 +29,6 @@ feature additions
 
 - Add IPv6 support to the SessionId code. It will fail now to compute a session id.
 
-- Support the questions with images, there are many
-
 
 -----
 general TODO thoughts
