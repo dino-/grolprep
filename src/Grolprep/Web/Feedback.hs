@@ -9,6 +9,7 @@ import Control.Monad
 import Data.Maybe
 import Network.CGI
 import System.FilePath
+import Text.Printf
 import Text.XHtml.Strict
 
 import Grolprep.Common.Log
@@ -74,9 +75,12 @@ actionFeedbackHandler = do
    subj <- liftM fromJust $ getInput "subject"
    comment <- liftM fromJust $ getInput "comment"
    llog DEBUG $ "email: " ++ email ++ " subj: " ++ subj ++ " comment: " ++ comment
+   commentorIp <- remoteAddr
    liftIO $ do       
-      fname <- formattedDate "%Y%m%d%H%M%S"
-      saveFeedback fname ( "Email:" ++ email ++ "\nSubject:" ++ subj ++ "\nComment:" ++ comment )
+      fname <- formattedDate "%Y%m%d-%H%M%S"
+      saveFeedback fname $ printf
+         "Submitted: %s\nIP: %s\nEmail: %s\nSubject: %s\nComment: %s\n"
+         fname commentorIp email subj comment
    thankyouPage <- liftIO $ page [] $ pageThankYou
    output $ renderHtml thankyouPage
 
