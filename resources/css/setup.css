@@ -33,3 +33,7 @@ A:link {
 A:visited {
    color: #749BC1 ;
 }
+
+select {
+   font-family: sans-serif;
+}
