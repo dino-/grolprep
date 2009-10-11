@@ -51,7 +51,8 @@ pageThankYou :: Html
 pageThankYou = 
    p << "Thank you for your feedback!"
    +++
-   p <<  ( "Now return to: " +++ anchor ! [ href $ baseUrl ] << "grolprep" +++ "." )
+   p << anchor ! [ href $ baseUrl ]
+      << "Return to the GROLPrep main page."
 
 
 {- Action handlers
