@@ -959,7 +959,7 @@ Key Topic 20:  Capacitors
 	C.	3
 	D.	4
 
-3-20C5  In Figure 3C5, the 1 μF capacitor is connected to a potentiometer that is used to:
+3-20C5  In Figure 3C5, the 1 &micro;F capacitor is connected to a potentiometer that is used to:
 	A.	Increase gain.
 	B.	Neutralize amplifier.
 	C.	Couple.
