@@ -1907,14 +1907,14 @@ Answer Key:	3-37E1:  B	3-37E2:  D	3-37E3:  A	3-37E4:  D	3-37E5:  A	3-37E6:  C
 Key Topic 38:  Memory
 
 3-38E1  What is the name of the semiconductor memory IC whose digital data can be written or read, and whose memory word address can be accessed randomly?
-	A.	ROM – Read-Only Memory.
-	B.	PROM – Programmable Read-Only Memory.
-	C.	RAM – Random-Access Memory.
-	D.	EPROM – Electrically Programmable Read-Only Memory.
+	A.	ROM - Read-Only Memory.
+	B.	PROM - Programmable Read-Only Memory.
+	C.	RAM - Random-Access Memory.
+	D.	EPROM - Electrically Programmable Read-Only Memory.
 
 3-38E2  What is the name of the semiconductor IC that has a fixed pattern of digital data stored in its memory matrix?
-	A.	RAM – Random-Access Memory.
-	B.	ROM – Read-Only Memory.
+	A.	RAM - Random-Access Memory.
+	B.	ROM - Read-Only Memory.
 	C.	Register.
 	D.	Latch.
 
@@ -1937,10 +1937,10 @@ Key Topic 38:  Memory
 	D.	64
 
 3-38E6  What is the name of the random-accessed semiconductor memory IC that must be refreshed periodically to maintain reliable data storage in its memory matrix?
-	A.	ROM – Read-Only Memory.
-	B.	DRAM – Dynamic Random-Access Memory.
-	C.	PROM – Programmable Read-Only Memory.
-	D.	PRAM – Programmable Random-Access Memory.
+	A.	ROM - Read-Only Memory.
+	B.	DRAM - Dynamic Random-Access Memory.
+	C.	PROM - Programmable Read-Only Memory.
+	D.	PRAM - Programmable Random-Access Memory.
 
 
 

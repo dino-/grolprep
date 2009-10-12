@@ -739,10 +739,10 @@ Key Topic 16: MF-HF Frequency & Emission Selection
 	D.	Normally used with public coast stations.
 
 1-16C4  What emission must be used when operating on the MF distress and calling voice frequency?
-	A.	J3E – Single sideband telephony.
-	B.	A1A – On-off keying without modulation by an audio frequency.
-	C.	F3E – Frequency modulation telephony.
-	D.	A3E – Amplitude modulation telephony, double sideband.
+	A.	J3E - Single sideband telephony.
+	B.	A1A - On-off keying without modulation by an audio frequency.
+	C.	F3E - Frequency modulation telephony.
+	D.	A3E - Amplitude modulation telephony, double sideband.
 
 1-16C5  Which of the following defines high frequency "ITU Channel 1212"?
 	A.	Ch-12 in the 16 MHz band.
