@@ -1159,7 +1159,7 @@ Key Topic 24:  Diodes
 
 3-24C6  What is the principal characteristic of a tunnel diode?
 	A.	High forward resistance.
-	B.	Very high PIV(peak inverse voltage).
+	B.	Very high PIV (peak inverse voltage).
 	C.	Negative resistance region.
 	D.	High forward current rating.
 
@@ -4013,8 +4013,8 @@ Key Topic 81:  Troubleshooting
 
 3-81L2  The tachometer of a building's elevator circuit experiences interference caused by the radio system nearby. What is a common potential "fix" for the problem?
 	A.	Replace the tachometer of the elevator.
-	B.	Add a .01 µF capacitor across the motor/tachometer leads.
-	C.	Add a 200 µF capacity across the motor/tachometer leads.
+	B.	Add a .01 &micro;F capacitor across the motor/tachometer leads.
+	C.	Add a 200 &micro;F capacity across the motor/tachometer leads.
 	D.	Add an isolating resistor in series with the motor leads.
 
 3-81L3  A common method of programming portable or mobile radios is to use a:
@@ -4463,15 +4463,15 @@ Key Topic 90:  RADAR Theory
 
 3-90O2  The RADAR range in nautical miles to an object can be found by measuring the elapsed time during a RADAR pulse and dividing this quantity by:
 	A.	0.87 seconds.
-	B.	1.15 µs.
-	C.	12.346 µs.
-	D.	1.073 µs.
+	B.	1.15 &micro;s.
+	C.	12.346 &micro;s.
+	D.	1.073 &micro;s.
 
 3-90O3  What is the normal range of pulse widths?
-	A.	.05 (s to 0.1 (s.
-	B.	.05 (s to 1.0 (s.
-	C.	1.0 (s to 3.5 (s.
-	D.	2.5 (s to 5.0 (s.
+	A.	.05 &micro;s to 0.1 &micro;s.
+	B.	.05 &micro;s to 1.0 &micro;s.
+	C.	1.0 &micro;s to 3.5 &micro;s.
+	D.	2.5 &micro;s to 5.0 &micro;s.
 
 3-90O4  Shipboard RADAR is most commonly operated in what band?
 	A.	VHF.
@@ -4556,22 +4556,22 @@ Answer Key:	3-91O1:  A	3-91O2:  B	3-91O3:  A	3-91O4:  C	3-91O5:  B	3-91O6:  D
 Key Topic 92:  Range, Pulse Width & Repetition Rate
 
 3-92O1  When a RADAR is being operated on the 48 mile range setting, what is the most appropriate pulse width (PW) and pulse repetition rate (pps)?
-	A.	1.0 (s PW and 2,000 pps.
-	B.	0.05 (s PW and 2,000 pps.
-	C.	2.5 (s PW and 2,500 pps.
-	D.	1.0 (s PW and 500 pps.
+	A.	1.0 &micro;s PW and 2,000 pps.
+	B.	0.05 &micro;s PW and 2,000 pps.
+	C.	2.5 &micro;s PW and 2,500 pps.
+	D.	1.0 &micro;s PW and 500 pps.
 
 3-92O2  When a RADAR is being operated on the 6 mile range setting what is the most appropriate pulse width and pulse repetition rate?
-	A.	1.0 (s PW and 500 pps.
-	B.	2.0 (s PW and 3,000 pps.
-	C.	0.25 (s PW and 1,000 pps.
-	D.	0.01 (s PW and 500 pps.
+	A.	1.0 &micro;s PW and 500 pps.
+	B.	2.0 &micro;s PW and 3,000 pps.
+	C.	0.25 &micro;s PW and 1,000 pps.
+	D.	0.01 &micro;s PW and 500 pps.
 
 3-92O3  We are looking at a target 25 miles away.  When a RADAR is being operated on the 25 mile range setting what is the most appropriate pulse width and pulse repetition rate?
-	A.	1.0 (s PW and 500 pps.
-	B.	0.25 (s PW and 1,000 pps.
-	C.	0.01 (s PW and 500 pps.
-	D.	0.05 (s PW and 2,000 pps.
+	A.	1.0 &micro;s PW and 500 pps.
+	B.	0.25 &micro;s PW and 1,000 pps.
+	C.	0.01 &micro;s PW and 500 pps.
+	D.	0.05 &micro;s PW and 2,000 pps.
 
 3-92O4  What pulse width and repetition rate should you use at long ranges?
 	A.	Narrow pulse width and slow repetition rate.
@@ -4586,10 +4586,10 @@ Key Topic 92:  Range, Pulse Width & Repetition Rate
 	D.	Wide pulse width and slow repetition rates.
 
 3-92O6  When a RADAR is being operated on the 1.5 mile range setting, what is the most appropriate pulse width and pulse repetition rate?
-	A.	0.25 (s PW and 1,000 pps.
-	B.	0.05 (s PW and 2,000 pps.
-	C.	1.0 (s PW and 500 pps.
-	D.	2.5 (s PW and 2,500 pps.
+	A.	0.25 &micro;s PW and 1,000 pps.
+	B.	0.05 &micro;s PW and 2,000 pps.
+	C.	1.0 &micro;s PW and 500 pps.
+	D.	2.5 &micro;s PW and 2,500 pps.
 
 
 
@@ -4760,16 +4760,16 @@ Answer Key:	3-95P1:  D	3-95P2:  B	3-95P3:  C	3-95P4:  A	3-95P5:  B	3-95P6:  A
 Key Topic 96:  INMARSAT Communications Systems-1
 
 3-96P1  What is the orbital altitude of INMARSAT Satellites?
-	A.	16, 436 miles.
+	A.	16,436 miles.
 	B.	22,177 miles.
-	C.	10, 450 miles.
+	C.	10,450 miles.
 	D.	26,435 miles.
 
 3-96P2  Which of the following describes the INMARSAT Satellite system?
-	A.	AOR at 35( W, POR-E at 165( W, POR-W at 155( E and IOR at 56.5( E.
-	B.	AOR-E at 25( W, AOR-W at 85( W, POR at 175( W and IOR at 56.5( E.
-	C.	AOR-E at 15.5( W, AOR-W at 54( W, POR at 178( E and IOR at 64.5( E.
-	D.	AOR at 40( W, POR at 178( W, IOR-E at 109( E and IOR-W at 46( E.
+	A.	AOR at 35&deg; W, POR-E at 165&deg; W, POR-W at 155&deg; E and IOR at 56.5&deg; E.
+	B.	AOR-E at 25&deg; W, AOR-W at 85&deg; W, POR at 175&deg; W and IOR at 56.5&deg; E.
+	C.	AOR-E at 15.5&deg; W, AOR-W at 54&deg; W, POR at 178&deg; E and IOR at 64.5&deg; E.
+	D.	AOR at 40&deg; W, POR at 178&deg; W, IOR-E at 109&deg; E and IOR-W at 46&deg; E.
 
 3-96P3  What are the directional characteristics of the INMARSAT-C SES antenna?
 	A.	Highly directional parabolic antenna requiring stabilization.
