@@ -302,7 +302,7 @@ formStart = do
             (
             "This site provides a study tool and test simulator for the FCC GROL and Radar Endorsement examinations. GROLPrep is used by students of the " 
             +++ anchor ! [href "http://www.burlingtonaviationtech.org" ] 
-               << "Burlington Aviation Technology at the Vermont Aircraft Maintenance School"
+               << "Avionics program at the Burlington Aviation Technology School"
             +++ "."
             )
          +++ 
