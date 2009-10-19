@@ -26,5 +26,5 @@ executable           fcc-grol-prep.cgi
    build-depends:    base >= 3 && < 5, cgi, containers, convertible, 
                      Crypto, directory, filepath, HDBC, HDBC-sqlite3, 
                      hslogger, mtl, old-locale, old-time, random, 
-                     regex-compat, split, time, xhtml
+                     regex-compat, time, xhtml
    ghc-options:      -Wall
