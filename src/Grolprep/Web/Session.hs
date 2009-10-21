@@ -32,6 +32,8 @@ import Paths_grolprep
 data StudyType
    = StudySimulation Int      -- Which element to run sim test
    | StudyRegular Int String  -- Which element and subelement
+   | StudyCustom String       -- User entered a space-delimited list 
+                              --    of questions
    deriving (Read, Show)
 
 

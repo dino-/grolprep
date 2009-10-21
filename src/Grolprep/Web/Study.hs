@@ -9,8 +9,10 @@ module Grolprep.Web.Study
    where
 
 import Control.Monad
+import Data.Char
 import Data.Convertible.Base
 import Data.List hiding ( lookup )
+import Data.List.Split
 import Data.Map ( Map, lookup )
 import Data.Maybe
 import Database.HDBC
@@ -312,8 +314,9 @@ formStart = do
 
 
       theform rs13' rs8' =
-         let study13 = "study13"
-             study8  = "study8"
+         let study13     = "study13"
+             study8      = "study8"
+             studyCustom = "studyCustom"
          in thediv << (
          script << primHtml (
             "\n      var questionOpts13 = [\n" ++
@@ -325,28 +328,60 @@ formStart = do
             (unlines (map constructStudyOptionJs rs8')) ++ "      ];"
          )
          +++
-         form ! [ identifier "setupForm", method "POST", action $ baseUrl ++ "/study" ] <<
-            (
-            p << "Let's get started! Please select type of study"
-            +++
-            fieldset << (
-               (radio "" study13 ! [name "studyType", strAttr "id" study13, checked , strAttr "onclick" "populateQuestionsList()"]
-                  +++ label ! [thefor study13] << "GROL (Elements 1 and 3)")
-               +++
-               (radio "" study8 ! [name "studyType", strAttr "id" study8, strAttr "onclick" "populateQuestionsList()"]
-                  +++ label ! [thefor study8] << "Radar Endorsement (Element 8)")
-               +++
-               p << select ! [identifier "questions", name "questions", size "12"] << noHtml
-            )
-            +++ p << (
-               checkbox "randQ" "" +++
-               label ! [thefor "randQ"] << "Ask the questions in a random order"
-               )
-            +++ p << (checkbox "randA" "" +++
-               label ! [thefor "randA"] << "Randomly order the answers of each question"
-               )
-            +++ p << submit (show ActStart) "Start study session" ! [theclass "button"]
-            )
+         form !
+            [ method "POST"
+            , action $ baseUrl ++ "/study"
+            ] <<
+            fieldset <<
+               [ legend <<
+                  "Let's get started! Please select type of study"
+
+               , thediv !
+                  [ theclass "form-right"
+                  , identifier "questions-parent"
+                  ] <<
+                  select !
+                     [ identifier "questions"
+                     , name "questions"
+                     , size "12"
+                     ]
+                     << noHtml
+
+               , thediv ! [theclass "form-left"] <<
+                  [ ulist <<
+                     [ li << label << (
+                        radio "" study13 !
+                           [ name "studyType"
+                           , strAttr "id" study13
+                           , checked
+                           , strAttr "onclick" "populateQuestionsList()"
+                           ]
+                        +++ " GROL (Elements 1 and 3)" )
+                     , li << label << (
+                        radio "" study8 !
+                           [ name "studyType"
+                           , strAttr "id" study8
+                           , strAttr "onclick" "populateQuestionsList()"
+                           ]
+                        +++ " Radar Endorsement (Element 8)" )
+                     , li << label << (
+                        radio "" studyCustom !
+                           [ name "studyType"
+                           , strAttr "id" studyCustom
+                           , strAttr "onclick" "populateQuestionsList()"
+                           ]
+                        +++ " Enter a list of problem IDs" )
+                     ]
+                  , ulist <<
+                     [ li << label ( checkbox "randQ" "" +++
+                        " Ask the questions in a random order" )
+                     , li << label ( checkbox "randA" "" +++
+                        " Randomly order the answers of each question" )
+                     ]
+                  , submit (show ActStart) "Start study session"
+                     ! [theclass "button"]
+                  ]
+               ]
          )
 
 
@@ -529,7 +564,13 @@ actionSetupSession :: App CGIResult
 actionSetupSession = do
    llog INFO "actionSetupSession"
 
-   mbQuestionsChoice <- readInput "questions"
+   studyType <- getInput "studyType"
+   mbQuestionsChoice <- case studyType of
+      Just "studyCustom" ->
+         liftM (Just . StudyCustom . fromJust) $ getInput "questions"
+      Just _ -> readInput "questions"
+      Nothing -> return Nothing  -- This should never happen
+
    case mbQuestionsChoice of
       Just (StudySimulation element) -> do
          -- Leaving much of this randomization code alone for now
@@ -560,6 +601,28 @@ actionSetupSession = do
          randA <- liftM (maybe False (const True)) $ getInput "randA"
 
          problems <- liftIO $ getRegularProblemIds element subelement
+
+         questionOrderer <- liftM (maybe return (const shuffle))
+            $ getInput "randQ"
+
+         sortedProblems <- liftIO $ questionOrderer problems
+
+         putSession $ Session
+               { sessRandA    = randA
+               , sessPass     = 1
+               , sessPassCurr = 0
+               , sessPassTot  = length sortedProblems
+               , sessCurr     = 0
+               , sessCurrOrd  = []
+               , sessList     = sortedProblems
+               }
+
+         actionNextProblem
+
+      Just (StudyCustom problemsString) -> do
+         randA <- liftM (maybe False (const True)) $ getInput "randA"
+
+         let problems = wordsBy (== ' ') $ map toUpper problemsString
 
          questionOrderer <- liftM (maybe return (const shuffle))
             $ getInput "randQ"
