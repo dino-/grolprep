@@ -43,7 +43,7 @@ function populateQuestionsList () {
       // of various things that may occur in problems.
       // May need to remove this later
       newControl.value =
-         "1-11B4 3-1A5 3-11B1 3-22C1 3-35E5 3-38E1 3-90O2 3-96P2 8-7A1";
+         "1-11B4 3-1A5 3-11B1 3-17B2 3-22C1 3-35E5 3-38E1 3-90O2 3-96P2 8-7A1";
    }
 
    // Replace old control with new one

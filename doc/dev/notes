@@ -13,8 +13,11 @@ degrees symbol
 wide hyphen
 3-38E1
 
-a test set of one of everything
-1-11B4 3-1A5 3-11B1 3-22C1 3-35E5 3-38E1 3-90O2 3-96P2 8-7A1
+angle symbol and degrees
+3-17B1 3-17B2 3-17B3 3-17B4 3-17B5
+
+a test set of at least one of everything
+1-11B4 3-1A5 3-11B1 3-17B2 3-22C1 3-35E5 3-38E1 3-90O2 3-96P2 8-7A1
 
 -----
 There is a tool to regenerate the sqlite database in resources/ from the source text files in util/resources/ :
