@@ -55,7 +55,8 @@ form {
 
 .form-right {
    float: right;
-   width: 45%;
+   width: 50%;
+   padding: 0em 0em 0em 0.5em;
 }
 
 ul {
