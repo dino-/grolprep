@@ -573,76 +573,40 @@ actionSetupSession = do
 
    case mbQuestionsChoice of
       Just (StudySimulation element) -> do
-         -- Leaving much of this randomization code alone for now
-         -- until we hear how the simulation tests are to work
-
-         randA <- liftM (maybe False (const True)) $ getInput "randA"
-
          problems <- liftIO $ getSimProblemIds element
-
-         questionOrderer <- liftM (maybe return (const shuffle))
-            $ getInput "randQ"
-
-         sortedProblems <- liftIO $ questionOrderer problems
-
-         putSession $ Session
-               { sessRandA    = randA
-               , sessPass     = 1
-               , sessPassCurr = 0
-               , sessPassTot  = length sortedProblems
-               , sessCurr     = 0
-               , sessCurrOrd  = []
-               , sessList     = sortedProblems
-               }
-
-         actionNextProblem
+         nextProblemSetup problems
 
       Just (StudyRegular element subelement) -> do
-         randA <- liftM (maybe False (const True)) $ getInput "randA"
-
          problems <- liftIO $ getRegularProblemIds element subelement
-
-         questionOrderer <- liftM (maybe return (const shuffle))
-            $ getInput "randQ"
-
-         sortedProblems <- liftIO $ questionOrderer problems
-
-         putSession $ Session
-               { sessRandA    = randA
-               , sessPass     = 1
-               , sessPassCurr = 0
-               , sessPassTot  = length sortedProblems
-               , sessCurr     = 0
-               , sessCurrOrd  = []
-               , sessList     = sortedProblems
-               }
-
-         actionNextProblem
+         nextProblemSetup problems
 
       Just (StudyCustom problemsString) -> do
-         randA <- liftM (maybe False (const True)) $ getInput "randA"
-
          let problems = wordsBy (== ' ') $ map toUpper problemsString
-
-         questionOrderer <- liftM (maybe return (const shuffle))
-            $ getInput "randQ"
-
-         sortedProblems <- liftIO $ questionOrderer problems
-
-         putSession $ Session
-               { sessRandA    = randA
-               , sessPass     = 1
-               , sessPassCurr = 0
-               , sessPassTot  = length sortedProblems
-               , sessCurr     = 0
-               , sessCurrOrd  = []
-               , sessList     = sortedProblems
-               }
-
-         actionNextProblem
+         nextProblemSetup problems
 
       -- No questions were selected, loop back to the beginning
       Nothing -> actionInitialize
+
+   where
+      nextProblemSetup problems = do
+         randA <- liftM (maybe False (const True)) $ getInput "randA"
+
+         questionOrderer <- liftM (maybe return (const shuffle))
+            $ getInput "randQ"
+
+         sortedProblems <- liftIO $ questionOrderer problems
+
+         putSession $ Session
+               { sessRandA    = randA
+               , sessPass     = 1
+               , sessPassCurr = 0
+               , sessPassTot  = length sortedProblems
+               , sessCurr     = 0
+               , sessCurrOrd  = []
+               , sessList     = sortedProblems
+               }
+
+         actionNextProblem
 
 
 actionNextProblem :: App CGIResult
