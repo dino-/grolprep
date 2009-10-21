@@ -784,34 +784,34 @@ Answer Key:	3-16B1:  C	3-16B2:  D	3-16B3:  A	3-16B4:  B	3-16B5:  C	3-16B6:  D
 Key Topic 17:  Impedance Networks-2
 
 3-17B1  What is the impedance of a network composed of a 100-picofarad capacitor in parallel with a 4000-ohm resistor, at 500 KHz? Specify your answer in polar coordinates.
-	A.	2490 ohms, /51.5 degrees
-	B.	4000 ohms, /38.5 degrees
-	C.	5112 ohms, /-38.5 degrees
-	D.	2490 ohms, /-51.5 degrees
+	A.	2490 ohms, &ang;51.5&deg;
+	B.	4000 ohms, &ang;38.5&deg;
+	C.	5112 ohms, &ang;-38.5&deg;
+	D.	2490 ohms, &ang;-51.5&deg;
 
 3-17B2  In polar coordinates, what is the impedance of a network composed of a 100-ohm-reactance inductor in series with a 100-ohm resistor?
-	A.	121 ohms, /35 degrees
-	B.	141 ohms, /45 degrees
-	C.	161 ohms, /55 degrees
-	D.	181 ohms, /65 degrees
+	A.	121 ohms, &ang;35&deg;
+	B.	141 ohms, &ang;45&deg;
+	C.	161 ohms, &ang;55&deg;
+	D.	181 ohms, &ang;65&deg;
 
 3-17B3  In polar coordinates, what is the impedance of a network composed of a 400-ohm-reactance capacitor in series with a 300-ohm resistor?
-	A.	240 ohms, /36.9 degrees
-	B.	240 ohms, /-36.9 degrees
-	C.	500 ohms, /-53.1 degrees
-	D.	500 ohms, /53.1 degrees
+	A.	240 ohms, &ang;36.9&deg;
+	B.	240 ohms, &ang;-36.9&deg;
+	C.	500 ohms, &ang;-53.1&deg;
+	D.	500 ohms, &ang;53.1&deg;
 
 3-17B4  In polar coordinates, what is the impedance of a network composed of a 300-ohm-reactance capacitor, a 600-ohm-reactance inductor, and a 400-ohm resistor, all connected in series?
-	A.	500 ohms, /37 degrees
-	B.	400 ohms, /27 degrees
-	C.	300 ohms, /17 degrees
-	D.	200 ohms, /10 degrees
+	A.	500 ohms, &ang;37&deg;
+	B.	400 ohms, &ang;27&deg;
+	C.	300 ohms, &ang;17&deg;
+	D.	200 ohms, &ang;10&deg;
 
 3-17B5  In polar coordinates, what is the impedance of a network comprised of a 400-ohm-reactance inductor in parallel with a 300-ohm resistor?
-	A.	240 ohms, /-36.9 degrees
-	B.	240 ohms, /36.9 degrees
-	C.	500 ohms, /53.1 degrees
-	D.	500 ohms, /-53.1 degrees
+	A.	240 ohms, &ang;-36.9&deg;
+	B.	240 ohms, &ang;36.9&deg;
+	C.	500 ohms, &ang;53.1&deg;
+	D.	500 ohms, &ang;-53.1&deg;
 
 3-17B6  Using the polar coordinate system, what visual representation would you get of a voltage in a sinewave circuit?
 	A.	To show the reactance which is present.
