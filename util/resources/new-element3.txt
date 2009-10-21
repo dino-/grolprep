@@ -1027,7 +1027,7 @@ Key Topic 22:  Voltage Regulators, Zener Diodes
 
 3-22C1  In a linear electronic voltage regulator:
 	A.	The output is a ramp voltage.
-	B.	The pass transistor switches from the "off" state to the "on"" state.
+	B.	The pass transistor switches from the "off" state to the "on" state.
 	C.	The control device is switched on or off, with the duty cycle proportional to the line or load conditions.
 	D.	The conduction of a control element is varied in direct proportion to the line voltage or load current.
 
