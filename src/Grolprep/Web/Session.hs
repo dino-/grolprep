@@ -44,13 +44,15 @@ data StudyType
 
 
 data Session = Session
-   { sessRandA    :: Bool
-   , sessPass     :: Int
-   , sessPassCurr :: Int
-   , sessPassTot  :: Int
-   , sessCurr     :: Int
-   , sessCurrOrd  :: [Int]
-   , sessList     :: [String]
+   { sessPassNumber  :: Int
+   , sessPassTot     :: Int
+   , sessPassProbIx  :: Int
+
+   , sessStudyRandA  :: Bool
+   , sessStudyList   :: [String]
+   , sessStudyProbIx :: Int
+   , sessStudyAOrd   :: [Int]
+   , sessStudyLastA  :: Maybe Int
    }
    deriving (Read, Show)
 

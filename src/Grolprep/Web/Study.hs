@@ -141,10 +141,10 @@ combineIxAndAns xs ys =
 
 nextProblem :: Session -> IO (Maybe Problem, Maybe String)
 nextProblem session = do
-   let scurr = sessCurr session
-   let slist = sessList session
+   let probIx = sessStudyProbIx session
+   let probIds = sessStudyList session
 
-   if (scurr < length slist)
+   if (probIx < length probIds)
       then do
          conn <- dbPath >>= connectSqlite3
          stmt <- prepare conn $ unlines
@@ -156,7 +156,7 @@ nextProblem session = do
             , "      p.id=?"
             , ";"
             ]
-         execute stmt [toSql $ slist !! scurr]
+         execute stmt [toSql $ probIds !! probIx]
          rs <- liftM concat $ sFetchAllRows' stmt
          disconnect conn
 
@@ -178,18 +178,18 @@ headingStats :: Session -> Html
 headingStats session =
    p ! [theclass "question"] <<
       (printf "Pass %d, question %d of %d total in this pass"
-         pass passCurr passTot :: String)
+         pass passProbIx passTot :: String)
    +++
    p << (printf "%d (%0.1f%%) correct so far for this pass"
       correct perc :: String)
 
    where
-      pass = sessPass session
-      passCurr = sessPassCurr session
+      pass = sessPassNumber session
+      passProbIx = sessPassProbIx session
       passTot = sessPassTot session
-      list = sessList session
+      probIds = sessStudyList session
 
-      correct = passTot - (length list)
+      correct = passTot - (length probIds)
 
       perc :: Float
       perc = (fromIntegral correct / fromIntegral passTot) * 100
@@ -450,11 +450,11 @@ formPoseProblem (Problem pid q eas) mbim = do
    llog INFO "formPoseProblem"
 
    session <- liftM fromJust getSession
-   let randA = sessRandA session
+   let randA = sessStudyRandA session
 
-   qord <- liftIO $ orderer randA [0..3]
-   putSession $ session { sessCurrOrd = qord }
-   let nas = combineIxAndAns qord $ map extractAnswer eas
+   aOrd <- liftIO $ orderer randA [0..3]
+   putSession $ session { sessStudyAOrd = aOrd }
+   let nas = combineIxAndAns aOrd $ map extractAnswer eas
 
    im <- liftIO $ imgRegion mbim
 
@@ -499,9 +499,9 @@ formPoseProblem (Problem pid q eas) mbim = do
 formAnswer :: Int -> Problem -> Maybe String -> App CGIResult
 formAnswer g (Problem pid q eas) mbim = do
    session <- liftM fromJust getSession
-   let qord = sessCurrOrd session
+   let aOrd = sessStudyAOrd session
 
-   let nas = combineIxAndAns qord eas
+   let nas = combineIxAndAns aOrd eas
 
    mi <- liftIO metaInfo
    im <- liftIO $ imgRegion mbim
@@ -597,13 +597,15 @@ actionSetupSession = do
          sortedProblems <- liftIO $ questionOrderer problems
 
          putSession $ Session
-               { sessRandA    = randA
-               , sessPass     = 1
-               , sessPassCurr = 0
-               , sessPassTot  = length sortedProblems
-               , sessCurr     = 0
-               , sessCurrOrd  = []
-               , sessList     = sortedProblems
+               { sessPassNumber  = 1
+               , sessPassTot     = length sortedProblems
+               , sessPassProbIx  = 0
+
+               , sessStudyRandA  = randA
+               , sessStudyList   = sortedProblems
+               , sessStudyProbIx = 0
+               , sessStudyAOrd   = []
+               , sessStudyLastA  = Nothing
                }
 
          actionNextProblem
@@ -615,15 +617,18 @@ actionNextProblem = do
 
    session <- liftM fromJust getSession
 
-   let passCurr = sessPassCurr session
-   let list = sessList session
+   let passProbIx = sessPassProbIx session
+   let probIds = sessStudyList session
 
    (mbnp, mbim) <- liftIO $ nextProblem session
 
-   case (mbnp, null list) of
+   case (mbnp, null probIds) of
       -- We have a next problem, let's get to it
       (Just np, _    ) -> do
-         putSession $ session { sessPassCurr = passCurr + 1 }
+         putSession $ session
+            { sessPassProbIx = passProbIx + 1
+            , sessStudyLastA = Nothing
+            }
          formPoseProblem np mbim
 
       -- No next problem and there are no more
@@ -633,12 +638,13 @@ actionNextProblem = do
       -- No next problem for this pass, but not-correctly-answered
       -- problems remain. Start next pass.
       (_      , False) -> do
-         let pass = sessPass session
+         let pass = sessPassNumber session
          putSession $ session
-               { sessPass = pass + 1
-               , sessPassCurr = 0
-               , sessPassTot = (length list)
-               , sessCurr = 0
+               { sessPassNumber = pass + 1
+               , sessPassProbIx = 0
+               , sessPassTot = (length probIds)
+               , sessStudyProbIx = 0
+               , sessStudyLastA = Nothing
                }
 
          actionNextProblem
@@ -648,7 +654,7 @@ actionCorrectProblem :: App CGIResult
 actionCorrectProblem = do
    llog INFO "actionCorrectProblem"
 
-   -- Get current session and extract some things from it
+   -- Get session and extract some things from it
    mbSession <- getSession
 
    -- Pull the answer they selected out of the form
@@ -657,8 +663,8 @@ actionCorrectProblem = do
    case (mbSession, mbAnswer) of
       -- We have a session and the user answered, correct it
       (Just session, Just answer) -> do
-         let curr = sessCurr session
-         let list = sessList session
+         let probIx = sessStudyProbIx session
+         let probIds = sessStudyList session
 
          -- Evaluate the user's answer
          (mbnp, mbim) <- liftIO $ nextProblem session
@@ -666,15 +672,15 @@ actionCorrectProblem = do
 
          -- Reconstitute the order of the answers from when the question
          -- was asked. We cleverly stored this in the session.
-         let currOrd = sessCurrOrd session
-         let ast = combineIxAndAns currOrd as
+         let aOrd = sessStudyAOrd session
+         let ast = combineIxAndAns aOrd as
 
          let (newCurr, newList) = case (snd $ ast !! answer) of
-               Right _ -> (curr, removeFromList curr list)
-               Left _  -> (curr + 1, list)
+               Right _ -> (probIx, removeFromList probIx probIds)
+               Left _  -> (probIx + 1, probIds)
 
          -- Make the new session and set it
-         putSession $ session { sessCurr = newCurr , sessList = newList }
+         putSession $ session { sessStudyProbIx = newCurr , sessStudyList = newList }
 
          formAnswer answer problem mbim
 
