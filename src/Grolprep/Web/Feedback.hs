@@ -71,16 +71,24 @@ dispatchFeedback = do
 
 formFeedback :: Html
 formFeedback =  do
-   let labelStyle = "display: block; width: 150px; float: left; margin: 2px 4px 6px 4px; text-align: right; vertical-align: top"
    form ! [ method "POST" ] << (
-      [ p << [label ! [thestyle labelStyle] << "Email: ", textfield "email"]
-      , p << [label ! [thestyle labelStyle] << "Subject: ", textfield "subject"]
-      , p << [label ! [thestyle labelStyle] << "Comment: ", 
-            (textarea ! [rows "20", cols "40", name "comment"]) noHtml]
-      , p << [label ! [thestyle labelStyle] << "", submit "ActFeedback" "Submit" ! [theclass "button"] ]
-      , script ! [ thetype "text/javascript", src "http://api.recaptcha.net/challenge?k=6Ldc1QgAAAAAALks41LS1WBEVKAI9rlJuxPqTOxD" ] << noHtml
+      [ thediv << [ p << [label << "Email: ", textfield "email"]
+                  , p << [label << "Subject: ", textfield "subject"]
+                  ] 
+      , p << [label << "Comment: ", 
+            (textarea ! [rows "10", cols "40", name "comment"]) noHtml]
+      , p << [label << "", reCaptchaWidget]
+      , p << [label << "", submit "ActFeedback" "Submit" ! [theclass "button"] ]
       ] ) 
 
+
+reCaptchaWidget :: Html
+reCaptchaWidget = do 
+   script ! 
+      [ thetype "text/javascript"
+      , src "http://api.recaptcha.net/challenge?k=6Ldc1QgAAAAAALks41LS1WBEVKAI9rlJuxPqTOxD" 
+      ] << noHtml
+            
 
 pageThankYou :: Html
 pageThankYou = 
@@ -96,7 +104,7 @@ pageThankYou =
 actionFeedbackPage :: App CGIResult
 actionFeedbackPage = do 
    llog INFO "actionFeedbackPage"
-   feedbackPage <- liftIO $ page [] $ formFeedback
+   feedbackPage <- liftIO $ page ["css/feedback.css"] $ formFeedback
    output $ renderHtml feedbackPage
 
 
