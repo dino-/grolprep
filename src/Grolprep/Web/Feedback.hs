@@ -69,17 +69,20 @@ dispatchFeedback = do
 {- HTML pages and forms 
 -}
 
-formFeedback :: Html
-formFeedback =  do
-   form ! [ method "POST" ] << (
-      [ thediv << [ p << [label << "Email: ", textfield "email"]
-                  , p << [label << "Subject: ", textfield "subject"]
-                  ] 
-      , p << [label << "Comment: ", 
-            (textarea ! [rows "10", cols "40", name "comment"]) noHtml]
-      , p << [label << "", reCaptchaWidget]
-      , p << [label << "", submit "ActFeedback" "Submit" ! [theclass "button"] ]
-      ] ) 
+formFeedback :: String -> String -> String -> String -> App CGIResult
+formFeedback msg addr subj comment =  do
+   feedbackPage <- liftIO $ page ["css/feedback.css"] $ 
+      form ! [ method "POST" ] << (
+         [ p << msg 
+         , p << [ label << "Email: ", widget "text" "email" [ value addr ] ]
+         , p << [ label << "Subject: ", widget "text" "subject" [ value subj ] ]
+         , p << [ label << "Comment: "
+                , (textarea ! [rows "10", cols "40", name "comment"]) << comment 
+                ]
+         , p << [ label << "", reCaptchaWidget ]
+         , p << [ label << "", submit "ActFeedback" "Submit" ! [theclass "button"] ]
+         ] ) 
+   output $ renderHtml feedbackPage
 
 
 reCaptchaWidget :: Html
@@ -97,6 +100,13 @@ pageThankYou =
    p << anchor ! [ href $ baseUrl ]
       << "Return to the GROLPrep main page."
 
+pageServerError :: Html
+pageServerError =
+   p << "Server error.  Try again later"
+   +++
+   p << anchor ! [ href $ baseUrl ]
+      << "Return to the GROLPrep main page."
+
 
 {- Action handlers
 -}
@@ -104,9 +114,7 @@ pageThankYou =
 actionFeedbackPage :: App CGIResult
 actionFeedbackPage = do 
    llog INFO "actionFeedbackPage"
-   feedbackPage <- liftIO $ page ["css/feedback.css"] $ formFeedback
-   output $ renderHtml feedbackPage
-
+   formFeedback "" "" "" "" 
 
 {- Handles feedback form submit
 -}
@@ -120,18 +128,23 @@ actionFeedbackHandler = do
    commentorIp <- remoteAddr
    challenge <- liftM fromJust $ getInput "recaptcha_challenge_field"
    response <- liftM fromJust $ getInput "recaptcha_response_field"
+      
+   e <- liftIO $ verifyChallengeResponse commentorIp challenge response
 
-   liftIO $ do       
-      e <- verifyChallengeResponse commentorIp challenge response
-      either logFeedbackException (const $ logM DEBUG "Challenge response verified") e 
-      fname <- formattedDate "%Y%m%d-%H%M%S"
-      saveFeedback fname $ printf
-         "Submitted: %s\nIP: %s\nEmail: %s\nSubject: %s\nComment: %s\n"
-         fname commentorIp email subj comment
-
-   thankyouPage <- liftIO $ page [] $ pageThankYou
-   output $ renderHtml thankyouPage
-
+   case e of 
+      Left (ChalRespFail _) -> formFeedback "The CAPTCHA solution was incorrect.  Please try again." email subj comment
+      Left err -> do 
+         liftIO $ logFeedbackException err
+         output $ renderHtml pageServerError
+      Right _ -> do
+         thankyouPage <- liftIO $ do
+            fname <- formattedDate "%Y%m%d-%H%M%S"
+            saveFeedback fname $ printf
+               "Submitted: %s\nIP: %s\nEmail: %s\nSubject: %s\nComment: %s\n"
+               fname commentorIp email subj comment
+            page [] $ pageThankYou
+         output $ renderHtml thankyouPage
+   
 
 {- Verifies the challenge response with the reCaptcha server
 -}
@@ -162,8 +175,8 @@ verifyChallengeResponse ip challenge response =  runErrorT $ do
 
       evalBody b 
          | isInfixOf "true" b = return ()
-         | isInfixOf "incorrect-captcha-sol" b = throwError $ RecaptchaFail b 
-         | otherwise = throwError $ ChalRespFail b
+         | isInfixOf "incorrect-captcha-sol" b = throwError $ ChalRespFail b 
+         | otherwise = throwError $ RecaptchaFail b
 
 
 {- Saves feedback submission to file 
