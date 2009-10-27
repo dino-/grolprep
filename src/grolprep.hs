@@ -3,10 +3,12 @@
 -- Author: Dino Morelli <dino@ui3.info>
 
 import Control.Monad
+import Data.List.Split
 import Data.Map ( lookup )
 import Data.Maybe
 import Network.CGI
 import Prelude hiding ( lookup )
+import Text.Printf
 
 import Grolprep.Common.Conf
 import Grolprep.Common.Log
@@ -16,18 +18,30 @@ import Grolprep.Web.Study
 
 import Paths_grolprep
 
-{- This is sort of our main event entry point. The web application
-   starts here and all form submits come through here.
+
+{- This is our main event entry point. All requests come through here.
 -}
 cgiMain :: App CGIResult
 cgiMain = do
+   haveSession <- liftM isJust getSession
+   method <- requestMethod
    path <- pathInfo
-   llog DEBUG $ "pathInfo: " ++ path
 
-   case (path) of
-      "/feedback" -> dispatchFeedback
-      "/study"    -> dispatchStudy
-      _           -> dispatchStudy
+   llog DEBUG $ printf "haveSession: %s" $ show haveSession
+   llog DEBUG $ printf "method: %s  path: %s" method path
+
+   dispatch haveSession method $ filter (/= "") $ splitOn "/" path
+
+
+dispatch :: Bool -> String -> [String] -> App CGIResult
+dispatch _     "GET"  ["feedback"]         = dispatchFeedback
+dispatch _     "GET"  ["study", "setup"]   = formSetup
+dispatch _     "POST" ["study", "setup"]   = setupSession
+dispatch _     "GET"  ["init"]             = initialize
+dispatch False _      _                    = initialize
+dispatch _     "POST" ["study", "problem"] = evalProblem
+dispatch _     _      ["study", "next"]    = prepareForNext
+dispatch True  _      _                    = formProblem
 
 
 main :: IO ()

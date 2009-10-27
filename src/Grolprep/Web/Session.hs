@@ -44,15 +44,15 @@ data StudyType
 
 
 data Session = Session
-   { sessPassNumber  :: Int
-   , sessPassTot     :: Int
-   , sessPassProbIx  :: Int
+   { sessPassNumber  :: Int         -- Current pass number
+   , sessPassTot     :: Int         -- Total problems when pass started
+   , sessPassProbIx  :: Int         -- Current problem wrt total for pass
 
-   , sessStudyRandA  :: Bool
-   , sessStudyList   :: [String]
-   , sessStudyProbIx :: Int
-   , sessStudyAOrd   :: [Int]
-   , sessStudyLastA  :: Maybe Int
+   , sessStudyRandA  :: Bool        -- True if we're shuffling answers
+   , sessStudyList   :: [String]    -- List of remaining problem IDs
+   , sessStudyProbIx :: Int         -- Problem index we're on
+   , sessStudyAOrd   :: [Int]       -- Order of the answers for curr problem
+   , sessStudyLastA  :: Int         -- Index of last answer chosen
    }
    deriving (Read, Show)
 

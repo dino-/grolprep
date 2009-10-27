@@ -33,27 +33,6 @@ import Grolprep.Web.Util
 import Paths_grolprep
 
 
-{- Dispatches HTML requests for study URLs
--}
-dispatchStudy :: App CGIResult
-dispatchStudy = do
-   mbSession <- getSession
-   --llog DEBUG $ "session: " ++ show mbSession
-
-   -- Figure out which form button was used for submit
-   mbForm <- getButtonPressed
-   llog DEBUG $ "form button: " ++ show mbForm
-
-   -- Map session status and form button pressed into actions
-   case (mbSession, mbForm) of
-      (Nothing, Nothing       ) -> actionInitialize
-      (Nothing, Just ActStart ) -> actionSetupSession
-      (_,       Just ActPose  ) -> actionCorrectProblem
-      (_,       Just ActQuit  ) -> actionInitialize
-      (Just _,  _             ) -> actionNextProblem
-      (_,       _             ) -> actionInitialize
-
-
 {- Remove an indexed element from a list
 -}
 removeFromList :: Int -> [a] -> [a]
@@ -139,8 +118,8 @@ combineIxAndAns xs ys =
    sortBy (\x y -> compare (fst x) (fst y)) $ zip xs ys
 
 
-nextProblem :: Session -> IO (Maybe Problem, Maybe String)
-nextProblem session = do
+currentProblem :: Session -> IO (Maybe Problem, Maybe String)
+currentProblem session = do
    let probIx = sessStudyProbIx session
    let probIds = sessStudyList session
 
@@ -165,17 +144,25 @@ nextProblem session = do
       else return (Nothing, Nothing)
 
 
+orderer :: Bool -> [a] -> IO [a]
+orderer True  = shuffle
+orderer False = return
+
+
 {- HTML pages and forms 
 -}
 
 formCancel :: Html
-formCancel = form ! [ method "POST", action $ baseUrl ] << (
+formCancel = form !
+   [ method "GET"
+   , action $ baseUrl ++ "/init"
+   ] << (
    submit (show ActQuit) "Cancel test session" ! [theclass "button"]
    )
 
 
-headingStats :: Session -> Html
-headingStats session =
+constructStats :: Bool -> Session -> Html
+constructStats isCorrect session =
    p ! [theclass "question"] <<
       (printf "Pass %d, question %d of %d total in this pass"
          pass passProbIx passTot :: String)
@@ -185,11 +172,14 @@ headingStats session =
 
    where
       pass = sessPassNumber session
-      passProbIx = sessPassProbIx session
+      passProbIx = sessPassProbIx session + 1
       passTot = sessPassTot session
       probIds = sessStudyList session
 
-      correct = passTot - (length probIds)
+      corrModifier True  = 1
+      corrModifier False = 0
+
+      correct = passTot - (length probIds) + (corrModifier isCorrect)
 
       perc :: Float
       perc = (fromIntegral correct / fromIntegral passTot) * 100
@@ -204,8 +194,8 @@ lookupSqlValue ::
 lookupSqlValue key mp = maybe Nothing fromSql $ lookup key mp
 
 
-formStart :: App CGIResult
-formStart = do
+formSetup :: App CGIResult
+formSetup = do
    -- Retrieve the subelement info from db
    (rs13, rs8) <- liftIO $ do
       conn <- dbPath >>= connectSqlite3
@@ -330,7 +320,7 @@ formStart = do
          +++
          form !
             [ method "POST"
-            , action $ baseUrl ++ "/study"
+            , action $ baseUrl ++ "/study/setup"
             ] <<
             fieldset <<
                [ legend <<
@@ -445,30 +435,30 @@ getProblemMetaInfo problemId = do
       )
 
 
-formPoseProblem :: Problem -> Maybe String -> App CGIResult
-formPoseProblem (Problem pid q eas) mbim = do
-   llog INFO "formPoseProblem"
+{- Produce the problem posing form
+-}
+formProblem :: App CGIResult
+formProblem = do
+   llog INFO "formProblem"
 
    session <- liftM fromJust getSession
-   let randA = sessStudyRandA session
 
-   aOrd <- liftIO $ orderer randA [0..3]
-   putSession $ session { sessStudyAOrd = aOrd }
+   (mbnp, mbim) <- liftIO $ currentProblem session
+   let (Problem pid q eas) = fromJust mbnp
+
+   let aOrd = sessStudyAOrd session
    let nas = combineIxAndAns aOrd $ map extractAnswer eas
 
    im <- liftIO $ imgRegion mbim
 
-   let fpp = formPoseProblem' q nas im
-   mi <- liftIO metaInfo
+   let fpp = formProblem' pid q nas im
+   mi <- liftIO $ metaInfo pid
    posePage <- liftIO $ page [] $ formCancel +++ 
-      mi +++ fpp +++ (headingStats session)
+      mi +++ fpp +++ (constructStats False session)
    output $ renderHtml posePage
 
    where
-      orderer True  = shuffle
-      orderer False = return
-
-      metaInfo = do
+      metaInfo pid = do
          ((_, elDesc), (seId, seDesc), (ktId, ktDesc))
             <- getProblemMetaInfo pid
 
@@ -478,8 +468,12 @@ formPoseProblem (Problem pid q eas) mbim = do
                         seId seDesc ktId ktDesc) :: String)
             ]
 
-      formPoseProblem' q' as im' =
-         form ! [theclass "question", method "POST", action $ baseUrl ++ "/study" ] <<
+      formProblem' pid q' as im' =
+         form !
+            [ theclass "question"
+            , method "POST"
+            , action $ baseUrl ++ "/study/problem"
+            ] <<
             ( im' +++
             thediv <<
                [ p << (pid ++ ": " +++ (primHtml q'))
@@ -496,22 +490,44 @@ formPoseProblem (Problem pid q eas) mbim = do
                      p << ((radio "" (show n') ! [theclass "hanging", name "answer", strAttr "id" (show n')])
                           +++ label ! [thefor (show n')] << (primHtml a))
 
-formAnswer :: Int -> Problem -> Maybe String -> App CGIResult
-formAnswer g (Problem pid q eas) mbim = do
+
+{- Compute whether or not the most recent answer was correct using
+   data in the session
+-}
+isGuessCorrect :: Session -> App Bool
+isGuessCorrect s = do
+   let lastA = sessStudyLastA s
+   let aOrd = sessStudyAOrd s
+   (mbnp, _) <- liftIO $ currentProblem s
+   let (Problem _ _ as) = fromJust mbnp
+   let ast = combineIxAndAns aOrd as
+   return $ either (const False) (const True) (snd $ ast !! lastA)
+
+
+{- Produce the scoring answer form
+-}
+formAnswer :: App CGIResult
+formAnswer = do
    session <- liftM fromJust getSession
+
+   let g = sessStudyLastA session
+   (mbnp, mbim) <- liftIO $ currentProblem session
+   let pr@(Problem pid _ eas) = fromJust mbnp
    let aOrd = sessStudyAOrd session
 
    let nas = combineIxAndAns aOrd eas
 
-   mi <- liftIO metaInfo
+   mi <- liftIO $ metaInfo pid
    im <- liftIO $ imgRegion mbim
 
+   isCorrect <- isGuessCorrect session
+
    answerPage <- liftIO $ page [] $ formCancel +++
-      mi +++ (theform nas im) +++ (headingStats session)
+      mi +++ (theform g pr nas im) +++ (constructStats isCorrect session)
    output $ renderHtml answerPage
 
    where
-      metaInfo = do
+      metaInfo pid = do
          ((_, elDesc), (seId, seDesc), (ktId, ktDesc))
             <- getProblemMetaInfo pid
 
@@ -521,9 +537,13 @@ formAnswer g (Problem pid q eas) mbim = do
                         seId seDesc ktId ktDesc) :: String)
             ]
 
-      theform nas' im' =
+      theform g (Problem pid q _) nas' im' =
          correctness (snd $ nas' !! g) +++
-         form ! [theclass "question", method "POST", action $ baseUrl ++ "/study" ] << (
+         form !
+            [ theclass "question"
+            , method "GET"
+            , action $ baseUrl ++ "/study/next"
+            ] << (
             im' +++
             thediv <<
                [ p << (pid ++ ": " +++ (primHtml q))
@@ -548,21 +568,37 @@ formAnswer g (Problem pid q eas) mbim = do
                            p ! [theclass "correct-ans"] << (primHtml a)
 
 
+{- Based on the order switching in the session, create a (possibly
+   random) order for a set of answer indices, and store that in
+   the session.
+   If there's no session, will do nothing at all
+-}
+setAnswerOrder :: App ()
+setAnswerOrder = do
+   mbSession <- getSession
+   maybe (return ())
+      (\session -> do
+         let randA = sessStudyRandA session
+
+         aOrd <- liftIO $ orderer randA [0..3]
+         putSession $ session { sessStudyAOrd = aOrd }
+      ) mbSession
+
+
 {- Action handlers
 -}
 
-actionInitialize :: App CGIResult
-actionInitialize = do
-   llog INFO "actionInitialize"
+initialize :: App CGIResult
+initialize = do
+   llog INFO "initialize"
 
    destroySession
+   formSetup
 
-   formStart
 
-
-actionSetupSession :: App CGIResult
-actionSetupSession = do
-   llog INFO "actionSetupSession"
+setupSession :: App CGIResult
+setupSession = do
+   llog INFO "setupSession"
 
    studyType <- getInput "studyType"
    mbQuestionsChoice <- case studyType of
@@ -574,21 +610,21 @@ actionSetupSession = do
    case mbQuestionsChoice of
       Just (StudySimulation element) -> do
          problems <- liftIO $ getSimProblemIds element
-         nextProblemSetup problems
+         finishSetup problems
 
       Just (StudyRegular element subelement) -> do
          problems <- liftIO $ getRegularProblemIds element subelement
-         nextProblemSetup problems
+         finishSetup problems
 
       Just (StudyCustom problemsString) -> do
          let problems = wordsBy (== ' ') $ map toUpper problemsString
-         nextProblemSetup problems
+         finishSetup problems
 
       -- No questions were selected, loop back to the beginning
-      Nothing -> actionInitialize
+      Nothing -> initialize
 
    where
-      nextProblemSetup problems = do
+      finishSetup problems = do
          randA <- liftM (maybe False (const True)) $ getInput "randA"
 
          questionOrderer <- liftM (maybe return (const shuffle))
@@ -605,35 +641,45 @@ actionSetupSession = do
                , sessStudyList   = sortedProblems
                , sessStudyProbIx = 0
                , sessStudyAOrd   = []
-               , sessStudyLastA  = Nothing
+               , sessStudyLastA  = 0  -- This is a dummy value
                }
+         setAnswerOrder
+         formProblem
 
-         actionNextProblem
 
+prepareForNext :: App CGIResult
+prepareForNext = do
+   llog INFO "prepareForNext"
 
-actionNextProblem :: App CGIResult
-actionNextProblem = do
-   llog INFO "actionNextProblem"
+   oldSession <- liftM fromJust getSession
+   let passProbIx = sessPassProbIx oldSession
+   let oldList = sessStudyList oldSession
+   let probIx = sessStudyProbIx oldSession
+
+   isCorrect <- isGuessCorrect oldSession
+   let (newProbIx, newList) = case isCorrect of
+         True  -> (probIx, removeFromList probIx oldList)
+         False -> (probIx + 1, oldList)
+
+   putSession $ oldSession
+      { sessPassProbIx = passProbIx + 1
+      , sessStudyList = newList
+      , sessStudyProbIx = newProbIx
+      }
 
    session <- liftM fromJust getSession
+   let list = sessStudyList session
+   (mbnp, _) <- liftIO $ currentProblem session
 
-   let passProbIx = sessPassProbIx session
-   let probIds = sessStudyList session
-
-   (mbnp, mbim) <- liftIO $ nextProblem session
-
-   case (mbnp, null probIds) of
+   case (mbnp, null list) of
       -- We have a next problem, let's get to it
-      (Just np, _    ) -> do
-         putSession $ session
-            { sessPassProbIx = passProbIx + 1
-            , sessStudyLastA = Nothing
-            }
-         formPoseProblem np mbim
+      (Just _, _    ) -> do
+         setAnswerOrder
+         formProblem
 
       -- No next problem and there are no more
       -- not-correctly-answered. We're done.
-      (_      , True ) -> actionInitialize
+      (_      , True ) -> initialize
 
       -- No next problem for this pass, but not-correctly-answered
       -- problems remain. Start next pass.
@@ -642,17 +688,16 @@ actionNextProblem = do
          putSession $ session
                { sessPassNumber = pass + 1
                , sessPassProbIx = 0
-               , sessPassTot = (length probIds)
+               , sessPassTot = (length list)
                , sessStudyProbIx = 0
-               , sessStudyLastA = Nothing
                }
+         setAnswerOrder
+         formProblem
 
-         actionNextProblem
 
-
-actionCorrectProblem :: App CGIResult
-actionCorrectProblem = do
-   llog INFO "actionCorrectProblem"
+evalProblem :: App CGIResult
+evalProblem = do
+   llog INFO "evalProblem"
 
    -- Get session and extract some things from it
    mbSession <- getSession
@@ -661,35 +706,16 @@ actionCorrectProblem = do
    mbAnswer <- readInput "answer"
 
    case (mbSession, mbAnswer) of
-      -- We have a session and the user answered, correct it
+      -- We have a session and the user answered
       (Just session, Just answer) -> do
-         let probIx = sessStudyProbIx session
-         let probIds = sessStudyList session
-
-         -- Evaluate the user's answer
-         (mbnp, mbim) <- liftIO $ nextProblem session
-         let problem@(Problem _ _ as) = fromJust mbnp
-
-         -- Reconstitute the order of the answers from when the question
-         -- was asked. We cleverly stored this in the session.
-         let aOrd = sessStudyAOrd session
-         let ast = combineIxAndAns aOrd as
-
-         let (newCurr, newList) = case (snd $ ast !! answer) of
-               Right _ -> (probIx, removeFromList probIx probIds)
-               Left _  -> (probIx + 1, probIds)
-
-         -- Make the new session and set it
-         putSession $ session { sessStudyProbIx = newCurr , sessStudyList = newList }
-
-         formAnswer answer problem mbim
+         putSession $ session { sessStudyLastA = answer }
+         formAnswer
 
       -- We have no session and yet they somehow arrived at this form
       -- Get out of here and go back to the beginning
-      (Nothing, _) -> actionInitialize
+      --(Nothing, _) -> actionInitialize
+      (Nothing, _) -> initialize
 
       -- The user has submit the form with no answer selected
       -- Kick them right back to the pose problem form
-      (Just session, _) -> do
-         (mbnp, mbim) <- liftIO $ nextProblem session
-         formPoseProblem (fromJust mbnp) mbim
+      (Just _, _) -> formProblem
