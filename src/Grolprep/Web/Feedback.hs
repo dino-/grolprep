@@ -71,6 +71,7 @@ dispatchFeedback = do
 
 formFeedback :: String -> String -> String -> String -> App CGIResult
 formFeedback msg addr subj comment =  do
+   pubkey <- getConfig "recaptcha-public-key"
    feedbackPage <- liftIO $ page ["css/feedback.css"] $ 
       form ! [ method "POST" ] << (
          [ p << msg 
@@ -79,17 +80,17 @@ formFeedback msg addr subj comment =  do
          , p << [ label << "Comment: "
                 , (textarea ! [rows "10", cols "40", name "comment"]) << comment 
                 ]
-         , p << [ label << "", reCaptchaWidget ]
+         , p << [ label << "", reCaptchaWidget pubkey ]
          , p << [ label << "", submit "ActFeedback" "Submit" ! [theclass "button"] ]
          ] ) 
    output $ renderHtml feedbackPage
 
 
-reCaptchaWidget :: Html
-reCaptchaWidget = do 
+reCaptchaWidget :: String -> Html
+reCaptchaWidget k = do 
    script ! 
       [ thetype "text/javascript"
-      , src "http://api.recaptcha.net/challenge?k=6Ldc1QgAAAAAALks41LS1WBEVKAI9rlJuxPqTOxD" 
+      , src $ "http://api.recaptcha.net/challenge?k=" ++ k 
       ] << noHtml
             
 
@@ -128,8 +129,9 @@ actionFeedbackHandler = do
    commentorIp <- remoteAddr
    challenge <- liftM fromJust $ getInput "recaptcha_challenge_field"
    response <- liftM fromJust $ getInput "recaptcha_response_field"
+   privkey <- getConfig "recaptcha-private-key"
       
-   e <- liftIO $ verifyChallengeResponse commentorIp challenge response
+   e <- liftIO $ verifyChallengeResponse privkey commentorIp challenge response
 
    case e of 
       Left (ChalRespFail _) -> formFeedback "The CAPTCHA solution was incorrect.  Please try again." email subj comment
@@ -148,10 +150,10 @@ actionFeedbackHandler = do
 
 {- Verifies the challenge response with the reCaptcha server
 -}
-verifyChallengeResponse :: String -> String -> String -> IO (FeedbackResult String)
-verifyChallengeResponse ip challenge response =  runErrorT $ do
+verifyChallengeResponse :: String -> String -> String -> String -> IO (FeedbackResult String)
+verifyChallengeResponse k ip challenge response =  runErrorT $ do
    let params = urlEncodeVars 
-                  [ ("privatekey", "6Ldc1QgAAAAAAF6txBF5_KX4pe71qdTxILZyN47F")
+                  [ ("privatekey", k)
                   , ("remoteip", ip)
                   , ("challenge", challenge) 
                   , ("response", response)
