@@ -1,19 +1,17 @@
 -----
 release
 
-- Split front page up into a new information-rich front page that then links to the setup form page
-
 - SEO
    - Use <h?> tags in static pages
    - site index document when we know what domain it's going to be on
 
-- Work on the styles to make everything look and work better. Need to redesign code to allow stylesheets for individual pages.
+- Work on the styling of feedback pages
 
 - Generate a statically linked binary
 
 - Start using fastcgi
 
-- Add an end of test results page
+- Add end of pass and end of test results pages
 
 - May need to add something to the state about the type of study that's being performed. Simulation or "normal" study. So that we can display it with each question.
 
@@ -24,6 +22,8 @@ release
 feature additions
 
 - Add IPv6 support to the SessionId code. It will fail now to compute a session id.
+
+- Split front page up into a new information-rich front page that then links to the setup form page
 
 
 -----
