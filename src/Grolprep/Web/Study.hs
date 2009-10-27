@@ -221,8 +221,8 @@ formSetup = do
       disconnect conn
       return (rs13', rs8')
 
-   startPage <- liftIO $ do
-      scriptPath <- getRelDataFileName "scripts/formStart.js"
+   setupPage <- liftIO $ do
+      scriptPath <- getRelDataFileName "scripts/formSetup.js"
       cssLinks <- createCssLinks [ "css/setup.css" ]
       return (
          (header <<
@@ -254,7 +254,7 @@ formSetup = do
                )
             )
          )
-   output $ renderHtml startPage
+   output $ renderHtml setupPage
 
    where
       constructSimOptionJs n =
