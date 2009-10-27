@@ -52,28 +52,16 @@ logFeedbackException (HttpFail r) = llog ERROR $ show r
 logFeedbackException (NetFail ce) = llog ERROR $ show ce
 
 
-{- Dispatches HTML requests for /feedback URLs
--}
-dispatchFeedback :: App CGIResult
-dispatchFeedback = do
-   -- Figure out which form button was used for submit
-   mbForm <- getButtonPressed
-   llog DEBUG $ "form button: " ++ show mbForm
-
-   -- Map form button pressed into actions
-   case (mbForm) of
-      (Just ActFeedback ) -> actionFeedbackHandler
-      (_                ) -> actionFeedbackPage
-
-
 {- HTML pages and forms 
 -}
 
 formFeedback :: String -> String -> String -> String -> App CGIResult
 formFeedback msg addr subj comment =  do
    pubkey <- getConfig "recaptcha-public-key"
-   feedbackPage <- liftIO $ page ["css/feedback.css"] $ 
-      form ! [ method "POST" ] << (
+   fbPage <- liftIO $ page ["css/feedback.css"] $ 
+      form ! [ method "POST" 
+             , action $ baseUrl ++ "/feedback"
+             ] << (
          [ p << msg 
          , p << [ label << "Email: ", widget "text" "email" [ value addr ] ]
          , p << [ label << "Subject: ", widget "text" "subject" [ value subj ] ]
@@ -81,9 +69,9 @@ formFeedback msg addr subj comment =  do
                 , (textarea ! [rows "10", cols "40", name "comment"]) << comment 
                 ]
          , p << [ label << "", reCaptchaWidget pubkey ]
-         , p << [ label << "", submit "ActFeedback" "Submit" ! [theclass "button"] ]
+         , p << [ label << "", submit "feedback" "Submit" ! [theclass "button"] ]
          ] ) 
-   output $ renderHtml feedbackPage
+   output $ renderHtml fbPage
 
 
 reCaptchaWidget :: String -> Html
@@ -101,6 +89,7 @@ pageThankYou =
    p << anchor ! [ href $ baseUrl ]
       << "Return to the GROLPrep main page."
 
+
 pageServerError :: Html
 pageServerError =
    p << "Server error.  Try again later"
@@ -109,19 +98,16 @@ pageServerError =
       << "Return to the GROLPrep main page."
 
 
-{- Action handlers
--}
-
-actionFeedbackPage :: App CGIResult
-actionFeedbackPage = do 
-   llog INFO "actionFeedbackPage"
+feedbackPage :: App CGIResult
+feedbackPage = do 
+   llog INFO "feedbackPage"
    formFeedback "" "" "" "" 
 
 {- Handles feedback form submit
 -}
-actionFeedbackHandler :: App CGIResult
-actionFeedbackHandler = do
-   llog INFO "actionFeedbackHandler"
+feedbackHandler :: App CGIResult
+feedbackHandler = do
+   llog INFO "feedbackHandler"
 
    email <- liftM fromJust $ getInput "email"
    subj <- liftM fromJust $ getInput "subject"

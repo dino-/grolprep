@@ -34,7 +34,8 @@ cgiMain = do
 
 
 dispatch :: Bool -> String -> [String] -> App CGIResult
-dispatch _     "GET"  ["feedback"]         = dispatchFeedback
+dispatch _     "GET"  ["feedback"]         = feedbackPage
+dispatch _     "POST" ["feedback"]         = feedbackHandler
 dispatch _     "GET"  ["study", "setup"]   = formSetup
 dispatch _     "POST" ["study", "setup"]   = setupSession
 dispatch _     "GET"  ["init"]             = initialize

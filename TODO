@@ -23,9 +23,7 @@ release
 
 - Put in some SQL error handling
 
-- reCaptcha 
-   - Feedback form needs css styling to format it nicer
-   - Add error handling and appropriate page response; all submits currently result in 'thank you' page 
+- Feedback form needs css styling to format it nicer
 
 -----
 feature additions
