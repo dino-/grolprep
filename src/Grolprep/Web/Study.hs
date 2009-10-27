@@ -2,25 +2,18 @@
 -- License: BSD3 (see LICENSE)
 -- Author: Dino Morelli <dino@ui3.info>
 
-{-# LANGUAGE FlexibleContexts #-}
-
 
 module Grolprep.Web.Study
    where
 
 import Control.Monad
 import Data.Char
-import Data.Convertible.Base
 import Data.List hiding ( lookup )
 import Data.List.Split
-import Data.Map ( Map, lookup )
 import Data.Maybe
-import Database.HDBC
-import Database.HDBC.Sqlite3
 import Network.CGI
 import Prelude hiding ( lookup )
 import System.FilePath
-import System.Random
 import Text.Printf
 import Text.XHtml.Strict
 
@@ -28,19 +21,15 @@ import Grolprep.Common.Data
 import Grolprep.Common.Log
 import Grolprep.Common.Util
 import Grolprep.Common.Shuffle
+import Grolprep.Web.Database
 import Grolprep.Web.Session
 import Grolprep.Web.Util
-import Paths_grolprep
 
 
 {- Remove an indexed element from a list
 -}
 removeFromList :: Int -> [a] -> [a]
 removeFromList i xs = take i xs ++ drop (i + 1) xs
-
-
-dbPath :: IO FilePath
-dbPath = getDataFileName $ "grolprep" <.> "sqlite"
 
 
 imgRegion :: Maybe FilePath -> IO Html
@@ -50,65 +39,6 @@ imgRegion (Just im) = do
    return $ image ! [theclass "problem", src path]
 
 
-getSimProblemIds :: Int -> IO [ProblemId]
-getSimProblemIds element = do
-   conn <- dbPath >>= connectSqlite3
-
-   -- Get all the keytopics for the specified element
-   keytopics <- liftM concat $
-      quickQuery' conn ( unlines
-         [ "SELECT id FROM keytopic WHERE "
-         , "   element=?"
-         , "   ORDER BY id"
-         , ";"
-         ] )
-         [toSql element]
-
-   -- Get all the question ids for these keytopics
-   allProbIds <- mapM 
-      ( \keytopic -> liftM concat $ 
-         quickQuery' conn ( unlines
-            [ "SELECT id FROM problem WHERE "
-            , "   element=? AND"
-            , "   keytopic=?"
-            , ";"
-            ] )
-         [toSql element, keytopic] 
-      )
-      keytopics
-
-   disconnect conn
-
-   -- Reduce that list of lists down to one randomly-selected item
-   -- from each inner list
-   randProbIdsSV <- mapM
-      (\is -> do
-         idx <- randomRIO (0, (length is) - 1)
-         return $ is !! idx
-      )
-      allProbIds
-
-   -- Convert this last list from [SqlValue] to [ProblemId]
-   -- and return
-   return $ map fromSql randProbIdsSV
-
-
-getRegularProblemIds :: Int -> String -> IO [ProblemId]
-getRegularProblemIds element subelement = do
-   conn <- dbPath >>= connectSqlite3
-   stmt <- prepare conn $ unlines
-      [ "SELECT id FROM problem WHERE"
-      , "   element=? AND"
-      , "   subelement=?"
-      , ";"
-      ]
-
-   execute stmt [toSql element, toSql subelement]
-   rs <- sFetchAllRows' stmt
-   disconnect conn
-   return $ map fromJust $ concat rs
-
-
 {- This function is used to take a list of randomized indexes to
    answers, and a list of the answers themselves, combine them into
    tuples, and sort that new list on the index values.
@@ -116,35 +46,6 @@ getRegularProblemIds element subelement = do
 combineIxAndAns :: (Ord a) => [a] -> [b] -> [(a, b)]
 combineIxAndAns xs ys =
    sortBy (\x y -> compare (fst x) (fst y)) $ zip xs ys
-
-
-{- Using the supplied session, get the current Problem and associated
-   image (if any)
--}
-currentProblem :: Session -> IO (Maybe Problem, Maybe String)
-currentProblem session = do
-   let probIx = sessStudyProbIx session
-   let probIds = sessStudyList session
-
-   if (probIx < length probIds)
-      then do
-         conn <- dbPath >>= connectSqlite3
-         stmt <- prepare conn $ unlines
-            [ "SELECT p.probdata, f.figure "
-            , "   FROM problem p "
-            , "   LEFT JOIN figure f "
-            , "   ON p.id = f.id "
-            , "   WHERE "
-            , "      p.id=?"
-            , ";"
-            ]
-         execute stmt [toSql $ probIds !! probIx]
-         rs <- liftM concat $ sFetchAllRows' stmt
-         disconnect conn
-
-         let mbProblem = maybe Nothing (Just . read) $ head rs
-         return (mbProblem, last rs)
-      else return (Nothing, Nothing)
 
 
 {- Used to map a Bool value to a shuffle/don't-shuffle function
@@ -192,46 +93,12 @@ constructStats isCorrect session =
       perc = (fromIntegral correct / fromIntegral passTot) * 100
 
 
-{- Convenience function to lookup a key in some SQL query results
-   and extract it with fromSql
--}
-lookupSqlValue ::
-   (  Data.Convertible.Base.Convertible SqlValue a
-   ,  Ord k )
-   => k
-   -> Map k SqlValue
-   -> Maybe a
-lookupSqlValue key mp = maybe Nothing fromSql $ lookup key mp
-
-
 {- Construct the setup form
 -}
 formSetup :: App CGIResult
 formSetup = do
    -- Retrieve the subelement info from db
-   (rs13, rs8) <- liftIO $ do
-      conn <- dbPath >>= connectSqlite3
-
-      stmt1 <- prepare conn $ unlines
-         [ "SELECT id, element, desc FROM subelement "
-         , "   WHERE element = ? or element = ?"
-         , "   ORDER BY element, id"
-         , ";"
-         ]
-      execute stmt1 [toSql (1::Int), toSql (3::Int)]
-      rs13' <- fetchAllRowsMap' stmt1
-
-      stmt2 <- prepare conn $ unlines
-         [ "SELECT id, element, desc FROM subelement "
-         , "   WHERE element = ?"
-         , "   ORDER BY element, id"
-         , ";"
-         ]
-      execute stmt2 [toSql (8::Int)]
-      rs8' <- fetchAllRowsMap' stmt2
-
-      disconnect conn
-      return (rs13', rs8')
+   setupJs <- liftIO constructSetupJs
 
    setupPage <- liftIO $ do
       scriptPath <- getRelDataFileName "scripts/formSetup.js"
@@ -246,7 +113,7 @@ formSetup = do
          )
          +++
          body ! [strAttr "onload" "populateQuestionsList()"] <<
-            ([heading, about, (theform rs13 rs8)] 
+            ([heading, about, (theform setupJs)] 
              +++
              thediv ! [theclass "banner"] << h2 ! [theclass "footer"] << (
                -- This is the right-side content, it floats
@@ -269,28 +136,6 @@ formSetup = do
    output $ renderHtml setupPage
 
    where
-      constructSimOptionJs n =
-         printf "         new Option('%s', '%s', false, false),"
-            ((printf "Simulate Element %d exam" n) :: String)
-            (show $ StudySimulation n)
-
-      constructStudyOptionJs rsMap =
-         printf "         new Option('%s', '%s', false, false),"
-            seDesc (show $ StudyRegular elValue seValue)
-         where
-            seValue :: String
-            seValue = fromJust $ lookupSqlValue "id" rsMap
-
-            elValue :: Int
-            elValue = fromJust $ lookupSqlValue "element" rsMap
-
-            descValue :: String
-            descValue = fromJust $ lookupSqlValue "desc" rsMap
-
-            seDesc :: String
-            seDesc = printf "Element %d, Subelement %s: %s"
-               elValue seValue descValue
-
       about = 
          thediv ! [ strAttr "class" "features" ] << ( 
             p ! [ strAttr "class" "features" ] << "Features of GROLPrep" 
@@ -315,20 +160,12 @@ formSetup = do
             +++ " site.")
 
 
-      theform rs13' rs8' =
+      theform setupJs =
          let study13     = "study13"
              study8      = "study8"
              studyCustom = "studyCustom"
          in thediv << (
-         script << primHtml (
-            "\n      var questionOpts13 = [\n" ++
-            (unlines (map constructSimOptionJs [1, 3])) ++
-            (unlines (map constructStudyOptionJs rs13')) ++ "      ];" ++
-
-            "\n      var questionOpts8 = [\n" ++
-            (constructSimOptionJs 8) ++
-            (unlines (map constructStudyOptionJs rs8')) ++ "      ];"
-         )
+         script << primHtml setupJs
          +++
          form !
             [ method "POST"
@@ -395,61 +232,6 @@ feedback = anchor !
    , href $ baseUrl ++ "/feedback"
    ]
    << "feedback"
-
-
-{- Given a problem ID, get all the identifying info and text descriptions
-   associated with it from the db
--}
-getProblemMetaInfo :: String -> 
-   IO ((Int, String), (String, String), (Int, String))
-getProblemMetaInfo problemId = do
-   conn <- dbPath >>= connectSqlite3
-
-   stmt <- prepare conn $ unlines
-         [ "SELECT element, subelement, keytopic "
-         , "   FROM problem "
-         , "   WHERE "
-         , "      id=?"
-         , ";"
-         ]
-   execute stmt [toSql problemId]
-   pRs <- liftM head $ fetchAllRowsMap' stmt
-
-   let sEl = fromJust $ lookup "element" pRs
-   let sSe = fromJust $ lookup "subelement" pRs
-   let sKt = fromJust $ lookup "keytopic" pRs
-
-   (elDesc:_) <- liftM concat $
-      quickQuery' conn ( unlines
-         [ "SELECT desc FROM element WHERE "
-         , "   id=?"
-         , ";"
-         ] )
-         [sEl]
-
-   (seDesc:_) <- liftM concat $
-      quickQuery' conn ( unlines
-         [ "SELECT desc FROM subelement WHERE "
-         , "   id=? AND element=?"
-         , ";"
-         ] )
-         [sSe, sEl]
-
-   (ktDesc:_) <- liftM concat $
-      quickQuery' conn ( unlines
-         [ "SELECT desc FROM keytopic WHERE "
-         , "   id=? AND element=? AND subelement=?"
-         , ";"
-         ] )
-         [sKt, sEl, sSe]
-
-   disconnect conn
-
-   return
-      ( (fromSql sEl, fromSql elDesc)
-      , (fromSql sSe, fromSql seDesc)
-      , (fromSql sKt, fromSql ktDesc)
-      )
 
 
 {- Produce the problem posing form
