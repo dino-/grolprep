@@ -3,26 +3,32 @@
 -- Author: Dino Morelli <dino@ui3.info>
 
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
+{-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE FlexibleInstances #-}
 
 
 module Grolprep.Web.Session
    ( Session (..), StudyType (..)
    , App, runApp
+   , getConfig
    , getSession, putSession, destroySession
    )
    where
 
 import Control.Monad.State
+import Control.Monad.Reader
+import Data.Map
 import Data.Maybe
 import Network.CGI
 import Network.CGI.Monad
 import Network.CGI.Protocol
+import Prelude hiding ( lookup )
 import System.FilePath
 import System.IO
 import System.IO.Error
 import System.Time
 
+import Grolprep.Common.Conf
 import Grolprep.Common.Log
 import Grolprep.Common.Util
 import Grolprep.Web.SessionId
@@ -49,23 +55,34 @@ data Session = Session
    deriving (Read, Show)
 
 
-newtype AppT m a = App (StateT (Maybe Session) (CGIT m) a)
-   deriving (Monad, MonadIO, MonadState (Maybe Session))
+newtype AppT m a = App (ReaderT ConfMap (StateT (Maybe Session) (CGIT m)) a)
+   deriving (Monad, MonadIO, MonadState (Maybe Session), 
+      MonadReader ConfMap)
 
 
 type App a = AppT IO a
 
 
 instance MonadCGI (AppT IO) where
-   cgiAddHeader n v = App $ lift $ cgiAddHeader n v
-   cgiGet x = App $ lift $ cgiGet x
+   cgiAddHeader n v = App $ lift $ lift $ cgiAddHeader n v
+   cgiGet x = App $ lift $ lift $ cgiGet x
 
 
-runApp :: App CGIResult -> IO ()
-runApp (App a) = do
+runApp :: ConfMap -> App CGIResult -> IO ()
+runApp conf (App a) = do
    env <- getCGIVars
-   hRunCGI env stdin stdout (runCGIT (evalStateT a Nothing))
+   hRunCGI env stdin stdout (runCGIT
+      (evalStateT (runReaderT a conf) Nothing))
    return ()
+
+
+{- Convenience function to get the value for a specific key
+   out of the config held by the reader
+-}
+getConfig :: (MonadReader ConfMap m) => String -> m String
+getConfig key = do
+   conf <- ask
+   return $ maybe "" id $ lookup key conf
 
 
 newGrolprepCookie :: String -> String -> IO Cookie

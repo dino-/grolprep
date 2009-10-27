@@ -39,4 +39,4 @@ main = do
 
    initLogging logPath logPriority
 
-   runApp cgiMain
+   runApp confMap cgiMain
