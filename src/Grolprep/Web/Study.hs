@@ -157,7 +157,7 @@ formCancel = form !
    [ method "GET"
    , action $ baseUrl ++ "/init"
    ] << (
-   submit (show ActQuit) "Cancel test session" ! [theclass "button"]
+   submit "quit" "Cancel test session" ! [theclass "button"]
    )
 
 
@@ -368,7 +368,7 @@ formSetup = do
                      , li << label ( checkbox "randA" "" +++
                         " Randomly order the answers of each question" )
                      ]
-                  , submit (show ActStart) "Start study session"
+                  , submit "start" "Start study session"
                      ! [theclass "button"]
                   ]
                ]
@@ -478,7 +478,7 @@ formProblem = do
             thediv <<
                [ p << (pid ++ ": " +++ (primHtml q'))
                , thediv << (ansControls as)
-               , submit (show ActPose) "Proceed" ! [theclass "button"]
+               , submit "proceed" "Proceed" ! [theclass "button"]
                ]
             )
          where
@@ -548,7 +548,7 @@ formAnswer = do
             thediv <<
                [ p << (pid ++ ": " +++ (primHtml q))
                , thediv << ansLines
-               , submit (show ActAnswer) "Next question" ! [theclass "button"]
+               , submit "next" "Next question" ! [theclass "button"]
                ]
             )
          where
