@@ -118,6 +118,9 @@ combineIxAndAns xs ys =
    sortBy (\x y -> compare (fst x) (fst y)) $ zip xs ys
 
 
+{- Using the supplied session, get the current Problem and associated
+   image (if any)
+-}
 currentProblem :: Session -> IO (Maybe Problem, Maybe String)
 currentProblem session = do
    let probIx = sessStudyProbIx session
@@ -144,6 +147,8 @@ currentProblem session = do
       else return (Nothing, Nothing)
 
 
+{- Used to map a Bool value to a shuffle/don't-shuffle function
+-}
 orderer :: Bool -> [a] -> IO [a]
 orderer True  = shuffle
 orderer False = return
@@ -161,6 +166,8 @@ formCancel = form !
    )
 
 
+{- Builds the section of xhtml that describes current study progress
+-}
 constructStats :: Bool -> Session -> Html
 constructStats isCorrect session =
    p ! [theclass "question"] <<
@@ -185,6 +192,9 @@ constructStats isCorrect session =
       perc = (fromIntegral correct / fromIntegral passTot) * 100
 
 
+{- Convenience function to lookup a key in some SQL query results
+   and extract it with fromSql
+-}
 lookupSqlValue ::
    (  Data.Convertible.Base.Convertible SqlValue a
    ,  Ord k )
@@ -194,6 +204,8 @@ lookupSqlValue ::
 lookupSqlValue key mp = maybe Nothing fromSql $ lookup key mp
 
 
+{- Construct the setup form
+-}
 formSetup :: App CGIResult
 formSetup = do
    -- Retrieve the subelement info from db
@@ -375,6 +387,8 @@ formSetup = do
          )
 
 
+{- Construct the xhtml for the feedback link on the setup form
+-}
 feedback :: Html
 feedback = anchor !
    [ theclass "footer-right"
@@ -383,6 +397,9 @@ feedback = anchor !
    << "feedback"
 
 
+{- Given a problem ID, get all the identifying info and text descriptions
+   associated with it from the db
+-}
 getProblemMetaInfo :: String -> 
    IO ((Int, String), (String, String), (Int, String))
 getProblemMetaInfo problemId = do
@@ -585,9 +602,9 @@ setAnswerOrder = do
       ) mbSession
 
 
-{- Action handlers
+{- Initialize the web application. This means destroy the session, 
+   if any, and display the setup form
 -}
-
 initialize :: App CGIResult
 initialize = do
    llog INFO "initialize"
@@ -596,6 +613,8 @@ initialize = do
    formSetup
 
 
+{- Handle the submitted setup form
+-}
 setupSession :: App CGIResult
 setupSession = do
    llog INFO "setupSession"
@@ -647,6 +666,10 @@ setupSession = do
          formProblem
 
 
+{- Adjust the state to ready us for the next problem. This function
+   also deals with situations like moving to the next pass and
+   detecting when we're finished
+-}
 prepareForNext :: App CGIResult
 prepareForNext = do
    llog INFO "prepareForNext"
@@ -695,6 +718,8 @@ prepareForNext = do
          formProblem
 
 
+{- Handle the submitted problem form
+-}
 evalProblem :: App CGIResult
 evalProblem = do
    llog INFO "evalProblem"
