@@ -15,6 +15,10 @@ release
 
 - Add end of pass and end of test results pages
 
+- Grolprep.Web.Study.getProblemMetaInfo should use a join instead of the 4 selects
+
+- Would be terrific if we could allow feedback at any time during study and go back to where we came from without error
+
 - May need to add something to the state about the type of study that's being performed. Simulation or "normal" study. So that we can display it with each question.
 
 - Put in some SQL error handling
@@ -30,5 +34,7 @@ feature additions
 
 -----
 general TODO thoughts
+
+- I'd like to clean up some of the xhtml-producing code in Study
 
 - May want to read that old old page about avoiding SQL injection attacks with Haskell. Track it down.
