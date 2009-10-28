@@ -19,6 +19,9 @@ angle symbol and degrees
 a test set of at least one of everything
 1-11B4 3-1A5 3-11B1 3-17B2 3-22C1 3-35E5 3-38E1 3-90O2 3-96P2 8-7A1
 
+a test set with only three sequential problems
+1-1A1 1-1A2 1-1A3
+
 -----
 There is a tool to regenerate the sqlite database in resources/ from the source text files in util/resources/ :
 

@@ -23,6 +23,15 @@ release
 
 - Feedback form needs css styling to format it nicer
 
+- Use same font in setup select and textarea, may help with size
+
+- Allow Enter key to submit setup form
+
+- Consolidate stats and summary code, the math code could be shared
+
+- Change Next Prob button on summary when at end of session
+
+
 -----
 feature additions
 
