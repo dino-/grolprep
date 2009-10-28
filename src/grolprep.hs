@@ -34,15 +34,16 @@ cgiMain = do
 
 
 dispatch :: Bool -> String -> [String] -> App CGIResult
-dispatch _     "GET"  ["feedback"]         = feedbackPage
-dispatch _     "POST" ["feedback"]         = feedbackHandler
-dispatch _     "GET"  ["study", "setup"]   = formSetup
-dispatch _     "POST" ["study", "setup"]   = setupSession
-dispatch _     "GET"  ["init"]             = initialize
-dispatch False _      _                    = initialize
-dispatch _     "POST" ["study", "problem"] = evalProblem
-dispatch _     _      ["study", "next"]    = prepareForNext
-dispatch True  _      _                    = formProblem
+dispatch _     "GET"  ["feedback"]          = feedbackPage
+dispatch _     "POST" ["feedback"]          = feedbackHandler
+dispatch _     "GET"  ["study", "setup"]    = formSetup
+dispatch _     "POST" ["study", "setup"]    = setupSession
+dispatch _     "GET"  ["init"]              = initialize
+dispatch False _      _                     = initialize
+dispatch _     "POST" ["study", "problem"]  = evalProblem
+dispatch _     _      ["study", "next"]     = evalPass
+dispatch _     "POST" ["study", "psummary"] = prepareForNext
+dispatch True  _      _                     = formProblem
 
 
 main :: IO ()

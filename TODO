@@ -13,8 +13,6 @@ release
 
 - Start using fastcgi
 
-- Add end of pass and end of test results pages
-
 - Grolprep.Web.Study.getProblemMetaInfo should use a join instead of the 4 selects
 
 - Would be terrific if we could allow feedback at any time during study and go back to where we came from without error

@@ -526,3 +526,60 @@ evalProblem = do
       -- The user has submit the form with no answer selected
       -- Kick them right back to the pose problem form
       (Just _, _) -> formProblem
+
+
+{- Right after the answer form comes back, check to see if we need
+   to show pass summary before moving on to the next problem
+-}
+evalPass :: App CGIResult
+evalPass = do
+   llog INFO "evalPass"
+
+   session <- liftM fromJust getSession
+
+   let passTot = sessPassTot session
+   let passProbIx = sessPassProbIx session + 1
+
+   case (passProbIx == passTot) of
+      True  -> formPassSummary
+      False -> prepareForNext
+
+
+{- Produce the pass summary form
+-}
+formPassSummary :: App CGIResult
+formPassSummary = do
+   llog INFO "formPassSummary"
+
+   session <- liftM fromJust getSession
+
+   isCorrect <- isGuessCorrect session
+   let pass = sessPassNumber session
+   let passTot = sessPassTot session
+   let probIds = sessStudyList session
+   let correct = passTot - (length probIds) + (corrModifier isCorrect)
+   let perc = ( (fromIntegral correct / fromIntegral passTot) * 100 )
+         :: Float
+
+   passSummaryPage <- liftIO $ page [] $
+      formCancel +++
+      h2 << (printf "Pass %d completed" pass :: String) +++
+      ( h3 << (printf "%d of %d answered correctly (%0.1f%%)"
+         correct passTot perc :: String) ) +++
+      theform
+   output $ renderHtml passSummaryPage
+
+   where
+      corrModifier True  = 1
+      corrModifier False = 0
+
+      theform =
+         form !
+            [ theclass "question"
+            , method "POST"
+            , action $ baseUrl ++ "/study/psummary"
+            ] << (
+            thediv <<
+               [ submit "next" "Next question" ! [theclass "button"]
+               ]
+            )
