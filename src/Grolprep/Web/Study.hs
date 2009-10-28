@@ -307,6 +307,8 @@ isGuessCorrect s = do
 -}
 formAnswer :: App CGIResult
 formAnswer = do
+   llog INFO "formAnswer"
+
    session <- liftM fromJust getSession
 
    let g = sessStudyLastA session
