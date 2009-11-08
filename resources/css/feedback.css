@@ -12,3 +12,10 @@ input[type="text"], textarea {
    border: 1px solid black;
 }
 
+a.button {
+   font-family: sans-serif;
+   text-decoration: none;
+   font-size: smaller;
+   padding: 0em 0.5em 0em 0.5em;
+}
+

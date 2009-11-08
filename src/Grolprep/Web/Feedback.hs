@@ -69,7 +69,10 @@ formFeedback msg addr subj comment =  do
                 , (textarea ! [rows "10", cols "40", name "comment"]) << comment 
                 ]
          , p << [ label << "", reCaptchaWidget pubkey ]
-         , p << [ label << "", submit "feedback" "Submit" ! [theclass "button"] ]
+         , p << [ label << ""
+                , submit "feedback" "Submit" ! [theclass "button"] 
+                , anchor ! [ href $ baseUrl, theclass "button" ] << "Cancel"
+                ]
          ] ) 
    output $ renderHtml fbPage
 

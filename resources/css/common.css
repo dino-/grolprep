@@ -13,6 +13,7 @@ body {
    border: none;
    color: #333333;
    background: #87A5C4;
+   margin-right: 0.5em;
 }
 
 .button:hover {
