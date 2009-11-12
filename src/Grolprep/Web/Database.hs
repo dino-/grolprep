@@ -9,12 +9,13 @@ module Grolprep.Web.Database
    ( getSimProblemIds, getRegularProblemIds
    , currentProblem
    , getProblemMetaInfo
-   , constructSetupJs
+   , constructSetupOptions
    )
    where
 
 import Control.Monad
 import Data.Convertible.Base
+import Data.List ( intercalate )
 import Data.Map ( Map, lookup )
 import Data.Maybe
 import Database.HDBC
@@ -23,6 +24,7 @@ import Prelude hiding ( lookup )
 import System.FilePath
 import System.Random
 import Text.Printf
+import Text.XHtml.Strict
 
 import Grolprep.Common.Data
 import Grolprep.Web.Session
@@ -187,49 +189,37 @@ getProblemMetaInfo problemId = do
       , (fromSql sKt, fromSql ktDesc)
       )
 
-constructSetupJs :: IO String
-constructSetupJs = do
-   -- Retrieve the subelement info from db
+
+{- Given a list of elements, construct option form elements for the
+   subelements in them. This is for the setup form
+-}
+constructSetupOptions :: [Int] -> IO [Html]
+constructSetupOptions es = do
    conn <- dbPath >>= connectSqlite3
 
-   stmt1 <- prepare conn $ unlines
+   let inExpr = "(" ++ (intercalate "," $ map show es) ++ ")"
+
+   stmt <- prepare conn $ unlines
       [ "SELECT id, element, desc FROM subelement "
-      , "   WHERE element = ? or element = ?"
+      , "   WHERE element IN " ++ inExpr
       , "   ORDER BY element, id"
       , ";"
       ]
-   execute stmt1 [toSql (1::Int), toSql (3::Int)]
-   rs13 <- fetchAllRowsMap' stmt1
+   execute stmt []
+   rsMap <- fetchAllRowsMap' stmt
 
-   stmt2 <- prepare conn $ unlines
-      [ "SELECT id, element, desc FROM subelement "
-      , "   WHERE element = ?"
-      , "   ORDER BY element, id"
-      , ";"
-      ]
-   execute stmt2 [toSql (8::Int)]
-   rs8 <- fetchAllRowsMap' stmt2
-
-   disconnect conn
-
-   return $
-      "\n      var questionOpts13 = [\n" ++
-      (unlines (map constructSimOptionJs [1, 3])) ++
-      (unlines (map constructStudyOptionJs rs13)) ++ "      ];" ++
-
-      "\n      var questionOpts8 = [\n" ++
-      (constructSimOptionJs 8) ++
-      (unlines (map constructStudyOptionJs rs8)) ++ "      ];"
+   return $ 
+      (map constructSimOption es)
+      ++
+      (map constructStudyOption rsMap)
 
    where
-      constructSimOptionJs n =
-         printf "         new Option('%s', '%s', false, false),"
-            ((printf "Simulate Element %d exam" n) :: String)
-            (show $ StudySimulation n)
+      constructSimOption n =
+         option ! [value (show $ StudySimulation n)]
+            << ((printf "Simulate Element %d exam" n) :: String)
 
-      constructStudyOptionJs rsMap =
-         printf "         new Option('%s', '%s', false, false),"
-            seDesc (show $ StudyRegular elValue seValue)
+      constructStudyOption rsMap =
+         option ! [value (show $ StudyRegular elValue seValue)] << seDesc
          where
             seValue :: String
             seValue = fromJust $ lookupSqlValue "id" rsMap

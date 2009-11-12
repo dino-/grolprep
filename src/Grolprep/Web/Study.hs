@@ -93,27 +93,39 @@ constructStats isCorrect session =
       perc = (fromIntegral correct / fromIntegral passTot) * 100
 
 
+{- Identifiers we need in several places
+-}
+nameRadioGroup, nameRadioStudy13, nameSelectStudy13, nameRadioStudy8, nameSelectStudy8, nameRadioStudyCustom, nameTextareaStudyCustom :: String
+nameRadioGroup          = "studyType"
+nameRadioStudy13        = "radio-study13"
+nameSelectStudy13       = "select-study13"
+nameRadioStudy8         = "radio-study8"
+nameSelectStudy8        = "select-study8"
+nameRadioStudyCustom    = "radio-studycustom"
+nameTextareaStudyCustom = "select-studycustom"
+
+
 {- Construct the setup form
 -}
 formSetup :: App CGIResult
 formSetup = do
-   -- Retrieve the subelement info from db
-   setupJs <- liftIO constructSetupJs
+   scriptPath <- liftIO $ getRelDataFileName "scripts/formSetup.js"
+
+   opts13 <- liftIO $ constructSetupOptions [1, 3]
+   opts8 <- liftIO $ constructSetupOptions [8]
 
    setupPage <- liftIO $ do
-      scriptPath <- getRelDataFileName "scripts/formSetup.js"
       cssLinks <- createCssLinks [ "css/setup.css" ]
       return (
-         (header <<
-            titleBar
-            +++
-            cssLinks
-            +++
-            script ! [src scriptPath] << noHtml
+         ( header <<
+            ( titleBar +++
+              cssLinks +++
+              (script ! [src scriptPath] << noHtml)
+            )
          )
          +++
-         body ! [strAttr "onload" "populateQuestionsList()"] <<
-            ([heading, about, (theform setupJs)] 
+         body ! [strAttr "onload" "setInitialSelections()"] <<
+            ([heading, about, theform opts13 opts8] 
              +++
              thediv ! [theclass "banner"] << h2 ! [theclass "footer"] << (
                -- This is the right-side content, it floats
@@ -160,13 +172,7 @@ formSetup = do
             +++ " site.")
 
 
-      theform setupJs =
-         let study13     = "study13"
-             study8      = "study8"
-             studyCustom = "studyCustom"
-         in thediv << (
-         script << primHtml setupJs
-         +++
+      theform opts13' opts8' = thediv << (
          form !
             [ method "POST"
             , action $ baseUrl ++ "/study/setup"
@@ -175,53 +181,65 @@ formSetup = do
                [ legend <<
                   "Let's get started! Please select type of study"
 
-               , thediv !
-                  [ theclass "form-right"
-                  , identifier "questions-parent"
-                  ] <<
-                  select !
-                     [ identifier "questions"
-                     , name "questions"
-                     , size "12"
+               , thediv <<
+                  [ select !
+                     [ identifier nameSelectStudy13
+                     , name nameSelectStudy13
+                     , size "5"
+                     , strAttr "onclick" "setRadio('study13')"
                      ]
-                     << noHtml
-
-               , thediv ! [theclass "form-left"] <<
-                  [ ulist <<
-                     [ li << label << (
-                        radio "" study13 !
-                           [ name "studyType"
-                           , strAttr "id" study13
-                           , checked
-                           , strAttr "onclick" "populateQuestionsList()"
-                           ]
-                        +++ " GROL (Elements 1 and 3)" )
-                     , li << label << (
-                        radio "" study8 !
-                           [ name "studyType"
-                           , strAttr "id" study8
-                           , strAttr "onclick" "populateQuestionsList()"
-                           ]
-                        +++ " Radar Endorsement (Element 8)" )
-                     , li << label << (
-                        radio "" studyCustom !
-                           [ name "studyType"
-                           , strAttr "id" studyCustom
-                           , strAttr "onclick" "populateQuestionsList()"
-                           ]
-                        +++ " Enter a list of problem IDs" )
-                     ]
-                  , ulist <<
-                     [ li << label ( checkbox "randQ" "" +++
-                        " Ask the questions in a random order" )
-                     , li << label ( checkbox "randA" "" +++
-                        " Randomly order the answers of each question" )
-                     ]
-                  , submit "start" "Start study session"
-                     ! [theclass "button"]
+                     << opts13'
+                  , label << (
+                     radio "" nameRadioStudy13 !
+                        [ identifier nameRadioStudy13
+                        , name nameRadioGroup
+                        , checked
+                        ]
+                     +++ " GROL (Elements 1 and 3)" )
                   ]
+
+               , thediv <<
+                  [ select !
+                     [ identifier nameSelectStudy8
+                     , name nameSelectStudy8
+                     , size "5"
+                     , strAttr "onclick" "setRadio('study8')"
+                     ]
+                     << opts8'
+                  , label << (
+                     radio "" nameRadioStudy8 !
+                        [ identifier nameRadioStudy8
+                        , name nameRadioGroup
+                        ]
+                     +++ " Radar Endorsement (Element 8)" )
+                  ]
+
+               , thediv <<
+                  [ textarea !
+                     [ name nameTextareaStudyCustom
+                     , rows "3"
+                     , strAttr "onclick" "setRadio('studycustom')"
+                     ]
+                     << "1-11B4 3-1A5 3-11B1 3-17B2 3-22C1 3-35E5 3-38E1 3-90O2 3-96P2 8-7A1"
+                  , label << (
+                     radio "" nameRadioStudyCustom !
+                        [ identifier nameRadioStudyCustom
+                        , name nameRadioGroup
+                        ]
+                     +++ " Enter a list of problem IDs" )
+                  ]
+
+               , thediv <<
+                  [ label ( checkbox "randQ" "" +++
+                     " Ask the questions in a random order" )
+                  , label ( checkbox "randA" "" +++
+                     " Randomly order the answers of each question" )
+                  ]
+
+               , submit "start" "Start study session"
+                  ! [theclass "button"]
                ]
-         )
+            )
 
 
 {- Construct the xhtml for the feedback link on the setup form
@@ -403,12 +421,7 @@ setupSession :: App CGIResult
 setupSession = do
    llog INFO "setupSession"
 
-   studyType <- getInput "studyType"
-   mbQuestionsChoice <- case studyType of
-      Just "studyCustom" ->
-         liftM (Just . StudyCustom . fromJust) $ getInput "questions"
-      Just _ -> readInput "questions"
-      Nothing -> return Nothing  -- This should never happen
+   mbQuestionsChoice <- getInput nameRadioGroup >>= getQuestionsChoice
 
    case mbQuestionsChoice of
       Just (StudySimulation element) -> do
@@ -427,6 +440,15 @@ setupSession = do
       Nothing -> initialize
 
    where
+      getQuestionsChoice (Just ty)
+         | ty == nameRadioStudy13 = readInput nameSelectStudy13
+         | ty == nameRadioStudy8 = readInput nameSelectStudy8
+         | ty == nameRadioStudyCustom =
+            liftM (Just . StudyCustom . fromJust) $
+               getInput nameTextareaStudyCustom
+         | otherwise = return Nothing
+      getQuestionsChoice Nothing = return Nothing
+
       finishSetup problems = do
          randA <- liftM (maybe False (const True)) $ getInput "randA"
 
@@ -522,7 +544,6 @@ evalProblem = do
 
       -- We have no session and yet they somehow arrived at this form
       -- Get out of here and go back to the beginning
-      --(Nothing, _) -> actionInitialize
       (Nothing, _) -> initialize
 
       -- The user has submit the form with no answer selected

@@ -47,42 +47,23 @@ form {
    padding: 0.3em;
 }
 
-.form-left {
-   width: 95%;
-   margin: 0.5em;
-   padding: 0;
-}
-
-.form-right {
-   float: right;
-   width: 50%;
-   padding: 0em 0em 0em 0.5em;
-}
-
-ul {
-   padding: 0;
-   margin: 0em;
-}
-
-ul + ul {
-   margin-top: 1em;
-}
-
-li {
-   padding: 0;
-   margin-top: 0.3em;
-   list-style: none;
-}
-
 fieldset {
-   width: 100%;
    width: 67%;
    margin: 0;
    padding: 1%;
 }
 
+fieldset div {
+   clear: both;
+   padding-top: 0.3em;
+}
+
 label {
    width: 100%;
+}
+
+label.radio {
+   width: 35%;
    display: block;
    padding-left: 1.2em;
    text-indent: -1.2em;
@@ -97,6 +78,7 @@ input {
 }
 
 select, textarea {
-   width: 100%;
+   float: right;
+   width: 60%;
    border: 1px solid black;
 }
