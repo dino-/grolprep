@@ -120,7 +120,11 @@ formSetup = do
          ( header <<
             ( titleBar +++
               cssLinks +++
-              (script ! [src scriptPath] << noHtml)
+              ( script !
+                  [ src scriptPath
+                  , thetype "text/javascript"
+                  ] << noHtml
+              )
             )
          )
          +++

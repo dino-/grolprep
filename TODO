@@ -1,8 +1,6 @@
 -----
 release
 
-- script tags missing attr type="text/javascript"
-
 - put for= attr back into radio/checkbox controls in formsetup
 
 - angle symbol in some questions isn't rendering in IE, replace it with a hack using /_
