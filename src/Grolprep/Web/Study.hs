@@ -60,7 +60,7 @@ orderer False = return
 
 formCancel :: Html
 formCancel = form !
-   [ method "GET"
+   [ method "get"
    , action $ baseUrl ++ "/init"
    ] << (
    submit "quit" "Cancel test session" ! [theclass "button"]
@@ -178,7 +178,7 @@ formSetup = do
 
       theform opts13' opts8' = thediv << (
          form !
-            [ method "POST"
+            [ method "post"
             , action $ baseUrl ++ "/study/setup"
             ] <<
             fieldset <<
@@ -292,7 +292,7 @@ formProblem = do
       formProblem' pid q' as im' =
          form !
             [ theclass "question"
-            , method "POST"
+            , method "post"
             , action $ baseUrl ++ "/study/problem"
             ] <<
             ( im' +++
@@ -364,7 +364,7 @@ formAnswer = do
          correctness (snd $ nas' !! g) +++
          form !
             [ theclass "question"
-            , method "GET"
+            , method "get"
             , action $ baseUrl ++ "/study/next"
             ] << (
             im' +++
@@ -603,7 +603,7 @@ formPassSummary = do
       theform =
          form !
             [ theclass "question"
-            , method "POST"
+            , method "post"
             , action $ baseUrl ++ "/study/psummary"
             ] << (
             thediv <<
