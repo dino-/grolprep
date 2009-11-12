@@ -1,8 +1,6 @@
 -----
 release
 
-- put for= attr back into radio/checkbox controls in formsetup
-
 - angle symbol in some questions isn't rendering in IE, replace it with a hack using /_
 
 - form method is supposed to be lower-case (as in "get" and "post")

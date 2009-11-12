@@ -193,7 +193,7 @@ formSetup = do
                      , strAttr "onclick" "setRadio('study13')"
                      ]
                      << opts13'
-                  , label << (
+                  , label ! [thefor nameRadioStudy13] << (
                      radio "" nameRadioStudy13 !
                         [ identifier nameRadioStudy13
                         , name nameRadioGroup
@@ -210,7 +210,7 @@ formSetup = do
                      , strAttr "onclick" "setRadio('study8')"
                      ]
                      << opts8'
-                  , label << (
+                  , label ! [thefor nameRadioStudy8] << (
                      radio "" nameRadioStudy8 !
                         [ identifier nameRadioStudy8
                         , name nameRadioGroup
@@ -225,7 +225,7 @@ formSetup = do
                      , strAttr "onclick" "setRadio('studycustom')"
                      ]
                      << "1-11B4 3-1A5 3-11B1 3-17B2 3-22C1 3-35E5 3-38E1 3-90O2 3-96P2 8-7A1"
-                  , label << (
+                  , label ! [thefor nameRadioStudyCustom] << (
                      radio "" nameRadioStudyCustom !
                         [ identifier nameRadioStudyCustom
                         , name nameRadioGroup
