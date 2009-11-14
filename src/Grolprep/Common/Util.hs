@@ -24,7 +24,7 @@ import Paths_grolprep
 -}
 appName, appVersion, appId :: String
 appName = "grolprep"
-appVersion = "1.0.1.4"
+appVersion = "1.0.1.5"
 appId = printf "%s-%s" appName appVersion
 
 
