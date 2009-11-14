@@ -191,12 +191,14 @@ formSetup = do
                      , name nameSelectStudy13
                      , size "5"
                      , strAttr "onclick" "setRadio('study13')"
+                     , intAttr "tabindex" 2
                      ]
                      << opts13'
                   , label ! [thefor nameRadioStudy13] << (
                      radio "" nameRadioStudy13 !
                         [ identifier nameRadioStudy13
                         , name nameRadioGroup
+                        , intAttr "tabindex" 1
                         , checked
                         ]
                      +++ " GROL (Elements 1 and 3)" )
@@ -208,6 +210,7 @@ formSetup = do
                      , name nameSelectStudy8
                      , size "5"
                      , strAttr "onclick" "setRadio('study8')"
+                     , intAttr "tabindex" 3 
                      ]
                      << opts8'
                   , label ! [thefor nameRadioStudy8] << (
@@ -223,6 +226,7 @@ formSetup = do
                      [ name nameTextareaStudyCustom
                      , rows "3"
                      , strAttr "onclick" "setRadio('studycustom')"
+                     , intAttr "tabindex" 4 
                      ]
                      << "1-11B4 3-1A5 3-11B1 3-17B2 3-22C1 3-35E5 3-38E1 3-90O2 3-96P2 8-7A1"
                   , label ! [thefor nameRadioStudyCustom] << (
@@ -234,14 +238,16 @@ formSetup = do
                   ]
 
                , thediv <<
-                  [ label ( checkbox "randQ" "" +++
+                  [ label ( checkbox "randQ" "" ! [ intAttr "tabindex" 5 ] +++
                      " Ask the questions in a random order" )
-                  , label ( checkbox "randA" "" +++
+                  , label ( checkbox "randA" "" ! [ intAttr "tabindex" 6 ] +++
                      " Randomly order the answers of each question" )
                   ]
 
-               , submit "start" "Start study session"
-                  ! [theclass "button"]
+               , submit "start" "Start study session" ! 
+                  [ theclass "button"
+                  , intAttr "tabindex" 7
+                  ]
                ]
             )
 
