@@ -71,7 +71,11 @@ formFeedback msg addr subj comment =  do
          , p << [ label << "", reCaptchaWidget pubkey ]
          , p << [ label << ""
                 , submit "feedback" "Submit" ! [theclass "button"] 
-                , anchor ! [ href $ baseUrl, theclass "button" ] << "Cancel"
+                , input ! [ theclass "button"
+                          , strAttr "value" "Cancel"
+                          , strAttr "type" "button"
+                          , strAttr "onClick" ("parent.location='" ++ baseUrl ++ "'") 
+                          ] 
                 ]
          ] ) 
    output $ renderHtml fbPage
