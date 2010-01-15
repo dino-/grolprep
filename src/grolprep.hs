@@ -27,8 +27,9 @@ cgiMain = do
    method <- requestMethod
    path <- pathInfo
 
-   llog DEBUG $ printf "haveSession: %s" $ show haveSession
-   llog DEBUG $ printf "method: %s  path: %s" method path
+   -- Sometimes need these to troubleshoot dispatching
+   --llog DEBUG $ printf "haveSession: %s" $ show haveSession
+   --llog DEBUG $ printf "method: %s  path: %s" method path
 
    dispatch haveSession method $ filter (/= "") $ splitOn "/" path
 

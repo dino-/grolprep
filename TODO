@@ -17,8 +17,6 @@ release
 
 - Change Next Prob button on summary when at end of session
 
-- Remove some debug logging that's still ocurring, probably mostly in Study
-
 
 -----
 feature additions
