@@ -17,8 +17,6 @@ release
 
 - Change Next Prob button on summary when at end of session
 
-- Fix copyright notice, it's wrong in some files
-
 - Remove some debug logging that's still ocurring, probably mostly in Study
 
 

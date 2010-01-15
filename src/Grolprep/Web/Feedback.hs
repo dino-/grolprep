@@ -1,6 +1,6 @@
--- Copyright: 2009 Dino Morelli
+-- Copyright: 2009, 2010 Dino Morelli
 -- License: BSD3 (see LICENSE)
--- Author: Dino Morelli <dino@ui3.info>
+-- Author: Betty Diegel <bdiegel@usa.net>
 
 module Grolprep.Web.Feedback
    where
