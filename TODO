@@ -19,8 +19,6 @@ release
 
 - Fix copyright notice, it's wrong in some files
 
-- Removed unused Action data type and other code
-
 - Remove some debug logging that's still ocurring, probably mostly in Study
 
 
