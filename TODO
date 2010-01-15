@@ -5,8 +5,6 @@ release
    - Use <h?> tags in static pages
    - site index document when we know what domain it's going to be on
 
-- Work on the feedback page Cancel button style, looks different than the submit button in IE
-
 - Start using fastcgi or maybe scgi
 
 - Grolprep.Web.Study.getProblemMetaInfo should use a join instead of the 4 selects
