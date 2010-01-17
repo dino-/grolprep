@@ -305,7 +305,7 @@ formProblem = do
             thediv <<
                [ p << (pid ++ ": " +++ (primHtml q'))
                , thediv << (ansControls as)
-               , submit "proceed" "Proceed" ! [theclass "button"]
+               , submit "submit" "Submit answer" ! [theclass "button"]
                ]
             )
          where
@@ -377,7 +377,7 @@ formAnswer = do
             thediv <<
                [ p << (pid ++ ": " +++ (primHtml q))
                , thediv << ansLines
-               , submit "next" "Next question" ! [theclass "button"]
+               , submit "continue" "Continue" ! [theclass "button"]
                ]
             )
          where
