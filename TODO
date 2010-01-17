@@ -23,6 +23,8 @@ feature additions
 
 - Split front page up into a new information-rich front page that then links to the setup form page
 
+- Figure out how and what we can save in the custom list of problem IDs on the setup form. At a minimum we can have another cheap session for the browser being used that remembers what you've done recently. That's without getting into user accounts yet.
+
 
 -----
 general TODO thoughts
