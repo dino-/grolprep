@@ -13,8 +13,6 @@ release
 
 - Consolidate stats and summary code, the math code could be shared
 
-- Change Next Prob button on summary when at end of session
-
 
 -----
 feature additions

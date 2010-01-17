@@ -599,20 +599,23 @@ formPassSummary = do
       h2 << (printf "Pass %d completed" pass :: String) +++
       ( h3 << (printf "%d of %d answered correctly (%0.1f%%)"
          correct passTot perc :: String) ) +++
-      theform
+      theform (passTot - correct)
    output $ renderHtml passSummaryPage
 
    where
       corrModifier True  = 1
       corrModifier False = 0
 
-      theform =
+      buttonLabel 0 = "Finish"
+      buttonLabel _ = "Continue"
+
+      theform remaining =
          form !
             [ theclass "question"
             , method "post"
             , action $ baseUrl ++ "/study/psummary"
             ] << (
             thediv <<
-               [ submit "next" "Next question" ! [theclass "button"]
+               [ submit "next" (buttonLabel remaining) ! [theclass "button"]
                ]
             )
