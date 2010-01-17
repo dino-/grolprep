@@ -7,8 +7,6 @@ release
 
 - Start using fastcgi or maybe scgi
 
-- Grolprep.Web.Study.getProblemMetaInfo should use a join instead of the 4 selects
-
 - Put in some SQL error handling
 
 - Consolidate stats and summary code, the math code could be shared

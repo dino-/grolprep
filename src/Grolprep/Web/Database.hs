@@ -143,50 +143,32 @@ getProblemMetaInfo :: String ->
 getProblemMetaInfo problemId = do
    conn <- dbPath >>= connectSqlite3
 
-   stmt <- prepare conn $ unlines
-         [ "SELECT element, subelement, keytopic "
-         , "   FROM problem "
-         , "   WHERE "
-         , "      id=?"
-         , ";"
-         ]
-   execute stmt [toSql problemId]
-   pRs <- liftM head $ fetchAllRowsMap' stmt
-
-   let sEl = fromJust $ lookup "element" pRs
-   let sSe = fromJust $ lookup "subelement" pRs
-   let sKt = fromJust $ lookup "keytopic" pRs
-
-   (elDesc:_) <- liftM concat $
+   (pEl:pSe:pKt:elDesc:seDesc:ktDesc:_) <- liftM concat $
       quickQuery' conn ( unlines
-         [ "SELECT desc FROM element WHERE "
-         , "   id=?"
+         [ "SELECT"
+         , "   p.element, p.subelement, p.keytopic, "
+         , "   el.desc, se.desc, kt.desc"
+         , "   FROM problem p"
+         , "   LEFT JOIN element el"
+         , "      ON p.element = el.id"
+         , "   LEFT JOIN subelement se"
+         , "      ON p.subelement = se.id"
+         , "      AND p.element = se.element"
+         , "   LEFT JOIN keytopic kt"
+         , "      ON p.keytopic = kt.id"
+         , "      AND p.element = kt.element"
+         , "      AND p.subelement = kt.subelement"
+         , "   WHERE p.id = ?"
          , ";"
          ] )
-         [sEl]
-
-   (seDesc:_) <- liftM concat $
-      quickQuery' conn ( unlines
-         [ "SELECT desc FROM subelement WHERE "
-         , "   id=? AND element=?"
-         , ";"
-         ] )
-         [sSe, sEl]
-
-   (ktDesc:_) <- liftM concat $
-      quickQuery' conn ( unlines
-         [ "SELECT desc FROM keytopic WHERE "
-         , "   id=? AND element=? AND subelement=?"
-         , ";"
-         ] )
-         [sKt, sEl, sSe]
+         [toSql problemId]
 
    disconnect conn
 
    return
-      ( (fromSql sEl, fromSql elDesc)
-      , (fromSql sSe, fromSql seDesc)
-      , (fromSql sKt, fromSql ktDesc)
+      ( (fromSql pEl, fromSql elDesc)
+      , (fromSql pSe, fromSql seDesc)
+      , (fromSql pKt, fromSql ktDesc)
       )
 
 
