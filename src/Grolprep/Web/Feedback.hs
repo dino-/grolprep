@@ -11,8 +11,6 @@ import Data.Maybe
 import Data.List
 import Network.CGI hiding (urlEncode)
 import Network.HTTP
-import Network.HTTP.Base
-import Network.HTTP.Headers
 import Network.Stream
 import Network.URI hiding (path)
 import System.FilePath

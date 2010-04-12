@@ -6,13 +6,10 @@ module Grolprep.Common.Util
    where
 
 import Control.Monad
-import Data.List
-import Data.Maybe
 import Data.Time.Clock ( getCurrentTime )
 import Data.Time.Format ( formatTime )
 import Data.Time.LocalTime ( utcToLocalZonedTime )
 import System.Directory
-import System.IO
 import System.Locale ( defaultTimeLocale )
 import Text.Printf
 import Text.Regex

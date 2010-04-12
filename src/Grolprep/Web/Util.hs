@@ -5,7 +5,6 @@
 module Grolprep.Web.Util
    where
 
-import Control.Monad
 import Text.XHtml.Strict
 
 import Grolprep.Common.Util
