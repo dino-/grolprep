@@ -88,7 +88,7 @@ getRegularProblemIds element subelement = do
       , ";"
       ]
 
-   execute stmt [toSql element, toSql subelement]
+   _ <- execute stmt [toSql element, toSql subelement]
    rs <- sFetchAllRows' stmt
    disconnect conn
    return $ map fromJust $ concat rs
@@ -114,7 +114,7 @@ currentProblem session = do
             , "      p.id=?"
             , ";"
             ]
-         execute stmt [toSql $ probIds !! probIx]
+         _ <- execute stmt [toSql $ probIds !! probIx]
          rs <- liftM concat $ sFetchAllRows' stmt
          disconnect conn
 
@@ -187,7 +187,7 @@ constructSetupOptions es = do
       , "   ORDER BY element, id"
       , ";"
       ]
-   execute stmt []
+   _ <- execute stmt []
    rsMap <- fetchAllRowsMap' stmt
 
    return $ 
