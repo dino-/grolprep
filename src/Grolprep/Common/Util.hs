@@ -51,6 +51,7 @@ mkdir path =
 unlink :: FilePath -> IO ()
 unlink path = doesFileExist path >>= (flip when $ removeFile path)
 
+
 {- Format the time right now given a formatting string
 -}
 formattedDate :: String -> IO String
