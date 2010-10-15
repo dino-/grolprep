@@ -1800,7 +1800,7 @@ Key Topic 35:  Logic Levels
 
 
 
-Answer Key:	3-35E1:  D	3-35E2:  B	3-35E3:  C	3-35E4:  A	3-35E5:  B	3-35E6:  A
+Answer Key:	3-35E1:  D	3-35E2:  B	3-35E3:  C	3-35E4:  A	3-35E5:  A	3-35E6:  A
 
 Key Topic 36:  Flip-Flops
 
