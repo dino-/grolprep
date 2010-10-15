@@ -79,6 +79,34 @@ Under Arch Linux:
 
 
 -----
+version numbering:
+
+change the version in these files:
+
+   grolprep.cabal
+   src/Grolprep/Common/Util.hs
+
+
+version numbering scheme
+
+major.minor.status.build
+major.status.build
+
+status
+0 alpha
+1 beta
+2 release candidate
+3 release
+
+examples
+   1.3.0.2         v1.3 alpha build 2
+   1.2.1.1         v1.2 beta build 1
+   2.10.3.5        v2.10 release build 5 (say they were bug fixes)
+   1.5.2.20090818  Can even use a date for build             
+                   v1.5 release candidate 2009-08-18 build
+
+
+-----
 2009-08-19
 NOTE: 2009-09-17 this is out of date
 
