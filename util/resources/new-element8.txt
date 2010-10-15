@@ -1322,12 +1322,16 @@ Key Topic 24: Automatic Frequency Control - AFC/ATC
 	D.	Cavity duplexer.
 
 8-24C5  A RADAR transmitter is operating on 3.0 GHz and the reflex klystron local oscillator, operating at 3.060 GHz, develops a 60 MHz IF. If the magnetron drifts higher in frequency, the AFC system must cause the klystron repeller plate to become:
-	A.	More positive.	C.	Less positive.
-	B.	More negative.	D.	Less negative.
+	A.	More positive.
+	B.	More negative.
+	C.	Less positive.
+	D.	Less negative.
 
 8-24C6  What component is block 50 in Fig. 8A1?
-	A.	IF amplifier.	C.	Discriminator.
-	B.	AFC amplifier.	D.	Crystal detector.
+	A.	IF amplifier.
+	B.	AFC amplifier.
+	C.	Discriminator.
+	D.	Crystal detector.
 
 Answer Key:	8-24C1: B	8-24C2: D	8-24C3: A	8-24C4: C	8-24C5: B	8-24C6: C
 
