@@ -27,6 +27,7 @@ import System.FilePath
 import System.IO
 import System.IO.Error
 import System.Time
+import Text.Printf
 
 import Grolprep.Common.Conf
 import Grolprep.Common.Log
@@ -134,9 +135,8 @@ getSession = do
             case esess of
                Right session -> put $ Just session
                Left _ -> do
-                  llog INFO
-                     "stale client session cookie detected, removed"
                   destroySession
+                  llog NOTICE $ "Stale client session cookie detected, removed. Session id: " ++ sessionId
                   return ()
          Nothing -> return ()
    get
@@ -152,6 +152,7 @@ putSession session = do
          sid <- liftIO $ generateSessionId ip
          c <- liftIO $ newGrolprepCookie appId sid
          setCookie c 
+         llog NOTICE $ printf "Created new session for ip: %s, session id: %s" ip sid
          return sid
 
    liftIO $ saveSession sessionId session
@@ -166,6 +167,7 @@ destroySession = do
          liftIO $ deleteSession sessionId
          c <- liftIO $ newGrolprepCookie appId ""
          deleteCookie c 
+         llog NOTICE $ "Destroyed session, id: " ++ sessionId
       Nothing -> return ()
 
    put Nothing

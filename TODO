@@ -7,8 +7,6 @@ release
 
 - New look, more like Burlington Aviation Technology website
 
-- Add log of IP address of each newly created session
-
 - Figure out how and what we can save in the custom list of problem IDs on the setup form. At a minimum we can have another cheap session for the browser being used that remembers what you've done recently. That's without getting into user accounts yet.
 
 - SEO
