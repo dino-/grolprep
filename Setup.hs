@@ -5,10 +5,10 @@
 -- Author: Dino Morelli <dino@ui3.info>
 
 import Control.Monad ( when )
-import Data.List
+import Data.List ( isPrefixOf )
 import Distribution.Simple
 import Distribution.Simple.LocalBuildInfo
-import System.Cmd
+import System.Cmd ( system )
 import System.Directory ( createDirectory, doesDirectoryExist )
 import System.FilePath
 import Text.Printf
