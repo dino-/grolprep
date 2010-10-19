@@ -7,8 +7,6 @@ release
 
 - New look, more like Burlington Aviation Technology website
 
-- See if we can log to /var/log/ by default
-
 - Fix the default log level
 
 - Add log of IP address of each newly created session
