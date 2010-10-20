@@ -58,10 +58,10 @@ orderer False = return
 {- HTML pages and forms 
 -}
 
-formCancel :: Html
-formCancel = form !
+formCancel :: String -> Html
+formCancel burl = form !
    [ method "get"
-   , action $ baseUrl ++ "/init"
+   , action $ burl ++ "/init"
    ] << (
    submit "quit" "Cancel test session" ! [theclass "button"]
    )
@@ -109,6 +109,8 @@ nameTextareaStudyCustom = "select-studycustom"
 -}
 formSetup :: App CGIResult
 formSetup = do
+   burl <- liftIO baseUrl
+
    scriptPath <- liftIO $ getRelDataFileName "scripts/formSetup.js"
 
    opts13 <- liftIO $ constructSetupOptions [1, 3]
@@ -129,7 +131,7 @@ formSetup = do
          )
          +++
          body ! [strAttr "onload" "setInitialSelections()"] <<
-            ([heading, about, theform opts13 opts8] 
+            ([heading, about, theform opts13 opts8 burl] 
              +++
              thediv ! [theclass "banner"] << h2 ! [theclass "footer"] << (
                -- This is the right-side content, it floats
@@ -138,7 +140,7 @@ formSetup = do
                   +++
                   (thespan ! [theclass "banner-dark-text"] << primHtml " &middot; ")
                   +++
-                  feedback
+                  feedback burl
                   )
 
                +++
@@ -176,10 +178,10 @@ formSetup = do
             +++ " site.")
 
 
-      theform opts13' opts8' = thediv << (
+      theform opts13' opts8' burl' = thediv << (
          form !
             [ method "post"
-            , action $ baseUrl ++ "/study/setup"
+            , action $ burl' ++ "/study/setup"
             ] <<
             fieldset <<
                [ legend <<
@@ -254,10 +256,10 @@ formSetup = do
 
 {- Construct the xhtml for the feedback link on the setup form
 -}
-feedback :: Html
-feedback = anchor !
+feedback :: String -> Html
+feedback burl = anchor !
    [ theclass "footer-right"
-   , href $ baseUrl ++ "/feedback"
+   , href $ burl ++ "/feedback"
    ]
    << "feedback"
 
@@ -270,6 +272,8 @@ formProblem = do
 
    session <- liftM fromJust getSession
 
+   burl <- liftIO baseUrl
+
    (mbnp, mbim) <- liftIO $ currentProblem session
    let (Problem pid q eas) = fromJust mbnp
 
@@ -278,9 +282,9 @@ formProblem = do
 
    im <- liftIO $ imgRegion mbim
 
-   let fpp = formProblem' pid q nas im
+   let fpp = formProblem' pid q nas im burl
    mi <- liftIO $ metaInfo pid
-   posePage <- liftIO $ page [] $ formCancel +++ 
+   posePage <- liftIO $ page [] $ (formCancel burl) +++ 
       mi +++ fpp +++ (constructStats False session)
    output $ renderHtml posePage
 
@@ -295,11 +299,11 @@ formProblem = do
                         seId seDesc ktId ktDesc) :: String)
             ]
 
-      formProblem' pid q' as im' =
+      formProblem' pid q' as im' burl' =
          form !
             [ theclass "question"
             , method "post"
-            , action $ baseUrl ++ "/study/problem"
+            , action $ burl' ++ "/study/problem"
             ] <<
             ( im' +++
             thediv <<
@@ -339,6 +343,8 @@ formAnswer = do
 
    session <- liftM fromJust getSession
 
+   burl <- liftIO baseUrl
+
    let g = sessStudyLastA session
    (mbnp, mbim) <- liftIO $ currentProblem session
    let pr@(Problem pid _ eas) = fromJust mbnp
@@ -351,8 +357,8 @@ formAnswer = do
 
    isCorrect <- isGuessCorrect session
 
-   answerPage <- liftIO $ page [] $ formCancel +++
-      mi +++ (theform g pr nas im) +++ (constructStats isCorrect session)
+   answerPage <- liftIO $ page [] $ (formCancel burl) +++
+      mi +++ (theform g pr nas im burl) +++ (constructStats isCorrect session)
    output $ renderHtml answerPage
 
    where
@@ -366,12 +372,12 @@ formAnswer = do
                         seId seDesc ktId ktDesc) :: String)
             ]
 
-      theform g (Problem pid q _) nas' im' =
+      theform g (Problem pid q _) nas' im' burl' =
          correctness (snd $ nas' !! g) +++
          form !
             [ theclass "question"
             , method "get"
-            , action $ baseUrl ++ "/study/next"
+            , action $ burl' ++ "/study/next"
             ] << (
             im' +++
             thediv <<
@@ -586,6 +592,8 @@ formPassSummary = do
 
    session <- liftM fromJust getSession
 
+   burl <- liftIO baseUrl
+
    isCorrect <- isGuessCorrect session
    let pass = sessPassNumber session
    let passTot = sessPassTot session
@@ -595,11 +603,11 @@ formPassSummary = do
          :: Float
 
    passSummaryPage <- liftIO $ page [] $
-      formCancel +++
+      (formCancel burl) +++
       h2 << (printf "Pass %d completed" pass :: String) +++
       ( h3 << (printf "%d of %d answered correctly (%0.1f%%)"
          correct passTot perc :: String) ) +++
-      theform (passTot - correct)
+      theform (passTot - correct) burl
    output $ renderHtml passSummaryPage
 
    where
@@ -609,11 +617,11 @@ formPassSummary = do
       buttonLabel 0 = "Finish"
       buttonLabel _ = "Continue"
 
-      theform remaining =
+      theform remaining burl' =
          form !
             [ theclass "question"
             , method "post"
-            , action $ baseUrl ++ "/study/psummary"
+            , action $ burl' ++ "/study/psummary"
             ] << (
             thediv <<
                [ submit "next" (buttonLabel remaining) ! [theclass "button"]

@@ -5,15 +5,23 @@
 module Grolprep.Web.Util
    where
 
+import Data.Maybe
+import System.FilePath
+import Text.Regex
 import Text.XHtml.Strict
 
 import Grolprep.Common.Util
+import Paths_grolprep
 
 
 {- The base URL of the application
 -}
-baseUrl :: String
-baseUrl = "/grolprep/bin/fcc-grol-prep.cgi"
+baseUrl :: IO String
+baseUrl = do
+   binDir <- getBinDir
+   let path = head $ fromJust $
+         matchRegex (mkRegex "(/grolprep.*)$") binDir
+   return $ path </> "fcc-grol-prep.cgi"
 
 
 createCssLinks :: [FilePath] -> IO [Html]

@@ -56,9 +56,10 @@ logFeedbackException (NetFail ce) = llog ERROR $ show ce
 formFeedback :: String -> String -> String -> String -> App CGIResult
 formFeedback msg addr subj comment =  do
    pubkey <- getConfig "recaptcha-public-key"
+   burl <- liftIO baseUrl
    fbPage <- liftIO $ page ["css/feedback.css"] $ 
       form ! [ method "POST" 
-             , action $ baseUrl ++ "/feedback"
+             , action $ burl ++ "/feedback"
              ] << (
          [ p << msg 
          , p << [ label << "Email: ", widget "text" "email" [ value addr ] ]
@@ -72,7 +73,7 @@ formFeedback msg addr subj comment =  do
                 , input ! [ theclass "button"
                           , strAttr "value" "Cancel"
                           , strAttr "type" "button"
-                          , strAttr "onClick" ("parent.location='" ++ baseUrl ++ "'") 
+                          , strAttr "onClick" ("parent.location='" ++ burl ++ "'") 
                           ] 
                 ]
          ] ) 
@@ -87,19 +88,19 @@ reCaptchaWidget k = do
       ] << noHtml
             
 
-pageThankYou :: Html
-pageThankYou = 
+pageThankYou :: String -> Html
+pageThankYou burl = 
    p << "Thank you for your feedback!"
    +++
-   p << anchor ! [ href $ baseUrl ]
+   p << anchor ! [ href $ burl ]
       << "Return to the GROLPrep main page."
 
 
-pageServerError :: Html
-pageServerError =
+pageServerError :: String -> Html
+pageServerError burl =
    p << "Server error.  Try again later"
    +++
-   p << anchor ! [ href $ baseUrl ]
+   p << anchor ! [ href $ burl ]
       << "Return to the GROLPrep main page."
 
 
@@ -124,18 +125,20 @@ feedbackHandler = do
       
    e <- liftIO $ verifyChallengeResponse privkey commentorIp challenge response
 
+   burl <- liftIO baseUrl
+
    case e of 
       Left (ChalRespFail _) -> formFeedback "The CAPTCHA solution was incorrect.  Please try again." email subj comment
       Left err -> do 
          liftIO $ logFeedbackException err
-         output $ renderHtml pageServerError
+         output $ renderHtml $ pageServerError burl
       Right _ -> do
          thankyouPage <- liftIO $ do
             fname <- formattedDate "%Y%m%d-%H%M%S"
             saveFeedback fname $ printf
                "Submitted: %s\nIP: %s\nEmail: %s\nSubject: %s\nComment: %s\n"
                fname commentorIp email subj comment
-            page [] $ pageThankYou
+            page [] $ pageThankYou burl
          output $ renderHtml thankyouPage
    
 
