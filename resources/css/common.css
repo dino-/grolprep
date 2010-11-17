@@ -34,9 +34,15 @@ label {
 
 p { clear: left; }
 
-.correct-ans { color: green; }
+.correct-ans {
+   color: green;
+   font-weight: bold;
+}
 
-.incorrect-ans { color: red; }
+.incorrect-ans {
+   color: red;
+   font-weight: bold;
+}
 
 fieldset { display:inline; }
 
