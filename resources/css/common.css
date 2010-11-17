@@ -34,23 +34,24 @@ label {
 
 p { clear: left; }
 
-div.ansresult > p {
+.correct-ans {
+   color: white;
+   background-color: #5FB551;
+   font-weight: bold;
    padding-top: 0.1em;
    padding-bottom: 0.1em;
    padding-left: 0.5em;
    padding-right: 0.5em;
 }
 
-.correct-ans {
-   color: white;
-   background-color: green;
-   font-weight: bold;
-}
-
 .incorrect-ans {
    color: white;
    background-color: red;
    font-weight: bold;
+   padding-top: 0.1em;
+   padding-bottom: 0.1em;
+   padding-left: 0.5em;
+   padding-right: 0.5em;
 }
 
 fieldset { display:inline; }

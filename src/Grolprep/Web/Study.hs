@@ -383,25 +383,25 @@ formAnswer = do
             im' +++
             thediv <<
                [ p << (pid ++ ": " +++ (primHtml q))
-               , thediv ! [theclass "ansresult"] << ansLines
+               , thediv << ansLines
                , submit "continue" "Continue" ! [theclass "button"]
                ]
             )
          where
             correctness (Right _) =
-               p ! [theclass "correct-ans"] << "CORRECT"
+               p << thespan ! [theclass "correct-ans"] << "CORRECT"
             correctness _         =
-               p ! [theclass "incorrect-ans"] << "INCORRECT"
+               p << thespan ! [theclass "incorrect-ans"] << "INCORRECT"
 
             ansLines = map f nas'
                where
                   f :: (Int, Either String String) -> Html
                   f (n', Left  a)
                      | n' == g    =
-                           p ! [theclass "incorrect-ans"] << (primHtml a)
+                           p << thespan ! [theclass "incorrect-ans"] << (primHtml a)
                      | otherwise  = p << (primHtml a)
                   f (_ , Right a) =
-                           p ! [theclass "correct-ans"] << (primHtml a)
+                           p << thespan ! [theclass "correct-ans"] << (primHtml a)
 
 
 {- Based on the order switching in the session, create a (possibly
