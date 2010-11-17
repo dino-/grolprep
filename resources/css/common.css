@@ -12,13 +12,13 @@ body {
 .button {
    border: none;
    color: #333333;
-   background: #87A5C4;
+   background: #5FB551;
    margin-right: 0.5em;
 }
 
 .button:hover {
    border: none;
-   background: #a5caef;
+   background: #6ECA56;
 }
 
 .hanging {
@@ -42,7 +42,7 @@ fieldset { display:inline; }
 
 div.banner {
    color: #eeeeee ;
-   background-color: #87A5C4 ;
+   background-color: #5FB551;
 }
 
 h1.heading {

@@ -6,7 +6,7 @@ h3 {
 div.features {
    font-size: .75em ;
 
-   background-color: #E8EA7C ;
+   background-color: #FDFB50;
 
    float: right ;
    width: 25% ;
@@ -31,11 +31,11 @@ li.features {
 }
 
 A:link {
-   color: #749BC1 ;
+   color: #5FB551;
 }
 
 A:visited {
-   color: #749BC1 ;
+   color: #5FB551;
 }
 
 form {
