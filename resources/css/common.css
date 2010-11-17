@@ -34,13 +34,22 @@ label {
 
 p { clear: left; }
 
+div.ansresult > p {
+   padding-top: 0.1em;
+   padding-bottom: 0.1em;
+   padding-left: 0.5em;
+   padding-right: 0.5em;
+}
+
 .correct-ans {
-   color: green;
+   color: white;
+   background-color: green;
    font-weight: bold;
 }
 
 .incorrect-ans {
-   color: red;
+   color: white;
+   background-color: red;
    font-weight: bold;
 }
 

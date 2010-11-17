@@ -383,7 +383,7 @@ formAnswer = do
             im' +++
             thediv <<
                [ p << (pid ++ ": " +++ (primHtml q))
-               , thediv << ansLines
+               , thediv ! [theclass "ansresult"] << ansLines
                , submit "continue" "Continue" ! [theclass "button"]
                ]
             )
