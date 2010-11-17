@@ -29,12 +29,4 @@ destPrefix="$2"
 [ -z "$srcPrefix" ] && usage
 [ -z "$destPrefix" ] && usage
 
-destSession="$destPrefix/session"
-
-set -x
-
-[ -x $destSession ] || mkdir $destSession
-
-cp $srcPrefix/session $destSession
-
-chown -R www-data:www-data $destSession
+rsync -av $srcPrefix/session/ $destPrefix/session
