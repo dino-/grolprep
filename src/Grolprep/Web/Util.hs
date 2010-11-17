@@ -37,13 +37,16 @@ titleBar :: Html
 titleBar = thetitle << "GROLPrep"
 
 
-heading :: Html
-heading = (thediv ! [theclass "banner"]) << (h1 ! [theclass "heading"]) << (
-   "GROLPrep" +++
-   (thespan ! [theclass "banner-dark-text"] << primHtml " &middot;")
-   +++
-   thespan ! [theclass "heading-smaller"] << " FCC General Radio Operators License exam preparation"
-   )
+heading :: IO Html
+heading = do
+   path <- getRelDataFileName "BTCAvionicsLogo.jpg"
+   return $ p << image ! [src path] +++
+      (thediv ! [theclass "banner"]) << (h1 ! [theclass "heading"]) << (
+      "GROLPrep" +++
+      (thespan ! [theclass "banner-dark-text"] << primHtml " &middot;")
+      +++
+      thespan ! [theclass "heading-smaller"] << " FCC General Radio Operators License exam preparation"
+      )
 
 
 footer :: Html
@@ -57,6 +60,7 @@ footer = thediv ! [theclass "banner"] << h2 ! [theclass "footer"] << (
 page :: [FilePath] -> Html -> IO Html
 page cssPaths b = do
    cssLinks <- createCssLinks cssPaths
+   h <- heading
    return (
       (header <<
          titleBar
@@ -65,9 +69,8 @@ page cssPaths b = do
       )
       +++
       body <<
-         [ heading
+         [ h
          , b
          , footer
          ] 
       )
-

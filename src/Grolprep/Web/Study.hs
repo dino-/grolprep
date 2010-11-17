@@ -118,6 +118,7 @@ formSetup = do
 
    setupPage <- liftIO $ do
       cssLinks <- createCssLinks [ "css/setup.css" ]
+      h <- heading
       return (
          ( header <<
             ( titleBar +++
@@ -131,7 +132,7 @@ formSetup = do
          )
          +++
          body ! [strAttr "onload" "setInitialSelections()"] <<
-            ([heading, about, theform opts13 opts8 burl] 
+            ([h, about, theform opts13 opts8 burl] 
              +++
              thediv ! [theclass "banner"] << h2 ! [theclass "footer"] << (
                -- This is the right-side content, it floats
