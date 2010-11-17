@@ -1,5 +1,5 @@
 name:                grolprep
-version:             1.0.2.0
+version:             1.0.2.1
 cabal-version:       >= 1.2
 build-type:          Simple
 license:             BSD3
