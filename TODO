@@ -1,6 +1,12 @@
 -----
 bugs
 
+- Set focus on the Continue button so enter key works on those forms
+
+- Setup.hs install perms code not working
+
+- All buttons to now have white foreground. This is a visibility issue for the whiteboard projector thing.
+
 
 -----
 release
@@ -22,6 +28,12 @@ release
 
 -----
 feature additions
+
+- Use static page templates instead of generating everything. This would be much easier if the share path didn't have the version in it. So, more customizations to Setup.hs?
+
+- Allow question text file upload
+
+- Perform question list verification for both the custom list and file upload
 
 - Add something to the state about the type of study that's being performed. Simulation or "normal" study. So that we can display it with each question.
 
