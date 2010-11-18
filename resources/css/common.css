@@ -11,8 +11,9 @@ body {
 
 .button {
    border: none;
-   color: #333333;
+   color: white;
    background: #5FB551;
+   font-weight: bold;
    margin-right: 0.5em;
 }
 
