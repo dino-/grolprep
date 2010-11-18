@@ -27,6 +27,8 @@ release
 -----
 feature additions
 
+- Full keyboard support. Meaning adding the ability to enter numbers and/or letters to select question answers.
+
 - Use static page templates instead of generating everything. This would be much easier if the share path didn't have the version in it. So, more customizations to Setup.hs?
 
 - Allow question text file upload
