@@ -3,6 +3,8 @@ bugs
 
 - Setup.hs install perms code not working
 
+- Two sessions are created every time probably because of something to do with the cookie and State not being available. Not causing any problems but it's incorrect behavior.
+
 
 -----
 release
