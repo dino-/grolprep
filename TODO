@@ -7,6 +7,8 @@ bugs
 -----
 release
 
+- Add some basic usage info, like what a pass is and how the program will work when you're using it to study.
+
 - New look, more like Burlington Aviation Technology website
 
 - Figure out how and what we can save in the custom list of problem IDs on the setup form. At a minimum we can have another cheap session for the browser being used that remembers what you've done recently. That's without getting into user accounts yet.
