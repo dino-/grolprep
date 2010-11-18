@@ -7,7 +7,7 @@ license-file:        LICENSE
 copyright:           2009, 2010 Dino Morelli
 author:              Dino Morelli
 maintainer:          Dino Morelli <dino@ui3.info>
-stability:           experimental
+stability:           stable
 homepage:            http://ui3.info/d/proj/grolprep.html
 synopsis:            FCC GROL examination preparation software
 description:         This is a web application for studying for FCC 
