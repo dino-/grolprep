@@ -247,7 +247,7 @@ formSetup = do
                      " Randomly order the answers of each question" )
                   ]
 
-               , submit "start" "Start study session" ! 
+               , submit "enter" "Start study session" ! 
                   [ theclass "button"
                   , intAttr "tabindex" 7
                   ]
@@ -310,7 +310,7 @@ formProblem = do
             thediv <<
                [ p << (pid ++ ": " +++ (primHtml q'))
                , thediv << (ansControls as)
-               , submit "submit" "Submit answer" ! [theclass "button"]
+               , submit "enter" "Submit answer" ! [theclass "button"]
                ]
             )
          where
@@ -384,7 +384,7 @@ formAnswer = do
             thediv <<
                [ p << (pid ++ ": " +++ (primHtml q))
                , thediv << ansLines
-               , submit "continue" "Continue" ! [theclass "button"]
+               , submit "enter" "Continue" ! [theclass "button"]
                ]
             )
          where
@@ -625,6 +625,6 @@ formPassSummary = do
             , action $ burl' ++ "/study/psummary"
             ] << (
             thediv <<
-               [ submit "next" (buttonLabel remaining) ! [theclass "button"]
+               [ submit "enter" (buttonLabel remaining) ! [theclass "button"]
                ]
             )

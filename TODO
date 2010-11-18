@@ -1,8 +1,6 @@
 -----
 bugs
 
-- Set focus on the Continue button so enter key works on those forms
-
 - Setup.hs install perms code not working
 
 - All buttons to now have white foreground. This is a visibility issue for the whiteboard projector thing.

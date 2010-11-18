@@ -68,7 +68,8 @@ page cssPaths b = do
          cssLinks
       )
       +++
-      body <<
+      body ! [strAttr "onLoad"
+         "document.getElementById(\"enter\").focus()"] <<
          [ h
          , b
          , footer
