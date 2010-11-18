@@ -37,13 +37,12 @@ main = defaultMainWithHooks (simpleUserHooks
    } )
    where
       customPostInst _ _ _ localBuildInfo = do
-         let sharePath = (fromPathTemplate $ prefix
-               $ installDirTemplates localBuildInfo)
-               </> "share"
+         let instPath = fromPathTemplate . prefix
+               . installDirTemplates $ localBuildInfo
 
-         let group = distroSpecificHttpGroup sharePath
+         let group = distroSpecificHttpGroup instPath
 
-         fixDir group sharePath
+         fixDir group instPath
 
          let logDirPath = "/var/log/grolprep"
          needLogDir <- fmap not $ doesDirectoryExist logDirPath
