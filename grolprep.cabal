@@ -17,8 +17,9 @@ description:         This is a web application for studying for FCC
 category:            Education
 tested-with:         GHC>=6.10.4
 data-dir:            resources
-data-files:          BTCAvionicsLogo.jpg, css/*.css, figures/*.png,
-                     grolprep.conf, grolprep.sqlite, scripts/*.js
+data-files:          AvionicsPhoto.jpg, BTCAvionicsLogo.jpg, css/*.css, 
+                     figures/*.png, grolprep.conf, grolprep.sqlite, 
+                     scripts/*.js
 
 executable           fcc-grol-prep.cgi
    main-is:          grolprep.hs
