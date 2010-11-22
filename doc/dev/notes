@@ -28,6 +28,18 @@ There is a tool to regenerate the sqlite database in resources/ from the source 
    bin/db-regen.sh
 
 -----
+2010-11-22 target screen sizes
+
+* smart board                 1280x800
++ lab machines at the school  1440x900
++ Bill desktop system         1600x900
+- Bill's Eee PC               1024x600
+
+* Really need to look good on this
++ Should look good on this as well
+- Least important
+
+-----
 2009-09-04 Information about the new questions scheduling:
 
 For the FCC testing, as you know, they are switching to the new test
