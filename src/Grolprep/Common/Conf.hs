@@ -39,7 +39,11 @@ type ConfMap = Map String String
 -}
 parseToMap :: String -> ConfMap
 parseToMap entireConf =
-   fromList $ map (\[k, v] -> (k, v))
+   fromList $ map listToPair
       $ catMaybes $ map (matchRegex re) $ lines entireConf
+
    where
+      listToPair [k, v] = (k, v)
+      listToPair _      = undefined  -- Should never happen
+
       re = mkRegex "^([^#][^=]*)=?(.*)"
