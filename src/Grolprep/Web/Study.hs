@@ -450,7 +450,7 @@ setupSession = do
          finishSetup problems
 
       Just (StudyCustom problemsString) -> do
-         let problems = wordsBy (== ' ') $ map toUpper problemsString
+         let problems = words $ map toUpper problemsString
          finishSetup problems
 
       -- No questions were selected, loop back to the beginning
