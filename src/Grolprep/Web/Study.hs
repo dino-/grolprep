@@ -9,7 +9,6 @@ module Grolprep.Web.Study
 import Control.Monad
 import Data.Char
 import Data.List hiding ( lookup )
-import Data.List.Split
 import Data.Maybe
 import Network.CGI
 import Prelude hiding ( lookup )
