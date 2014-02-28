@@ -9,7 +9,7 @@ author:              Dino Morelli
 maintainer:          Dino Morelli <dino@ui3.info>
 stability:           stable
 homepage:            http://ui3.info/d/proj/grolprep.html
-synopsis:            FCC GROL examination preparation software
+synopsis:            FCC GROL exam prep web application
 description:         This is a web application for studying for FCC 
                      General Radio Operator License questions (including 
                      the Radar endorsement) in preparation of taking the 
