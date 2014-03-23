@@ -11,11 +11,10 @@ FCC GROL exam prep web application (Haskell)
 grolprep is a web application for studying the FCC GROL questions
 in preparation of taking the exams.
 
-The study of this multiple-choice data is in the flash-card
-style. Students can choose from Elements 1, 3 and 8 and can specify
-any subelement of those three for specific study. Questions and
-answers can be randomly presented. In addition, this study tool
-shows the images for questions with figures.
+This is a flash-card style study tool. Students can choose from
+Elements 1, 3 and 8 and can specify any subelement of those
+three for specific study. Questions and answers can be randomly
+presented. grolprep displays the images for questions with figures.
 
 Additionally, simulations of the randomly-chosen exams can be
 practiced with this software.
@@ -31,7 +30,7 @@ The source test data questions can be acquired
 from the [FCC Commercial Operator License
 site](http://wireless.fcc.gov/commoperators/eqp.html).
 
-This software is written in Haskell using many libraries including:
+grolprep is written in Haskell using many libraries including:
 cgi, Crypto, HDBC-sqlite3, hslogger, HTTP, split, xhtml. At this
 time, no special web framework was used, just Network.CGI and
 Text.XHtml
