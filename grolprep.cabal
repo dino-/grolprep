@@ -21,6 +21,10 @@ data-files:          AvionicsPhoto.jpg, BTCAvionicsLogo.jpg, css/*.css,
                      figures/*.png, grolprep.conf, grolprep.sqlite, 
                      scripts/*.js
 
+source-repository    head
+   type:             darcs
+   location:         http://hub.darcs.net/dino/grolprep
+
 executable           fcc-grol-prep.cgi
    main-is:          grolprep.hs
    hs-source-dirs:   src
