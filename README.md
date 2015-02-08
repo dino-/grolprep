@@ -43,9 +43,9 @@ Text.XHtml
 
 And once you have it, building the usual way:
 
->     $ cabal configure
->     $ cabal build
->     $ cabal install
+    $ cabal configure
+    $ cabal build
+    $ cabal install
 
 
 ## Using the web application
