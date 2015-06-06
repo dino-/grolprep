@@ -8,7 +8,7 @@ copyright:           2009-2014 Dino Morelli
 author:              Dino Morelli
 maintainer:          Dino Morelli <dino@ui3.info>
 stability:           stable
-homepage:            http://ui3.info/d/proj/grolprep.html
+homepage:            http://hub.darcs.net/dino/grolprep
 synopsis:            FCC GROL exam prep web application
 description:         This is a web application for studying for FCC 
                      General Radio Operator License questions (including 
