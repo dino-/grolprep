@@ -12,11 +12,10 @@ import Prelude hiding ( lookup )
 
 import Grolprep.Common.Conf
 import Grolprep.Common.Log
+import Grolprep.Common.Util ( getDataFilePath )
 import Grolprep.Web.Feedback
 import Grolprep.Web.Session
 import Grolprep.Web.Study
-
-import Paths_grolprep
 
 
 {- This is our main event entry point. All requests come through here.
@@ -49,8 +48,7 @@ dispatch True  _      _                     = formProblem
 
 main :: IO ()
 main = do
-   confMap <- liftM parseToMap $ 
-      getDataFileName "grolprep.conf" >>= readFile
+   confMap <- parseToMap <$> (readFile =<< getDataFilePath "grolprep.conf")
    let logPath = fromJust $ lookup "log-path" confMap
    let logPriority = read . fromJust $ lookup "log-priority" confMap
 

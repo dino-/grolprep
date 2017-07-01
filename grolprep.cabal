@@ -28,8 +28,37 @@ source-repository    head
 executable           fcc-grol-prep.cgi
    main-is:          grolprep.hs
    hs-source-dirs:   src
-   build-depends:    base >= 3 && < 5, cgi, containers, convertible, 
-                     Crypto, directory, filepath, HDBC, HDBC-sqlite3, 
-                     hslogger, HTTP, mtl, network, old-locale, old-time, 
-                     random, regex-compat, split, time, xhtml
+   build-depends:      base >= 4.8 && < 5
+                     , cgi
+                     , containers
+                     , convertible
+                     , Crypto
+                     , directory
+                     , filepath
+                     , HDBC
+                     , HDBC-sqlite3
+                     , hsinstall
+                     , hslogger
+                     , HTTP
+                     , mtl
+                     , network
+                     , network-uri
+                     , old-locale
+                     , old-time
+                     , random
+                     , regex-compat
+                     , split
+                     , time
+                     , xhtml
    ghc-options:      -Wall
+   other-modules:    Grolprep.Common.Conf
+                     Grolprep.Common.Data
+                     Grolprep.Common.Log
+                     Grolprep.Common.Shuffle
+                     Grolprep.Common.Util
+                     Grolprep.Web.Database
+                     Grolprep.Web.Feedback
+                     Grolprep.Web.Session
+                     Grolprep.Web.SessionId
+                     Grolprep.Web.Study
+                     Grolprep.Web.Util

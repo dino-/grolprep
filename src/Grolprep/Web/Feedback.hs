@@ -23,7 +23,6 @@ import Grolprep.Common.Log
 import Grolprep.Common.Util
 import Grolprep.Web.Session
 import Grolprep.Web.Util
-import Paths_grolprep
 
 
 {- Feedback handler failures -}
@@ -181,7 +180,7 @@ verifyChallengeResponse k ip challenge response =  runErrorT $ do
 -}
 saveFeedback :: String -> String -> IO ()
 saveFeedback fname fcontent = do
-   fbDir <- getDataFileName $ "feedback"
+   fbDir <- getDataFilePath $ "feedback"
    mkdir fbDir
    let path = fbDir </> fname
    logM DEBUG $ "path: " ++ path ++ " content:" ++ fcontent

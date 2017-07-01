@@ -5,30 +5,22 @@
 module Grolprep.Web.Util
    where
 
-import Data.Maybe
-import System.FilePath
-import Text.Regex
 import Text.XHtml.Strict
 
 import Grolprep.Common.Util
-import Paths_grolprep
 
 
 {- The base URL of the application
 -}
 baseUrl :: IO String
-baseUrl = do
-   binDir <- getBinDir
-   let path = head $ fromJust $
-         matchRegex (mkRegex "(/grolprep.*)$") binDir
-   return $ path </> "fcc-grol-prep.cgi"
+baseUrl = getRelDataFilePath "../bin/fcc-grol-prep.cgi"
 
 
 createCssLinks :: [FilePath] -> IO [Html]
 createCssLinks paths = mapM createLink ("css/common.css" : paths)
    where
       createLink path = do
-         cssPath <- getRelDataFileName path
+         cssPath <- getRelDataFilePath path
          return $ thelink noHtml ! [href cssPath, rel "stylesheet", 
              thetype "text/css"]
 
@@ -39,8 +31,8 @@ titleBar = thetitle << "GROLPrep"
 
 heading :: IO Html
 heading = do
-   logoPath <- getRelDataFileName "BTCAvionicsLogo.jpg"
-   avionicsPicPath <- getRelDataFileName "AvionicsPhoto.jpg"
+   logoPath <- getRelDataFilePath "BTCAvionicsLogo.jpg"
+   avionicsPicPath <- getRelDataFilePath "AvionicsPhoto.jpg"
    return $ p <<
       ( image ! [src logoPath] +++ 
         image ! [src avionicsPicPath, strAttr "style" "padding-left: 0.5em;"]

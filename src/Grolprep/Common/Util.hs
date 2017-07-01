@@ -9,12 +9,13 @@ import Control.Monad
 import Data.Time.Clock ( getCurrentTime )
 import Data.Time.Format ( defaultTimeLocale, formatTime )
 import Data.Time.LocalTime ( utcToLocalZonedTime )
+import HSInstall ( getRsrcDir )
 import System.Directory
 import System.FilePath ( (</>) )
 import Text.Printf
 import Text.Regex
 
-import Paths_grolprep
+import Paths_grolprep ( getDataDir )
 
 
 {- Some identifying info for this application
@@ -25,16 +26,20 @@ appVersion = "1.0.2.6"
 appId = printf "%s-%s" appName appVersion
 
 
+getDataFilePath :: FilePath -> IO FilePath
+getDataFilePath pathTail = (</> pathTail) <$> getRsrcDir getDataDir
+
+
 {- This function allows us to rely on the cabal data-files mechanism 
    to generate relative URLs for HTML pages.
 
    It's a bit of a hack, but this returns the part of the path starting 
    with the share directory and continuing to the end.
 -}
-getRelDataFileName :: String -> IO String
-getRelDataFileName s = do
-   fullPath <- getDataFileName s
-   return $ maybe s head $
+getRelDataFilePath :: FilePath -> IO FilePath
+getRelDataFilePath pathTail = do
+   fullPath <- getDataFilePath pathTail
+   return $ maybe pathTail head $
       matchRegex (mkRegex "(/grolprep.*)$") fullPath
 
 

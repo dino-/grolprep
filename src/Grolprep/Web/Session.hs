@@ -34,7 +34,6 @@ import Grolprep.Common.Conf
 import Grolprep.Common.Log
 import Grolprep.Common.Util
 import Grolprep.Web.SessionId
-import Paths_grolprep
 
 
 data StudyType
@@ -99,13 +98,13 @@ newGrolprepCookie aid sid = do
 
 loadSession :: String -> IO Session
 loadSession sessionId = do
-   path <- getDataFileName $ "session" </> sessionId
+   path <- getDataFilePath $ "session" </> sessionId
    liftM read $ readFile path
 
 
 saveSession :: String -> Session -> IO ()
 saveSession sessionId session = do
-   sessionDir <- getDataFileName "session"
+   sessionDir <- getDataFilePath "session"
    mkdir sessionDir
 
    let path = sessionDir </> sessionId
@@ -115,7 +114,7 @@ saveSession sessionId session = do
 
 deleteSession :: String -> IO ()
 deleteSession sessionId = do
-   path <- getDataFileName $ "session" </> sessionId
+   path <- getDataFilePath $ "session" </> sessionId
    unlink path
 
 

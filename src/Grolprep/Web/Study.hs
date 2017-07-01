@@ -34,7 +34,7 @@ removeFromList i xs = take i xs ++ drop (i + 1) xs
 imgRegion :: Maybe FilePath -> IO Html
 imgRegion Nothing = return noHtml
 imgRegion (Just im) = do
-   path <- getRelDataFileName $ "figures" </> im <.> "png"
+   path <- getRelDataFilePath $ "figures" </> im <.> "png"
    return $ image ! [theclass "problem", src path]
 
 
@@ -110,7 +110,7 @@ formSetup :: App CGIResult
 formSetup = do
    burl <- liftIO baseUrl
 
-   scriptPath <- liftIO $ getRelDataFileName "scripts/formSetup.js"
+   scriptPath <- liftIO $ getRelDataFilePath "scripts/formSetup.js"
 
    opts13 <- liftIO $ constructSetupOptions [1, 3]
    opts8 <- liftIO $ constructSetupOptions [8]

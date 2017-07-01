@@ -21,18 +21,17 @@ import Data.Maybe
 import Database.HDBC
 import Database.HDBC.Sqlite3
 import Prelude hiding ( lookup )
-import System.FilePath
 import System.Random
 import Text.Printf
 import Text.XHtml.Strict
 
 import Grolprep.Common.Data
+import Grolprep.Common.Util ( getDataFilePath )
 import Grolprep.Web.Session
-import Paths_grolprep
 
 
 dbPath :: IO FilePath
-dbPath = getDataFileName $ "grolprep" <.> "sqlite"
+dbPath = getDataFilePath $ "grolprep.sqlite"
 
 
 getSimProblemIds :: Int -> IO [ProblemId]
