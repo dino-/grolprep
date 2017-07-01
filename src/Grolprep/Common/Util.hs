@@ -7,10 +7,10 @@ module Grolprep.Common.Util
 
 import Control.Monad
 import Data.Time.Clock ( getCurrentTime )
-import Data.Time.Format ( formatTime )
+import Data.Time.Format ( defaultTimeLocale, formatTime )
 import Data.Time.LocalTime ( utcToLocalZonedTime )
 import System.Directory
-import System.Locale ( defaultTimeLocale )
+import System.FilePath ( (</>) )
 import Text.Printf
 import Text.Regex
 
@@ -55,6 +55,6 @@ unlink path = doesFileExist path >>= (flip when $ removeFile path)
 {- Format the time right now given a formatting string
 -}
 formattedDate :: String -> IO String
-formattedDate formatString =
-   liftM (formatTime defaultTimeLocale formatString)
+formattedDate formatString' =
+   liftM (formatTime defaultTimeLocale formatString')
       $ getCurrentTime >>= utcToLocalZonedTime

@@ -1,3 +1,5 @@
+{-# LANGUAGE FlexibleContexts #-}
+
 -- Copyright: 2009, 2010 Dino Morelli
 -- License: BSD3 (see LICENSE)
 -- Author: Betty Diegel <bdiegel@usa.net>

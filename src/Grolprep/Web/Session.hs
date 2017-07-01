@@ -19,6 +19,7 @@ import Control.Monad.State
 import Control.Monad.Reader
 import Data.Map
 import Data.Maybe
+import Data.Time.Clock
 import Network.CGI
 import Network.CGI.Monad
 import Network.CGI.Protocol
@@ -59,7 +60,7 @@ data Session = Session
 
 
 newtype AppT m a = App (ReaderT ConfMap (StateT (Maybe Session) (CGIT m)) a)
-   deriving (Monad, MonadIO, MonadState (Maybe Session), 
+   deriving (Applicative, Functor, Monad, MonadIO, MonadState (Maybe Session), 
       MonadReader ConfMap)
 
 
@@ -91,15 +92,9 @@ getConfig key = do
 newGrolprepCookie :: String -> String -> IO Cookie
 newGrolprepCookie aid sid = do
    let rawcookie = newCookie aid sid
-   expiration <- cookieExpiration
+   let sevenDaysInSeconds = 604800
+   expiration <- addUTCTime sevenDaysInSeconds <$> getCurrentTime
    return $ rawcookie { cookiePath = Just "/" , cookieExpires = Just expiration } 
-
-
-cookieExpiration :: IO CalendarTime
-cookieExpiration = do
-   now <- getClockTime
-   let week = noTimeDiff { tdDay = 7 }
-   toCalendarTime $ addToClockTime week now
 
 
 loadSession :: String -> IO Session
