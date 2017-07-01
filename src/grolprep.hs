@@ -8,7 +8,7 @@ import Data.Map ( lookup )
 import Data.Maybe
 import Network.CGI
 import Prelude hiding ( lookup )
---import Text.Printf
+--import Text.Printf  -- For debug log messages below
 
 import Grolprep.Common.Conf
 import Grolprep.Common.Log
