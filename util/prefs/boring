@@ -113,3 +113,5 @@
 (^|/)\.DS_Store$
 # cabal
 (^|/)dist($|/)
+# stack
+(^|/).stack-work($|/)
