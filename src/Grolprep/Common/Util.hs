@@ -9,21 +9,21 @@ import Control.Monad
 import Data.Time.Clock ( getCurrentTime )
 import Data.Time.Format ( defaultTimeLocale, formatTime )
 import Data.Time.LocalTime ( utcToLocalZonedTime )
+import Data.Version ( showVersion )
 import HSInstall ( getRsrcDir )
 import System.Directory
 import System.FilePath ( (</>) )
 import Text.Printf
 import Text.Regex
 
-import Paths_grolprep ( getDataDir )
+import Paths_grolprep ( getDataDir, version )
 
 
 {- Some identifying info for this application
 -}
-appName, appVersion, appId :: String
-appName = "grolprep"
-appVersion = "1.0.2.6"
-appId = printf "%s-%s" appName appVersion
+appVersion, appId :: String
+appVersion = showVersion version
+appId = printf "grolprep-%s" appVersion
 
 
 getDataFilePath :: FilePath -> IO FilePath
