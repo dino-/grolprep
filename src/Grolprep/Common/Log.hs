@@ -14,7 +14,7 @@ import qualified System.Log.Logger as L ( logM )
 import           System.Log.Logger hiding ( logM )
 import Text.Printf
 
-import Grolprep.Common.Util
+import Grolprep.Common.Util ( formattedDate )
 
 
 {- Log a message to the root logger with timestamp and priority

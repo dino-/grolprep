@@ -7,7 +7,7 @@ module Grolprep.Web.Util
 
 import Text.XHtml.Strict
 
-import Grolprep.Common.Util
+import Grolprep.Common.Util ( appVersion, getRelDataFilePath )
 
 
 {- The base URL of the application

@@ -31,7 +31,7 @@ import Text.Printf
 
 import Grolprep.Common.Conf
 import Grolprep.Common.Log
-import Grolprep.Common.Util
+import Grolprep.Common.Util ( appId, getDataFilePath, mkdir, unlink )
 import Grolprep.Web.SessionId
 
 

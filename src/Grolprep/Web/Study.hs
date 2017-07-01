@@ -18,7 +18,7 @@ import Text.XHtml.Strict
 
 import Grolprep.Common.Data
 import Grolprep.Common.Log
-import Grolprep.Common.Util
+import Grolprep.Common.Util ( appVersion, getRelDataFilePath )
 import Grolprep.Common.Shuffle
 import Grolprep.Web.Database
 import Grolprep.Web.Session

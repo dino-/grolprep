@@ -3,6 +3,11 @@
 -- Author: Dino Morelli <dino@ui3.info>
 
 module Grolprep.Common.Util
+   ( appId, appVersion
+   , getDataFilePath, getRelDataFilePath
+   , mkdir, unlink
+   , formattedDate
+   )
    where
 
 import Control.Monad
