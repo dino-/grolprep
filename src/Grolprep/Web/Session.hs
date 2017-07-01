@@ -26,8 +26,7 @@ import Network.CGI.Protocol
 import Prelude hiding ( lookup )
 import System.FilePath
 import System.IO
-import System.IO.Error
-import System.Time
+import System.IO.Error ( tryIOError )
 import Text.Printf
 
 import Grolprep.Common.Conf
@@ -125,7 +124,7 @@ getSession = do
       mbSessionId <- getCookie appId
       case mbSessionId of
          Just sessionId -> do
-            esess <- liftIO $ try $ loadSession sessionId
+            esess <- liftIO $ tryIOError $ loadSession sessionId
             case esess of
                Right session -> put $ Just session
                Left _ -> do
