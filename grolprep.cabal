@@ -49,6 +49,7 @@ executable           fcc-grol-prep.cgi
                      , regex-compat
                      , split
                      , time
+                     , unix
                      , xhtml
    ghc-options:      -Wall
    other-modules:    Grolprep.Common.Conf

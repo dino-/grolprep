@@ -18,6 +18,8 @@ import Data.Version ( showVersion )
 import HSInstall ( getRsrcDir )
 import System.Directory
 import System.FilePath ( (</>) )
+import System.Posix.Files
+   ( groupModes, ownerModes, setFileMode, unionFileModes )
 import Text.Printf
 import Text.Regex
 
@@ -51,8 +53,11 @@ getRelDataFilePath pathTail = do
 {- Make a directory if it doesn't already exist
 -}
 mkdir :: FilePath -> IO ()
-mkdir path =
-   doesDirectoryExist path >>= (flip unless $ createDirectory path)
+mkdir path = do
+   dirExists <- doesDirectoryExist path
+   unless dirExists $ do
+      createDirectory path
+      setFileMode path $ ownerModes `unionFileModes` groupModes
 
 
 {- Remove a file given a file path. Does nothing at all if the file

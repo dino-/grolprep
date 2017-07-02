@@ -48,6 +48,12 @@ And once you have it, building the usual way:
     $ cabal install
 
 
+When developing and deploying be mindful of directory
+permissions. This web application writes session state files into
+its deployment directory. To make things work right, I needed to
+set the group ID bit on `/var/www/`, example: `# chmod g+s /var/www/`
+
+
 ## Using the web application
 
 [Visit the live site](http://ui3.info/grolprep/bin/fcc-grol-prep.cgi) and start studying!
