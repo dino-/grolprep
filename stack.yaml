@@ -45,12 +45,12 @@ resolver: lts-6.35
 # will not be run. This is useful for tweaking upstream packages.
 packages:
 - '.'
-- location: /home/dino/dev/hsinstall
+#- location: /home/dino/dev/hsinstall
 # Dependency packages to be pulled from upstream that are not in the resolver
 # (e.g., acme-missiles-0.3)
 extra-deps:
 - Crypto-4.2.5.1
-- hsinstall-1.5
+- hsinstall-1.6
 
 # Override default flag values for local packages and extra-deps
 flags: {}
