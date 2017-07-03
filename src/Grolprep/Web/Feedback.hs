@@ -56,7 +56,7 @@ logFeedbackException (NetFail ce) = llog ERROR $ show ce
 
 formFeedback :: String -> String -> String -> String -> App CGIResult
 formFeedback msg addr subj comment =  do
-   pubkey <- getConfig "recaptcha-public-key"
+   pubkey <- getConfig "recaptcha-site-key"
    burl <- liftIO baseUrl
    fbPage <- liftIO $ page ["css/feedback.css"] $ 
       form ! [ method "POST" 
@@ -122,7 +122,7 @@ feedbackHandler = do
    commentorIp <- remoteAddr
    challenge <- liftM fromJust $ getInput "recaptcha_challenge_field"
    response <- liftM fromJust $ getInput "recaptcha_response_field"
-   privkey <- getConfig "recaptcha-private-key"
+   privkey <- getConfig "recaptcha-secret-key"
       
    e <- liftIO $ verifyChallengeResponse privkey commentorIp challenge response
 
