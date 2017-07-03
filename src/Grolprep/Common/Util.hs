@@ -5,6 +5,7 @@
 module Grolprep.Common.Util
    ( appId, appVersion
    , getDataFilePath, getRelDataFilePath
+   , getVarFilePath
    , mkdir, unlink
    , formattedDate
    )
@@ -48,6 +49,10 @@ getRelDataFilePath pathTail = do
    fullPath <- getDataFilePath pathTail
    return $ maybe pathTail head $
       matchRegex (mkRegex "(/grolprep.*)$") fullPath
+
+
+getVarFilePath :: FilePath -> FilePath
+getVarFilePath pathTail = "/var" </> "local" </> "grolprep" </> pathTail
 
 
 {- Make a directory if it doesn't already exist

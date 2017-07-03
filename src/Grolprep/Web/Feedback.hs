@@ -20,7 +20,7 @@ import Text.Printf
 import Text.XHtml.Strict 
 
 import Grolprep.Common.Log
-import Grolprep.Common.Util ( formattedDate, getDataFilePath, mkdir )
+import Grolprep.Common.Util ( formattedDate, getVarFilePath, mkdir )
 import Grolprep.Web.Session
 import Grolprep.Web.Util
 
@@ -180,7 +180,7 @@ verifyChallengeResponse k ip challenge response =  runErrorT $ do
 -}
 saveFeedback :: String -> String -> IO ()
 saveFeedback fname fcontent = do
-   fbDir <- getDataFilePath $ "feedback"
+   let fbDir = getVarFilePath "feedback"
    mkdir fbDir
    let path = fbDir </> fname
    logM DEBUG $ "path: " ++ path ++ " content:" ++ fcontent
