@@ -7,8 +7,7 @@
 module Grolprep.Web.Feedback
    where
 
-import Control.Monad()
-import Control.Monad.Error
+import Control.Monad.Except ( liftM, runExceptT, throwError )
 import Data.Maybe
 import Data.List
 import Network.CGI hiding (urlEncode)
@@ -32,11 +31,6 @@ data FeedbackException a
    | HttpFail (Response a)
    | NetFail ConnError
    deriving Show
-
-
-{- It's bullshit that we have to do this -}
-instance Error (FeedbackException a) where
-   noMsg = ChalRespFail "SHOULD NEVER SEE THIS"
 
 
 {- Convenience type, not really necessary -}
@@ -146,7 +140,7 @@ feedbackHandler = do
 {- Verifies the challenge response with the reCaptcha server
 -}
 verifyChallengeResponse :: String -> String -> String -> String -> IO (FeedbackResult String)
-verifyChallengeResponse k ip challenge response =  runErrorT $ do
+verifyChallengeResponse k ip challenge response =  runExceptT $ do
    let params = urlEncodeVars 
                   [ ("privatekey", k)
                   , ("remoteip", ip)
