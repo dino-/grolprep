@@ -24,7 +24,7 @@ import Grolprep.Web.Session
 import Grolprep.Web.Util
 
 
-{- Feedback handler failures -}
+-- Feedback handler failures
 data FeedbackException a
    = ChalRespFail String
    | RecaptchaFail String
@@ -33,11 +33,11 @@ data FeedbackException a
    deriving Show
 
 
-{- Convenience type, not really necessary -}
+-- Convenience type, not really necessary
 type FeedbackResult a = Either (FeedbackException a) ()
 
 
-{- Log feedback handler failures -}
+-- Log feedback handler failures
 logFeedbackException :: FeedbackException a -> IO ()
 logFeedbackException (ChalRespFail s) = llog NOTICE s
 logFeedbackException (RecaptchaFail s) = llog NOTICE s
@@ -45,8 +45,7 @@ logFeedbackException (HttpFail r) = llog ERROR $ show r
 logFeedbackException (NetFail ce) = llog ERROR $ show ce
 
 
-{- HTML pages and forms 
--}
+-- HTML pages and forms
 
 formFeedback :: String -> String -> String -> String -> App CGIResult
 formFeedback msg addr subj comment =  do
@@ -104,8 +103,7 @@ feedbackPage = do
    llog INFO "feedbackPage"
    formFeedback "" "" "" "" 
 
-{- Handles feedback form submit
--}
+-- Handles feedback form submit
 feedbackHandler :: App CGIResult
 feedbackHandler = do
    llog INFO "feedbackHandler"
@@ -137,8 +135,7 @@ feedbackHandler = do
          output $ renderHtml thankyouPage
    
 
-{- Verifies the challenge response with the reCaptcha server
--}
+-- Verifies the challenge response with the reCaptcha server
 verifyChallengeResponse :: String -> String -> String -> String -> IO (FeedbackResult String)
 verifyChallengeResponse k ip challenge response =  runExceptT $ do
    let params = urlEncodeVars 
@@ -170,8 +167,7 @@ verifyChallengeResponse k ip challenge response =  runExceptT $ do
          | otherwise = throwError $ RecaptchaFail b
 
 
-{- Saves feedback submission to file 
--}
+-- Saves feedback submission to file
 saveFeedback :: String -> String -> IO ()
 saveFeedback fname fcontent = do
    let fbDir = getVarFilePath "feedback"
