@@ -19,13 +19,6 @@ presented. grolprep displays the images for questions with figures.
 Additionally, simulations of the randomly-chosen exams can be
 practiced with this software.
 
-grolprep is currently being used by people all over the US, including
-students of the Avionics program at the [Burlington Aviation
-Technology School](http://kevaco.net/aviationtech/). Some of the
-technology in this web application was already helpful in preparing
-students for these tests in the form of the prior command-line
-version, [fequiz-pl](http://ui3.info/d/proj/fequiz-pl.html).
-
 The source test data questions can be acquired
 from the [FCC Commercial Operator License
 site](http://wireless.fcc.gov/commoperators/eqp.html).
@@ -43,15 +36,26 @@ Text.XHtml
 
 And once you have it, building the usual way:
 
-    $ cabal configure
-    $ cabal build
-    $ cabal install
+    $ stack build
+    $ stack test
 
 
-When developing and deploying be mindful of directory
-permissions. This web application writes session state files into
-its deployment directory. To make things work right, I needed to
-set the group ID bit on `/var/www/`, example: `# chmod g+s /var/www/`
+## Installation
+
+To install, a script is included, run it with `--help` for more info
+
+    $ cd /dir/containing/grolprep/source
+    $ ./util/install.hs
+
+Installation defaults to `/var/www/grolprep-x.y.z`. After
+first-time installation, you will need to copy
+`/var/www/grolprep.../resources/grolprep.conf` to `/etc/` and make
+it readable by the web server group or user. To use the feedback
+facility, reCAPTCHA keys will need to be added to this config file.
+
+Runtime data (user sessions and feedback messages) is stored in
+`/var/local/grolprep`. This directory will need to be created ahead
+of time and permissions set as with `grolprep.conf`
 
 
 ## Using the web application
