@@ -59,13 +59,6 @@ then switch to the new test pools.
 -----
 2009-08-21
 
-Developer configuration
-
-This web application requires access to its data files to function. The easiest way to work on it is to configure it with a --prefix to a dir in your http server document root.
-
-Changes made require both build and install, don't forget install or nothing will be deployed to where the web server is looking.
-
-
 apache configuration
 
 Under Debian:
@@ -92,12 +85,6 @@ Under Arch Linux:
 
 -----
 version numbering:
-
-change the version in these files:
-
-   grolprep.cabal
-   src/Grolprep/Common/Util.hs
-
 
 version numbering scheme
 
