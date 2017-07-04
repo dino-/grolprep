@@ -18,7 +18,8 @@ import Text.Printf
 import Text.XHtml.Strict 
 
 import Grolprep.Common.Log
-import Grolprep.Common.Util ( formattedDate, getVarFilePath, mkdir )
+import Grolprep.Common.Util
+   ( appVersion, formattedDate, getVarFilePath, mkdir )
 import Grolprep.Web.Session
 import Grolprep.Web.Util
 
@@ -128,8 +129,8 @@ feedbackHandler = do
          thankyouPage <- liftIO $ do
             fname <- formattedDate "%Y%m%d-%H%M%S"
             saveFeedback fname $ printf
-               "Submitted: %s\nIP: %s\nEmail: %s\nSubject: %s\nComment: %s\n"
-               fname commentorIp email subj comment
+               "Submitted: %s\nGROLPrep version: %s\nIP: %s\nEmail: %s\nSubject: %s\nComment: %s\n"
+               fname appVersion commentorIp email subj comment
             page [] $ pageThankYou burl
          output $ renderHtml thankyouPage
    
