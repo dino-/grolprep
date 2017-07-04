@@ -1,3 +1,24 @@
+1.0.2.6 (2017-07-03)
+
+   * Updated developer docs
+   * Moved copyright date up to 2017
+   * Replaced deprecated ErrorT code with ExceptT
+   * Now writing session and feedback data into /var/local
+   * Now loading conf file from /etc/
+   * Removed reCAPTCHA keys from example config file
+   * Project now builds with stack instead of cabal
+   * Updated to use the hsinstall library
+   * Fixed breakage dues to date/time library changes
+   * Changed cabal homepage to darcshub
+   * Updated synopsis to better reflect the project
+
+
+1.0.2.5 (2011-10-11)
+
+   * Fixed a non-exhaustive pattern match in conf file reading code
+   * Fixed bad session bug due to newlines in question lists
+
+
 1.0.2.4 (2010-11-22)
 
    * Added avionics photo to page headings
