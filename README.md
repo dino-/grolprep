@@ -31,8 +31,8 @@ Text.XHtml
 
 ## Getting source
 
-- Get the source with darcs: `$ darcs get http://hub.darcs.net/dino/grolprep`
-- If you're just looking, [browse the source](http://hub.darcs.net/dino/grolprep)
+- Get the source with git: `$ git clone https://github.com/dino-/grolprep.git`
+- If you're just looking, [browse the source](https://github.com/dino-/grolprep)
 
 And once you have it, building the usual way:
 
