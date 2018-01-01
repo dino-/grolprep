@@ -2,9 +2,9 @@ name:                grolprep
 version:             1.0.2.7
 cabal-version:       >= 1.2
 build-type:          Simple
-license:             BSD3
+license:             ISC
 license-file:        LICENSE
-copyright:           2009-2017 Dino Morelli
+copyright:           2009-2018 Dino Morelli
 author:              Dino Morelli
 maintainer:          Dino Morelli <dino@ui3.info>
 stability:           stable

@@ -1,6 +1,6 @@
 {-# LANGUAGE FlexibleContexts #-}
 
--- License: BSD3 (see LICENSE)
+-- License: ISC (see LICENSE)
 -- Author: Betty Diegel <bdiegel@usa.net>
 
 module Grolprep.Web.Feedback
