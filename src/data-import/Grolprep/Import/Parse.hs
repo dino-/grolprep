@@ -9,7 +9,6 @@ module Grolprep.Import.Parse
 
 import Control.Monad
 import Data.Char
-import Data.List
 import Data.Maybe
 --import Debug.Trace
 import Text.ParserCombinators.Parsec
@@ -93,8 +92,8 @@ question = do
 answer :: GenParser Char st Answer
 answer = do
    spaces
-   ansLetter
-   char '.'
+   _ <- ansLetter
+   _ <- char '.'
    spaces
    liftM Left tillEol
 
@@ -111,7 +110,7 @@ problem = do
 solutions :: GenParser Char st [(ProblemId, Char)]
 solutions = do
    spaces
-   string "Answer Key:"
+   _ <- string "Answer Key:"
    ss <- many1 $ try $ do
       spaces
       pid <- problemId
@@ -124,9 +123,9 @@ solutions = do
 keyTopicHead :: GenParser Char st (String, String)
 keyTopicHead = do
    spaces
-   string "Key Topic "
+   _ <- string "Key Topic "
    ktNum <- many1 digit
-   char ':'
+   _ <- char ':'
    spaces
    ktDesc <- tillEol
    return (ktNum, ktDesc)
@@ -146,12 +145,12 @@ keyTopic = do
 subElementHead :: GenParser Char st (Char, String)
 subElementHead = do
    spaces
-   string "Subelement"
+   _ <- string "Subelement"
    spaces
    seLetter <- letter
    spaces >> char '-' >> spaces
    seDesc <- manyTill anyChar $ char ':'
-   tillEol
+   _ <- tillEol
    return (seLetter, seDesc)
 
 
@@ -169,7 +168,7 @@ elemDesc = do
    y <- many1 $ satisfy (not . isDigit)
    d <- many1 digit
    z <- manyTill anyChar $ try $ string " ("
-   tillEol
+   _ <- tillEol
    return (read d, (y ++ d ++ z))
 
 
@@ -178,8 +177,8 @@ element = do
    (en, ed) <- elemDesc
    ses <- (many1 $ try subElement) <?> "subElement"
    spaces
-   string "[END OF"
-   tillEol
+   _ <- string "[END OF"
+   _ <- tillEol
 
    return $ Element en ed ses
 
