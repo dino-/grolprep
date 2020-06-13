@@ -2,8 +2,8 @@
 
 set -x
 rm resources/grolprep.sqlite
-src/data-import.hs util/resources/new-element1.txt
-src/data-import.hs util/resources/new-element3.txt
-src/data-import.hs util/resources/new-element8.txt
-src/data-import.hs figures
+stack exec data-import -- util/resources/new-element1.txt
+stack exec data-import -- util/resources/new-element3.txt
+stack exec data-import -- util/resources/new-element8.txt
+stack exec data-import -- figures
 set +x

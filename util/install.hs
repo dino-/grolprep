@@ -71,7 +71,7 @@ main = do
 
    -- Copy the binaries
    createDirectoryIfMissing True $ binDir dirs
-   installExitCode <- system $ "stack install grolprep --local-bin-path=" ++ (binDir dirs)
+   installExitCode <- system $ "stack install grolprep:fcc-grol-prep.cgi --local-bin-path=" ++ (binDir dirs)
    unless (ok installExitCode) $ die "Can't continue because stack install failed"
 
    -- Copy additional scripts

@@ -1,15 +1,12 @@
-#! /usr/bin/runhaskell -isrc
-
--- License: ISC (see LICENSE)
--- Author: Dino Morelli <dino@ui3.info>
+{-# LANGUAGE FlexibleContexts #-}
 
 import Control.Monad
+import Data.Convertible.Base
 import Database.HDBC
 import Database.HDBC.Sqlite3
 import System.Directory
 import System.Environment
 import System.FilePath
-import System.IO
 
 import Grolprep.Common.Data
 import Grolprep.Import.Parse
@@ -17,6 +14,7 @@ import Grolprep.Import.Parse
 
 {- Create the necessary tables
 -}
+createTables :: IConnection conn => conn -> IO ()
 createTables conn = do
    mapM_ (\sql -> do
          stmt <- prepare conn sql
@@ -66,6 +64,7 @@ createTables conn = do
          ]
 
 
+storeElement :: IConnection conn => conn -> Element -> IO ()
 storeElement conn (Element eid edesc ses) = do
    stmt <- prepare conn $ unlines
       [ "INSERT INTO element "
@@ -74,12 +73,15 @@ storeElement conn (Element eid edesc ses) = do
       , ";"
       ]
 
-   execute stmt [toSql eid, toSql edesc]
+   _ <- execute stmt [toSql eid, toSql edesc]
    commit conn
 
    mapM_ (storeSubElement conn eid) ses
 
 
+storeSubElement
+  :: (Convertible a2 SqlValue, IConnection conn)
+  => conn -> a2 -> SubElement -> IO ()
 storeSubElement conn eid (SubElement seid sedesc kts) = do
    stmt <- prepare conn $ unlines
       [ "INSERT INTO subelement "
@@ -88,12 +90,16 @@ storeSubElement conn eid (SubElement seid sedesc kts) = do
       , ";"
       ]
 
-   execute stmt [toSql seid, toSql eid, toSql sedesc]
+   _ <- execute stmt [toSql seid, toSql eid, toSql sedesc]
    commit conn
 
    mapM_ (storeKeyTopic conn eid seid) kts
 
 
+storeKeyTopic
+  :: (Convertible a1 SqlValue, Convertible a2 SqlValue,
+      IConnection conn)
+  => conn -> a2 -> a1 -> KeyTopic -> IO ()
 storeKeyTopic conn eid seid (KeyTopic kid kdesc ps) = do
    stmt <- prepare conn $ unlines
       [ "INSERT INTO keytopic "
@@ -102,12 +108,17 @@ storeKeyTopic conn eid seid (KeyTopic kid kdesc ps) = do
       , ";"
       ]
 
-   execute stmt [toSql kid, toSql eid, toSql seid, toSql kdesc]
+   _ <- execute stmt [toSql kid, toSql eid, toSql seid, toSql kdesc]
    commit conn
 
    mapM_ (storeProblem conn eid seid kid) ps
 
 
+storeProblem
+  :: (Data.Convertible.Base.Convertible a SqlValue,
+      Data.Convertible.Base.Convertible a1 SqlValue,
+      Data.Convertible.Base.Convertible a2 SqlValue, IConnection conn)
+  => conn -> a2 -> a1 -> a -> Problem -> IO ()
 storeProblem conn eid seid kid p@(Problem pid _ _) = do
    stmt <- prepare conn $ unlines
       [ "INSERT INTO problem "
@@ -116,7 +127,7 @@ storeProblem conn eid seid kid p@(Problem pid _ _) = do
       , ";"
       ]
 
-   execute stmt
+   _ <- execute stmt
       [ toSql pid
       , toSql eid
       , toSql seid
@@ -126,6 +137,7 @@ storeProblem conn eid seid kid p@(Problem pid _ _) = do
    commit conn
 
 
+storeFigures :: IConnection conn => conn -> IO ()
 storeFigures conn = do
    stmt <- prepare conn $ unlines
       [ "INSERT INTO figure "
@@ -182,10 +194,12 @@ storeFigures conn = do
             ]
 
 
+maybeHead :: [a] -> Maybe a
 maybeHead [] = Nothing
 maybeHead l  = Just $ head l
 
 
+dbSetup :: IO Connection
 dbSetup = do
    let dbPath = "resources" </> "grolprep" <.> "sqlite"
    dbExists <- doesFileExist dbPath

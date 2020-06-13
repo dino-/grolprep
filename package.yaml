@@ -1,0 +1,79 @@
+name: grolprep
+version: '1.0.3'
+synopsis: FCC GROL exam prep web application
+description: This is a web application for studying for FCC General Radio Operator License questions (including the Radar endorsement) in preparation of taking the exams.
+license: ISC
+author: Dino Morelli
+maintainer: Dino Morelli <dino@ui3.info>
+copyright: 2009-2018 Dino Morelli
+stability: stable
+homepage: http://hub.darcs.net/dino/grolprep
+category: Education
+tested-with: GHC>=6.10.4
+data-dir: resources
+data-files:
+- AvionicsPhoto.jpg
+- BTCAvionicsLogo.jpg
+- css/*.css
+- figures/*.png
+- grolprep.conf
+- grolprep.sqlite
+- scripts/*.js
+
+github: dino-/grolprep.git
+
+ghc-options:
+- -fwarn-tabs
+- -Wall
+- -Wcompat
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wredundant-constraints
+
+dependencies:
+- base >= 4.8 && < 5.0
+- filepath
+
+library:
+  source-dirs: src/lib
+  dependencies:
+  - cgi
+  - containers
+  - convertible
+  - Crypto
+  - directory
+  - HDBC
+  - HDBC-sqlite3
+  - hsinstall
+  - hslogger
+  - HTTP
+  - mtl
+  - network
+  - network-uri
+  - old-locale
+  - old-time
+  - random
+  - regex-compat
+  - time
+  - unix
+  - xhtml
+
+executables:
+  fcc-grol-prep.cgi:
+    source-dirs: src/grolprep
+    main: Main.hs
+    dependencies:
+    - cgi
+    - containers
+    - grolprep
+    - split
+  data-import:
+    source-dirs: src/data-import
+    main: Main.hs
+    dependencies:
+    - convertible
+    - directory
+    - grolprep
+    - HDBC
+    - HDBC-sqlite3
+    - parsec
