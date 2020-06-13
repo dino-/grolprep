@@ -3,6 +3,10 @@
 
 # stack build artifacts
 .stack-work/
+stack.yaml.lock
 
 # Stack generates the Cabal file from `package.yaml` through hpack.
 /*.cabal
+
+# No need to store ctags files
+tags
