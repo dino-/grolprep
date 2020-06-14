@@ -134,7 +134,7 @@ formSetup = do
              thediv ! [theclass "banner"] << h2 ! [theclass "footer"] << (
                -- This is the right-side content, it floats
                thespan ! [theclass "footer-right"] << (
-                  anchor ! [theclass "footer-right", href "https://hub.darcs.net/dino/grolprep"] << "developer site"
+                  anchor ! [theclass "footer-right", href "https://github.com/dino-/grolprep"] << "developer site"
                   +++
                   (thespan ! [theclass "banner-dark-text"] << primHtml " &middot; ")
                   +++
