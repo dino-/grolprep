@@ -30,18 +30,12 @@ titleBar = thetitle << "GROLPrep"
 
 heading :: IO Html
 heading = do
-   logoPath <- getRelDataFilePath "BTCAvionicsLogo.jpg"
-   avionicsPicPath <- getRelDataFilePath "AvionicsPhoto.jpg"
    return $ p <<
-      ( image ! [src logoPath] +++ 
-        image ! [src avionicsPicPath, strAttr "style" "padding-left: 0.5em;"]
-      )
-      +++
       (thediv ! [theclass "banner"]) << (h1 ! [theclass "heading"]) << (
       "GROLPrep" +++
       (thespan ! [theclass "banner-dark-text"] << primHtml " &middot;")
       +++
-      thespan ! [theclass "heading-smaller"] << " FCC General Radio Operators License exam preparation"
+      thespan ! [theclass "heading-smaller"] << " FCC Commercial Radio Operators License exam preparation"
       )
 
 

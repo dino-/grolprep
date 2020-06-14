@@ -12,8 +12,6 @@ category: Education
 tested-with: GHC>=6.10.4
 data-dir: resources
 data-files:
-- AvionicsPhoto.jpg
-- BTCAvionicsLogo.jpg
 - css/*.css
 - figures/*.png
 - grolprep.conf

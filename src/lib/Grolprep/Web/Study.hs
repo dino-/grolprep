@@ -163,16 +163,10 @@ formSetup = do
                , li ! [theclass "features"] << "Figure illustrations included!"
                ] )
          +++
-         h3 << 
-            (
-            "This site provides a study tool and test simulator for the FCC GROL and Radar Endorsement examinations. GROLPrep is used by students of the " 
-            +++ anchor ! [href "http://www.burlingtonaviationtech.org" ] 
-               << "Avionics program at the Burlington Aviation Technology School"
-            +++ "."
-            )
+         h3 << "This site provides a study tool and test simulator for the FCC Commercial Radio Operators License and Radar Endorsement examinations."
          +++ 
          h3 << ("The source test questions can be acquired from the "
-            +++ (anchor ! [href "http://wireless.fcc.gov/commoperators/index.htm?job=question_pools" ]  << "FCC Commercial Radio Operators License" )
+            +++ (anchor ! [href "http://wireless.fcc.gov/commoperators/index.htm?job=question_pools"] << "FCC Commercial Radio Operators License" )
             +++ " site.")
 
 
