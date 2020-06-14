@@ -20,8 +20,7 @@ Additionally, simulations of the randomly-chosen exams can be
 practiced with this software.
 
 The source test data questions can be acquired
-from the [FCC Commercial Operator License
-site](http://wireless.fcc.gov/commoperators/eqp.html).
+from the [FCC Commercial Operator License Program Examinations site](https://www.fcc.gov/wireless/bureau-divisions/mobility-division/commercial-radio-operator-license-program/examinations).
 
 grolprep is written in Haskell using many libraries including:
 cgi, Crypto, HDBC-sqlite3, hslogger, HTTP, split, xhtml. At this

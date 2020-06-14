@@ -166,7 +166,7 @@ formSetup = do
          h3 << "This site provides a study tool and test simulator for the FCC Commercial Radio Operators License and Radar Endorsement examinations."
          +++ 
          h3 << ("The source test questions can be acquired from the "
-            +++ (anchor ! [href "http://wireless.fcc.gov/commoperators/index.htm?job=question_pools"] << "FCC Commercial Radio Operators License" )
+            +++ (anchor ! [href "https://www.fcc.gov/wireless/bureau-divisions/mobility-division/commercial-radio-operator-license-program/examinations"] << "FCC Commercial Operator License Program Examinations site" )
             +++ " site.")
 
 
