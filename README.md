@@ -57,6 +57,9 @@ Runtime data (user sessions and feedback messages) is stored in
 `/var/local/grolprep`. This directory will need to be created ahead
 of time and permissions set as with `grolprep.conf`
 
+Be aware also that the log-path set in the conf file will need to exist and
+have permissiong set by-hand as well.
+
 
 ## Using the web application
 
