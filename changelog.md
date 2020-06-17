@@ -1,3 +1,26 @@
+1.0.3 (2020-06-14)
+
+   * Updated FCC URL in README, pages and other places
+   * Removed BTC branding from the site
+   * Updated developer site footer link
+   * Added some installation details to README.md
+   * Fixed question 1-12B3 which had the wrong answer for *years*
+   * Fixed a non-exhaustive pattern match warning in data-import parsing code
+   * Warnings addressed in the data-import parse code
+   * Reorganized source files into app and lib dirs
+   * Set executable bits on all scripts, these were lost when we transitioned from darcs to git
+
+
+1.0.2.7 (2018-01-01)
+
+   * Updated source control location in cabal file
+   * Updated stack.yaml to a more recent snapshot
+   * Switched from BSD3 license to ISC
+   * Switched from darcs to git source control
+   * Added executable bits back to scripts after darcs conversion
+   * Changed installation default to no-link
+
+
 1.0.2.6 (2017-07-03)
 
    * Updated developer docs
