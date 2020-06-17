@@ -1,5 +1,5 @@
 name: grolprep
-version: '1.0.3'
+version: '1.0.4'
 synopsis: FCC GROL exam prep web application
 description: This is a web application for studying for FCC General Radio Operator License questions (including the Radar endorsement) in preparation of taking the exams.
 license: ISC
